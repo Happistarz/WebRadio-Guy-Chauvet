@@ -7,6 +7,7 @@ DESIGN
 CODE
 -mathieu
 -hugo s (leader)
+-enzo
 
 SUPPORT 
 -pierre

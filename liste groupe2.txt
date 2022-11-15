@@ -1,0 +1,18 @@
+DESIGN
+-benjamin 
+-hugo p (leader)
+-mathis
+-nathan
+
+CODE
+-mathieu
+-hugo s (leader)
+
+SUPPORT 
+-pierre
+-valentin
+
+EN ATTENTE
+-axel
+-damien
+-lucas

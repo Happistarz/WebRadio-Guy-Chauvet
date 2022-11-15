@@ -10,10 +10,10 @@ CODE
 -enzo
 
 SUPPORT 
--pierre
--valentin
+-pierre (leader)
+-valentin (leader)
 
 EN ATTENTE
--axel
+-axel   (leader)
 -damien
 -lucas

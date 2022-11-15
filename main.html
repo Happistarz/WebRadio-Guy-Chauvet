@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Web Radio</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
@@ -13,19 +13,19 @@
 <style>
 
 body{
-background-image:url(loudun.jpg);
-background-color:grey;
+background-image:url(Loudun.jpg);
 background-repeat:no-repeat;
 background-attachment:fixed;
 background-size:100% 100%;
-
 }
-
 </style>
-
-
 </head>
 <body>
+
+<div>
+		<img src="Logo.png">
+</div>
+
 
 
 
@@ -36,18 +36,7 @@ background-size:100% 100%;
 
 
 <script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>
-
-<script>
-alert("N'hésite pas à t'abonné à Masdak");
+alert("Bienvenue sur le site du la radio du lycee");
 </script>
 
 
@@ -58,17 +47,6 @@ alert("N'hésite pas à t'abonné à Masdak");
 
  
  
-<script> 
-	var module1 = document.getElementById("monModule")
-    monPremierModule = Object.create(monModule)
-    monPremierModule.interface(module1)
- 
-    var module2 = document.getElementById("monModule2")
-    monModule2(module2)
- 
-</script> 
-</body>
-</html>
 
 
 </body>

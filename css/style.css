@@ -1,8 +1,8 @@
 .container{
-	background: linear-gradient(to right,black,white);
+	background: linear-gradient(to right,black,grey);
+	border:2px solid black;
 }
-h1{
-		font-familly: Alber News Bold}
+
 
 
 .logo{
@@ -23,3 +23,6 @@ h1{
 		margin-left:300px;
 		right:10px;
 }
+
+.nav-link{
+		color:white;

@@ -1,0 +1,11 @@
+URL : 
+http://radio.poupli.net	ou http://lgc.poupli.net/ ( Site actuelle en cours de dev )
+http://old.lgc.poupli.net	( Ancien site de la web radio )
+http://bd.poupli.net ou https://poupli.net/adminer.php	( Pour acceder a adminer.php  )
+
+
+Base de donnée : 
+
+Nom de la base : Webradio
+Nom d'utilisateur : lgc
+Mot de passe : devsts

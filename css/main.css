@@ -1,69 +1,19 @@
 * {
-	margin: 0;
-	padding: 0;
-	font-family: 'Albert Sans', sans-serif;
+    margin: 0;
+    padding: 0;
 }
-.nav {
-	background: #FFF8E6;
-	display: flex;
-	justify-content: space-between;
-	text-align: center;
-	border-bottom: 2px solid black;
-	font-weight: bold;
-	font-size: 20px;
+.header {
+    background: #000;
+    width: 100%;
+    padding: 40px;
 }
-.nav img {
-	width: 10vh;
-	margin-left: 5vh; 
+.header img {
+    width:  10%;
+    position: absolute;
+    top: 3vh;
+    left: 2vh;
 }
-.nav-left a{
-	text-decoration: none;
-	margin: auto 20px;
-	font-size: 20px;
-	color: black;
-}
-.nav-left {
-	display: flex;
-	justify-content: flex-start;
-	margin: 30px 0px; 
-}
-.nav-right {
-	display: flex;
-	justify-content: flex-end;
-	text-align: center;
-}
-.nav-right a {
-	display: flex;
-	list-style: none;
-	padding: 14px 16px;
-	margin: 20px;
-	justify-content: center;
-	align-items: center;
-	color: black;
-}
-.nav-right a:nth-child(3) {
-	margin-right: 5vh;
-}
-header{
-	background-image: url(Loudun.jpg);
-	width: 100%;
-	height: 50vh;
-	background-repeat: no-repeat;
-	background-position: center top;
-}
-header img {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-75%);
-	width: 50vh;
-}
-
-.separator {
-	border: 1px solid black;
-	margin-top: 20px;
-	width: 75%;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
+.header a {
+    color: white;
+    text-decoration: none;
 }

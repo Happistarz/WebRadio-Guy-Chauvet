@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background: #000;
+    width: 100%;
+    padding: 40px;
+}
+.header img {
+    width:  10%;
+    position: absolute;
+    top: 3vh;
+    left: 2vh;
+}
+.header a {
+    color: white;
+    text-decoration: none;
+}

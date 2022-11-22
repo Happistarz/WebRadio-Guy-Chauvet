@@ -1,6 +1,6 @@
 # WebRadio-Guy-Chauvet
 
-**Description deu projet**
+**Description du projet**
 Ceci est le github du projet WebRadio du lycée Guy Chauvet
 
 **Info:** 

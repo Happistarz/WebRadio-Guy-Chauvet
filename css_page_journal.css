@@ -1,0 +1,58 @@
+body{
+margin: 0px;
+padding: 30px;
+}
+
+.base > p{
+ border-bottom: 6px solid rgb(0, 0, 0);
+}
+
+.border-1 {
+border-radius: 12px;
+border: 2px solid red;
+}
+
+.border-2 {
+border-radius: 12px;
+border: 2px solid rgb(4, 0, 255);
+}
+
+.border-3 {
+border-radius: 12px;
+border: 2px solid rgb(238, 255, 0);
+}
+
+.article h1 {
+padding: 0;
+margin: 0;
+color: rgb(255, 255, 255);
+}
+
+.article p{
+padding: 0;
+margin: 3px;
+color: rgb(34, 33, 33);
+}
+
+
+.article img{
+max-width:10% ;
+padding: 1px;
+max-height:auto;
+float: left;
+}
+
+.container img{
+background-color: azure;
+}
+
+.article-container {
+padding: 4px;
+background-color: rgba(107, 103, 103, 0.911);
+}
+
+.article {
+padding: 10px;
+
+
+}

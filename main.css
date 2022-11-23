@@ -8,13 +8,15 @@
     background: #000;
     height: 8vh;
     display: flex;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     align-items: center;
+    margin-bottom: 100px;
 }
 .logo {
-    width: 12.5%;
+    width: 14%;
     position: absolute;
-    top: 2vh;
+    top: 3%;
     left: 2vh;
 }
 .header a {
@@ -39,7 +41,7 @@
     position: relative;
     display: inline-block;
 }
-#emission {
+#emission, #journal, #equipe {
     display: none;
     position: absolute;
     background: #777;
@@ -53,6 +55,6 @@
     text-decoration: none;
     display: block;
 }
-#emission:hover {
+.btnEmission:hover {
     display: block;
 }

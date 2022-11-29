@@ -1,0 +1,202 @@
+
+html{
+
+    /* center the page when zoomed out*/
+    display: flex;
+    justify-content: center;
+
+}
+
+/* left containers... */ 
+.container-left{
+    /* 1vh: top to bottom || 3vw : left to right*/
+    padding: 1vh 3vw;
+    /* put the container in flex*/
+    display: flex;
+
+    }
+
+    /* the "box" container */
+    .box-left{
+        /* the box size*/
+        max-height: auto;
+        max-width: 100%;
+        width: 80%;
+        height: auto;
+
+        margin-right: 1rem;
+        /* erase the blue color from the <a> hyperlink */
+        color: inherit;
+        text-decoration: none;
+        /* change the cursor : UI friendly */
+        cursor: pointer;
+        }
+
+        /* title of the link's box*/
+        .box-left h2{
+            /* place the title*/
+            display: flex;
+            place-content: center center;
+            /* bottom padding */
+            padding-top: 3%;
+            padding-bottom: 3%;
+            /* title size */
+            font-size: 175%;
+            /* change the background color */
+            background-color: grey;
+            /* rounded the top left and top right corner */
+            border-top-left-radius: 9px;
+            border-top-right-radius: 9px;
+            /* put the title in uppercase */
+            text-transform: uppercase;
+            max-height: 100%;
+            max-width: 100%;
+            height: auto;
+            width: auto;
+        }
+
+        /* container's box's img */
+        .container-left .box-left img{
+            /* max it's size */
+            max-height: 100%;
+            max-width: 100%;
+            height: auto;
+            width: auto;
+            /* rounded the bottom left and bottom right corner */
+            border-bottom-left-radius: 9px;
+            border-bottom-right-radius: 9px;
+
+            background-color: white;
+            
+        }
+    /* Put a scrollable text when the container is zoomed */
+    .container-left  article {
+        overflow-x: auto;
+        }
+        /* avoid the text to go out of the container */
+        .container-left article p{
+            max-height: 0px;
+            max-width: auto;
+
+            text-align: left;
+            font-size: 270%;
+        }
+        /* place the title's article */
+        .container-left  article h3{
+            margin-top: 3%;
+            margin-bottom:4%;
+            font-size: 300%;
+}
+
+
+/* Right containers... */
+.container-right{
+    /* 1vh: top to bottom || 3vw : left to right*/
+    padding: 1vh 3vw;
+    /* put the container in flex*/
+    display: flex;
+    height: auto;
+    }
+
+    /* the "box" container */
+
+    .box-right{
+        
+        /* the box size*/
+        max-height: auto;
+        max-width: 100%;
+        width: 80%;
+        height: auto;
+        margin-left: 1rem;
+        /* erase the blue color from the <a> hyperlink */
+        color: inherit;
+        text-decoration: none;
+        /* change the cursor : UI friendly */
+        cursor: pointer;
+        }
+
+        /* title of the link's box*/
+        .box-right h2{
+            /* place the title*/
+            display: flex;
+            place-content: center center;
+            /* bottom padding */
+            padding-top: 3%;
+            padding-bottom: 3%;
+            /* title size */
+            font-size: 175%;
+            /* change the background color */
+            background-color: grey;
+            /* rounded the top left and top right corner */
+            border-top-left-radius: 9px;
+            border-top-right-radius: 9px;
+            /* put the title in uppercase */
+            text-transform: uppercase;
+            max-height: 100%;
+            max-width: 100%;
+            height: auto;
+            width: auto;
+        }
+
+        /* container's box's img */
+        .container-right .box-right img{
+
+            /* max it's size */
+            max-height: 100%;
+            max-width: 100%;
+            height: auto;
+            width: auto;
+            /* rounded the bottom left and bottom right corner */
+            border-bottom-left-radius: 9px;
+            border-bottom-right-radius: 9px;
+            
+            background-color: white;
+        }
+    /* Put a scrollable text when the container is zoomed */
+    .container-right  article {
+        overflow-x: auto;
+        }
+        /* avoid the text to go out of the container */
+        .container-right article p{
+            max-height: 0px;
+            text-align: right;
+            font-size: 270%;
+
+        }
+        /* place the title's article */
+        .container-right  article h3{
+            margin-left:70%;
+            margin-top: 5%;
+            margin-bottom:5%;
+            font-size: 300%;
+}
+  
+a:hover{
+    /*Shadow effect after selection*/
+      box-shadow: 5px 20px 20px rgb(19, 19, 19);
+
+    /*Scale tranformation after selection*/
+      transform: translateY(-5px);}
+
+
+
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(0, 0, 0) rgb(255, 255, 255);}
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+    border-radius: 9px;}
+  
+  *::-webkit-scrollbar-track {
+      background: rgb(0, 0, 0);
+      border-radius: 9px;
+   }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(226, 226, 226);
+    border: 3px solid rgb(28, 28, 28);
+    border-radius: 9px;
+  }

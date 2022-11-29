@@ -1,4 +1,4 @@
-	<footer>
+<footer>
 	<img src="../img/headerlogo.png" alt="Logo" class="logo">
 	
 	<table>

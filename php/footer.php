@@ -1,0 +1,13 @@
+<footer>
+	<img src="../img/headerlogo.png" alt="Logo" class="logo">
+	
+	<table>
+		<th><h1>A propos</h1></th>
+		
+		<tr>
+			<td> - Contact </td>
+			<td> - Plan du site </td>
+			<td> - Mentions légales </td>
+		</tr>
+	</table>
+</footer>	

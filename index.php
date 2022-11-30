@@ -8,7 +8,7 @@
    <body>
    <?php require './php/header.php' ?>
 
-   <?php require './php/index.php' ?>
+   <?php require './template/index.html' ?>
 
    <?php include "./php/footer.html" ?>
 </body>

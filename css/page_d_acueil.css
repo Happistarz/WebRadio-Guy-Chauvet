@@ -47,8 +47,8 @@ padding: 1%;
 font-size: 175%;
 /* change the background color */
 background-color: grey;
-border-top-left-radius: 9px;
-border-top-right-radius: 9px;
+border-top-left-radius: 8px;
+border-top-right-radius: 8px;
 /* put the title in uppercase */
 text-transform: uppercase;
 max-height: 100%;

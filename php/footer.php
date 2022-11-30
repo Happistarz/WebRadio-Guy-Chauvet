@@ -1,7 +1,7 @@
 <?php
 ?>
 <footer>
-        <img src="../../img/Logo.png" alt="Logo" class="logo-footer">
+        <img src="../img/Logo.png" alt="Logo" class="logo-footer">
         <h4>A propos</h4>
         <div class="footer-element">
             <ul>

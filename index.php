@@ -3,13 +3,12 @@
     <head>
         <title>WebRadio LGC</title>
      <meta charset="UTF-8" />
-     <!-- <meta http-equiv="refresh" content="1; URL=https://poupli.net/WebRadio-Guy-Chauvet/template/index.html" /> -->
    </head>
    <body>
-   <?php include './template/header.html' ?>
+   <?php include './body/header.php' ?>
 
-   <?php include './template/index.html' ?>
+   <?php include './body/index.php' ?>
 
-   <?php include "./template/footer.html" ?>
+   <?php include "./body/footer.php" ?>
 </body>
 </html>

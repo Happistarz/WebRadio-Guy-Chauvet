@@ -10,3 +10,10 @@ Un onglet Equipe,
 Une page vitrine
 un système d'article
 etc..
+
+
+**Important:**
+Pour les title: WebRadio - {nom de la page}
+Nommage fichier: 
+  module: {sa fonction, ex:header}
+  page fini: index-{page} ex.index-emission

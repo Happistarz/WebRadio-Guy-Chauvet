@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Old Page</title>
+        <title>WebRadio LGC</title>
      <meta charset="UTF-8" />
      <!-- <meta http-equiv="refresh" content="1; URL=https://poupli.net/WebRadio-Guy-Chauvet/template/index.html" /> -->
    </head>

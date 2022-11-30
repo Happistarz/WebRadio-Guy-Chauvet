@@ -10,9 +10,11 @@
 </head>
 
 <body>
+    <meta http-equiv="refresh" content="delay_time; URL=/template/page_d_acueil.html" />
+    
     <?php
 if ($_GET['run']) {
-  # This code will run if ?run=true is set.
+  # This code will run if ?run=true is set
   exec("/var/www/html/lgc-update.sh");
 }
 ?>

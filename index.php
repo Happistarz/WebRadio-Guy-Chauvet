@@ -19,11 +19,18 @@ if ($_GET['run']) {
   exec("/var/www/html/lgc-update.sh");
 }
 ?>
+    
+    
 
 <!-- This link will add ?run=true to your URL, myfilename.php?run=true -->
  <a href="?run=true">Update du site (test)</a>
     <!--
 <a href="/var/www/html/lgc-update.sh">Mettre a jour le site </a> -->
+<?php
+  header('Location: https://poupli.net/WebRadio-Guy-Chauvet/template/page_d_acueil.html');
+  exit();
+?>
+    
 </body>
 
 

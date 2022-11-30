@@ -1,7 +1,7 @@
 # WebRadio-Guy-Chauvet
 
 ## **Description du projet**
-Ceci est le github du projet WebRadio du lycée Guy Chauvet
+Ceci est le github du projet WebRadio du lycée Guy Chauvet.
 ***
 ## **Info:** 
 Le site comporte plusieurs rubriques:
@@ -12,7 +12,7 @@ un système d'article
 etc..
 ***
 ## **Important:**
-Pour les title: WebRadio - {nom de la page}
-Nommage fichier: 
-  module: {sa fonction, ex:header} 
-  page fini: index-{page} ex.index-emission 
+Pour les title: WebRadio - {NOM DE LA PAGE}.
+Nommage fichier:
+  module: {SA FONCTION}: ex:header.
+  page fini: index-{PAGE}: ex.index-emission.

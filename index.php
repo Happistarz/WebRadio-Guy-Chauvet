@@ -16,7 +16,7 @@
     <?php
 if ($_GET['run']) {
   # This code will run if ?run=true is set
-  exec("/var/www/html/lgc-update.sh");
+  exec("https://poupli.net/WebRadio-Guy-Chauvet/template/page_d_acueil.html");
 }
 ?>
     

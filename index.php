@@ -5,10 +5,10 @@
      <meta charset="UTF-8" />
    </head>
    <body>
-   <?php include './body/header.php' ?>
+   <?php require './body/header.php' ?>
 
-   <?php include './body/index.php' ?>
+   <?php require './body/index.php' ?>
 
-   <?php include "./body/footer.php" ?>
+   <?php require "./body/footer.php" ?>
 </body>
 </html>

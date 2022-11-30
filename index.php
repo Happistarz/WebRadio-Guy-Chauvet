@@ -10,6 +10,6 @@
 
    Content
 
-   <?php include "./php/footer.php" ?>
+   <?php include "./php/footer.html" ?>
 </body>
 </html>

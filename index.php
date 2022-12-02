@@ -4,6 +4,7 @@
 
         <meta charset="UTF-8" />
         <?php 
+        echo "test";
         $entete = require("./body/inc.php");
         $entete.entete();
         ?>

@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Cuprum&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cuprum', sans-serif;
+}
+header {
+    width: 100%;
+    background: #000;
+    height: 7vh;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+    z-index: 2;
+}
+.logo {
+    width: 14%;
+    position: absolute;
+    top: 2%;
+    left: 2vh;
+}
+header #btn {
+    text-decoration: none;
+    color: #fff;
+    background: #000;
+    float: right;
+    padding: auto;
+    font-size: 4vh;
+}
+header button {
+    background: #000;
+    border: none;
+    cursor: pointer;
+}
+.headright {
+    position: absolute;
+    display: flex;
+    width: 85%;
+    right: 5vh;
+    justify-content: space-around;
+    align-items: center;
+}
+.headright img {
+    width: 7vh;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 3.75vh;
+}
+.dropdown-content a{
+    color: white;
+    padding: 20px 18px;
+    text-decoration: none;
+    display: block;
+    font-size: auto;
+}
+header a:hover {text-decoration: underline;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown-content a:hover {background-color: rgba(0,0,0,0.4);}
+
+.loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: #000;
+    top: 0;
+    transition: top 0.5s ease-in-out;
+    display: none;
+}
+.loader p {
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@media only screen and (max-width: 1100px) {
+    .headright {
+        width: 75%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    header #btn {
+        display: none;
+    }
+    .headright a:first-child {
+        position: absolute;
+        left: 50%;
+    }
+    .logo {
+        min-width: 150px;
+        top: 0.5vh;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .headright a:first-child {
+        left: 70%;
+    }
+
+    header #btn {
+        transition: .2s;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 50%;
+    }
+}

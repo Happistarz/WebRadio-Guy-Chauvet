@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WebRadio</title>
@@ -14,7 +13,7 @@
         <img src="./img/headerlogo.png" alt="Logo" class="logo">
         <img src="headerlogo.png" alt="Logo" class="logo">
         <div class="headright">
-            <button onclick="MenuOpen()"><img src="../img/Menu.png" alt="Menu"></button>
+            <button onclick="MenuOpen()"><img src="./img/Menu.png" alt="Menu"></button>
             <div class="dropdown" id="emission">
                 <a href="" id="btn">EMISSIONS</a>
                 <div class="dropdown-content">

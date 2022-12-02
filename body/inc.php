@@ -1,4 +1,6 @@
-<?php
+
+
+<?php echo "test";
 function header() {
 
  echo "<div class=\"loader\" id=\"loader\">

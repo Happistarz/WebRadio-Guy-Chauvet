@@ -1,10 +1,8 @@
 <html>
     <head>
         <title>WebRadio LGC</title>
-     <meta charset="UTF-8" />
-     <?php include "./body/inc.php";
-        entete();
-     ?>
+        <meta charset="UTF-8" />
+        <?php include "./body/inc.php"; entete();?>
    </head>
    <body>
    <?php require "./body/inc.php";

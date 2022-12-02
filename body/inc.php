@@ -2,8 +2,8 @@
 
 <?php echo "test";
 function header() {
-
- echo "<div class=\"loader\" id=\"loader\">
+?>
+ <div class=\"loader\" id=\"loader\">
         <p>Chargement...</p>
     </div>
     <header>
@@ -70,7 +70,7 @@ function header() {
         }, 1000)
     });
 </script>
-";
+<?php
 }
 function footer(){
 

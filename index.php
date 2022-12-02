@@ -5,7 +5,7 @@
      <meta charset="UTF-8" />
         
    <?php require './body/header.php' ?>
-   <?php require "./body/entete.php" ?>
+   <?php require './body/entete.php' ?>
    </head>
    <body>
    <?php require './body/header.php' ?>

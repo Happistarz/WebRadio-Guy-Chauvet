@@ -9,7 +9,7 @@
     entete();   
     header();
        ?>
-   <?php require './body/index.php' ?>
+   <?php require './body/acceuil.html' ?>
     
    <?php include './body/footer.html';?>
 </body>

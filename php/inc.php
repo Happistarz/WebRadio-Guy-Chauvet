@@ -2,7 +2,7 @@
 function eader() {
 ?>
 <header class = "header">
-    <img src="./img/Logo.png" alt="Logo" class="logo">
+    <img src="./img/logo.png" alt="Logo" class="logo">
     <div class="headright">
         <a href=""><img src="./img/Menu.png" alt="Menu"></a>
         <div class="dropdown" id="emission">
@@ -35,7 +35,7 @@ function eader() {
 function footer(){
 ?>
 <footer>
-        <img src="./img/Logo.png" alt="Logo" class="logo-footer">
+        <img src="./img/logo.png" alt="Logo" class="logo-footer">
         <h4>A propos</h4>
         <div class="footer-element">
             <ul>

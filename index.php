@@ -14,4 +14,3 @@
    <?php require "./body/entete.php" ?>
 </body>
 </html>
-s

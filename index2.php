@@ -8,6 +8,7 @@
 
    <?php 
      require './body/inc.php';
+     entete();
      header();
      footer();
      ?>

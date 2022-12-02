@@ -1,15 +1,8 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>WebRadio LGC</title>
-
-        <meta charset="UTF-8" />
-        <?php 
-        echo "test";
-        require("./body/inc.php");
-        entete();
-        ?>
      <meta charset="UTF-8" />
-
    </head>
    <body>
    <?php require './body/header.php' ?>

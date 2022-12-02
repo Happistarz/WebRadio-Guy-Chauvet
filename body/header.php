@@ -11,7 +11,7 @@
 <body>
     <div class="header">
         <img src="./img/headerlogo.png" alt="Logo" class="logo">
-        <img src="headerlogo.png" alt="Logo" class="logo">
+        
         <div class="headright">
             <button onclick="MenuOpen()"><img src="./img/Menu.png" alt="Menu"></button>
             <div class="dropdown" id="emission">

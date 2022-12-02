@@ -6,7 +6,8 @@
    </head>
    <body>
 
-   <?php require './body/inc.php';
+   <?php 
+     require './body/inc.php';
      header();
      footer();
      ?>

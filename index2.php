@@ -4,9 +4,9 @@
         <title>WebRadio LGC</title>
      <meta charset="UTF-8" />
    </head>
-   <body>
-
-   <?php 
+   
+   <?php
+    echo"<body>";
      require('php/inc.php');
      entete();
      header();

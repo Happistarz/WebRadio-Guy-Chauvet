@@ -9,7 +9,7 @@
      require('./php/inc.php');
     echo"<body>";
     entete();
-     header();
+     eader();
      footer();
      ?>
   

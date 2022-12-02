@@ -4,7 +4,7 @@ function eader() {
 <header class = "header">
     <img src="./img/Logo.png" alt="Logo" class="logo">
     <div class="headright">
-        <a href=""><img src="../img/Menu.png" alt="Menu"></a>
+        <a href=""><img src="./img/Menu.png" alt="Menu"></a>
         <div class="dropdown" id="emission">
             <a href="" id="btn">EMISSIONS</a>
             <div class="dropdown-content">

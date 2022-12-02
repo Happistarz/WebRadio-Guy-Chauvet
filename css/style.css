@@ -20,7 +20,7 @@
     margin-bottom: 100px;
     z-index: 2;
 }
-.logo {
+.logoh {
     width: 14%;
     position: absolute;
     top: 2%;
@@ -118,7 +118,7 @@ footer {
     background-color: #000;
 }
 
-.logo {
+.logof {
     display: flex;
     position: relative;
     margin-left: auto;

@@ -16,7 +16,7 @@
 <body>
 <!--   <?php require "./body/entete.php" ?> -->
 
-<?php include './body/index.php' ?>
+<?php include './body/index.html' ?>
 <?php include './body/footer.php' ?>
 </body>
 </html>

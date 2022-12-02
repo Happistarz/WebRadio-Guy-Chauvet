@@ -5,8 +5,7 @@
      <meta charset="UTF-8" />
    </head>
    <body>
-   <?php require './body/inc.php' ?>
-  
+
    <?php require './body/header.php' ?>
 
    <?php require './body/index.php' ?>

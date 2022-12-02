@@ -1,4 +1,5 @@
 <?php
+require('./php/inc.php'); 
 entete();?>
 
 <title>WebRadio LGC</title>
@@ -6,7 +7,8 @@ entete();?>
 <body>
    <?php
     ini_set('display_errors','1');
-     require('./php/inc.php');  
+     require('./php/inc.php'); 
+   
      eader();
      footer();
      ?>

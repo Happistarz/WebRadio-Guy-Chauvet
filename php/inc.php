@@ -1,5 +1,5 @@
 <?php
-function header() {
+function eader() {
 ?>
 <header class = "header">
     <img src="../img/Logo.png" alt="Logo" class="logo">

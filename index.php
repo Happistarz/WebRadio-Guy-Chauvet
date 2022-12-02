@@ -17,7 +17,7 @@
 
 <!--   <?php require "./body/entete.php" ?> -->
 
-    <?php include './template/index.html' ?>
-    <?php include './body/footer.html' ?>
+    <?php include './body/index.php'  ?>
+    <?php include './body/footer.php' ?>
     </body>
 </html>

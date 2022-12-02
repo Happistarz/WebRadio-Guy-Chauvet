@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WebRadio</title>
-    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css" integrity="sha384-z4tVnCr80ZcL0iufVdGQSUzNvJsKjEtqYZjiQrrYKlpGow+btDHDfQWkFjoaz/Zr" crossorigin="anonymous">
 </head>
 
@@ -13,9 +13,9 @@
         <p>Chargement...</p>
     </div>
     <header>
-        <img src="headerlogo.png" alt="Logo" class="logo">
+        <img src="../img/headerlogo.png" alt="Logo" class="logo">
         <div class="headright">
-            <button onclick="MenuOpen()"><img src="html css/Menu.png" alt="Menu"></button>
+            <button onclick="MenuOpen()"><img src="../img/Menu.png" alt="Menu"></button>
             <div class="dropdown" id="emission">
                 <a href="" id="btn">EMISSIONS</a>
                 <div class="dropdown-content">

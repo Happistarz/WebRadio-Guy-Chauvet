@@ -2,7 +2,14 @@
 <html>
     <head>
         <title>WebRadio LGC</title>
+
+        <meta charset="UTF-8" />
+        <?php 
+        $entete = require("./body/inc.php");
+        $entete.entete();
+        ?>
      <meta charset="UTF-8" />
+
    </head>
    <body>
    <?php require './body/header.php' ?>

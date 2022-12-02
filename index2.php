@@ -6,7 +6,7 @@
    </head>
    <?php
     
-     require('../php/inc.php');
+     require('./php/inc.php');
     echo"<body>";
     entete();
      header();

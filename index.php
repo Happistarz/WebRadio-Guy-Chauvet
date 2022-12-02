@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <body>
         <title>WebRadio LGC</title>
      <meta charset="UTF-8" />
         
@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/page_des_emissions.css">
     <link rel="stylesheet" href="../css/page_journal.css">
-   </head>
-    <body>
+
+
 <!--   <?php require "./body/entete.php" ?> -->
 
     <?php include './body/index.html' ?>

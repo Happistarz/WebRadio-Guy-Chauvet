@@ -5,11 +5,11 @@
      <meta charset="UTF-8" />
    </head>
    <body>
-   <?php require './body/header.html' ?>
+   <?php require './body/header.php' ?>
 
    <?php require './body/index.php' ?>
 
-   <?php require "./body/footer.html" ?>
+   <?php require "./body/footer.php" ?>
    <?php require "./body/entete.php" ?>
 </body>
 </html>

@@ -14,8 +14,7 @@
     <link rel="stylesheet" href="../css/page_journal.css">
    </head>
    <body>
-   <?php require './body/header.php' ?>
-   <?php require "./body/entete.php" ?>
+<!--   <?php require "./body/entete.php" ?> -->
 
    <?php require './body/index.php' ?>
 

@@ -7,7 +7,7 @@
    <body>
 
    <?php 
-     require('./body/inc.php');
+     require('./php/inc.php');
      entete();
      header();
      footer();

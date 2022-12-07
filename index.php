@@ -7,12 +7,12 @@
 
    </head>
    <body>
-   <?php require "./body/entete.php" ?>
+
    <?php require './body/header.php' ?>
 
    <?php require './body/index.php' ?>
 
    <?php require "./body/footer.php" ?>
-
+   <?php require "./body/entete.php" ?>
 </body>
 </html>

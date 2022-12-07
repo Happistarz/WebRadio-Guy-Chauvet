@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<body>
     <link rel="stylesheet" href="../css/page_journal.css">
     <div class="def-p">
         <p>
@@ -83,5 +79,3 @@
             <img src="../img/test.png" alt="image">
         </a>
     </div>
-
-</html>

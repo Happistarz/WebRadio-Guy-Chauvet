@@ -36,7 +36,7 @@ function footer(){
 ?>
 <footer>
         <img src="./img/logo.png" alt="Logo" class="logof">
-        <h4>A propos</h4>
+        <h1>A propos</h1>
         <div class="footer-element">
             <ul>
                 <li><a href="">- Contact</a></li>

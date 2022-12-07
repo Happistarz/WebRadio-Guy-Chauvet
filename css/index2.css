@@ -164,13 +164,11 @@ ul {
 	position: relative;
 	color: white;
 	justify-content: space-between;
+	list-style-type: none;
 }
 
 h1 {
 	color : white;
-}
-li{
-	list-style-type: none;	
 }
 li a{
 	text-decoration: none;

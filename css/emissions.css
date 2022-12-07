@@ -1,0 +1,44 @@
+.emission {
+    display: inline-block;
+    width: 100%;
+    background: #000;
+    height: 50vh;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+    margin-bottom: 100px;
+    color: white;
+    text-align: center;
+    
+}
+.podcasts {
+    height: 50vh;
+    padding-top: 20px;
+    padding-bottom: 10px; 
+    background-color: white;
+}
+
+div .container article {
+text-decoration: none;
+}
+
+.container {
+    display: block; /* Ajout de cette ligne pour afficher le conteneur en un seul rectangle */
+    background-color: #ddd;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+img {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    
+  }
+  
+  img:hover {
+    box-shadow: none;
+    transform: scale(1.1);
+  }

@@ -179,8 +179,11 @@ li:before {
   padding-right: 5px;
 }
 /* PARTIE AJOUT */
-"c" {
+"c", "C" {
 	color: yellow;
+}
+"r", "R" {
+	color: green;
 }
 .emission {
     width: 100%;

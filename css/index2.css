@@ -173,6 +173,10 @@ li a{
 	text-decoration: none;
 	color: white;
 }
+li:before {
+  content: "-";
+  padding-right: 5px;
+}
 /* PARTIE AJOUT */
 
 .emission {

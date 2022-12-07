@@ -58,7 +58,7 @@ function entete(){
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="./css/test.css">
+    <link rel="stylesheet" href="./css/index2.css">
 
 </head> 
 <?php

@@ -1,121 +1,39 @@
-html{
-
-  /* center the page when zoomed out*/
-  display: flex;
-  justify-content: center;
-
+.j-box {
+display:flex;
+margin-bottom: 3%;
 }
-/* A link box.*/ 
-.container {
-  display:flex;
-  margin:5%;
-
-  max-height: auto;
-  max-width: auto;
-  width: auto;
-  height: auto;
-
-  /*Anim*/
-  transition:all .3s ease-in-out;
-  cursor: pointer;
-  background-color: rgba(107, 103, 103, 0.911);
-
+.j-box img{
+width: 200px;
+aspect-ratio:1;
+border-bottom-left-radius: 6px;
+border-top-left-radius: 6px;
+text-align:center;
+background-color: rgb(60, 60, 60);
+color: white;
 }
-a {
-  color: inherit;
-  text-decoration: none;
+.j-box article {
+width:100%;
+background-color: grey;
+border-bottom-right-radius: 6px;
+border-top-right-radius: 6px;
+padding: 10px;
+text-overflow: ellipsis;
+overflow-y: hidden;
 }
-
-.container img {
-  /* max it's size */
-  display: flex;
-  max-height: auto;
-  max-width: 15%;
-  height: auto;
-  width: auto;
-
-  /* rounded the bottom left and bottom right corner */
-  border-top-left-radius: 9px;
-  border-bottom-left-radius: 9px;
-
-  background-color: white;
+.j-box article h2 {
+/*Article Title color*/
+color: rgb(255, 255, 255);
+font-size: 130%;
 }
-
-
-.container article{
-    /* max it's size */
-    max-height: auto;
-    max-width: auto;
-    height: auto;
-    width: auto;
-    /*Padding cross border/container*/
-    padding:10px;
-    /*Bacground color of article-container*/
-    /*Ronded corner/right link to border*/
-    border-top-right-radius:9px ;
-    border-bottom-right-radius:9px ;
-    /*Position of Box article-container*/
-    position:relative;
-    /*Set scrollbar for overflow text */
-    overflow-x:auto;
-  }
-
-
-.container article h2 {
+.j-box article p {
   /*Article Title color*/
-  color: white;
-  margin-bottom: 0.75%;
-  font-size: 175%;
-}
-
-.container article p{
-  /*Paragraphe color*/
-  font-size: 145%;
-}
+  color: rgb(0, 0, 0);
+  line-height: 1.3;
+  text-align:left;}
 
 
 
-a:hover{
-
-  /*Shadow effect after selection*/
-  box-shadow: 10px 20px 30px rgb(19, 19, 19);
-
-  /*Scale tranformation after selection*/
-  transform:translateY(-5px);}
-
-/*Custom scrollbar -> Only works in forefox*/
-* {
-  /*Type of scrollbar*/
-  scrollbar-width: thin;
-  /*Color of scrollbar*/
-  scrollbar-color: rgb(0, 0, 0) rgb(255, 255, 255);}
-
-/*Size and Rounded scrolbar -> Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 12px;
-  border-radius: 9px;}
-
-*::-webkit-scrollbar-track {
-    background: rgb(0, 0, 0);
-    border-radius: 9px;
- }
-
-*::-webkit-scrollbar-thumb {
-  background-color: rgb(226, 226, 226);
-  border: 3px solid rgb(28, 28, 28);
-  border-radius: 9px;
-}
 
 
-/*responsive text 700px*/
-@media only screen and (max-width: 700px) {
-  .page-journal .article .article-container{
-    font-size:small;
-  }
-}
-/*responsive text 500px*/
-  @media only screen and (max-width: 500px) {
-    .page-journal .article .article-container{
-        font-size:smaller;
-    }
-  }
+
+

@@ -2,6 +2,7 @@
 <html lang="fr">
 
 <body>
+    <link rel="stylesheet" href="../css/page_journal.css">
     <div class="def-p">
         <p>
         Certains domaines de l'informatique peuvent être très abstraits, comme la complexité algorithmique, et d'autres peuvent être plus proches d'un public profane. Ainsi, la théorie des langages demeure un domaine davantage accessible aux professionnels formés (description des ordinateurs et méthodes de programmation), tandis que les métiers liés aux interfaces homme-machine (IHM) sont accessibles à un plus large public. 

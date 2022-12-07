@@ -6,7 +6,12 @@
 }
 
 /* Partie HEADER */
-
+"c", "C" {
+	color: yellow;
+}
+"r", "R" {
+	color: green;
+}
 header {
     width: 100%;
     background: #000;
@@ -179,12 +184,6 @@ li:before {
   padding-right: 5px;
 }
 /* PARTIE AJOUT */
-"c", "C" {
-	color: yellow;
-}
-"r", "R" {
-	color: green;
-}
 .emission {
     width: 100%;
     background: #000;

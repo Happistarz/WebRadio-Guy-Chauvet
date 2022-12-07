@@ -2,9 +2,9 @@
         <p>Chargement...</p>
     </div>
     <header>
-        <img src="../img/headerlogo.png" alt="Logo" class="logo">
+        <img src="./img/headerlogo.png" alt="Logo" class="logo">
         <div class="headright">
-            <button onclick="MenuOpen()"><img src="../img/Menu.png" alt="Menu"></button>
+            <button onclick="MenuOpen()"><img src="./img/Menu.png" alt="Menu"></button>
             <div class="dropdown" id="emission">
                 <a href="" id="btn">EMISSIONS</a>
                 <div class="dropdown-content">

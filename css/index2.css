@@ -178,6 +178,10 @@ h1 {
 	color : white;
 }
 
+li {
+	text-decoration: none;
+	text-color: white;
+}
 /* PARTIE AJOUT */
 
 .emission {

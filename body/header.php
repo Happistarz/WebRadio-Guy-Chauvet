@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WebRadio</title>
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css" integrity="sha384-z4tVnCr80ZcL0iufVdGQSUzNvJsKjEtqYZjiQrrYKlpGow+btDHDfQWkFjoaz/Zr" crossorigin="anonymous">
-</head>
-
-<body>
     <div class="loader" id="loader">
         <p>Chargement...</p>
     </div>
@@ -41,7 +30,6 @@
             </div>
         </div>
     </header>
-    </body>
     <script>
         tmp = true;
         function MenuOpen() {
@@ -76,4 +64,3 @@
             }, 1000)
         });
     </script>
-    </html>

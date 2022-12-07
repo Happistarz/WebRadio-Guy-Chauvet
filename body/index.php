@@ -1,4 +1,3 @@
-    <link rel="stylesheet" href="../css/page_journal.css">
     <div class="def-p">
         <p>
         Certains domaines de l'informatique peuvent être très abstraits, comme la complexité algorithmique, et d'autres peuvent être plus proches d'un public profane. Ainsi, la théorie des langages demeure un domaine davantage accessible aux professionnels formés (description des ordinateurs et méthodes de programmation), tandis que les métiers liés aux interfaces homme-machine (IHM) sont accessibles à un plus large public. 
@@ -17,34 +16,34 @@
     <div class="container-em-img">
         <a href="" class="box-img border-1">
             <h3>Titre</h3>
-            <img src="../img/test.png" alt="image">
+            <img src="./img/test.png" alt="image">
         </a>
         <a href="" class="box-img border-2">
             <h3>Titre</h3>
-            <img src="../img/test.png" alt="image">
+            <img src="./img/test.png" alt="image">
         </a>
         <a href="" class="box-img border-3">
             <h3>Titre</h3>
-            <img src="../img/test.png" alt="image">
+            <img src="./img/test.png" alt="image">
         </a>
         <a href="" class="box-img border-3">
             <h3>Titre</h3>
-            <img src="../img/test.png" alt="image">
+            <img src="./img/test.png" alt="image">
         </a>
         <a href="" class="box-img border-2">
             <h3>Titre</h3>
-            <img src="../img/test.png" alt="image">
+            <img src="./img/test.png" alt="image">
         </a>
         <a href="" class="box-img border-1">
             <h3>Titre</h3>
-            <img src="../img/test.png" alt="image">
+            <img src="./img/test.png" alt="image">
         </a>
     </div>
     <h1 class="header-page">LE JOURNAL</h1>
     <hr size=5 width="93%"color = black>
 
     <a class="container border-1" href="">
-        <img src="../img/test.png" alt="Image">
+        <img src="./img/test.png" alt="Image">
 
         <article>
             <h2>Lorem ipsum dolor sit</h2>
@@ -52,7 +51,7 @@
         </article>
     </a>
     <a class="container border-2" href="">
-        <img src="../img/test.png" alt="Image">
+        <img src="./img/test.png" alt="Image">
 
         <article>
             <h2>Lorem ipsum dolor sit</h2>
@@ -60,7 +59,7 @@
         </article>
     </a>
     <a class="container border-3" href="">
-        <img src="../img/test.png" alt="Image">
+        <img src="./img/test.png" alt="Image">
 
         <article>
             <h2>Lorem ipsum dolor sit</h2>
@@ -72,10 +71,10 @@
     <div class="container-ac-img">
         <a href="" class="box-img border-1">
             <h3>Titre</h3>
-            <img src="../img/test.png" alt="image">
+            <img src="./img/test.png" alt="image">
         </a>
         <a href="" class="box-img border-2">
             <h3>Titre</h3>
-            <img src="../img/test.png" alt="image">
+            <img src="./img/test.png" alt="image">
         </a>
     </div>

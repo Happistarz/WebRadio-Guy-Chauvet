@@ -8,6 +8,7 @@ entete();?>
    <?php
     ini_set('display_errors','1');
      eader();
+     page_emission();
      footer();
      ?>
 </body>

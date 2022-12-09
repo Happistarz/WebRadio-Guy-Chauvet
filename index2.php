@@ -8,9 +8,12 @@ entete();?>
    <?php
     ini_set('display_errors','1');
      eader();
-     require './body/index.php'
+
+   ?>
+   <?php require './body/index.php' ?>
+      <?php
+    ini_set('display_errors','1');
      footer();
      ?>
-  
 </body>
 </html>

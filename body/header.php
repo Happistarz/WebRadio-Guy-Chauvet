@@ -2,6 +2,7 @@
         <p>Chargement...</p>
     </div>
     <header>
+        <script src="./js/header.js"></script>
         <img src="./img/headerlogo.png" alt="Logo" class="logo">
         <div class="headright">
             <button onclick="MenuOpen()"><img src="./img/Menu.png" alt="Menu"></button>
@@ -30,37 +31,3 @@
             </div>
         </div>
     </header>
-    <script>
-        tmp = true;
-        function MenuOpen() {
-            console.log(window.innerWidth);
-            
-            if (window.innerWidth < 400) {
-                if (tmp == true) {
-                    const btn = document.querySelectorAll("#btn");
-                    btn.forEach(btn => {
-                        btn.style.display = "block";
-                    });
-                    
-                    tmp = false;
-                } else {
-                    tmp = true;
-                    const btn = document.querySelectorAll("#btn");
-                    btn.forEach(btn => {
-                        btn.style.display = "none";
-                    });
-                }
-            } else {
-                const btn = document.querySelectorAll("#btn");
-                    btn.forEach(btn => {
-                        btn.style.display = "block";
-                    });
-                        
-            }
-        }
-        window.addEventListener("DOMContentLoaded",(event) => {
-            setTimeout(function() {
-                document.getElementById("loader").style.top = "-100vh";
-            }, 1000)
-        });
-    </script>

@@ -52,5 +52,11 @@ img {
     box-shadow: none;
     transform: scale(1.1);
   }
+    .buttons {
+        flex:1;
+    }
+    .text {
+        flex:3;
+    }
 
  

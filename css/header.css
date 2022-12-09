@@ -16,7 +16,7 @@ header {
     z-index: 2;
 }
 .logo {
-    width: 14%;
+    width: 25vh;
     position: absolute;
     top: 2%;
     left: 2vh;

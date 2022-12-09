@@ -14,7 +14,7 @@ color: white;
 }
 .j-box article {
 width:100%;
-background-color: grey;
+background: linear-gradient(-45deg, rgba(85,85,85,1) 0%, rgba(117,117,117,1) 100%);
 border-bottom-right-radius: 6px;
 border-top-right-radius: 6px;
 padding: 10px;

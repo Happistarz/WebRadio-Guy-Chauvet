@@ -11,8 +11,8 @@
 
    <?php require './body/header.php' ?>
 
-   <?php require './body/index.php' ?>
-
+   <!-- <?php require './body/index.php' ?> -->
+   <?php require "./template/index.html" ?>
    <?php require "./body/footer.php" ?>
 
 </body>

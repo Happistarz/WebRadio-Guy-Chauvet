@@ -63,4 +63,43 @@ function entete(){
 </head> 
 <?php
   }
+function page_emission(){
  ?>
+      <div class="emission marging-body">
+        <img src="/../img/test.png" id="Imgdel'emission" alt="Emission" class="image">
+        <div class="text">
+            <h5>Titre de l'émission</h5>
+            <h6>- Description de l'émission en quelques mots sed do -</h6>
+            <article>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
+               eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris <br>
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <br>
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla <br>
+              pariatur. Excepteur sint occaecat cupidatat non
+            <article>
+          </div>
+      </div>
+
+        <h1 id="podcasts" class="header-page title">LES PODCASTS</h1>
+        <hr size=5 width="93%"color = black> 
+    <div>
+        <a class="container border-3 marging-body" href="">
+            <audio id="player" src="mon-fichier-audio.mp3"></audio>
+            <img src="/../img/bouton-coeur-plein.png" onclick="document.getElementById('player').play()">
+            <img src="/../img/bouton-play.png" onclick="document.getElementById('player').pause()">
+            <img src="/../img/bouton-stop.png" onclick="document.getElementById('player').stop()">
+            <h6>Titre du podcast</h6>
+            <h7>Description et/ou nom croniqueurs</h7>
+            <hr size=5 width="93%"color = black> 
+            <audio id="player" src="../Audio/Shrek.mp3"></audio>
+            <img src="/../img/bouton-coeur-plein.png" onclick="document.getElementById('player').play()">
+            <img src="/../img/bouton-play.png" onclick="document.getElementById('player').pause()">
+            <img src="/../img/bouton-stop.png" onclick="document.getElementById('player').stop()">
+            <h6>Titre du podcast</h6>
+            <h7>Description et/ou nom croniqueurs</h7>
+        </a>
+    </div>
+    <br>
+<?php
+}
+?>

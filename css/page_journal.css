@@ -8,6 +8,7 @@ aspect-ratio:1;
 border-bottom-left-radius: 6px;
 border-top-left-radius: 6px;
 text-align:center;
+object-fit: cover;
 background-color: rgb(60, 60, 60);
 color: white;
 }

@@ -5,7 +5,7 @@
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="icon" type="image/x-icon" href="./img/favico.png">
-      <?php require "./body/entete.php" ?>
+      <?php require "../body/entete.php" ?>
    </head>
    <body>
 

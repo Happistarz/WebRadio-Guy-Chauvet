@@ -1,16 +1,26 @@
 .emission {
-    display: inline-block;
-    width: 100%;
-    background: #000;
-    height: 50vh;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    align-items: center;
-    margin-bottom: 100px;
-    color: white;
-    text-align: center;
-    
+  width: 100%;
+  background: #000;
+  height: 50vh;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  align-items: center;
+  margin-bottom: 100px;
+  color: white;
 }
+.image {
+  float: left;
+  width: 350px;
+  height: 350px;
+}
+.text {
+  text-align: left;
+  margin-left: 200px;
+  padding: 10px;
+  
+}
+
+
 .podcasts {
     height: 50vh;
     padding-top: 20px;
@@ -42,3 +52,5 @@ img {
     box-shadow: none;
     transform: scale(1.1);
   }
+
+ 

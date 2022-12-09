@@ -35,7 +35,6 @@ function header() {
             </div>
         </div>
     </header>
-</body>
 <script>
     tmp = true;
     function MenuOpen() {

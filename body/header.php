@@ -2,7 +2,7 @@
         <p>Chargement...</p>
     </div>
     <header>
-        <script src="../js/header.js"></script>
+        <script src="./js/header.js"></script>
         <a href="./index.php"><img src="./img/headerlogo.png" alt="Logo" class="logo"></a>
         <div class="headright">
             <button onclick="MenuOpen()"><img src="./img/Menu.png" alt="Menu"></button>

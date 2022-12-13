@@ -44,25 +44,7 @@ function eader() {
 </header>
 <?php
 }
-function footer(){
-?>
-<footer>
-        <img src="./img/logo.png" alt="Logo" class="logof">
-        <h1>A propos</h1>
-        <div class="footer-element">
-            <ul>
-                <li><a href="">Contact</a></li>
-                <li><a href="">Plan du site</a></li>
-                <li><a href="">Mentions Legales</a></li>
-            </ul>
-        </div>
-    </footer>
-</body>
-</html>
-<?php
-?>
-<?php
-  }
+
 function page_emission(){
  ?>
       <div class="emission marging-body">
@@ -194,4 +176,25 @@ function index_accueil(){
     </div>
   <?php
 }
+
+function footer(){
+?>
+<footer>
+        <img src="./img/logo.png" alt="Logo" class="logof">
+        <h1>A propos</h1>
+        <div class="footer-element">
+            <ul>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Plan du site</a></li>
+                <li><a href="">Mentions Legales</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
+<?php
+?>
+<?php
+  }
+
 ?>

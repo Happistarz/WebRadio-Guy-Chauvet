@@ -7,7 +7,7 @@
         <div class="headright">
             <button onclick="MenuOpen()"><img src="./img/Menu.png" alt="Menu"></button>
             <div class="dropdown" id="emission">
-                <a href="../page/index-des-emissions.php" id="btn">EMISSIONS</a>
+                <a href="./page/index-des-emissions.php" id="btn">EMISSIONS</a>
                 <div class="dropdown-content">
                     <a href="">Le quiz en série</a>
                     <a href="">Histoire de poche</a>

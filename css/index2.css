@@ -59,7 +59,7 @@ li:before {
   padding-right: 5px;
 }
 
-/*PARTIE RESET*/
+/*PARTIE RESET
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -81,7 +81,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -102,7 +102,7 @@ table {
 	border-spacing: 0;
 }
 
-/*Css border for all web-page */
+
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	line-height: 1;
@@ -131,20 +131,19 @@ body h1{
 	font-size: 200%;
 }
 
-/* the horizontal barre */
+
 hr{
 border-radius: 6px;
 width: auto;
 margin-bottom: 4%;
 }
 
-/*Rigth and left marging for body contain*/
 h1,hr,.marging-body{
 	margin-left: 100px;
 	margin-right: 100px;
 }
 
-/*Anim after selection of box*/
+
 a:not(header a){
 height: auto;
 color: inherit;
@@ -152,11 +151,11 @@ text-decoration: none;
 cursor: pointer;
 }
 a:hover:not(header a){
-/*Shadow effect after selection*/
-box-shadow: 5px 5px 10px rgb(19, 19, 19);
-/*Scale tranformation after selection*/
-transform:translateY(-3px);}
 
+box-shadow: 5px 5px 10px rgb(19, 19, 19);
+
+transform:translateY(-3px);}
+*/
 /* Partie HEADER */
 
 "c", "C" {

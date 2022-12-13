@@ -4,8 +4,160 @@
     padding: 0;
     font-family: 'Cuprum', sans-serif;
 }
+/* FOOTER */
+
+footer {
+	position: absolute;
+	display: flex;
+	width: 100%;
+	height: 25%;
+	bottom: 0px;
+	background-color: #000;
+	flex-direction: column;
+	
+}
+
+.logof {
+	display: flex;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 150px;
+	height: 80px;
+	margin-top: 10px;
+}
+
+.menu {
+	display: flex;
+	flex-direction: space-arround;
+}
+
+.footer-element {
+	font-size: 1.1em;
+	width: 50%;
+	height: 25%;
+	
+}
+
+ul {
+	display: flex;
+	position: relative;
+	color: white;
+	justify-content: space-between;
+	list-style: none;
+}
+
+h1 {
+	color : white;
+}
+li a{
+	text-decoration: none;
+	color: white;
+}
+li:before {
+  content: "-";
+  padding-right: 5px;
+}
+
+/*PARTIE RESET*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*Css border for all web-page */
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 1;
+	font-size: 150%;
+}
+
+body h1{
+	font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	margin-top: 7%;
+}
+
+.border-1 {
+    border-radius: 16px;
+    border: 9px solid #E15D5D;}
+.border-2 {
+    border-radius: 16px;
+    border: 9px solid #00A29E;}
+.border-3 {
+    border-radius: 16px;
+    border: 9px solid #FFB442;}
+
+.title{
+	text-transform: uppercase;
+	margin-top:1%;
+	margin-bottom: 1%;
+	font-size: 200%;
+}
+
+/* the horizontal barre */
+hr{
+border-radius: 6px;
+width: auto;
+margin-bottom: 4%;
+}
+
+/*Rigth and left marging for body contain*/
+h1,hr,.marging-body{
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+/*Anim after selection of box*/
+a:not(header a){
+height: auto;
+color: inherit;
+text-decoration: none;
+cursor: pointer;
+}
+a:hover:not(header a){
+/*Shadow effect after selection*/
+box-shadow: 5px 5px 10px rgb(19, 19, 19);
+/*Scale tranformation after selection*/
+transform:translateY(-3px);}
 
 /* Partie HEADER */
+
 "c", "C" {
 	color: yellow;
 }
@@ -129,86 +281,6 @@ header a:hover {text-decoration: underline;}
     }
 }
 
-/* FOOTER */
-
-footer {
-	position: absolute;
-	display: flex;
-	width: 100%;
-	height: 25%;
-	bottom: 0px;
-	background-color: #000;
-	flex-direction: column;
-	
-}
-
-.logof {
-	display: flex;
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	width: 150px;
-	height: 80px;
-	margin-top: 10px;
-}
-
-.menu {
-	display: flex;
-	flex-direction: space-arround;
-}
-
-.footer-element {
-	font-size: 1.1em;
-	width: 50%;
-	height: 25%;
-	
-}
-
-ul {
-	display: flex;
-	position: relative;
-	color: white;
-	justify-content: space-between;
-	list-style: none;
-}
-
-h1 {
-	color : white;
-}
-li a{
-	text-decoration: none;
-	color: white;
-}
-li:before {
-  content: "-";
-  padding-right: 5px;
-}
-/* PARTIE AJOUT */
-.emission {
-    width: 100%;
-    background: #000;
-    height: 50vh;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    align-items: center;
-    margin-bottom: 100px;
-    color: white;
-    text-align: center;
-}
-.podcasts {
-    height: 50vh;
-    padding-top: 20px;
-    padding-bottom: 10px; 
-}
-/* PARTIE INDEX */
-.def-p{
-margin-top: 4%;
-line-height: 1.3;
-text-align: center;
-font-weight:bold;
-margin-bottom: 2%;
-}
-
 /*PARTIE JOURNAL*/
 /*Second area of text at the start*/
 .new-p{
@@ -312,112 +384,8 @@ font-size: 130%;
   color: rgb(0, 0, 0);
   line-height: 1.3;
   text-align:left;}
+
 /*PARTIE ARTICLE*/
-.art-box{
-display:grid;
-}
-.art-box h4{
-font-size: 200%;
-text-align: center;
-font-weight:bold;
-padding-bottom:40px;
-}
-.art-box-img{
-display: grid;
-justify-items: center;
-margin-bottom: 20px;
-background-color: gray;
-border-bottom-left-radius: 7px;
-border-bottom-right-radius: 7px;
-border-top-left-radius: 6px;
-border-top-right-radius: 6px;
-}
-.art-box-img p{
-padding: 6px;
-color: white;
-}
-
-.art-box img{
-width: 100%;
-aspect-ratio:3/1;
-text-align: center;
-object-fir: cover;
-color: white;
-background-color: rgb(60, 60, 60);
-}
-
-.art-box p{
-text-align: justify;
-line-height: 1.3;
-}
-
-/* Setup for date flexbox */
-.date-wrapper {
-margin-bottom: 40px;
-justify-content:right ;
-align-items: baseline;
-display: inline-flex;
-}
-.date-day,
-.date-year,
-.date-month{
-  display: inline-block;
-}
-
-/* Set date display order */
-.date-year   { order: 3; }
-.date-month  { order: 2; }
-.date-day    { order: 1; }
-.date-hour   { order: 4; }
-.date-minute { order: 5; }
-
-/* Display dates based on "val" custom attribute in HTML */
-.date-year::after,
-.date-month::after,
-.date-day::after,
-.date-hour::after,
-.date-minute::after{
-  content: attr(val);
-}
-
-/* Add separators */
-.date-month::before { content: "/"; }
-.date-year::before {content: "/";}
-.date-hour::before {content: "\00a0";}
-.date-minute::before {content: "h";}
-
-/* Add leading zero to days */
-.date-day[val="1"]:after{ content: "01"; }
-.date-day[val="2"]:after{ content: "02"; }
-.date-day[val="3"]:after{ content: "03"; }
-.date-day[val="4"]:after{ content: "04"; }
-.date-day[val="5"]:after{ content: "05"; }
-.date-day[val="6"]:after{ content: "06"; }
-.date-day[val="7"]:after{ content: "07"; }
-.date-day[val="8"]:after{ content: "08"; }
-.date-day[val="9"]:after{ content: "09"; }
-
-/* Add leading zero to minute */
-.date-minute[val="1"]:after{ content: "01"; }
-.date-minute[val="2"]:after{ content: "02"; }
-.date-minute[val="3"]:after{ content: "03"; }
-.date-minute[val="4"]:after{ content: "04"; }
-.date-minute[val="5"]:after{ content: "05"; }
-.date-minute[val="6"]:after{ content: "06"; }
-.date-minute[val="7"]:after{ content: "07"; }
-.date-minute[val="8"]:after{ content: "08"; }
-.date-minute[val="9"]:after{ content: "09"; }
-
-/* Add leading zero to hour */
-.date-hour[val="1"]:after{ content: "01"; }
-.date-hour[val="2"]:after{ content: "02"; }
-.date-hour[val="3"]:after{ content: "03"; }
-.date-hour[val="4"]:after{ content: "04"; }
-.date-hour[val="5"]:after{ content: "05"; }
-.date-hour[val="6"]:after{ content: "06"; }
-.date-hour[val="7"]:after{ content: "07"; }
-.date-hour[val="8"]:after{ content: "08"; }
-.date-hour[val="9"]:after{ content: "09"; }
 
 /**PARTIE EMISSION*/
 .emission {

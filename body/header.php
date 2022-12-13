@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="dropdown" id="equipe">
-                <a href="" id="btn">JOURNAL</a>
+                <a href="./page_journal.php" id="btn">JOURNAL</a>
                 <div class="dropdown-content">
                     <a href=""> </a>
                 </div>

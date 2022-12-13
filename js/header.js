@@ -26,8 +26,9 @@
         }
     }
     window.addEventListener("DOMContentLoaded", (event) => {
-        console.log("test");
+
         setTimeout(function() {
+            console.log("test");
             document.getElementById("loader").style.top = "-100vh";
         }, 500)
     });

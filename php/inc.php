@@ -104,7 +104,7 @@ function page_emission(){
 }
 function index_accueil(){
 ?>
-            <div class="def-p marging-body">
+     <div class="def-p marging-body">
         <p>
         Certains domaines de l'informatique peuvent être très abstraits, comme la complexité algorithmique, et d'autres peuvent être plus proches d'un public profane. Ainsi, la théorie des langages demeure un domaine davantage accessible aux professionnels formés (description des ordinateurs et méthodes de programmation), tandis que les métiers liés aux interfaces homme-machine (IHM) sont accessibles à un plus large public.
         </p>

@@ -1,6 +1,3 @@
-    <div class="loader" id="loader">
-        <p>Chargement...</p>
-    </div>
     <header>
         <script src="./js/header.js" defer></script>
         <a href="./index.php"><img src="./img/headerlogo.png" alt="Logo" class="logo"></a>

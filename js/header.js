@@ -28,7 +28,8 @@
     window.addEventListener("DOMContentLoaded", (event) => {
 
         setTimeout(function() {
-            console.log("test");
+
             document.getElementById("loader").style.top = "-100vh";
+            console.log("test");
         }, 500)
     });

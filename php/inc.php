@@ -1,4 +1,16 @@
 <?php
+function entete(){
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./css/index2.css">
+
+</head> 
+<?php
+}
 function eader() {
 ?>
 <header class = "header">
@@ -51,22 +63,10 @@ function footer(){
 ?>
 <?php
   }
-function entete(){
-?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="./css/index2.css">
-
-</head> 
-<?php
-  }
 function page_emission(){
  ?>
       <div class="emission marging-body">
-        <img src="/../img/test.png" id="Imgdel'emission" alt="Emission" class="image">
+        <img src="./img/test.png" id="Imgdel'emission" alt="Emission" class="image">
         <div class="text">
             <h5>Titre de l'émission</h5>
             <h6>- Description de l'émission en quelques mots sed do -</h6>
@@ -85,16 +85,16 @@ function page_emission(){
     <div>
         <a class="container border-3 marging-body" href="">
             <audio id="player" src="mon-fichier-audio.mp3"></audio>
-            <img src="/../img/bouton-coeur-plein.png" onclick="document.getElementById('player').play()">
-            <img src="/../img/bouton-play.png" onclick="document.getElementById('player').pause()">
-            <img src="/../img/bouton-stop.png" onclick="document.getElementById('player').stop()">
+            <img src="./img/bouton-coeur-plein.png" onclick="document.getElementById('player').play()">
+            <img src="./img/bouton-play.png" onclick="document.getElementById('player').pause()">
+            <img src="./img/bouton-stop.png" onclick="document.getElementById('player').stop()">
             <h6>Titre du podcast</h6>
             <h7>Description et/ou nom croniqueurs</h7>
             <hr size=5 width="93%"color = black> 
             <audio id="player" src="../Audio/Shrek.mp3"></audio>
-            <img src="/../img/bouton-coeur-plein.png" onclick="document.getElementById('player').play()">
-            <img src="/../img/bouton-play.png" onclick="document.getElementById('player').pause()">
-            <img src="/../img/bouton-stop.png" onclick="document.getElementById('player').stop()">
+            <img src="./img/bouton-coeur-plein.png" onclick="document.getElementById('player').play()">
+            <img src="./img/bouton-play.png" onclick="document.getElementById('player').pause()">
+            <img src="./img/bouton-stop.png" onclick="document.getElementById('player').stop()">
             <h6>Titre du podcast</h6>
             <h7>Description et/ou nom croniqueurs</h7>
         </a>

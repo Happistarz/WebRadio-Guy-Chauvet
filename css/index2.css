@@ -329,28 +329,6 @@ border-bottom-left-radius: 6px;
 border-bottom-right-radius: 6px;
 }
 
-
-/*Css for the area of "EQUIPE"*/
-.equipe-box{
-display: flex;
-justify-content: space-around;
-margin-bottom: 4%;
-}
-.equipe-box a{
-display: grid;
-width: content;
-
-}
-.equipe-box a img{
-width: 500px;
-aspect-ratio: 2/1;
-text-align:center;
-color: white;
-background-color: rgb(60, 60, 60);
-border-bottom-left-radius: 6px;
-border-bottom-right-radius: 6px;
-}
-
 .j-box {
 display:flex;
 margin-bottom: 3%;

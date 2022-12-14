@@ -1,62 +1,72 @@
 .emission {
-  width: 100%;
+  width: 90%;
   background: #000;
   height: 50vh;
-  padding-top: 10px;
-  padding-bottom: 10px;
   align-items: center;
   margin-bottom: 100px;
   color: white;
 }
+
 .image {
   float: left;
-  width: 350px;
-  height: 350px;
+  width: 35%;
+  display: flex;
+  align-items: center;
+  margin-right: 10vh;
 }
+.image img {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  object-fit: cover;
+}
+
 .text {
   text-align: left;
   margin-left: 200px;
   padding: 10px;
-  
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 
 .podcasts {
-    height: 50vh;
-    padding-top: 20px;
-    padding-bottom: 10px; 
-    background-color: white;
+  height: 50vh;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background-color: white;
 }
 
 div .container article {
-text-decoration: none;
+  text-decoration: none;
 }
 
 .container {
-    display: block; /* Ajout de cette ligne pour afficher le conteneur en un seul rectangle */
-    background-color: #ddd;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
+  display: block;
+  /* Ajout de cette ligne pour afficher le conteneur en un seul rectangle */
+  background-color: #ddd;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
-img {
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    width: 50px;
-    height: 50px;
-    
-  }
-  
-  img:hover {
-    box-shadow: none;
-    transform: scale(1.1);
-  }
-    .buttons {
-        flex:1;
-    }
-    .text {
-        flex:3;
-    }
+.btn {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
 
- 
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.buttons {
+  flex: 1;
+}
+
+.text {
+  flex: 3;
+}

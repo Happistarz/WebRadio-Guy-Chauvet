@@ -7,7 +7,7 @@ function entete(){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="./css/index2.css">
-
+    <link rel="icon" type="image/x-icon" href="./img/favico.png">
 </head> 
 <?php
 }

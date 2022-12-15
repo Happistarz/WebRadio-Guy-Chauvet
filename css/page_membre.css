@@ -1,0 +1,77 @@
+main{
+display: grid;
+}
+body h6{
+font-size: 300%;
+margin: 50px 0px 50px 0px ;
+}
+body p{
+font-size: 130%;
+line-height: 1.3;
+text-align: justify;
+}
+
+
+.WR2 img{
+display: flex;
+margin-left: auto;
+margin-right: auto;
+width:800px;
+margin-bottom: 50px;
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+text-align:center;
+justify-content: center;
+}
+
+.mbr h5{
+font-size: 150%;
+margin: 0px 0px 20px 0px ;
+}
+.mbr img{
+display: flex;
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+text-align:center;
+justify-content: center;
+}
+
+.pmb-left{
+width: 49%;
+float: left;
+}
+.pmb-left div{
+display: flex;
+margin-bottom: 50px;
+}
+.pmb-left div article{
+width: 50%;
+}
+.pmb-left div article h5{
+text-align: left;
+}
+.pmb-left div img{
+width: 50%;
+margin-right: 60px;
+}
+
+.pmb-right{
+width: 49%;
+float: right;
+}
+.pmb-right div{
+display: flex;
+margin-bottom: 50px;
+}
+
+.pmb-right div article{
+width: 50%;
+}
+.pmb-right div article h5{
+text-align: right;
+}
+.pmb-right div img{
+width: 50%;
+margin-left: 60px;
+}
+

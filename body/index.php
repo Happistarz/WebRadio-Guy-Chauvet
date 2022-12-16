@@ -69,11 +69,11 @@
     <h1 id="equipe" class="header-page">L'EQUIPE</h1>
     <hr size=5 width="93%"color = black>
     <div class="container-ac-img">
-        <a href="" class="box-img border-1">
+        <a href="./page_lycee_mdl.php" class="box-img border-1">
             <h3>Titre</h3>
             <img src="./img/test.png" alt="image">
         </a>
-        <a href="" class="box-img border-2">
+        <a href="./page_membre.php" class="box-img border-2">
             <h3>Titre</h3>
             <img src="./img/test.png" alt="image">
         </a>

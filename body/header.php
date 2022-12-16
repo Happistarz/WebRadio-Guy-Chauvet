@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="dropdown" id="journal">
-                <a href="" id="btn">L'EQUIPE</a>
+                <a href="./page_lycee.php" id="btn">L'EQUIPE</a>
                 <div class="dropdown-content">
                     <a href="">le Web Radio</a>
                     <a href="">Le lycée</a>

@@ -10,7 +10,7 @@
       <?php require './body/entete.php' ?>
    </head>
    <body>
-
+   <?php require "./loader.php"; ?>
    <?php require './body/header.php' ?>
 
    <!-- <?php require "./body/index.php" ?> -->

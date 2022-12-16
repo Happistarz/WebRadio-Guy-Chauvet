@@ -8,7 +8,7 @@
                 <div class="dropdown-content">
                     <a href="">Le quiz en série</a>
                     <a href="">Histoire de poche</a>
-                    <a href="">Le journal</a>
+                    <a href="./page_journal.php">Le journal</a>
                     <a href="">Debat Lycéen</a>
                     <a href="">1 thème, 3 chansons</a>
                 </div>

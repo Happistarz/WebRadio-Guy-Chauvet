@@ -3,6 +3,7 @@
     <?php require "./body/entete.php"; ?>
   </head>
   <body>
+    <?php require "./body/loader.php"; ?>
     <?php require "./body/header.php"; ?>
     <?php require "./template/index_lycee_membre.html"; ?>
     <?php require "./body/footer.php"; ?>

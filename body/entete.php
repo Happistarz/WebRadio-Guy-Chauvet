@@ -7,3 +7,4 @@
     <link rel="stylesheet" href="./css/page_lycee_membre.css">
     <link rel="stylesheet" href="./css/page_lycee_mdl.css">
     <link rel="stylesheet" href="./css/page_membre.css">
+    <link rel="stylesheet" href="./css/page_article.css">

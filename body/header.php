@@ -22,8 +22,8 @@
             <div class="dropdown" id="journal">
                 <a href="./page_lycee.php" id="btn">L'EQUIPE</a>
                 <div class="dropdown-content">
-                    <a href="./page_lycee.php">le Web Radio</a>
-                    <a href="./page_lycee.php#WR">Le lycée</a>
+                    <a href="./page_lycee.php#WR">le Web Radio</a>
+                    <a href="./page_lycee.php#LY">Le lycée</a>
                 </div>
             </div>
         </div>

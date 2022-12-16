@@ -14,27 +14,27 @@
     <h1 class="header-page">LES EMISSIONS</h1>
     <hr size=5 width="93%"color = black>
     <div class="container-em-img">
-        <a href="./page_article.php" class="box-img border-1">
+        <a href="./page_emission.php" class="box-img border-1">
             <h3>Titre</h3>
             <img src="./img/test.png" alt="image">
         </a>
-        <a href="./page_article.php" class="box-img border-2">
+        <a href="./page_emission.php" class="box-img border-2">
             <h3>Titre</h3>
             <img src="./img/test.png" alt="image">
         </a>
-        <a href="./page_article.php" class="box-img border-3">
+        <a href="./page_emission.php" class="box-img border-3">
             <h3>Titre</h3>
             <img src="./img/test.png" alt="image">
         </a>
-        <a href="./page_article.php" class="box-img border-3">
+        <a href="./page_emission.php" class="box-img border-3">
             <h3>Titre</h3>
             <img src="./img/test.png" alt="image">
         </a>
-        <a href="./page_article.php" class="box-img border-2">
+        <a href="./page_emission.php" class="box-img border-2">
             <h3>Titre</h3>
             <img src="./img/test.png" alt="image">
         </a>
-        <a href="./page_article.php" class="box-img border-1">
+        <a href="./page_emission.php" class="box-img border-1">
             <h3>Titre</h3>
             <img src="./img/test.png" alt="image">
         </a>

@@ -1,0 +1,116 @@
+
+.emission {
+padding: 100px;
+display: flex;
+width: 100%;
+background: #000;
+height: 80vh;
+margin-bottom: 100px;
+color: white;
+}
+.emission img{
+width: 35%;
+aspect-ratio: 1;
+display: grid;
+margin-right: 10vh;
+margin-bottom: auto;
+margin-top: auto;
+border-radius: 30px;
+color: white;
+}
+.emission article{
+margin-top: 4rem;
+margin-bottom: auto;
+}
+.emission article h5{
+font-size: 190%;
+margin-bottom: 50px;
+}
+.emission article p{
+font-size: 160%;
+}
+
+.audio-box {
+display: grid;
+height: auto;
+padding-top: 20px;
+padding-bottom: 10px;
+background-color: rgb(95, 95, 95);
+color: white;
+padding: 10px;
+text-decoration: none;
+}
+
+.audio-box article{
+display: flex;
+width: 100%;
+gap: 30px;
+padding-bottom: 10px;
+}
+
+/* Setup for date flexbox */
+.audio-box .date-wrapper {
+margin-bottom: 40px;
+align-items: baseline;
+display: inline-flex;
+}
+.date-day,
+.date-year,
+.date-month{
+display: inline-block;
+}
+
+/* Set date display order */
+.date-year   { order: 3; }
+.date-month  { order: 2; }
+.date-day    { order: 1; }
+.date-hour   { order: 4; }
+.date-minute { order: 5; }
+
+/* Display dates based on "val" custom attribute in HTML */
+.date-year::after,
+.date-month::after,
+.date-day::after,
+.date-hour::after,
+.date-minute::after{
+    content: attr(val);
+}
+
+/* Add separators */
+.date-month::before { content: "/"; }
+.date-year::before {content: "/";}
+.date-hour::before {content: "\00a0";}
+.date-minute::before {content: "h";}
+
+/* Add leading zero to days */
+.date-day[val="1"]:after{ content: "01"; }
+.date-day[val="2"]:after{ content: "02"; }
+.date-day[val="3"]:after{ content: "03"; }
+.date-day[val="4"]:after{ content: "04"; }
+.date-day[val="5"]:after{ content: "05"; }
+.date-day[val="6"]:after{ content: "06"; }
+.date-day[val="7"]:after{ content: "07"; }
+.date-day[val="8"]:after{ content: "08"; }
+.date-day[val="9"]:after{ content: "09"; }
+
+/* Add leading zero to minute */
+.date-minute[val="1"]:after{ content: "01"; }
+.date-minute[val="2"]:after{ content: "02"; }
+.date-minute[val="3"]:after{ content: "03"; }
+.date-minute[val="4"]:after{ content: "04"; }
+.date-minute[val="5"]:after{ content: "05"; }
+.date-minute[val="6"]:after{ content: "06"; }
+.date-minute[val="7"]:after{ content: "07"; }
+.date-minute[val="8"]:after{ content: "08"; }
+.date-minute[val="9"]:after{ content: "09"; }
+
+/* Add leading zero to hour */
+.date-hour[val="1"]:after{ content: "01"; }
+.date-hour[val="2"]:after{ content: "02"; }
+.date-hour[val="3"]:after{ content: "03"; }
+.date-hour[val="4"]:after{ content: "04"; }
+.date-hour[val="5"]:after{ content: "05"; }
+.date-hour[val="6"]:after{ content: "06"; }
+.date-hour[val="7"]:after{ content: "07"; }
+.date-hour[val="8"]:after{ content: "08"; }
+.date-hour[val="9"]:after{ content: "09"; }

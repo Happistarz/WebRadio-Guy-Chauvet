@@ -1,6 +1,16 @@
 Cahier des charges
  
-C.D.N -> Hugo, Ambre, Benjamin
+C.D.C -> Hugo, Ambre, Benjamin : 100%
+
+Tuto outils : 100%
+
+Organisation script : 70%
+
+Tuto VM : 90%
+
+MCD : 50%
+
+BDD : 10%
 
 S.G -> Victor - Florent
 
@@ -12,3 +22,10 @@ Schéma -> Lucas
 
 B.D.D -> Lenny
 lien : http://192.168.105.123/adminer.php 
+
+
+Pour demain 17/01/23 : 
+Rassembler l'entierté du site
+Trier de ce qu'on jette (les fichiers)
+Finir VM + Tuto + MCD
+Avancer sur la base de données 

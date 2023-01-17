@@ -36,7 +36,7 @@ Afficher les cartes archivées : "Ctrl" + "Shift" + "A"
 Il est important de noter que ces raccourcis peuvent varier en fonction de la configuration de votre ordinateur et de la version de Trello que vous utilisez. Vous pouvez également consulter les raccourcis clavier de Trello en cliquant sur "Aide" dans le menu de l'application.
 
 - GitHub 
-https://github.com/Happistarz/WebRadio-Guy-Chauvet
+lien : https://github.com/Happistarz/WebRadio-Guy-Chauvet
 
 - GoogleChat 
-https://mail.google.com/mail/u/0/?tab=rm&ogbl#chat/space/AAAAgjLral8
+lien : https://mail.google.com/mail/u/0/?tab=rm&ogbl#chat/space/AAAAgjLral8

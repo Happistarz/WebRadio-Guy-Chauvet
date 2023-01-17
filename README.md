@@ -2,7 +2,6 @@
 
 TOUT ÉCRIRE EN ANGLAIS 
 
-
 Site main = index.html
 Dossier image 
 Css global qui s’appelle style.css et un css reset qui s’appelle reset.css 

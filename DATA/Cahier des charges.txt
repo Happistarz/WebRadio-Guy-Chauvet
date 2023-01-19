@@ -24,14 +24,18 @@ B.D.D -> Lenny
 lien : http://192.168.105.123/adminer.php 
 
 
-Pour demain 17/01/23 : 
-Rassembler l'entierté du site
-Trier de ce qu'on jette (les fichiers)
-Finir VM + Tuto + MCD
-Avancer sur la base de données 
+Pour le 17/01/23 : 
+- Rassembler l'entierté du site
+- Trier de ce qu'on jette (les fichiers)
+- Finir VM + Tuto + MCD
+- Avancer sur la base de données 
 
-
-
+Pour le 20/01/23 : 
+- Insérer les tables dans la base de données
+- Faire un fichier pour la création de base de données et tables, les droits
+- Commencer le php (formulaire)
+- Commencer à mettre des fichiers dans le serveur et faire des tests
+- Autorisation du schéma (pour l'ajout d'émission...)
 
 
 CAHIER DES CHARGES

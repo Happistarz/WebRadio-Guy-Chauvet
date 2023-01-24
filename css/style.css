@@ -108,7 +108,6 @@ header a:hover {
   background: #000;
   top: 0;
   transition: top 0.5s ease-in-out;
-  display: none;
 }
 
 #loader p {
@@ -209,11 +208,6 @@ h3 {
   border-bottom-right-radius: 6px;
 }
 
-
-
-
-
-
 /* ---------------------------page des emissions--------------------------- */
 /* left containers... */
 .container-left {
@@ -231,7 +225,7 @@ h3 {
   line-height: 1.3;
 }
 
-.container-left article h3 {
+.container-left article h2 {
   text-align: left;
   font-weight: bold;
   padding-bottom: 30px;
@@ -258,7 +252,7 @@ h3 {
   line-height: 1.3;
 }
 
-.container-right article h3 {
+.container-right article h2 {
   text-align: right;
   font-weight: bold;
   padding-bottom: 30px;
@@ -289,7 +283,7 @@ h3 {
 /* container's box's img */
 .ems-box img {
   width: 400px;
-  aspect-ratio: 2/1;
+  aspect-ratio: 3/2;
   color: white;
   object-fit: cover;
   background-color: rgb(60, 60, 60);

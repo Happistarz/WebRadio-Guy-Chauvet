@@ -11,25 +11,9 @@
 - Dossier JS [NomDePage].js
 
 
-# WebRadio-Guy-Chauvet
-
-TOUT ÉCRIRE EN ANGLAIS 
-
-
-Site main = index.html
-Dossier image 
-Css global qui s’appelle style.css et un css reset qui s’appelle reset.css 
-Dossier html (toutes les pages) [NomDePage].html
-Dossier data (bdd) BDD-[NomDePage].php
-Dossier php [NomDePage].php
-Dossier JS [NomDePage].js
-
-# WebRadio-Guy-Chauvet
-
-
 ## **Description du projet**
 
-Ceci est le github du projet WebRadio du lycée Guy Chauvet <br>
+Ceci est le github du projet WebRadio du lycée Guy Chauvet pour la web radio du lycée<br>
 
 ***
 

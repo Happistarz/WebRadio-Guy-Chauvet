@@ -79,12 +79,6 @@ width: auto;
 margin-bottom: 1.5%;
 }
 
-/*Rigth and left marging for body contain*/
-h1,hr,.marging-body{
-	margin-left: 100px;
-	margin-right: 100px;
-}
-
 /*Anim after selection of box*/
 a{
 height: auto;
@@ -97,3 +91,9 @@ a:hover{
 box-shadow: 5px 5px 10px rgb(19, 19, 19);
 /*Scale tranformation after selection*/
 transform:translateY(-3px);}
+
+/*Rigth and left marging for body contain*/
+main {
+	margin-left: 100px;
+	margin-right: 100px;
+}

@@ -66,5 +66,6 @@ Nommage fichier: <br>
 
   page fini: index-{PAGE}: ex.index-emission. <br>
 ***
-
+## **Contact :**
+Adresse mail : gr-sts1-slam@lycee-guychauvet.fr
 

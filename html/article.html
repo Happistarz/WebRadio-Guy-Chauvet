@@ -5,19 +5,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/loader.js"></script>
     <title>Article</title>
 </head>
 
 <body>
+    <!-- loader -->
+  <div id="loader">
+    <p>Chargement...</p>
+  </div>
+  <!-- header -->
+  <header>
+    <!-- logo -->
+    <img src="../images/logo.png" alt="Logo" class="logo" />
+    <!-- navbar header -->
+    <div class="headright">
+      <button onclick="MenuOpen()">
+        <img src="../images/Menu.png" alt="Menu" />
+      </button>
+      <!-- emission btn -->
+      <div class="dropdown">
+        <a href="html/les_emissions.html" id="btn">EMISSIONS</a>
+        <div class="dropdown-content">
+          <a href="">Le quiz en série</a>
+          <a href="">Histoire de poche</a>
+          <a href="">Le journal</a>
+          <a href="">Debat Lycéen</a>
+          <a href="">1 thème, 3 chansons</a>
+        </div>
+      </div>
+      <!-- equipe btn -->
+      <div class="dropdown">
+        <a href="../html/journal.html" id="btn">JOURNAL</a>
+        <div class="dropdown-content">
+          <a href=""> </a>
+        </div>
+      </div>
+      <!-- journal btn -->
+      <div class="dropdown">
+        <a href="" id="btn">L'EQUIPE</a>
+        <div class="dropdown-content">
+          <a href="../html/lycee_mdl.html">le Web Radio</a>
+          <a href="../html/lycee_membre.html">Le lycée</a>
+        </div>
+      </div>
+    </div>
+  </header>
     <main>
         <!-- setup art box -->
         <div class="art-box">
             <div class="ar-date">10/11/2022 13h35</div>
             <h4>Certains domaines de </h4>
             <div class="art-box-img">
-                <img class="border-1" src="images/test.png" alt="Image">
+                <img class="border-1" src="../images/test.png" alt="Image">
                 <p>description de l'image</p>
             </div>
             <p>Certains domaines de l'informatique peuvent être très abstraits, comme la complexité algorithmique, et
@@ -27,6 +69,17 @@
             </p>
         </div>
     </main>
+    <footer>
+        <img src="../images/Logo.png" alt="Logo" class="logo-footer" />
+        <h4>A propos</h4>
+        <div class="footer-element">
+          <ul>
+            <li><a href="">- Contact</a></li>
+            <li><a href="">- Plan du site</a></li>
+            <li><a href="">- Mentions Legales</a></li>
+          </ul>
+        </div>
+      </footer>
 </body>
 
 </html>

@@ -21,6 +21,7 @@ Ceci est le github du projet WebRadio du lycée Guy Chauvet pour la web radio du
 
 **Accès** :
 - Serveur (Debian 11.4)
+- Sauvegarde
 - Planification a prévoir/recherche 
 
 ***

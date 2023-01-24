@@ -20,7 +20,7 @@ Ceci est le github du projet WebRadio du lycée Guy Chauvet pour la web radio du
 - JavaScript  
 
 **Accès** :
-- Serveur (Debian 11.4)
+- FTP 3.0
 - Sauvegarde
 - Planification a prévoir/recherche 
 

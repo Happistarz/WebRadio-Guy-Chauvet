@@ -16,6 +16,12 @@
 Ceci est le github du projet WebRadio du lycée Guy Chauvet pour la web radio du lycée<br>
 
 ***
+## **Environnement technique**
+-Serv(quoi et versions)
+-sgbd(quoi et versions)
+-langage(quoi et versions)
+-accés
+***
 
 ## **Info:** 
 

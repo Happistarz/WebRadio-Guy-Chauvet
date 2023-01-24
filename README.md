@@ -18,9 +18,23 @@ Ceci est le github du projet WebRadio du lycée Guy Chauvet pour la web radio du
 ***
 ## **Environnement technique**
 -Serv(quoi et versions)
+- Machine virtuelle OS (debian)
+- version 11.4
+
 -sgbd(quoi et versions)
+- MariaDB 10.5.18
+- Adminer 4.8.1
+
+
 -langage(quoi et versions)
+- HTML
+- CSS
+- PHP 
+- JavaScript
+- SQL
+
 -accés
+
 ***
 
 ## **Info:** 

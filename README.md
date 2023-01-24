@@ -1,39 +1,28 @@
 # WebRadio-Guy-Chauvet
 
-##TOUT ÉCRIRE EN ANGLAIS 
-
-- Site main = index.html
-- Dossier image 
-- Css global qui s’appelle style.css et un css reset qui s’appelle reset.css 
-- Dossier html (toutes les pages) [NomDePage].html
-- Dossier data (bdd) BDD-[NomDePage].php
-- Dossier php [NomDePage].php
-- Dossier JS [NomDePage].js
-
-
 ## **Description du projet**
 
 Ceci est le github du projet WebRadio du lycée Guy Chauvet pour la web radio du lycée<br>
 
 ***
 ## **Environnement technique**
--Serv(quoi et versions)
+**Serveur utiliser** :
 - Machine virtuelle OS (debian)
 - version 11.4
 
--sgbd(quoi et versions)
+**SGBD** :
 - MariaDB 10.5.18
 - Adminer 4.8.1
 
 
--langage(quoi et versions)
+**Langage** :
 - HTML
 - CSS
 - PHP 
 - JavaScript
 - SQL
 
--accés
+**accés** :
 
 ***
 

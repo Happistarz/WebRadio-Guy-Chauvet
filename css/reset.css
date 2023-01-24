@@ -86,11 +86,6 @@ color: inherit;
 text-decoration: none;
 cursor: pointer;
 }
-a:hover{
-/*Shadow effect after selection*/
-box-shadow: 5px 5px 10px rgb(19, 19, 19);
-/*Scale tranformation after selection*/
-transform:translateY(-3px);}
 
 /*Rigth and left marging for body contain*/
 main {

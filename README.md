@@ -15,14 +15,14 @@ Ceci est le github du projet WebRadio du lycée Guy Chauvet pour la web radio du
 - Adminer 4.8.1
 
 
-**Langage** :
+**Langages** :
 - HTML 5
 - CSS 3
 - PHP 7.4
 - JavaScript 
 - SQL 
 
-**accés** :
+**Accès** :
 - Serveur FTP (fileZilla)
 
 ***

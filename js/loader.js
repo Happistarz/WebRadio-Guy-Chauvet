@@ -39,3 +39,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
         console.log("test");
     }, 500)
 });
+        var i = 0;
+        function Like(x) {
+            if (i == 0) {
+                x.style.backgroundImage = "url('like.png')";
+                i = 1;
+            } else {
+                x.style.backgroundImage = "url('nolike.png')";
+                i = 0;
+            }
+        }

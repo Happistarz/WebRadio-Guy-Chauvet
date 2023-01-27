@@ -786,7 +786,7 @@ footer li a:hover {
 }
 
 .like {
-  background-image: url('../images/nolike.png');
+  background-image: url('../images/bouton-coeur-vide.png');
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: 50%;

@@ -37,6 +37,16 @@ window.addEventListener("DOMContentLoaded", (event) => {
   }, 500);
 });
 
+var i = 0;
+function Like(x) {
+    if (i == 0) {
+        x.style.backgroundImage = "url('../images/bouton-coeur-plein.png')";
+        i = 1;
+    } else {
+        x.style.backgroundImage = "url(../images/bouton-coeur-vide.png)";
+        i = 0;
+    }
+}
 function addredac() {
   var form1 = (document.getElementById("form1").style.display = "grid");
   var form1 = (document.getElementById("form2").style.display = "none");

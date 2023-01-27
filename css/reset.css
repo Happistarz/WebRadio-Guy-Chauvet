@@ -79,9 +79,6 @@ width: auto;
 margin-bottom: 1.5%;
 }
 
-/*Rigth and left marging for body contain*/
-
-
 /*Anim after selection of box*/
 a{
 height: auto;
@@ -91,7 +88,8 @@ cursor: pointer;
 }
 
 /*Rigth and left marging for body contain*/
-main,h1,hr{
+main {
 	margin-left: 100px;
 	margin-right: 100px;
+	margin-bottom: 5%;
 }

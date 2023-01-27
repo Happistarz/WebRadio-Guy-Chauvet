@@ -773,6 +773,9 @@ footer li a {
 footer li a:hover {
   opacity: .5;
 }
+
+/* ---------------------------Lecteur Audio---------------------------*/
+
 .footer-podcast {
   background-image: linear-gradient(black 50%, #6b6b6b 50%);
   width: 100%;
@@ -855,11 +858,6 @@ footer audio::-webkit-media-controls-panel {
   align-items: left;
   width: 85%;
 }
-/* ---------------------------Lecteur Audio---------------------------*/
-
-
-
-
 
 /* ---------------------------Dev page---------------------------*/
 
@@ -933,7 +931,7 @@ footer audio::-webkit-media-controls-panel {
   margin-bottom: 2%;
 }
 
-textarea {
+.creation textarea {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -948,7 +946,7 @@ textarea {
   margin-bottom: 3px;
 }
 
-input[type="file"] {
+.creation input[type="file"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -959,9 +957,9 @@ input[type="file"] {
   font-size: 1em;
 }
 
-#submit {
+.creation #submit {
   width: 100%;
-  background-color: #4CAF50;
+  background-color: #0c0c0c;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -970,80 +968,49 @@ input[type="file"] {
   cursor: pointer;
 }
 
-#submit:hover {
-  background-color: #45a049;
+.creation #submit:hover {
+  background-color: #f9b345;
 }
 
-.toolbar {
+.creation .toolbar {
   display: flex;
   cursor: pointer;
   align-items: center;
 }
 
-.toolbar img {
+.creation .toolbar img {
   width: 20px;
   height: 20px;
   cursor: pointer;
   margin-right: 10px;
 }
 
-.toolbar img {
+.creation .toolbar img {
   width: 25px;
   height: 25px;
   cursor: pointer;
 }
 
-.toolbar img:hover {
+.creation .toolbar img:hover {
   opacity: 0.5;
 }
-.upload-group {
+
+.creation .upload-group {
   display: flex;
   align-items: center;
 }
-
-#audio-file {
-  display: none;
-}
-
-label[for='audio-file'] {
-  padding: 0.5em 1em;
-  background-color: #4CAF50;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1em;
-  margin-right: 1em;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #profile {
   display: flex;
   justify-self: right;
   margin: 1%;
   width: 20vh;
+  height: 10vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
 
 }
+
 #profile img {
   width: 100%;
   height: 100%;
@@ -1053,12 +1020,15 @@ label[for='audio-file'] {
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
 }
+
 #profile h2 {
   margin: 1vh;
   grid-column: 2;
 }
 
-/* ---------------------------Page de creation------------------------*/
+
+/* ---------------------------Modal login---------------------------*/
+
 .grad img {
   padding: 4px;
   width: 100px;

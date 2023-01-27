@@ -34,7 +34,7 @@ header {
 .headright img {
   width: 7vh;
 }
-.header #btn {
+header #btn {
   text-decoration: none;
   color: #fff;
   background: #000;

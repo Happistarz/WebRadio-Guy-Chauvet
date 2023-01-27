@@ -331,6 +331,54 @@ h3 {
 .emission article p {
   font-size: 160%;
 }
+.podcast-container {
+  color: white;
+  background-color: #6b6b6b;
+  height: auto;
+}
+
+.podcast audio::-webkit-media-controls-panel {
+  background: #f9b345;
+}
+
+.podcast {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.podcast button {
+  padding: 40px;
+  margin-left: 2vh;
+  margin-right: 2vh;
+  background-image: url(nolike.png);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-color: #6b6b6b;
+  border: none;
+}
+
+.podcast audio {
+  background-color: none;
+  width: 100%;
+  margin: 10px 2vh 15px 2vh;
+}
+
+.info-podcast {
+  object-fit: cover;
+  margin: 0;
+}
+
+.podcast p {
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.podcast h2 {
+  font-size: 35px;
+}
+
 
 /* ---------------------------page journal--------------------------- */
 /* setup  */
@@ -729,7 +777,88 @@ footer li a {
 footer li a:hover {
   opacity: .5;
 }
+.footer-podcast {
+  background-image: linear-gradient(black 50%, #6b6b6b 50%);
+  width: 100%;
+  border-top: 100px solid black;
+  display: inline-flex;
+  justify-content: space-around;
+}
 
+.like {
+  background-image: url('../images/nolike.png');
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-color: transparent;
+  border: none;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 3vh;
+}
+
+.biblio {
+  background-image: url('../images/biblio.png');
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border: none;
+}
+
+.next {
+  background-image: url('../images/next.png');
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border: none;
+}
+
+.previous {
+  background-image: url('../images/next.png');
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-color: transparent;
+  transform: rotate(180deg);
+  width: 50px;
+  height: 50px;
+  border: none;
+}
+
+.footer-podcast audio {
+  width: 100%;
+  transform: translateY(10px);
+}
+
+.biblioTXT {
+  color: white;
+  font-size: 14px;
+  float: right;
+}
+
+.bibliotheque {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2vh;
+}
+
+footer audio::-webkit-media-controls-panel {
+  background-color: #f9b345;
+}
+
+.audio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 85%;
+}
 /* ---------------------------Lecteur Audio---------------------------*/
 
 

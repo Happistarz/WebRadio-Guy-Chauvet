@@ -1061,3 +1061,81 @@ label[for='audio-file'] {
   margin: 1vh;
   grid-column: 2;
 }
+
+/* ---------------------------Page de creation------------------------*/
+.grad img {
+  padding: 4px;
+  width: 100px;
+}
+
+.login-container {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(
+  165deg,
+  hsl(36deg 100% 63%) 0%,
+  hsl(11deg 77% 63%) 26%,
+  hsl(17deg 16% 56%) 63%,
+  hsl(175deg 36% 56%) 87%,
+  hsl(43deg 100% 95%) 100%);
+  border-radius: 30px;
+  margin: auto;
+  padding: 20px;
+}
+
+.login-form {
+  text-align: center;
+}
+
+.form-header {
+  margin-bottom: 30px;
+}
+
+.form-group {
+  position: relative; 
+  justify-content: flex-end; 
+  }
+
+label {
+  color: black;
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+input {
+  position: relative;
+  display: inline-block;
+  position: relative;
+  width: 55%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border-color: black;
+  background-color: #fff;
+  position: relative;
+  text-align: center;
+}
+
+#showPasswordBtn {
+  position: absolute; 
+  right: 10px; 
+  top: 50%; 
+  transform: translateY(-50%); 
+}
+
+#showPasswordBtn i {
+  font-size: 18px;
+}
+
+button {
+  width: 30%;
+  background-color: #E15D5D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}

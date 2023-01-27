@@ -1028,6 +1028,51 @@ footer audio::-webkit-media-controls-panel {
 
 
 /* ---------------------------Modal login---------------------------*/
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); 
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #ccc;
+}
+
+.grad {
+  background: -webkit-linear-gradient(top, #f3e7e9 0%,#e3eeff 100%);
+  background: linear-gradient(to bottom, #f3e7e9 0%,#e3eeff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e7e9', endColorstr='#e3eeff',GradientType=0 );
+}
+
+#modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+#modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
 
 .grad img {
   padding: 4px;
@@ -1037,13 +1082,7 @@ footer audio::-webkit-media-controls-panel {
 .login-container {
   width: 400px;
   height: 400px;
-  background: linear-gradient(
-  165deg,
-  hsl(36deg 100% 63%) 0%,
-  hsl(11deg 77% 63%) 26%,
-  hsl(17deg 16% 56%) 63%,
-  hsl(175deg 36% 56%) 87%,
-  hsl(43deg 100% 95%) 100%);
+  background: linear-gradient(165deg, hsl(36deg 100% 63%) 0%, hsl(11deg 77% 63%) 26%, hsl(17deg 16% 56%) 63%, hsl(175deg 36% 56%) 87%, hsl(43deg 100% 95%) 100%);
   border-radius: 30px;
   margin: auto;
   padding: 20px;
@@ -1057,10 +1096,11 @@ footer audio::-webkit-media-controls-panel {
   margin-bottom: 30px;
 }
 
+
 .form-group {
   position: relative; 
   justify-content: flex-end; 
-  }
+}
 
 label {
   color: black;
@@ -1084,11 +1124,11 @@ input {
   text-align: center;
 }
 
-#showPasswordBtn {
-  position: absolute; 
-  right: 10px; 
-  top: 50%; 
-  transform: translateY(-50%); 
+.btnmdp{
+  background: none;
+  text-align: center;
+  position: absolute;
+  right: 100px;
 }
 
 #showPasswordBtn i {

@@ -35,19 +35,9 @@ header {
   width: 7vh;
 }
 
-/* header main page button */
-header #btn {
-  text-decoration: none;
-  color: #fff;
-  background: #000;
-  float: right;
-  padding: auto;
-  font-size: 4vh;
-}
-
 /* header dropdown button */
 header button {
-  background: #000;
+  background: transparent;
   border: none;
   cursor: pointer;
 }

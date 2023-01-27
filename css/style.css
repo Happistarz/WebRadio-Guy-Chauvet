@@ -34,7 +34,14 @@ header {
 .headright img {
   width: 7vh;
 }
-
+.header #btn {
+  text-decoration: none;
+  color: #fff;
+  background: #000;
+  float: right;
+  padding: auto;
+  font-size: 4vh;
+}
 /* header dropdown button */
 header button {
   background: transparent;

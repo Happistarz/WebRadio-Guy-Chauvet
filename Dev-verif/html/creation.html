@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="../js/loader.js"></script>
+    <title>Page_Rédacteur</title>
+</head>
+
+<body>
+    <!-- loader -->
+    <div id="loader">
+        <p>Chargement...</p>
+    </div>
+    <!-- header -->
+    <header>
+        <!-- logo -->
+        <a href="../index.html"><img src="../images/Logo.png" alt="Logo" class="logo"></a>
+        <!-- navbar header -->
+        <div class="headright">
+           
+            <!-- emission btn -->
+            <div class="dropdown">
+                <a href="html/les_emissions.html" id="btn">EMISSIONS</a>
+                <div class="dropdown-content">
+                   
+                    <a href="">Histoire de poche</a>
+                
+                </div>
+            </div>
+            <!-- equipe btn -->
+            <div class="dropdown">
+                <a href="../html/journal.html" id="btn">JOURNAL</a>
+                <div class="dropdown-content">
+                  
+                </div>
+            </div>
+            <!-- journal btn -->
+            <div class="dropdown">
+                <a href="" id="btn">L'EQUIPE</a>
+                <div class="dropdown-content">
+                    <a href="../html/lycee_mdl.html">La Web Radio</a>
+                    <a href="../html/lycee_membre.html">Le lycée</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <a id="profile" class="border-2">
+            <img src="../images/test.png" alt="Profile photo">
+            <h2 class="grade">Grade : Admin</h3>
+        </a>
+
+        </div>
+        </div>
+        <div class="redac-dropdown">
+            <img src="../images/signe-plus.png" class="dropbtn" alt="Dropdown">
+            <div class="dropdown-content">
+                <button onclick="addredac()">Article</button>
+                <button onclick="addemis()">Emission</button>
+            </div>
+        </div>
+        <form id="form1" action="">
+            <h1 class="title" style="margin-top: 1%">Création d'un article</h1>
+            <hr size=5 width="93%" color=black>
+            <input type="hidden" name="content" id="content">
+            <textarea onkeyup="textAreaAdjust(this)" placeholder="Titre article"></textarea>
+            <textarea onkeyup="textAreaAdjust(this)" placeholder="Resumé article"></textarea>
+            <input type="file" id="image" onchange="previewImage()" value="Parcourir..." />
+            <img id="preview" src="" alt="" style="max-width: 200px;">
+            <textarea id="titre" onkeyup="textAreaAdjust(this)" placeholder="Description image"></textarea>
+            <textarea onkeyup="textAreaAdjust(this)" placeholder="Contenu article"></textarea>
+            <div class="toolbar">
+                <img src="../images/bold.png" onclick="document.execCommand('bold',false,null)" alt="bolt" />
+                <img src="../images/italic.png" onclick="document.execCommand('italic',false,null)" alt="italic" />
+                <img src="../images/underlined-text.png" onclick="document.execCommand('underline',false,null)"alt="underline" />
+            </div>
+            <input id="submit" type="submit" value="Submit">
+        </form>
+
+        <form id="form2" action="">
+            <h1 class="title" style="margin-top: 1%">Création d'une émission</h1>
+            <hr size=5 width="93%" color=black>
+            <input type="hidden" name="content" id="content">
+            <textarea onkeyup="textAreaAdjust(this)" placeholder="Titre émission"></textarea>
+            <div class="upload-group">
+                <input type="file" id="audio-file" accept="audio/*"/>
+                <label for="audio-file">Parcourir...</label>
+                <audio id="audio-preview" controls></audio>
+              </div>
+            <textarea onkeyup="textAreaAdjust(this)" placeholder="Resumé émission"></textarea>
+            <textarea id="titre" onkeyup="textAreaAdjust(this)" placeholder="Description image"></textarea>
+            <textarea onkeyup="textAreaAdjust(this)" placeholder="Contenu émission"></textarea>
+            <div class="toolbar">
+                <img src="../images/bold.png" onclick="document.execCommand('bold',false,null)" alt="bolt" />
+                <img src="../images/italic.png" onclick="document.execCommand('italic',false,null)" alt="italic" />
+                <img src="../images/underlined-text.png" onclick="document.execCommand('underline',false,null)"
+                    alt="underline" />
+            </div>
+            <input id="submit" type="submit" value="Submit">
+        </form>
+
+    </main>
+    <footer>
+        <a href="../index.html"><img src="../images/Logo.png" alt="Logo" class="logo-footer"></a>
+        <h4>A propos</h4>
+        <div class="footer-element">
+            <ul>
+                <li><a href="">- Contact</a></li>
+                <li><a href="">- Plan du site</a></li>
+                <li><a href="">- Mentions Légales</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

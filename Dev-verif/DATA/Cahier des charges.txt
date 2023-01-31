@@ -1,0 +1,134 @@
+Cahier des charges
+ 
+C.D.C -> Hugo, Ambre, Benjamin : 100%
+
+Tuto outils : 100%
+
+Organisation script : 70%
+
+Tuto VM : 90%
+
+MCD : 50%
+
+BDD : 10%
+
+S.G -> Victor - Florent
+
+O.S -> Lucas
+
+Arbo -> Kassim
+
+Schéma -> Lucas
+
+B.D.D -> Lenny
+lien : http://192.168.105.123/adminer.php 
+
+
+Pour le 17/01/23 : 
+- Rassembler l'entierté du site
+- Trier de ce qu'on jette (les fichiers)
+- Finir VM + Tuto + MCD
+- Avancer sur la base de données 
+
+Pour le 20/01/23 : 
+- Insérer les tables dans la base de données
+- Faire un fichier pour la création de base de données et tables, les droits
+- Commencer le php (formulaire)
+- Commencer à mettre des fichiers dans le serveur et faire des tests
+- Autorisation du schéma (pour l'ajout d'émission...)
+
+
+CAHIER DES CHARGES
+RADIO GUY CHAUVET
+2023
+
+DÉVELOPPEURS 
+
+-HTML : Benjamin TOULAT -Mathieu RAVELEAU -Florent LETERME- Victor MORAUD-Ambre FROIDEVAL-Hugo PEREIRA
+
+-CSS: Benjamin TOULAT- Mathieu RAVELEAU- Hugo PEREIRA-Ambre FROIDEVAL - Florent LETERME-Victor MORAUD
+
+-PHP :  Kassim ATTOUMANI- Lucas RUBY
+
+-BASE DE DONNÉES : Lenny DELAUNE
+
+-JavaScript : Mathieu RAVELEAU
+
+SOMMAIRE
+
+*Page d'accueil					
+*Développeurs 							
+								
+— — — — — — — — — — — — — — — — — — — — —
+
+*Mise en page								       
+*Convention de nommage					
+
+— — — — — — — — — — — — — — — — — — — — — 
+
+Documents annexes						
+
+
+MISE EN PAGE
+
+HEADER:
+Le header ne changera jamais 
+
+LOGO: 
+Logo en haut à gauche a cheval sur le menu et la page centrale.
+
+FOOTER:
+Le Footer ne changera jamais 
+
+LECTEUR AUDIO:
+Les lecteurs audio doivent avoir un bouton “favoris”, un bouton“lecture” et un bouton “pause”. Il doit contenir le titre du podcast, le(s) nom(s) des chroniqueurs et le temps que durent les podcasts. Il devra aussi contenir la date de publication du podcast.
+
+ TYPOGRAPHIE:
+Nous avons deux typographies à utiliser: Arial pour le corps du texte et Cuprum pour les titres et les sous titres
+
+COULEURS:
+ le rouge, le jaune et le bleu sont les trois couleurs principales. On retrouve aussi le noir et le beige et le rose.
+
+CONVENTION DE NOMMAGE:
+
+TOUS LES COMMENTAIRES DOIVENT ÊTRE  ÉCRITS EN ANGLAIS 
+
+Pour le CSS:
+style.css → Le main du projet css
+reset.css → Au cas où la page ne fonctionne pas
+
+Pour le HTML:
+index.html → Site main 
+Dossier html → Contient toutes les pages
+[NomDePage].html →  format de nommage des fichiers html
+
+Pour la base de données:
+Dossier data → fichier contenant toutes les bases de données
+BDD-[NomDePage].php → répertoire des comptes
+
+Pour le PHP:
+Dossier php → Le site sur internet
+[NomDePage].php → format de nommage des fichiers PHP
+
+Pour Java Script
+Dossier JS → fichier qui permettra l’animation du loader
+[NomDePage].js → format de nommage des fichiers JS
+
+Pour les images:
+Dossier image → Contient toutes les images qui serviront pour le site
+*.PNJ → format de nommage 
+*.JPEG → format de nommage 
+
+DOCUMENTS ANNEXES:
+
+Voici quelques documents annexes qui vous permettront de comprendre le fonctionnement global des outils et des langages utilisés.
+
+Tutoriel sur les bases en CSS
+
+Tutoriel pour installer et utiliser une Machine Virtuelle
+
+Tutoriel sur les bases en HTML
+
+Tutoriel sur Git et Github
+
+

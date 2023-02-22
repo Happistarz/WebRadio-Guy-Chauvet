@@ -16,7 +16,15 @@
 </head>
  <body>
 	<?php require("header.php");?>
-
+	<div class="emission">
+                <img src="../images/Images_rubriques/quiz-en-serie.png" alt="Emission">
+                <article>
+                        <h5>Quiz en Série</h5>
+                        <p>Le quiz en série, c'est 2 minutes durant lesquelles nous allons poser une série de questions à notre candidat, et ce dernier va devoir donner le plus de bonnes réponses possibles.
+ Chaque bonne réponse lui rapportera 1 point. Tous ses points seront additionnés à la fin pour obtenir un score.
+ Le candidat pourra passer une question s'il ne trouve pas la bonne réponse, mais il ne pourra pas y répondre à nouveau par la suite. </p>
+                </article>
+        </div>
 	
         <!--setup page Journal -->
         <h1 class="title" style="margin-top: 6%">LE QUIZ</h1>
@@ -32,8 +40,6 @@
 <div class="podcast-container border-3"> 
 	<?php 
 		foreach ($resu as $resultat) {
-			if (stripos($resultat["titre"], 'Ep') !== false) {
-
 			echo " <div class=\"podcast\">
 				 <button class=\"previous\"></button> 
 				<button onclick=\"Like(this)\"></button>
@@ -48,7 +54,6 @@
 				 </div> 
 				<hr size=5 width=\"90%\" color=\"black\">
 			";
-			}
 		 }
 	?>
  </div> 

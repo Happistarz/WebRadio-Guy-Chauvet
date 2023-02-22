@@ -16,13 +16,13 @@
        	<a href="journalaudio.php">Journal Audio</a>
         </div>
       </div>
-      <!-- equipe btn -->
-      <div class="dropdown">
-        <a href="journal.php" id="btn">JOURNAL</a>
-      </div>
       <!-- journal btn -->
       <div class="dropdown">
-        <a id="btn" disabled style="pointer-events": none>L'EQUIPE</a>
+        <a href="journal.php" id="btn" disabled style="pointer-events: none ;color: #ccc;">JOURNAL</a>
+      </div>
+      <!-- equipe btn -->
+      <div class="dropdown">
+        <a id="btn" disabled style="pointer-events: none">L'EQUIPE</a>
         <div class="dropdown-content">
           <a href="lycee_mdl.php">la Web Radio</a>
           <a href="lycee_membre.php">Le lycée</a>

@@ -37,13 +37,13 @@ $db = null;
 	  <a href ="php/journalaudio.php">Journal Audio </a>
         </div>
       </div>
-      <!-- equipe btn -->
-      <div class="dropdown">
-        <a href="php/journal.php disabled style="pointer-events: none;color: #ccc"; id="btn">JOURNAL</a>
-      </div>
       <!-- journal btn -->
       <div class="dropdown">
-        <a href="" id="btn" disabled style="pointer-events: none ;color: #ccc";>L'EQUIPE</a>
+        <a href="php/journal.php id="btn" disabled style="pointer-events: none ;color: #ccc;">JOURNAL</a>
+      </div>
+      <!-- equipe btn -->
+      <div class="dropdown">
+        <a href="" id="btn">L'EQUIPE</a>
         <div class="dropdown-content">
           <a href="php/lycee_mdl.php">la Web Radio</a>
           <a href="php/lycee_membre.php">Le lycée</a>

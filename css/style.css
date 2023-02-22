@@ -167,7 +167,7 @@ h3 {
 
 .emissions a {
   display: grid;
-  width: 400px;
+  width: 350px;
 }
 
 .emissions a img {
@@ -228,7 +228,7 @@ h3 {
 .container-left article h2 {
   text-align: left;
   font-weight: bold;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
 }
 
 .container-left .box a {

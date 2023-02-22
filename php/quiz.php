@@ -40,6 +40,8 @@
 <div class="podcast-container border-3"> 
 	<?php 
 		foreach ($resu as $resultat) {
+		if ($handle = opendir("../files/QES/")) {
+
 			echo " <div class=\"podcast\">
 				 <button class=\"previous\"></button> 
 				<button onclick=\"Like(this)\"></button>

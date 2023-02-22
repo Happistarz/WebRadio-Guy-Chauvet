@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css" />
+    <title>WebRadio Lycee Guy Chauvet</title>
+        <script src="../js/loader.js"></script>
+</head>
+
+<body>
+    <!-- loader -->
+    <div id="loader">
+        <p>Chargement...</p>
+    </div>
+    <!-- header -->
+    <header>
+        <!-- logo -->
+        <img src="headerlogo.png" alt="Logo" class="logo" />
+        <!-- navbar header -->
+        <div class="headright">
+            <button onclick="MenuOpen()">
+                <img src="../images/Menu.png" alt="Menu" />
+            </button>
+            <!-- emission btn -->
+            <div class="dropdown">
+                <a href="" id="btn">EMISSIONS</a>
+                <div class="dropdown-content">
+                    <a href="">Le quiz en série</a>
+                    <a href="">Histoire de poche</a>
+                    <a href="">Le journal</a>
+                    <a href="">Debat Lycéen</a>
+                    <a href="">1 thème, 3 chansons</a>
+                </div>
+            </div>
+            <!-- equipe btn -->
+            <div class="dropdown">
+                <a href="" id="btn">JOURNAL</a>
+                <div class="dropdown-content">
+                    <a href=""> </a>
+                </div>
+            </div>
+            <!-- journal btn -->
+            <div class="dropdown">
+                <a href="" id="btn">L'EQUIPE</a>
+                <div class="dropdown-content">
+                    <a href="">le Web Radio</a>
+                    <a href="">Le lycée</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Setup Container Emission  -->
+    <div class="emission">
+        <img src="test.png" alt="Emission">
+        <article>
+            <h5>Titre de l'émission</h5>
+            <p>- Description de l'émission en quelques mots sed do -</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris <br>
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <br>
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla <br>
+                pariatur. Excepteur sint occaecat cupidatat non
+            </p>
+        </article>
+    </div>
+    <main>
+        <!-- header page podcasts -->
+        <h1 id="podcasts" class="header-page title">LES PODCASTS</h1>
+        <hr size=5 width="93%" color=black>
+
+        <div class="podcast-container border-3">
+            <div class="podcast">
+                <button onclick="Like(this)"></button>
+                <div class="info-podcast">
+                    <h2>Titre de podcast</h2>
+                    <p>Description et/ou nom des chroniqueurs</p>
+                    <p>10/11/2023 / 13h16</p>
+                </div>
+                <audio controls>
+                    <source src="">
+                </audio>
+            </div>
+            <hr size=5 width="90%" color="black">
+            <div class="podcast">
+                <button onclick="Like(this)"></button>
+                <div class="info-podcast">
+                    <h2>Titre de podcast</h2>
+                    <p>Description et/ou nom des chroniqueurs</p>
+                    <p>10/11/2023 / 13h16</p>
+                </div>
+                <audio controls>
+                    <source src="">
+                </audio>
+            </div>
+            <hr size=5 width="90%" color="black">
+            <div class="podcast">
+                <button onclick="Like(this)"></button>
+                <div class="info-podcast">
+                    <h2>Titre de podcast</h2>
+                    <p>Description et/ou nom des chroniqueurs</p>
+                    <p>10/11/2023 / 13h16</p>
+                </div>
+                <audio controls>
+                    <source src="1.wav">
+                </audio>
+            </div>
+            <hr size=5 width="90%" color="black">
+            
+        </div>
+    </main>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer>
+        <img src="Logo.png" alt="Logo" class="logo-footer" />
+        <h4>A propos</h4>
+        <div class="footer-element">
+            <ul>
+                <li><a href="">- Contact</a></li>
+                <li><a href="">- Plan du site</a></li>
+                <li><a href="">- Mentions Legales</a></li>
+            </ul>
+        </div>
+        <div class="footer-podcast">
+            <div style="margin-bottom: 2vh">
+                <button class="previous"></button>
+                <button onclick="Like(this)" class="like"></button>
+                <button class="next"></button>
+            </div>
+            <div class="audio-container">
+                <p><strong>Titre Podcast</strong> / Description</p>
+                <audio controls preload>
+                    <source src="1.wav" type="audio/wav">
+                    Votre navigateur ne supporte pas la lecture d'audio.
+                </audio>
+            </div>
+            <div class="bibliotheque">
+                <button class="biblio"></button>
+                <p class="biblioTXT">Bibliothèque</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

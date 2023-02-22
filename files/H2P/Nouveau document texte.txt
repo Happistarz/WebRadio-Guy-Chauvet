@@ -1,0 +1,420 @@
+Skip to content
+ 
+Search…
+All gists
+Back to GitHub
+Sign in
+Sign up
+Instantly share code, notes, and snippets.
+
+@Pynutt
+Pynutt/rootme challenges
+Created 2 years ago
+2
+0
+Code
+Revisions
+1
+Stars
+2
+<script src="https://gist.github.com/Pynutt/0346eeea40e59fb9b1436510e7aa8476.js"></script>
+rootme challenges
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~APP-SCRIPT: 10TO16~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!oPe96a/.s8d5                                                       o Bash - System 1
+b3_c4r3full_w1th_sud0                                               o sudo - faiblesse de configuration
+8a95eDS/*e_T#                                                       o Bash - System 2
+PerlCanDoBetterThanYouThink                                         o Perl - Command injection
+Vys3OS3iStUapDj                                                     o Bash - cron
+13373439872909134298363103573901                                    o Python - input()
+6kSGEI2bh8bgRfCW                                                    o Python - pickle
+                                                                    x SSH - Agent Hijacking
+YjHRUZEa9irCPS2llubR                                                o Python - PyJail 1
+                                                                    x Bash/Awk - parsing netstat
+                                                                    x PHP - Jail
+ValidateMeDude!                                                     o Python - PyJail 2
+PythonAlwaysHasAllYouNeed!                                          o Python - Jail - Exec
+                                                                    x Javascript - Jail
+                                                                    x Python - Jail - Garbage collector
+                                                                    x Bash - Shells restreints
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~APP-SYSTEME: 10TO73~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1w4ntm0r3pr0np1s                                                    o ELF x86 - Stack buffer overflow basic 1
+B33r1sSoG0oD4y0urBr4iN                                              o ELF x86 - Stack buffer overflow basic 2
+Dpa9d6)(Epamd                                                       o ELF x86 - Format string bug basic 1
+B4sicBufferOverflow                                                 o ELF x64 - Stack buffer overflow - basic
+                                                                    x ELF x86 - Format string bug basic 2
+eh-q8dEa8q19f9aF()"2a96q92                                          o ELF x86 - Race condition
+                                                                    x ELF ARM - Stack buffer overflow - basic
+                                                                    x ELF MIPS - Stack buffer overflow - No NX
+Sm4shM3ify0uC4n                                                     o ELF x86 - Stack buffer overflow basic 3
+U44aafff_U4f_The_d0G                                                o ELF x86 - Use After Free - basic
+                                                                    x ELF ARM - Stack Spraying
+                                                                    x ELF x86 - BSS buffer overflow
+                                                                    x ELF x86 - Stack buffer overflow basic 4
+R3t2l1bcISnicet0o!                                                  o ELF x86 - Stack buffer overflow basic 6
+                                                                    x ELF x86 - Format String Bug Basic 3
+ARM_b4by_ROP_to_warm_up                                             o ELF ARM - Basic ROP
+                                                                    x ELF MIPS - Basic ROP
+                                                                    x ELF x86 - Stack buffer overflow - C++ vtables
+                                                                    x ELF x64 - Logic bug
+                                                                    x ELF x86 - Bug Hunting - Plusieurs problèmes
+                                                                    x ELF x86 - Stack buffer and integer overflow
+                                                                    x ELF x86 - Stack buffer overflow - ret2dl_resolve
+                                                                    x ELF x86 - Stack buffer overflow basic 5
+BufFErOvErFlOw-In-64-BiTs                                           o ELF x64 - Stack buffer overflow - avancé
+                                                                    x ELF MIPS - Format String Glitch
+                                                                    x ELF x86 - Information leakage with Stack Smashing Protector
+                                                                    x ELF ARM - Race condition
+                                                                    x ELF x64 - Browser exploit - Intro
+                                                                    x ELF x86 - Out of bounds attack - French Paradox
+                                                                    x ELF x86 - Remote BSS buffer overflow
+                                                                    x ELF x86 - Remote Format String bug
+                                                                    x ELF x64 - Remote heap buffer overflow - fastbin
+                                                                    x ELF x86 - Blind remote format string bug
+                                                                    x LinKern ARM - syscall vulnérable
+                                                                    x LinKern x86 - Buffer overflow basic 1
+                                                                    x LinKern x86 - Null pointer dereference
+                                                                    x LinKern x64 - Race condition     
+                                                                    x ELF ARM - Shellcode alphanumérique
+                                                                    x ELF MIPS - URLEncoded Format String bug
+                                                                    x ELF x86 - Hardened binary 1
+                                                                    x ELF x86 - Hardened binary 2
+                                                                    x ELF x86 - Hardened binary 3
+                                                                    x ELF x86 - Hardened binary 4
+                                                                    x LinKern MIPSel - Vulnerable ioctl
+                                                                    x LinKern x64 - code réentrant
+                                                                    x ELF ARM - Heap format string bug
+                                                                    x ELF x64 - Sigreturn Oriented Programming
+                                                                    x ELF ARM - Format String bug
+                                                                    x ELF ARM - Use After Free
+                                                                    x ELF x64 - Heap feng-shui
+                                                                    x ELF x64 - Off-by-one bug
+                                                                    x ELF x86 - Hardened binary 5
+                                                                    x LinKern ARM - Stack Overflow
+                                                                    x LinKern x86 - basic ROP
+                                                                    x ELF ARM - Heap Off-by-One
+                                                                    x ELF x64 - Remote Heap buffer overflow 1
+                                                                    x ELF x86 - Hardened binary 6
+                                                                    x ELF x86 - Hardened binary 7
+                                                                    x ELF x86 - Remote stack buffer overflow - Hardened
+                                                                    x LinKern x64 - RowHammer
+                                                                    x LinKern x64 - SLUB off-by-one
+                                                                    x ELF ARM - Heap buffer overflow - Wilderness
+                                                                    x ELF ARM - Heap Overflow
+                                                                    x ELF x64 - Seccomp Whitelist
+                                                                    x ELF x86 - Blind ROP
+                                                                    x Linkern x64 - Memory exploration
+                                                                    x ELF x64 - Remote Heap buffer overflow 2
+                                                                    x ELF x64 - Blind ROP
+                                                                    x ELF x64 - Browser exploit - BitString
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CRACKING: 17TO35~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+123456789                                                           o ELF x86 - 0 protection
+987654321                                                           o ELF x86 - Basique
+SPaCIoS                                                             o PE x86 - 0 protection
+Here_you_have_to_understand_a_little_C++_stuffs                     o ELF C++ - 0 protection
+DotNetOP                                                            o PE DotNet - 0 protection
+cantrunmiiiiiiiiips                                                 o ELF MIPS - Basic Crackme
+ImLovingGoLand                                                      o ELF x64 - Golang basique
+liberté!                                                            o ELF x86 - Fake Instructions
+easy                                                                o ELF x86 - Ptrace
+storms                                                              o ELF ARM - Basic Crackme
+I_hate_RUBY_!!!                                                     o PYC - ByteCode
+HardW@re_Br3akPoiNT_r0ckS |A VERIFIER|                              o ELF x86 - Pas de points d’arrêt logiciels
+                                                                    x MachO x64 - keygenme or not
+ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_                                     o ELF ARM - crackme 1337
+ff07031d6fb052490149f44b1d5e94f1592b6bac93c06ca9                    o ELF x86 - CrackPass
+25260060504_VE_T25_*t*_                                             o ELF x86 - ExploitMe
+                                                                    x ELF x86 - Random Crackme
+r0m1                                                                o GB - Basic GameBoy crackme
+                                                                    x PDF - Javascript
+                                                                    x PE x86 - Xor Madness
+                                                                    x ELF ARM - Crypted
+                                                                    x ELF x64 - Automatisation du crackme
+                                                                    x PE x86 - SEHVEH
+MayTheF0rceB3W1thU                                                  o APK - Anti-debug
+                                                                    x ELF x64 - Nanomites - Introduction
+                                                                    x ELF x86 - Anti-debug
+                                                                    x PE x86 - AutoPE
+                                                                    x ELF x86 - KeygenMe
+                                                                    x ELF x64 - Anti-debug et equations
+                                                                    x ELF x64 - Nanomites
+                                                                    x ELF x86 - Packed
+                                                                    x PE x86 - RunPE
+                                                                    x ELF x86 - VM
+                                                                    x Ringgit
+                                                                    x White-Box Cryptography #2
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CRYPTANALYSE: 26TO48~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2ac376481ae546cd689d5b91275d324e                                    o Encodage - ASCII
+ULTRASIMPLE                                                         o Encodage - UU
+weak                                                                o Hash - Message Digest 5
+a7c9d5a37201c08c5b7b156173bea5ec2063edf9                            o Hash - SHA-2
+Yolaihu                                                             o Chiffrement par décalage
+SOLUTION                                                            o Décomposition pixelisée
+-/q2/a9d6e31D                                                       o ELF64 - Chiffrement avec le PID
+14535                                                               o Fichier - PKZIP
+ujqcsddessxsffes                                                    o Substitution monoalphabétique - César
+ICONOCLASTE                                                         o Clair connu - XOR
+                                                                    x Code - Pseudo Random Number Generator
+F1rstP4sSw0rD                                                       o File - Insecure storage 1
+Loyd Blankenship                                                    o Substitution polyalphabétique - Vigenère
+145263780                                                           o Système - Android lock pattern
+Frozen chicken                                                      o Transposition - Rail Fence
+Gr3@t_CBC_Tr1ck_15n't_1t?                                           o AES - CBC - Bit-Flipping Attack
+mGf1du3ykb                                                          o AES - ECB
+                                                                    x LFSR - Clair connu
+up2l6DnaIhZgxA                                                      o RSA - Factorisation
+S1d3Ch4nn3l4tt4ck                                                   o RSA - Oracle de déchiffrement
+30467-132630                                                        o Service - Timing attack
+cpaaourbxpjpgfo                                                     o Substitution monoalphabétique - Polybe
+I_l0v3_Crypt0_:)                                                    o Vecteur d’initialisation
+                                                                    x GEDEFU
+                                                                    x RSA - Clé privée corrompue 1
+                                                                    x RSA - Fractions continues
+W311D0n3!                                                           o RSA - Modules communs
+u$3_HMAC_l4m3rZ!                                                    o Service - Hash length extension attack
+                                                                    x AES - 4 tours
+                                                                    x ECDSA - Introduction
+                                                                    x RSA - Padding
+                                                                    x AES128 - CTR
+5984395521967467346233654974364351165422250974773836380349996370549071399526484130546437803585190342858690941215911884205493540794098544612334027224908987632                                  o Problème du logarithme discret
+                                                                    x RSA - Clé privée corrompue 2
+                                                                    x RSA - Clé privée corrompue 3
+NoSpamWithRSA!                                                      o RSA - Multiples destinataires
+                                                                    x AES - Attaque par fautes #1
+                                                                    x Machine Enigma
+                                                                    x ECDHE
+                                                                    x RSA - Lee cooper
+H3llK1tchen                                                         o Service - CBC Padding
+                                                                    x Substitution polyalphabétique - Masque jetable
+                                                                    x White-Box Cryptography
+                                                                    x AES - Variante affaiblie
+                                                                    x Hash - SHA-3
+                                                                    x AES - Attaque par fautes #2
+                                                                    x AES-PMAC
+                                                                    x ECDSA - Erreur d’implémentation
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~FORENSIC:10TO25~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+WIN-ETSA91RKCFP                                                     o Command & Control - niveau 2
+                                                                    x Analyse de logs - attaque web
+passw0rd                                                            o Command & Control - niveau 5
+helfrantzkirch                                                      o Trouvez le chat
+RubberDuckyFail3D                                                   o Vilain petit canard
+                                                                    x Active Directory - GPO
+49979149632639432397b3a1df8cb43d                                    o Command & Control - niveau 3
+                                                                    x Exfiltration DNS
+192.168.0.22:3389                                                   o Command & Control - niveau 4
+RdP_l3av3s_Trac3S                                                   o Entretien à l’ANSSI
+                                                                    x Keylogger maison
+                                                                    x macOS - Keychain
+                                                                    x Macro Word malveillante
+BullShitR4ns0mW4re                                                  o Ransomware Android
+                                                                    x Insomni’Droid
+                                                                    x Multi-devices
+7uFbrqEY2k                                                          o Root My Droid
+                                                                    x Rootkit - Cold case
+th1sis.l1k3aK3y.org                                                 o Command & Control - niveau 6
+                                                                    x Find me
+                                                                    x Second entretien à l’ANSSI
+                                                                    x Find me again
+                                                                    x Find me back
+                                                                    x Zeus Bot
+                                                                    x Try again
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~PROGRAMMATION: 7TO15~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+jaimlefr0m4g                                                        o Retour au collège
+Viv3l"64                                                            o Chaîne encodée
+3bienBr4v0Continuepe7i7PONEY                                        o La Roue Romaine
+tumasp0wned                                                         o Uncompress me
+dtePZJgVAfaU                                                        o CAPTCHA me if you can
+                                                                    x Ethereum - Tutoreum
+lFablYE9P1                                                          o Suite arithmétique
+                                                                    x ELF x64 - Shellcoding - Sheep warmup
+                                                                    x Ethereum - Takeover
+                                                                    x Ethereum - NotSoPriv8
+                                                                    x ELF x64 - Shellcoding - Polymorphism
+POHeyZ6pMvgn                                                        o Quick Response Code
+                                                                    x Ethereum - BadStack
+                                                                    x ELF x64 - Sandbox shellcoding
+                                                                    x ELF x86 - Shellcoding - Alphanumeric
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~REALIST: 11TO31~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+0010110111101001                                                    o Eh oui, parfois
+CtP6p$>@8xm-0t                                                      o P0wn3d
+4Dm1N_de_site                                                       o The h@ckers l4b
+456123                                                              o Néonazi à l’intérieur
+                                                                    x PyRat Enchères
+                                                                    x Root them
+support:supersupport666                                             o IPBX - call me maybe
+d0nnieDark0                                                         o Marabout
+4dm1n                                                               o Root-We
+                                                                    x Starbug Bounty
+St0rAgeInn0vati0n!p@sSwordAdm!N                                     o Ultra Upload
+                                                                    x Imagick
+59w9oUjG5lin10B                                                     o MALab
+mxYXd4hz5WAjTe1                                                     o Web TV
+                                                                    x SamBox v2
+                                                                    x SamCMS
+                                                                    x BBQ Factory - First Flirt
+                                                                    x Django unchained
+                                                                    x BBQ Factory - Back To The Grill
+                                                                    x SamBox v1
+                                                                    x SAP Pentest 007
+                                                                    x Crypto Secure
+                                                                    x Hôpital Bozobe
+Admp1ls                                                             o Red Pills
+                                                                    x SamBox v3
+                                                                    x ARM FTP Box
+                                                                    x SAP Pentest 000
+                                                                    x Bluebox 2 - Pentest
+                                                                    x Bluebox - Pentest
+                                                                    x Highway to shell
+                                                                    x Sambox v4
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NETWORK: 16TO18~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cdts3500                                                            o FTP - Authentification
+user                                                                o TELNET - authentification
+confi:dential                                                       o ETHERNET - trame
+password                                                            o Authentification twitter
+c1d0349c153ed96fe2fadf44e880aef9e69c122b                            o Bluetooth - Fichier inconnu
+6sK0_enable                                                         o CISCO - mot de passe
+CBkFRwfNMMtRjHY                                                     o DNS - transfert de zone
+13                                                                  o IP - Time To Live
+sabu@anonops.org                                                    o LDAP - null bind
+1234                                                                o SIP - Authentification
+f9f781003afadab00b81                                                o ETHERNET - Transmission altérée
+asdpokv4e57q7a2                                                     o Trafic Global System for Mobile communications
+twisted by design                                                   o SSL - échange HTTP
+                                                                    x Netfilter - erreurs courantes
+4dm1n                                                               o SNMP - Authentification
+                                                                    x Wired Equivalent Privacy
+a7290d426b6a1764af6fd7fba5db214e                                    o Charge ICMP
+8f653e36780d5dd7fe7b07e64ff6fde48c3199cb                            o XMPP - Authentification
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~STEGANOGRAPHIE: 12TO19~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TOTORO                                                              o Gunnm
+HAHAHA                                                              o Pas très carré
+chatelet15h                                                         o Point à la ligne
+cellphone                                                           o Steganomobile
+grand central terminal                                              o Twitter Secret Messages
+3b27641fc5h0                                                        o Du bruit
+Cette Nuit                                                          o George et Alfred
+11:05 27/07/2014 06922930                                           o Points jaunes
+secret-password                                                     o Audio stégano
+B33r1sG00d!                                                         o We need to go deeper
+                                                                    x Base Jumper
+                                                                    x Hide and seek
+                                                                    x Objet PDF
+                                                                    x Angecryption
+                                                                    x Kitty spy
+LWf07rsMbiA6                                                        o LSB - Un canard qui pèse son poids
+                                                                    x Pixel Indicator Technique
+                                                                    x Pixel Value Differencing
+ARTLOVERSWILLNEVERDIE                                               o Crypt-art
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~WEB-SERVEUR: 60TO61~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+nZ^&@q5&sjJHev0                                                     o HTML - Code source
+e6f8a530811d5a479812d7b82fc1a5c5                                    o HTTP - Open redirect
+rr$Li9%L34qd1AAe27                                                  o HTTP - User-agent
+admin                                                               o Mot de passe faible
+S3rv1ceP1n9Sup3rS3cure                                              o PHP - Injection de commande
+OCCY9AcNm1tj                                                        o Fichier de sauvegarde
+LINUX                                                               o HTTP - Directory indexing
+HeadersMayBeUseful                                                  o HTTP - Headers
+H7tp_h4s_N0_s3Cr37S_F0r_y0U                                         o HTTP - POST
+ExecutionAfterRedirectIsBad                                         o HTTP - Redirection invalide
+a23e$dme96d3saez$$prap                                              o HTTP - Verb tampering
+karambar                                                            o Install files
+rFSP&G0p&5uAg1%                                                     o CRLF
+Gg9LRz-hWSxqqUKd77-_q-6G8                                           o File upload - Double extensions
+a7n4nizpgQgnPERy89uanf6T4                                           o File upload - Type MIME
+ml-SYMPA                                                            o HTTP - Cookies
+s3cureP@ssw0rd                                                      o Insecure Code Management
+S1gn4tuR3_v3r1f1c4t10N_1S_1MP0Rt4n7                                 o JSON Web Token (JWT) - Introduction
+kcb$!Bx@v4Gs9Ez                                                     o Directory traversal
+YPNchi2NmTwygr2dgCCF                                                o File upload - Null byte
+PleaseUseAStrongSecretNextTime                                      o JSON Web Token (JWT) - Secret faible
+x4Ss3rT1nglSn0ts4f3A7A1Lx                                           o PHP - assert()
+DAPt9D2mky0APAF                                                     o PHP - Filters
+NoTQYipcRKkgrqG                                                     o PHP - Register globals
+N3v3r_7rU5T_u5Er_1npU7                                              o File upload - ZIP
+Comma@nd_1nJec7ion_Fl@9_1337_Th3_G@m3!!!                            o Injection de commande - Contournement de filtre
+B3wareOfT3mplat3Inj3ction                                           o Java - Server-side Template Injection
+                                                                    x JSON Web Token (JWT) - Clé publique
+OpbNJ60xYpvAQU8                                                     o Local File Inclusion
+Th1sIsTh3Fl4g!                                                      o Local File Inclusion - Double encoding
+F34R_Th3_L0o5e_C0mP4r15On                                           o PHP - Loose Comparison
+pr3g_r3pl4c3_3_m0d1f13r_styl3                                       o PHP - preg_replace()
+DontForgetPHPL00seComp4r1s0n                                        o PHP - Type juggling
+R3m0t3_iS_r3aL1y_3v1l                                               o Remote File Inclusion
+t0_W34k!$                                                           o SQL injection - Authentification
+iMDaFlag1337!                                                       o SQL injection - Authentification - GBK
+c4K04dtIaJsuWdi                                                     o SQL injection - String
+X5L7_R0ckS                                                          o XSLT - Exécution de code
+SWRwehpkTI3Vu2F9DoTJJ0LBO                                           o LDAP injection - Authentification
+nosqli_no_secret_4_you                                              o NoSQL injection - Authentification
+110V3TrUnC4T10n                                                     o PHP - Path Truncation
+NoUserInputInPHPSerialization!                                      o PHP - Sérialisation
+aTlkJYLjcbLmue3                                                     o SQL injection - Numérique
+qs89QdAs9A                                                          o SQL Injection - Routed
+J41m3Qu4nD54Tr0nc                                                   o SQL Truncation
+c934fed17f1cac3045ddfeca34f332bc                                    o XML External Entity
+6FkC67ui8njEepIK5Gr2Kwe                                             o XPath injection - Authentification
+db23ac29ee9872d71a7532128d5c22b9                                    o Java - Spring Boot
+lf1-Wr4pp3r_Ph4R_pwn3d                                              o Local File Inclusion - Wrappers
+M!xIng_PHP_w1th_3v4l_L0L                                            o PHP - Eval
+1a2BdKT5DIx3qxQN3UaC                                                o SQL injection - Error
+moaZ63rVXUhlQ8tVS7Hw                                                o SQL injection - Insert
+superpassword                                                       o SQL injection - Lecture de fichiers
+MB5PRCvfOXiYejMcmNTI                                                o XPath injection - String
+3@sY_n0_5q7_1nj3c710n                                               o NoSQL injection - En aveugle
+T!m3B@s3DSQL!                                                       o SQL injection - Time based
+SSRF_PwNiNg_v1@_GoPh3r_1s_$o_c00l!                                  o Server Side Request Forgery
+e2azO93I                                                            o SQL injection - En aveugle
+dsy365gdzerzo94                                                     o LDAP injection - En aveugle
+ueiJ4a65@1.oS                                                       o XPath injection - En aveugle
+KLfgyTIJbdhursqli                                                   o SQL injection - Contournement de filtres
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~WEB-CLIENT: 16TO19~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+HTMLCantStopYou                                                     o HTML - boutons désactivés
+sh.org                                                              o Javascript - Authentification
+123456azerty                                                        o Javascript - Source
+HIDDEN                                                              o Javascript - Authentification 2
+cpasbiendurpassword                                                 o Javascript - Obfuscation 1
+hDufjdki156                                                         o Javascript - Obfuscation 2
+toto123lol                                                          o Javascript - Native code
+786OsErtk12                                                         o Javascript - Obfuscation 3
+NkI9qe4cdLIO2P7MIsWS8ofD6                                           o XSS - Stockée 1
+Csrf_Fr33style-L3v3l1!                                              o CSRF - 0 protection
+141432434322                                                        o Flash - Authentification
+Byp4ss_CSRF_T0k3n-w1th-XSS                                          o CSRF - contournement de jeton
+r3fL3ct3D_XsS_fTw                                                   o XSS - Volatile
+MyP4sS                                                              o Javascript - Obfuscation 4
+E5HKEGyCXQVsYaehaqeJs0AfV                                           o XSS - Stockée 2
+946a0b2d-c590-46f9-86fd-f7e76062779d                                o HTTP Response Splitting
+                                                                    x Javascript - Obfuscation 5
+                                                                    x XSS - Stored - contournement de filtres
+                                                                    x XSS - DOM Based
+@williamtaddee
+williamtaddee commented last month
+Hello;
+Please you need to correct the following answer
+REALIST
+The h@ckers l4b : Ho5M6UPkLJMncnW
+
+ to join this conversation on GitHub. Already have an account? Sign in to comment
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About

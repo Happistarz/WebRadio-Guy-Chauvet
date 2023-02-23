@@ -40,7 +40,17 @@
 <div class="podcast-container border-3"> 
 	<?php 
 		foreach ($resu as $resultat) {
+		$ext = ".wav";
 		if ($handle = opendir("../files/QES/")) {
+			while(false !== ($file = readdir($handle))){
+				$extension = strtolower(pathinfo($file, PATH_EXTENSION));
+				if($extension === 'mp3') {
+					$ext = ".mp3";
+				}else if ($extension === ".wav") {
+					$ext = ".wav";
+				}
+			}
+		closedir($handle);
 
 			echo " <div class=\"podcast\">
 				 <button class=\"previous\"></button> 
@@ -51,7 +61,7 @@
 					<p>{$resultat["created"]}</p> 
 				</div> 
 				<audio controls>
-					 <source src=\"../files/QES/QES Ep {$resultat["id"]}.wav\">
+					 <source src=\"../files/QES/QES Ep {$resultat["id"]}{$ext}\">
 				 </audio>
 				 </div> 
 				<hr size=5 width=\"90%\" color=\"black\">

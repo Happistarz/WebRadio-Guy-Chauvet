@@ -39,7 +39,7 @@ $db = null;
       </div>
       <!-- journal btn -->
       <div class="dropdown">
-        <a href="php/journal.php id="btn" disabled style="pointer-events: none ;color: #ccc;">JOURNAL</a>
+        <a href="php/journal.php" id="btn" disabled style="pointer-events: none ;color: #ccc;">JOURNAL</a>
       </div>
       <!-- equipe btn -->
       <div class="dropdown">

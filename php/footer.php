@@ -1,5 +1,5 @@
     <footer>
-        <img src="../images/Logo.png" alt="Logo" class="logo-footer" />
+       <a href="../index.php"> <img src="../images/Logo.png" alt="Logo" class="logo-footer" /></a>
         <h4>A propos</h4>
         <div class="footer-element">
             <ul>

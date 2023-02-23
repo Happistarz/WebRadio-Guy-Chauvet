@@ -46,7 +46,7 @@ $db = null;
 			<div class=\"container-".$display."\">
             			<a href=\"emission.php?id=".$resu["id"]."\" class=\"ems-box border-2\">
                 			<h3>Titre</h3>
-			                <img src=\"../images/Images_rubriques/'1-theme-3-chansons-Thomas-mont'$'\351''-25.png'" alt=\"image\">
+			                <img src=\"../images/Images_rubriques/1-theme-3-chanson.png\" alt=\"image\">
 		                </a>
            			 <article>
            				 <h2>".$resu["titre"]."</h2>

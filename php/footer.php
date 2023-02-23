@@ -4,7 +4,7 @@
         <div class="footer-element">
             <ul>
                 <li><a href="">- Contact</a></li>
-                <li><a href="">- Plan du site</a></li>
+                <li><a href="plan_du_site.php">- Plan du site</a></li>
                 <li><a href="">- Mentions Legales</a></li>
             </ul>
         </div>

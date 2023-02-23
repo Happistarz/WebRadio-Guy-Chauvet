@@ -40,16 +40,17 @@
 <div class="podcast-container border-3"> 
 	<?php 
 		foreach ($resu as $resultat) {
-		$ext = ".wav";
+		$ext = "";
 		if ($handle = opendir("../files/QES/")) {
 			while(false !== ($file = readdir($handle))){
-				$extension = strtolower(pathinfo($file, PATH_EXTENSION));
+				$extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
 				if($extension === 'mp3') {
 					$ext = ".mp3";
-				}else if ($extension === ".wav") {
+				}else if ($extension === "wav") {
 					$ext = ".wav";
 				}
 			}
+			echo $ext;
 		closedir($handle);
 
 			echo " <div class=\"podcast\">
@@ -67,6 +68,7 @@
 				<hr size=5 width=\"90%\" color=\"black\">
 			";
 		 }
+	}
 	?>
  </div> 
 </main>       

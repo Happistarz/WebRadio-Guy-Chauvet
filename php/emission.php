@@ -19,6 +19,7 @@
 	$stmt = $db->prepare($sql2);
 	$stmt->execute(array(':id' => $id));
 	$result = $stmt->fetch(PDO::FETCH_ASSOC);
+	$idDescription = 4;
 	 ?>
  <body>
 	<?php require("header.php");?>
@@ -27,7 +28,7 @@
         	<img src="../images/Images_rubriques/Rubrique_H2P.png" alt="Emission">
         	<article>
             		<h5>Histoire De Poche</h5>
-            		<p>...</p>
+            		<p><?php echo{$idDescription["description"]}</p>?>
         	</article>
     	</div>
     <main>

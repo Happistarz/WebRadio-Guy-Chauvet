@@ -16,8 +16,6 @@
 
     <main>
 		<div>
-		</div>
-		<div>
 			<h4> Plan du site</h4>
 		</div>
 		<div>

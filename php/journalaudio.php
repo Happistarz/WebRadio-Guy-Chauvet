@@ -22,7 +22,7 @@
                 <img src="../images/Images_rubriques/journal-radio-25.png" alt="Emission">
                 <article>
                         <h5>Journal Audio</h5>
-                        <p>...</p>
+                        <p>Histoire de poche, c'est une émission pour les amateurs d'histoire et de savoir. Nous vous raconterons des anecdotes historiques et mythologiques sur des sujets aussi variés qu’intéressant.</p>
                 </article>
         </div>
     <main>

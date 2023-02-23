@@ -1,9 +1,18 @@
 #!/bin/bash
 
+chmod -R 775 /var/www
+chown -R www-data /var/www
+
+
 rm -r /var/www/html/WebRadio-Guy-Chauvet
 
-# Cloner le référentiel GitHub avec la branche spécifique et une profondeur d'historique de 1 commit
-git clone https://github.com/Happistarz/WebRadio-Guy-Chauvet  --branch dev  --single-branch .
+cp /var/www/html/ /var/www/html/WebRadio-Guy-Chauvet
 
-# Définir le chemin du répertoire de destination sur votre machine Debian
-destination="/var/www/html"
+git add .
+
+#git pull WebRadio-Guy-Chauvet testdebian
+
+git commit -m "Commit debian"
+
+git push --force-with-lease WebRadio-Guy-Chauvet testdebian
+

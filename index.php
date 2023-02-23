@@ -93,6 +93,10 @@ L'équipe de Radio Guy Chauvet
            <h3>Quiz En Série</h3>
            <img src="../images/Images_rubriques/quiz-en-serie.png" alt="image" />
          </a>-->
+	 <a href="php/emission.php" class="border-1">
+           <h3>1 thème 3 chansons</h3>
+           <img src="../images/Images_rubriques/1-theme-3-chanson.png" alt="image" />
+         </a>
 
 
     </div>

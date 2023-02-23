@@ -19,8 +19,7 @@
 	$stmt = $db->prepare($sql2);
 	$stmt->execute(array(':id' => $id));
 	$result = $stmt->fetch(PDO::FETCH_ASSOC);
-	$idDescription = 4;
-	 ?>
+?>
  <body>
 	<?php require("header.php");?>
     <!-- Setup Container Emission  -->
@@ -28,7 +27,7 @@
         	<img src="../images/Images_rubriques/Rubrique_H2P.png" alt="Emission">
         	<article>
             		<h5>Histoire De Poche</h5>
-            		<p><?php echo{$idDescription["description"]}</p>?>
+            		<p>Histoire de poche, c'est une émission pour les amateurs d'histoire et de savoir. Nous vous raconterons des anecdotes historiques et mythologiques sur des sujets aussi variés qu’intéressant.</p>
         	</article>
     	</div>
     <main>

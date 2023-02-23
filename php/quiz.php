@@ -42,8 +42,13 @@
 		foreach ($resu as $resultat) {
 		$ext = "";
 		if ($handle = opendir("../files/QES/")) {
+		$fi = readdir($handle);
+		$f =  "QES Ep {$resultat['id']}";
+		echo $f;
 			while(false !== ($file = readdir($handle))){
+				$filename = pathinfo($file, PATHINFO_FILENAME);
 				$extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+				echo $filename .".". $extension;
 				if($extension === 'mp3') {
 					$ext = ".mp3";
 				}else if ($extension === "wav") {

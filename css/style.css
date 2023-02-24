@@ -1025,5 +1025,127 @@ footer audio::-webkit-media-controls-panel {
   grid-column: 2;
 }
 
+/*----------------------------Questionnaire-----------------------*/
 
+.questionnaire {
+  padding: 100px;
+  display: flex;
+  background: #000;
+  height: 1 vh;
+  margin-bottom: 100px;
+  color: white;
+}
+
+.quest {
+  position: relative;
+  width: 13%;
+  aspect-ratio: 1%;
+  display: grid;
+  margin-right: 5%;
+  margin-bottom: auto;
+  margin-top: auto;
+  border-radius: 10px;
+  color: white;
+  position: relative;
+}
+
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {
+  opacity: 0.7;
+}
+
+.modalquest {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-20%, -60%);
+  z-index: 1;
+  width: 80%;
+  max-width: 800px;
+  height: auto;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 16px;
+}
+
+.modal-contentquest {
+  background-color: #fefefe;
+  margin: 0;
+  padding: 0px;
+  border: none;
+  width: 100%;
+  height: auto;
+  color:rgb(0, 0, 0);
+}
+
+.modal-headerquest {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-headerquest .close {
+  font-size: 30px;
+  font-weight: bold;
+  color: #aaa;
+  margin-top: -38.5px;
+  margin-right: 10px;
+  cursor: pointer;
+  width: 12%;
+}
+
+.modal-headerquest .close:hover,
+.modal-headerquest .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-bodyquest {
+  padding: 20px;
+}
+
+.modal-bodyquest h1 {
+  margin-bottom: 20px;
+}
+
+.info {
+  width: 7%;
+  aspect-ratio: 1%;
+  display: grid;
+  margin-right: 75px;
+  position: absolute;
+  top: 40%;
+  right: 0%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+
+
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0} 
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
 

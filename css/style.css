@@ -1065,7 +1065,7 @@ footer audio::-webkit-media-controls-panel {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-20%, -60%);
+  transform: translate(12.4%, -60%);
   z-index: 1;
   width: 80%;
   max-width: 800px;
@@ -1094,10 +1094,10 @@ footer audio::-webkit-media-controls-panel {
   font-size: 30px;
   font-weight: bold;
   color: #aaa;
-  margin-top: -38.5px;
-  margin-right: 10px;
+  margin-top: -37.5px;
+  margin-right: 13px;
   cursor: pointer;
-  width: 12%;
+  width: 17%;
 }
 
 .modal-headerquest .close:hover,
@@ -1148,4 +1148,3 @@ footer audio::-webkit-media-controls-panel {
   from {opacity: 0} 
   to {opacity: 1}
 }
-

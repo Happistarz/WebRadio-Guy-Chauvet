@@ -1094,8 +1094,8 @@ footer audio::-webkit-media-controls-panel {
   font-size: 30px;
   font-weight: bold;
   color: #aaa;
-  margin-top: -37.5px;
-  margin-right: 13px;
+  margin-top: -48px;
+  margin-right: 18.5px;
   cursor: pointer;
   width: 17%;
 }
@@ -1116,13 +1116,13 @@ footer audio::-webkit-media-controls-panel {
 }
 
 .info {
-  width: 7%;
+  width: 9%;
   aspect-ratio: 1%;
   display: grid;
   margin-right: 75px;
   position: absolute;
-  top: 40%;
-  right: 0%;
+  top: 42.5%; 
+  right: -1%;
   transform: translateY(-50%);
   cursor: pointer;
 }

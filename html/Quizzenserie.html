@@ -12,104 +12,77 @@
 </head>
 
 <body>
-    <!-- loader -->
-    <div id="loader">
-        <p>Chargement...</p>
-    </div>
-    <!-- header -->
-    <header>
-        <!-- logo -->
-        <img src="../images/headerlogo.png" alt="Logo" class="logo" />
-        <!-- navbar header -->
-        <div class="headright">
-
-            <!-- emission btn -->
-            <div class="dropdown">
-                <a href="#" id="btn">EMISSIONS</a>
-                <div class="dropdown-content">
-
-                    <a href="#">Histoire de poche</a>
-                </div>
-            </div>
-            <!-- equipe btn -->
-            <div class="dropdown">
-                <a href="#" id="btn">JOURNAL</a>
-                <div class="dropdown-content">
-                    
-                </div>
-            </div>
-            <!-- journal btn -->
-            <div class="dropdown">
-                <a href="" id="btn">L'EQUIPE</a>
-                <div class="dropdown-content">  
-                    <a href="#">la Web Radio</a>
-                    <a href="#">Le lycée</a>
-                </div>
-            </div>
+  <div id="loader">
+    <p>Chargement...</p>
+  </div>
+  <header>
+    <img src="../images/headerlogo.png" alt="Logo" class="logo" />
+    <div class="headright">
+      <div class="dropdown">
+        <a href="#" id="btn">EMISSIONS</a>
+        <div class="dropdown-content">
+          <a href="#">Histoire de poche</a>
         </div>
-    </header>
-    
+      </div>
+      <div class="dropdown">
+        <a href="#" id="btn">JOURNAL</a>
+      </div>
+      <div class="dropdown">
+        <a href="" id="btn">L'EQUIPE</a>
+        <div class="dropdown-content">  
+          <a href="#">la Web Radio</a>
+          <a href="#">Le lycée</a>
+        </div>
+      </div>
+    </div>
+  </header>
     <div class="questionnaire">
-        <img src="../images/QES.png" alt="QuestionnairePhoto" class="quest">
-        <article>
-          <br>
-          <p>Inscription Quiz en Série :</p>
-          <br>
-          <p> Bienvenue sur le formulaire d'inscription au jeu de la radio</p>
-          <p> du lycée Guy Chauvet, intitulé le Quiz en Série.</p>
-        </article>
+      <img src="../images/QES.png" alt="QuestionnairePhoto" class="quest">
+      <article>
+        <br>
+        <p>Inscription Quiz en Série :</p>
+        <br>
+        <p> Bienvenue sur le formulaire d'inscription au jeu de la radio</p>
+        <p> du lycée Guy Chauvet, intitulé le Quiz en Série.</p>
+      </article>
           
-
-        <img id="myImg" src="../images/info.png" alt="questinfo" class="info">
-      
-        <div id="myModal" class="modalquest">
-
-            <div class="modal-contentquest">
-                <div class="podcast-container border-2">
-                <div class="modal-headerquest">
-                    <img src="../images/sansinfo.png" alt="questinfo" class="info close">
-                  </div>
-                <div class="modal-bodyquest">
-                  <h1>Informations :</h1>
-                  <h1>Le quiz en série, c'est 2 minutes durant lequelles nous allons <br>
-                    poser unesérie de questions à notre candidat, 
-                    et ce dernier va devoir <br> donner le plus  de bonnes réponses possibles. Chaque bonne réponse lui rapportera 1 point. Tout ses points 
-                    seront additionnés à la fin pour obtenir un score. Le candidat pourra passer une question s'il ne trouve pas la bonne réponse, mais il 
-                    ne pourra pas y répondre à nouveau par la suite</h1>
-                </div>
-
+      <img id="myImg" src="../images/info.png" alt="questinfo" class="info">
+      <div id="myModal" class="modalquest">
+        <div class="modal-contentquest">
+          <div class="podcast-container border-2">
+            <div class="modal-headerquest">
+              <img src="../images/sansinfo.png" alt="questinfo" class="info close">
             </div>
+            <div class="modal-bodyquest">
+              <h1>Informations :</h1>
+              <h1>Le quiz en série, c'est 2 minutes durant lequelles nous allons <br>
+              poser unesérie de questions à notre candidat, 
+              et ce dernier va devoir <br> donner le plus  de bonnes réponses possibles. Chaque bonne réponse lui rapportera 1 point. Tout ses points 
+              seront additionnés à la fin pour obtenir un score. Le candidat pourra passer une question s'il ne trouve pas la bonne réponse, mais il 
+              ne pourra pas y répondre à nouveau par la suite</h1>
+            </div>
+          </div>
             
         </div>
+      </div>
     </div>
-    </div>
-            <script>
-            // Get the modal
-            var modal = document.getElementById("myModal");
+  <script>
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myImg");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+    modal.style.display = "block";
+    }
             
-            // Get the button that opens the modal
-            var btn = document.getElementById("myImg");
+    span.onclick = function() {
+    modal.style.display = "none";
+    }
             
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-            
-            // When the user clicks the button, open the modal 
-            btn.onclick = function() {
-              modal.style.display = "block";
-            }
-            
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
-              modal.style.display = "none";
-            }
-            
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-              if (event.target == modal) {
-                modal.style.display = "none";
-              }
-            }
-            </script>
-
+    window.onclick = function(event) {
+    if (event.target == modal) {
+    modal.style.display = "none";
+      }
+    }
+    </script>
 </body>
 </html>

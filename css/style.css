@@ -1148,3 +1148,133 @@ footer audio::-webkit-media-controls-panel {
   from {opacity: 0} 
   to {opacity: 1}
 }
+
+/*------------------------Mention Légales-----------------------*/
+
+.infonoir {
+  width: 6%;
+  aspect-ratio: 1%;
+  display: grid;
+  margin-right: 5px;
+  position: absolute;
+  right: 60%;
+  transform: translateY(820%);
+  cursor: pointer;
+}
+
+.icones {
+  width: 3%;
+  float: left;
+  margin-top: 22px;
+}
+
+.moyenicones{
+  width: 3.5%;
+  float: left;
+  margin-right: 6px;
+  margin-left: -6px;
+  margin-top: 52px;
+}
+
+.petiticones{
+  width: 2.5%;
+  float: left;
+  margin-right: 6px;
+  margin-left: 82px;
+  margin-top: 31px;
+}
+
+.GigaTitre {
+  font-size: 40px;
+  margin: auto;
+  margin: 25px 5px;
+  text-indent: 30px;
+}
+
+.TitreMention {
+  font-size: 30px;
+  text-indent: 30px;
+  padding: 10px;
+}
+
+
+
+.Titre {
+  text-align: center;
+  font-size: 50px;
+}
+
+.RaisonSociale{
+  font-size: 40px;
+  margin: auto;
+}
+
+.GrosTexteMention{
+  font-size: 35px;
+  text-indent: 120px;
+}
+
+/* CSS pour la fenêtre modale */
+.modalmention {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.show {
+  display: block;
+}
+
+.modal-contentmention {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 0px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 16.6px;
+}
+
+.closemention {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+
+
+.modal-headermention .close:hover,
+.modal-headermention .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#myModalquest {
+  display: none;
+}
+
+.fermer {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  }
+
+.infos {
+  width: 4%;
+  aspect-ratio: 1%;
+  display: grid;
+  margin-right: 75px;
+  position: absolute;
+  top: 42.5%;
+  right: 54%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}

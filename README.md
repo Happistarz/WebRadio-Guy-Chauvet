@@ -37,29 +37,29 @@ branch:
 
 ---
 **VM**
-prendre une vm dynamique
-installer git
-faire: `git config --global alias.group "!git add -A && git commit -m"`
-syntaxe d'utilisation: `git group "modification de la seance"`
-creer la bdd avec les structures etc
-recup la bdd en .sql et le mettre dans la racine du projet
-donner la vm a tt le monde pour pouvoir dev osef 
+prendre une vm dynamique <br>
+installer git <br>
+faire: `git config --global alias.group "!git add -A && git commit -m"` <br>
+syntaxe d'utilisation: `git group "modification de la seance"` <br>
+creer la bdd avec les structures etc <br>
+recup la bdd en .sql et le mettre dans la racine du projet <br>
+donner la vm a tt le monde pour pouvoir dev osef  <br>
 
 ---
 ** SETUP PROJET **
-cloner le projet sur la machine:
-`cd /var/www/html/`
-`git clone https://github.com/Happistarz/WebRadio-Guy-Chauvet.git`
-`git config user.name "ton user name github"`
-`git config user.mail tonmailgithub@domaine.fr`
+cloner le projet sur la machine: <br>
+`cd /var/www/html/` <br>
+`git clone https://github.com/Happistarz/WebRadio-Guy-Chauvet.git` <br>
+`git config user.name "ton user name github"` <br>
+`git config user.mail tonmailgithub@domaine.fr` <br>
 
 ---
 ** A CHAQUE SEANCE DE DEV **
-demarrer l'ide en ssh, donc `ssh chef@ton-ip` et installer l'extension "Remote - SSH" sur VSCode si pas fais
-import la bdd en .sql si besoin, sinon refaire
-faire `git pull origin main` dans le terminal
-dev,
-finir par `git group "les modifications de la seance"` et `git push origin main`
+demarrer l'ide en ssh, donc `ssh chef@ton-ip` et installer l'extension "Remote - SSH" sur VSCode si pas fais <br>
+import la bdd en .sql si besoin, sinon refaire <br>
+faire `git pull origin main` dans le terminal <br>
+dev, <br>
+finir par `git group "les modifications de la seance"` et `git push origin main` <br>
 
 ---
 

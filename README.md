@@ -28,15 +28,24 @@ Ceci est le github du projet WebRadio du lycée Guy Chauvet pour la web radio du
 
 ## **Info:** 
 
-Le site comporte plusieurs rubriques: <br>
+branch:
+ - login: toutes les versions des login
+ - index: toutes les versions des index
+ - main: toutes les versions du projet
+ - features: toutes les versions des pages. ex: 1T3C, H2P
+ - database: toutes les versions backend
 
-Un contact, <br>
+---
+** SETUP PROJET **
+creer un dossier en local et faire:
+`git clone https://github.com/Happistarz/WebRadio-Guy-Chauvet.git`
 
-Un onglet Equipe, <br>
+---
+** PROG **
+doc:
+...
 
-Une page vitrine <br>
-
-un système d'article <br>
+---
 
 Site main = index.html <br>
 

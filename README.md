@@ -59,7 +59,7 @@ demarrer l'ide en ssh, donc `ssh chef@ton-ip` et installer l'extension "Remote -
 import la bdd en .sql si besoin, sinon refaire <br>
 faire `git pull origin main` dans le terminal <br>
 dev, <br>
-finir par `git group "les modifications de la seance"` et `git push origin main` <br>
+finir par `git group "les modifications de la seance"` et `git push origin [le nom de la branche ou la modification doit etre (ex: index)]` <br>
 
 ---
 

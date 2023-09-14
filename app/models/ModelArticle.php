@@ -1,13 +1,11 @@
 <?php
-require_once('model.php');
-class Article extends Model{
+require_once(GENERAL.'model.php');
+class ModelArticle extends Model{
     protected $id;
     protected $lib;
     protected $table;
     public function __construct(){
-        $this ->lib ="";
-        $this ->id =1;
-        $this->table = "article";
+        $this->table = "Audio";
         parent::__construct($this->table,$this->id);
         }
 }

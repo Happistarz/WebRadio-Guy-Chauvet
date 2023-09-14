@@ -5,10 +5,11 @@ define('ROOT',str_replace('index.php',"",$_SERVER['SCRIPT_FILENAME']));
 define('CONTROLER', ROOT.'controllers/');
 define('MODEL',ROOT.'models/');
 define('VUE',ROOT.'vue/');
+define('GENERAL', ROOT."../general/");
 
 #derterminer si le chemin apres index et vide
 if( empty($_GET['p'])){
-    $ctrl = 'defaults';
+    $ctrl = 'Accueil';
     $param = array();
 }else{
     $param = explode('/',$_GET['p']);
@@ -19,9 +20,13 @@ if( empty($_GET['p'])){
 if(!empty($param[1])){
     $action = $param;
 }else{
-    $action = 'defaults';
+    $action = 'index';
+}
+if (!file_exists(CONTROLER.$ctrl.'.php')){
+    $ctrl = "ErrorHandler";
 }
 require (CONTROLER.$ctrl.'.php');
+
 
 
 $ctrl = new $ctrl;

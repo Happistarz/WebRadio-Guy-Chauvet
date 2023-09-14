@@ -1,4 +1,7 @@
 <?php
+
+require_once(GENERAL.'Connexion.php');
+
 class Model{
     private $table;
     private $primary;
@@ -12,10 +15,11 @@ class Model{
 
     public function Liste($condition='1=1'){
 
-        $sql="SELECT * FROM $this->table WHERE $condition";
-        $db = $this->connect();
+        $sql="SELECT * FROM ".$this->table." WHERE $condition";
+        $db = Connexion::login();
         $res=$db->query($sql);
-        $db=null;
+        $db=Connexion::logout();
+        $data = array();
         while($resu=$res->fetch(PDO::FETCH_ASSOC)){
             $data[]=$resu;
         }
@@ -25,23 +29,23 @@ class Model{
 
     public function  Delete($id) {
         $sql = "DELETE FROM $this->table WHERE $this->primary=$id";
-        $db=$this->connect();
+        $db=Connexion::login();
         $res=$db->exec($sql);
-        $db=null;
+        $db=Connexion::logout();
     }
 
    public function Read($id){
         $sql = "SELECT * FROM $this->table WHERE $this->primary=$id";
         echo $sql;
-        $db=$this->connect();
+        $db=Connexion::login();
         $res=$db->query($sql);
-        $db=null;
+        $db=Connexion::logout();
         $resu=$res->fetch(PDO::FETCH_ASSOC);
         foreach($resu as $k => $v) {$this->$k=$v;}
     }
 
    public function Create(){
-        $db=$this->connect();
+        $db=Connexion::login();
     $colum="";
     $valeur="";
         foreach($this as $k => $v){
@@ -56,11 +60,11 @@ class Model{
     $sql="INSERT INTO Produit($colum) VALUES ($valeur)";
 
         $res=$db->exec($sql);
-        $db=null;
+        $db=Connexion::logout();
    }
 
    public function Update(){
-        $db=$this->connect();
+        $db=Connexion::login();
         $cle = $this->primary;
         $id = $this->$cle;
         $sql = "UPDATE $this->table SET ";
@@ -75,17 +79,21 @@ class Model{
     $sql .= " WHERE $this->primary =$id";
     echo $sql;
         $res=$db->exec($sql);
-        $db=null;
-   }
-   public function connect()
-   {
-        return new PDO('mysql:host=127.0.0.1;dbname=ECommerce','chef','mdpchef');
+        $db=Connexion::logout();
    }
 
    public function postobjets(){
     foreach($_POST as $k=> $v){
         $this->$k=$v;
     }
+   }
+
+   public function ToArray() {
+    $data = array();
+    foreach($this as $k => $v) {
+        $data[$k] = $v;
+    }
+    return $data;
    }
 }
 

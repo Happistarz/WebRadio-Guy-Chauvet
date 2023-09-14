@@ -1,5 +1,5 @@
 <?php
-require_once('model.php');
+require_once(GENERAL.'model.php');
 class Emission extends Model{
     protected $id;
     protected $NOM;

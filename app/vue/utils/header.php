@@ -5,7 +5,7 @@
   <!-- header -->
   <header>
     <!-- logo -->
-    <a href="../index.php"><img src="../images/Logo.png" alt="Logo" class="logo" /></a>x
+    <a href="../index.php"><img src="../../utils/general/Logo.png" alt="Logo" class="logo" /></a>x
     <!-- navbar header -->
     <div class="headright">
       <!-- emission btn -->

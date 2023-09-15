@@ -1,0 +1,11 @@
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 5 minutes"
+    ExpiresByType image/png "access plus 3 minutes"
+    ExpiresByType audio/wav "access plus 5 minutes"
+</IfModule>
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([a-zA-Z0-9\-\_\/].*)$ index.php?p=$1

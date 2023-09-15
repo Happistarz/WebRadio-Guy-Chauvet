@@ -36,3 +36,4 @@ unset($param[1]);
 #appel final du controler / methode et +
 call_user_func_array(array($ctrl,$action),$param);
 ?>
+je fait un test pour la web radio ...

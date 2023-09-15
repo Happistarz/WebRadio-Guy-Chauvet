@@ -2,10 +2,12 @@
 
 #path for all branch
 define('ROOT',str_replace('index.php',"",$_SERVER['SCRIPT_FILENAME']));
-define('CONTROLER', ROOT.'controllers/');
-define('MODEL',ROOT.'models/');
-define('VUE',ROOT.'vue/');
-define('GENERAL', ROOT."../general/");
+define('APP',ROOT.'app/');
+define('CONTROLER', APP.'controllers/');
+define('MODEL',APP.'models/');
+define('VUE',APP.'vue/');
+define('GENERAL', ROOT.'general/');
+define('CONF',ROOT.'conf/');
 
 #derterminer si le chemin apres index et vide
 if( empty($_GET['p'])){
@@ -36,4 +38,4 @@ unset($param[1]);
 #appel final du controler / methode et +
 call_user_func_array(array($ctrl,$action),$param);
 ?>
-je fait un test pour la web radio ...
+

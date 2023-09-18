@@ -1,19 +1,19 @@
 <?php
 
-        $dbh = new Pdo("mysql:host=127.0.0.1;dbname=web_radio", "chefWR", "mdpwebradio");
-	$sql = "SELECT * FROM 1_Theme_3_Chansons";
+    $dbh = new Pdo("mysql:host=127.0.0.1;dbname=web_radio", "chefWR", "mdpwebradio");
+	$sql = "SELECT * FROM Qui_qu_cest";
 	$res = $dbh->query($sql);
 
 ?>
         <?php require("header.php");
-        entete("1 théme 3 chansons");
+        entete("Qui_qu'c'est");
 ?>
     <!-- Setup Container 1-theme-3-chansons -->
         <div class="emission">
-                <img src="../images/Images_rubriques/1-theme-3-chansons.png" alt="Emission">
+                <img src="../images/Images_rubriques/Qui_qu_c_est.png" alt="Emission">
                 <article>
-                        <h5>1 thème 3 chansons</h5>
-                        <p>Dans l’émission 1 thème, 3 chansons, découvrez trois œuvres musicales, réunies autour d’un thème. Pour chaque morceau, nous vous proposons une présentation pour comprendre les tenants et les aboutissants de ces derniers.</p>
+                        <h5>Qui qu'c'est</h5>
+                        <p>...</p>
                 </article>
         </div>
     <div class="main">
@@ -34,7 +34,7 @@
                                         <p>{$result["created"]}</p>
                                 </div>
                                  <audio controls>
-                                         <source src=\"../files/1Theme3Chansons/1T3C Ep ".$result['id'].".wav\" type=\"audio/wav\">
+                                         <source src=\"../files/Qui_qu_cest/Qui_qu_cest Ep ".$result['id'].".wav\" type=\"audio/wav\">
                                  </audio>
                          </div>
                          <hr size=5 width=\"90%\" color=\"black\">";

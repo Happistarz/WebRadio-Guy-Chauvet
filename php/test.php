@@ -6,7 +6,10 @@
          ?>
         <?php require("header.php");
         entete("Journal audio");
+
+
 ?>
+	<script src=\"../js/tes.js\"></script>
 
     <!-- Setup Container Emission  -->
         <div class="emission">
@@ -24,8 +27,9 @@
         <div class="podcast-container border-3">
         <?php
                 foreach ($resu as $resultat) {
-		$date = new DateTime($resultat["created"]);
-		$fdate = $date->format('d m Y');
+                $date = new DateTime($resultat["created"]);
+                $fdate = $date->format('d m Y');
+                echo $fdate;
                 echo "
                         <div class=\"podcast\">
                                 <button onclick=\"Like(this)\"></button>

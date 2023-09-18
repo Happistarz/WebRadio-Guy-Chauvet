@@ -1,3 +1,7 @@
+<?php require("header.php");
+?>
+
+
 <?php
 
 $id = $_GET['id'];
@@ -22,8 +26,10 @@ $months = array(
 
 $db = null;
 
-
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,8 +44,7 @@ $db = null;
 </head>
 
 <body>
-<?php require("header.php");?>	
-	    <main>
+	    <div class="main">
         <!-- setup art box -->
         <div class="art-box" style="margin-top: 5%;">
             <div><?php echo ($fdate . " | " .  $ftime);?></div>
@@ -50,7 +55,7 @@ $db = null;
             </div>
             <p><?php echo $resu["contenu"] ?></p>
         </div>
-    </main>
+</div>
 	
 	<?php require("footer.php");?>	
 </body>

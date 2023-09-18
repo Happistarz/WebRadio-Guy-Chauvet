@@ -8,7 +8,6 @@ define('MODEL',APP.'models/');
 define('VUE',APP.'vue/');
 define('GENERAL', ROOT.'general/');
 define('CONF',ROOT.'conf/');
-
 #derterminer si le chemin apres index et vide
 if( empty($_GET['p'])){
     $ctrl = 'Accueil';

@@ -1,48 +1,21 @@
 <?php
-
-/**
- * Class Controller
- * 
- * Parent de tous les controllers
- * 
- * 
- */
 class Controller{
 
-    protected $view = array(); // stock les données à passer à la vue
+    protected $view = array();
 
-    /**
-     * Charge un model
-     * 
-     * @param string $model
-     * @return void
-     * 
-     */
+    public function __construct(){
+    }
+
     public function loadModel($model){
         require(MODEL.$model.".php");
         $this->$model = new $model();
     }
 
-    /**
-     * Charge un model
-     * 
-     * @param array[string,array] $array
-     * @return void
-     * 
-     */
     public function Set($array) {
         $this->view = array_merge($this->view, $array);
     }
 
 
-    /**
-     * Charge un model
-     * 
-     * @param string $name
-     * @param string $layout
-     * @return void
-     * 
-     */
     public function Render($name, $layout = "default") {
         // EXTRACT LES DATA
         extract($this->view);
@@ -63,4 +36,17 @@ class Controller{
         require VUE."layout/$layout.php";
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 

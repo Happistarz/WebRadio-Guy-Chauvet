@@ -1,40 +1,33 @@
 <?php
 
 #path for all branch
-define('ROOT',str_replace('index.php',"",$_SERVER['SCRIPT_FILENAME']));
-define('APP',ROOT.'app/');
-define('CONTROLER', APP.'controllers/');
-define('MODEL',APP.'models/');
-define('VUE',APP.'vue/');
-define('GENERAL', ROOT.'general/');
-define('CONF',ROOT.'conf/');
+require('conf/constantes.php');
+ini_set('display_errors',1);
 #derterminer si le chemin apres index et vide
 if( empty($_GET['p'])){
-    $ctrl = 'Accueil';
+    $ctrl = 'CTRLAccueil';
     $param = array();
 }else{
     $param = explode('/',$_GET['p']);
-    $ctrl =  $param[0];
+    $ctrl =  "CTRL".$param[0];
 }
 
 #dertermine si la mehode choisie / saisie existe
 if(!empty($param[1])){
-    $action = $param;
+    $action = $param[1];
 }else{
     $action = 'index';
 }
-if (!file_exists(CONTROLER.$ctrl.'.php')){
-    $ctrl = "ErrorHandler";
+if (!file_exists(CONTROLLER.$ctrl.'.php')){
+    $ctrl = "CTRLErrorHandler";
 }
-require (CONTROLER.$ctrl.'.php');
+require (CONTROLLER.$ctrl.'.php');
 
-
-
-$ctrl = new $ctrl;
+$ctrl = new $ctrl();
 unset($param[0]);
 unset($param[1]);
 
-#appel final du controler / methode et +
+#appel final du CONTROLLER / methode et +
 call_user_func_array(array($ctrl,$action),$param);
 ?>
 

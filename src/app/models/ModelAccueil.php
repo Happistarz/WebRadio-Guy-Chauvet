@@ -1,6 +1,6 @@
 <?php
-require_once(GENERAL.'model.php');
-class ModelArticle extends Model{
+require_once(LIB.'model.php');
+class ModelAccueil extends Model{
     protected $id;
     protected $lib;
     protected $table;
@@ -9,5 +9,5 @@ class ModelArticle extends Model{
         parent::__construct($this->table,$this->id);
         }
 }
-?>
 
+?>

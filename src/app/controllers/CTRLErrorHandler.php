@@ -1,8 +1,8 @@
 <?php
 
-require GENERAL."Controller.php";
+require LIB."Controller.php";
 
-class ErrorHandler extends Controller {
+class CTRLErrorHandler extends Controller {
     public function __construct(){
         parent::__construct();
     }

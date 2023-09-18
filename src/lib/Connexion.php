@@ -3,7 +3,7 @@
 class Connexion {
     private static $login = "chef";
     private static $host = "127.0.0.1";
-    private static $dbname = "Webradio";
+    private static $dbname = "WebRadio";
     private static $password = "mdpchef";
 
     public static function login() : PDO

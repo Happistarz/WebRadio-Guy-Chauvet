@@ -97,7 +97,7 @@ Adresse mail : gr-sts1-slam@lycee-guychauvet.fr
 
 
 Group 1
-Hugo le bg de fou smr trop beau grrr miam sa beuteu de 50m² , Ben
+Hugo le bg de fou smr trop beau grrr miam sa beuteu de 50m² ,  
 Index
 
 Group 2
@@ -105,11 +105,7 @@ Yoan , Kassim
 Les emissions
 
 
-Group 1
+Group 3
 Mathieu , Flo
 Page emission (...)
 
-Group 1
-Group 1
-Group 1
-Group 1

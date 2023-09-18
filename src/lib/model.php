@@ -1,6 +1,6 @@
 <?php
 
-require_once(GENERAL.'Connexion.php');
+require_once(LIB.'Connexion.php');
 
 class Model{
     private $table;
@@ -28,20 +28,21 @@ class Model{
     }
 
     public function  Delete($id) {
-        $sql = "DELETE FROM $this->table WHERE $this->primary=$id";
+        $sql = "DELETE FROM $this->table WHERE $this->primary='$id'";
         $db=Connexion::login();
         $res=$db->exec($sql);
         $db=Connexion::logout();
     }
 
    public function Read($id){
-        $sql = "SELECT * FROM $this->table WHERE $this->primary=$id";
-        echo $sql;
+        $sql = "SELECT * FROM $this->table WHERE $this->primary='$id'";
+        // echo $sql;
         $db=Connexion::login();
         $res=$db->query($sql);
         $db=Connexion::logout();
         $resu=$res->fetch(PDO::FETCH_ASSOC);
         foreach($resu as $k => $v) {$this->$k=$v;}
+        return $resu;
     }
 
    public function Create(){

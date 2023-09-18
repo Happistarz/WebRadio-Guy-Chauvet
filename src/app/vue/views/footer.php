@@ -1,5 +1,5 @@
 <footer>
-       <a href="../index.php"> <img src="../images/Logo.png" alt="Logo" class="logo-footer" /></a>
+       <a href="index.php"> <img src=<?php echo WEBROOT ."utils/general/Logo.png";?> alt="Logo" class="logo-footer" /></a>
         <h4>A propos</h4>
         <div class="footer-element">
             <ul>
@@ -10,4 +10,5 @@
         </div>
 
     </footer>
-<?php
+</body>
+</html>

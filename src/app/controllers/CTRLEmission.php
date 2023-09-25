@@ -40,11 +40,14 @@ class CTRLEmission extends Controller{
     }
 
     public function view($rubrique){
-        $data = $this->ModelEmission->ReadByKey(array("NOM ='$rubrique'"));
-        $audio = $this->ModelAudio->ReadByKey(array("IDEMISSION ='$data[ID]'"));
-        var_dump($audio);
-        parent::Set(array('emission'=>$data,'audio'=>$audio));
-        parent::Render('Emission.php', EMISSIONS[$rubrique]);
+        $data = $this->ModelEmission->ReadByKey(array("NOM ='$rubrique'"))[0];
+        $audio = $this->ModelAudio->ReadByKey(array("IDEMISSION =".$data["ID"]));
+        parent::Set(array('emission'=>$data,'audios'=>$audio));
+        $layout = "default";
+        if ($data["INSCRIPTION"]) {
+            $layout = "inscription";
+        }
+        parent::Render('Emission.php', EMISSIONS[$rubrique], $layout);
     }
 
     

@@ -1,16 +1,16 @@
 <?php
 require_once(LIB.'model.php');
-
-class ModelEmission extends Model{
+class ModelArticle extends Model{
     protected $id;
-    protected $table;
     protected $NOM;
+    protected $PRENOM;
     protected $DESCRIPTION;
+    protected $MAIL;
     protected $SRC;
-    protected $INSCRIPTION;
+    protected $table;
     public function __construct(){
-        $this->id ="NOM";
-        $this->table = "Emission";
+        $this->table = "Article";
+        $this->id = "ID";
         parent::__construct($this->table,$this->id);
         }
 }

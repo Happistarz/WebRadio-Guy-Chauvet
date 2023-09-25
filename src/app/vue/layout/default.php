@@ -11,7 +11,7 @@
 <body>
 
     <?php require VIEWS . "header.php"; ?>
-    <div class="content" style="margin:20vh 0">
+    <div class="content">
         <?php echo $content; ?>
     </div>
     <?php require VIEWS . "footer.php"; ?>

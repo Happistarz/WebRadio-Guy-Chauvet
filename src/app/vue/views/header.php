@@ -1,6 +1,6 @@
-<script src="<?php echo WEBROOT . "www/js/loader.js" ?>"></script>
-<link rel="stylesheet" href="<?php echo WEBROOT . "www/css/reset.css" ?>">
-<link rel="stylesheet" href="<?php echo WEBROOT . "www/css/style.css" ?>">
+<script src="<?php echo WWW . "js/loader.js" ?>"></script>
+<link rel="stylesheet" href="<?php echo CSS . "reset.css" ?>">
+<link rel="stylesheet" href="<?php echo CSS . "style.css" ?>">
 <!-- loader -->
 <!-- <div id="loader">
   <p>Chargement...</p>
@@ -8,15 +8,15 @@
 <!-- header -->
 <header>
   <!-- logo -->
-  <a href="<?php URLROOT ?>"><img src="<?php echo DATA . "general/Logo.png"; ?>" alt="Logo" class="logo" /></a>
+  <a href="<?php echo WEBROOT ?>"><img src="<?php echo DATA . "general/Logo.png"; ?>" alt="Logo" class="logo" /></a>
   <!-- navbar header -->
   <div class="headright">
     <!-- emission btn -->
     <div class="dropdown">
-      <a href="<?php echo URLROOT ?>Emission" id="btn">EMISSIONS</a>
+      <a href="<?php echo WEBROOT ?>Emission" id="btn">EMISSIONS</a>
       <div class="dropdown-content">
-        <a href="<?php echo URLROOT?>Emission/view/H2P">Histoire de poche</a>
-        <a href="Emission/view/JA">Journal Audio</a>
+        <a href="<?php echo WEBROOT?>Emission/view/H2P">Histoire de poche</a>
+        <a href="<?php echo WEBROOT?>Emission/view/JA">Journal Audio</a>
       </div>
     </div>
     <!-- journal btn -->

@@ -22,6 +22,7 @@ class CTRLAccueil extends Controller{
         #herit de la function loadmodel pour categorie
         parent::loadModel('ModelEmission');
         parent::loadModel('ModelArticle');
+        parent::loadModel('ModelInfo');
 
         }
 
@@ -32,12 +33,26 @@ class CTRLAccueil extends Controller{
      * 
      * @return array $data
      */
-    public function index(){
-        $data2 = $this->ModelArticle->Liste();
-        $data = $this->ModelEmission->Liste();
-        parent::Set(array('data'=>$data));
-        parent::Set(array('data2'=>$data2));
-        parent::Render("index.php","Accueil");
+    public function index(){   
+        $emission = $this->ModelEmission->Liste();
+        $article = $this->ModelArticle->Liste();
+        $info = $this->ModelInfo->Liste();
+        parent::Set(array('emission'=>$emission));
+        parent::Set(array('article'=>$article));
+        parent::Set(array('info'=>$info));
+        parent::Render("index.php","WebRadio");
+    }
+
+    public function Contact(){
+        parent::Render("contact.php","Contact");
+    }
+
+    public function Plan() {
+        parent::Render("plan.php","Plan");
+    }
+
+    public function Mentions() {
+        parent::Render("mention.php","Mentions");
     }
 
 }

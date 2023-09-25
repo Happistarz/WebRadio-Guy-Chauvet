@@ -26,6 +26,7 @@ $ctrl = new $ctrl();
 unset($param[0]);
 unset($param[1]);
 
+
 #appel final du CONTROLLER / methode et +
 call_user_func_array(array($ctrl,$action),$param);
 ?>

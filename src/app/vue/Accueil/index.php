@@ -1,15 +1,36 @@
-<!-- journal -->
+<main>
+<?php
+foreach ($info as $i) {
+	extract($i);
+	if ($MODIFIED > $CREATED)  {
+		$DATE = $MODIFIED;
+	} else {
+		$DATE = $CREATED;
+	}
+	echo 
+	'
+	<div class="def-p">
+	<p>'.$INFO.'</p>
+	<p>'.$DATE.'</p>
+
+	</div>
+	';
+}
+
+?>
 <h1 class="title">LE JOURNAL</h1>
 <hr size="5" width="93%" color="black" />
 <?php
-foreach ($data2 as $d) {
+
+foreach ($article as $d) {
+	extract($d);
 	echo'
-	<a class=\"j-box border-1\" href=\"view/'.$d['NOM'].'.php">
-	<img src=\"images/test.png\" alt=\"Image\" />
+	<a class="j-box border-'.mt_rand(1,3).'" href=\"view/'.$NOM.'.php">
+	<img src="'.DATA.'general/nosrc.png" alt="Image" />
 	<!-- article -->
 	<article>
-	  	<h2>".$resul["titre"]."</h2>
-		<p>".$resul["description"]."</p>
+	  	<h2>'.$NOM.'</h2>
+		<p>'.$DESCRIPTION.'</p>
 	</article>
 	</a> 
 	';
@@ -20,12 +41,16 @@ foreach ($data2 as $d) {
 <hr size="5" width="93%" color="black" />
 <div class="emissions">
 <?php
-	foreach ($data as $d) {
+
+	foreach ($emission as $e) {
+		extract($e);
+
 		echo'
-			<a href="Emission/view/'.$d['NOM'].'" class="border-2">
-				<h3>'.$d['NOM'].'</h3>
-				<img src="'.DATA.'rubrique/'.$d['NOM'].'.png" alt="image" />
+			<a href="Emission/view/'.$NOM.'" class="border-'.mt_rand(1,3).'">
+				<h3>'.EMISSIONS[$NOM].'</h3>
+				<img src="'.DATA.'rubrique/'.$NOM.'.png" alt="image" />
   			</a>';
 	}
 ?>
 </div>
+</main>

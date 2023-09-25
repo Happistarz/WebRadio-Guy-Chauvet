@@ -16,7 +16,7 @@ class Model{
     public function Liste($condition='1=1'){
 
         $sql="SELECT * FROM ".$this->table." WHERE $condition";
-        //echo $sql;
+        // echo $sql;
         $db = Connexion::login();
         $res=$db->query($sql);
         $db=Connexion::logout();
@@ -48,20 +48,16 @@ class Model{
     
     public function ReadByKey($cond = array("1=1")) {
         $where = implode(" AND ", $cond);
+        echo $where;
+        // return $resu;
+        return $this->Liste($where);
 
-        $sql = "SELECT * FROM $this->table WHERE $where";
-        // echo $sql;
-        $db=Connexion::login();
-        $res=$db->query($sql);
-        $db=Connexion::logout();
-        $resu=$res->fetch(PDO::FETCH_ASSOC);
-        foreach($resu as $k => $v) {$this->$k=$v;}
-        return $resu;
     }
+    
 
    public function Create(){
-        $db=Connexion::login();
-    $colum="";
+            $db=Connexion::login();
+        $colum="";
     $valeur="";
         foreach($this as $k => $v){
                 if (! in_array($k,$this->arraysys) && $k !=$this->primary)
@@ -71,8 +67,8 @@ class Model{
                 }
         }
         $colum = substr($colum,0,-1);
-        $valeur = substr($valeur,0,-1);
-    $sql="INSERT INTO Produit($colum) VALUES ($valeur)";
+            $valeur = substr($valeur,0,-1);
+        $sql="INSERT INTO $this->table($colum) VALUES ($valeur)";
 
         $res=$db->exec($sql);
         $db=Connexion::logout();

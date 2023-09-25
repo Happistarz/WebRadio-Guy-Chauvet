@@ -1,9 +1,9 @@
 <?php 
 
-require LIB ."model.php";
+require_once LIB ."model.php";
 
 class ModelAudio extends Model {
-    protected $table = "audio";
+    protected $table = "Audio";
 
     protected $id = "ID";
     protected $id_emission;

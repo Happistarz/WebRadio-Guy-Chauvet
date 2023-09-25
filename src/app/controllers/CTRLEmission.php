@@ -1,5 +1,5 @@
 <?php
-require(LIB."Controller.php");
+require_once(LIB."Controller.php");
 
 /**
  * Class Emission
@@ -36,15 +36,15 @@ class CTRLEmission extends Controller{
         #load model global
         $data = $this->ModelEmission->Liste();
         parent::Set(array('emission'=>$data));
-        parent::Render('index.php');
+        parent::Render('index.php',"Emission");
     }
 
     public function view($rubrique){
-        $data = $this->ModelEmission->Read($rubrique);
-        $audio = $this->ModelAudio->Liste($rubrique);
-        var_dump($data);
+        $data = $this->ModelEmission->ReadByKey(array("NOM ='$rubrique'"));
+        $audio = $this->ModelAudio->ReadByKey(array("IDEMISSION ='$data[ID]'"));
+        var_dump($audio);
         parent::Set(array('emission'=>$data,'audio'=>$audio));
-        parent::Render($rubrique.'.php');
+        parent::Render('Emission.php', EMISSIONS[$rubrique]);
     }
 
     

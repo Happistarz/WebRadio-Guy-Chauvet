@@ -13,7 +13,7 @@ class CTRLArticle extends Controller{
         #load model global
         $data = $this->ModelArticle->Liste();
         parent::Set(array('data'=>$data));
-        parent::Render("index.php");
+        parent::Render("index.php","Article");
     }
  }
 

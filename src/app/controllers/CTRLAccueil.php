@@ -20,7 +20,9 @@ class CTRLAccueil extends Controller{
      */
     public function __construct(){
         #herit de la function loadmodel pour categorie
-        parent::loadModel('ModelAccueil');
+        parent::loadModel('ModelEmission');
+        parent::loadModel('ModelArticle');
+
         }
 
     /**
@@ -31,7 +33,11 @@ class CTRLAccueil extends Controller{
      * @return array $data
      */
     public function index(){
-        parent::Render('index.php');
+        $data2 = $this->ModelArticle->Liste();
+        $data = $this->ModelEmission->Liste();
+        parent::Set(array('data'=>$data));
+        parent::Set(array('data2'=>$data2));
+        parent::Render("index.php","Accueil");
     }
 
 }

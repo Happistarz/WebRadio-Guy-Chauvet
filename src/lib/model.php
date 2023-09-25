@@ -16,6 +16,7 @@ class Model{
     public function Liste($condition='1=1'){
 
         $sql="SELECT * FROM ".$this->table." WHERE $condition";
+        //echo $sql;
         $db = Connexion::login();
         $res=$db->query($sql);
         $db=Connexion::logout();
@@ -36,6 +37,19 @@ class Model{
 
    public function Read($id){
         $sql = "SELECT * FROM $this->table WHERE $this->primary='$id'";
+        // echo $sql;
+        $db=Connexion::login();
+        $res=$db->query($sql);
+        $db=Connexion::logout();
+        $resu=$res->fetch(PDO::FETCH_ASSOC);
+        foreach($resu as $k => $v) {$this->$k=$v;}
+        return $resu;
+    }
+    
+    public function ReadByKey($cond = array("1=1")) {
+        $where = implode(" AND ", $cond);
+
+        $sql = "SELECT * FROM $this->table WHERE $where";
         // echo $sql;
         $db=Connexion::login();
         $res=$db->query($sql);

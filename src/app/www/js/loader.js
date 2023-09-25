@@ -30,12 +30,12 @@ function MenuOpen() {
 }
 
 // loader event
-window.addEventListener("DOMContentLoaded", (event) => {
+/*window.addEventListener("DOMContentLoaded", (event) => {
   setTimeout(function () {
     // animation loader fill up
     document.getElementById("loader").style.top = "-100vh";
   }, 500);
-});
+});*/
 
 function addredac() {
   var form1 = (document.getElementById("form1").style.display = "grid");

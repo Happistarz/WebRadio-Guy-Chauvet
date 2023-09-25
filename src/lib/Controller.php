@@ -16,7 +16,7 @@ class Controller{
     }
 
 
-    public function Render($name, $layout = "default") {
+    public function Render($name,$title_page, $layout = "default") {
         // EXTRACT LES DATA
         extract($this->view);
         
@@ -31,7 +31,8 @@ class Controller{
         // RECUP LE BUFFER
         $content = ob_get_clean();
         ob_end_clean();
-
+        
+        $title = $title_page;
         // REQUIRE LE LAYOUT
         require VUE."layout/$layout.php";
     }

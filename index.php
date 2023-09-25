@@ -11,7 +11,6 @@ if( empty($_GET['p'])){
     $param = explode('/',$_GET['p']);
     $ctrl =  "CTRL".$param[0];
 }
-
 #dertermine si la mehode choisie / saisie existe
 if(!empty($param[1])){
     $action = $param[1];

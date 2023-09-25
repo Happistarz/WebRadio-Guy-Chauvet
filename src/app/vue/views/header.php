@@ -17,15 +17,15 @@
      <!-- header -->
      <header>
        <!-- logo -->
-       <a href="<?php echo APP ?>"><img src="<?php echo WEBROOT ."utils/general/Logo.png";?>" alt="Logo" class="logo" /></a>
+       <a href="index.php"><img src="<?php echo WEBROOT ."utils/general/Logo.png";?>" alt="Logo" class="logo" /></a>
        <!-- navbar header -->
        <div class="headright">
          <!-- emission btn -->
          <div class="dropdown">
-           <a href="<?php echo WEBROOT."/Emission/index.php";?>" id="btn">EMISSIONS</a>
+           <a href="Emission" id="btn">EMISSIONS</a>
            <div class="dropdown-content">
-             <a href=<?php echo WEBROOT ."emission.php"?>>Histoire de poche</a>
-             <a href="journalaudio.php">Journal Audio</a>
+             <a href="Emission/H2P">Histoire de poche</a>
+             <a href="Emission/JA">Journal Audio</a>
            </div>
          </div>
          <!-- journal btn -->
@@ -36,8 +36,8 @@
          <div class="dropdown">
            <a id="btn" disabled style="pointer-events: none">L'EQUIPE</a>
            <div class="dropdown-content">
-             <a href="lycee_mdl.php">la Web Radio</a>
-             <a href="lycee_membre.php">Le lycée</a>
+             <a href="Static/lycee_mdl">la Web Radio</a>
+             <a href="Static/lycee_membre">Le lycée</a>
            </div>
          </div>
        </div>

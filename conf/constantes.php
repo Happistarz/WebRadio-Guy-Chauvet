@@ -25,4 +25,15 @@ define('EMISSIONS', array(
     "QQC" => "Qui Que C'est",
     "DBL" => "Débat Lycéen"
 ));
+
+
+ function ValidSession() {
+    if (isset($_SESSION) && !empty($_SESSION) && $_SESSION['valid'] && !empty($_SESSION['login']) && !empty($_SESSION['role'])) {
+        return true;
+    } else {
+        header('Location: '.WEBROOT.'login');
+        return false;
+    }
+};
+
 ?>

@@ -15,6 +15,12 @@ class CTRLArticle extends Controller{
         parent::Set(array('data'=>$data));
         parent::Render("index.php","Article");
     }
+
+    public function view($id){
+        $data = $this->ModelArticle->ReadByKey(array("ID =".$id))[0];
+        parent::Set(array('data'=>$data));
+        parent::Render('Article.php', $data["NOM"]);
+    }
  }
 
 

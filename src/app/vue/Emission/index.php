@@ -10,10 +10,8 @@ echo "</br>";
     echo
         '<a href="Emission/view/' . $NOM . '">' . EMISSIONS[$NOM] . '  </a><br>';
 }*/
+
 $counter = 0;
-echo "<style>";
-echo "body { background-color: grey; color: darkblue;  }";
-echo "</style>";
 
 //Parcours la liste des emissions 
 foreach ($emission as $e) {
@@ -23,8 +21,8 @@ foreach ($emission as $e) {
     extract($e);
     
     // Ouvrir le lien <a> avec le style pour le div
-    echo "<a href='".WEBROOT."Emission/view/$NOM' style='display: block; text-decoration: none; color: inherit; '>";
-    echo "<div style='text-align: $display; background-color: pink; border-radius: 30px; border: 50px solid brown; margin:20px; '>";
+    echo "<a href='".WEBROOT."Emission/view/$NOM' style='display: block; text-decoration: none; '>";
+    echo "<div style='text-align: $display; border-radius: 30px; margin:20px; '>";
 
     
     echo "<div style='float : left ; display: flex; align-items: center; margin-right: 10px;";

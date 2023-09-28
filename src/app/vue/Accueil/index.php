@@ -25,7 +25,7 @@ foreach ($info as $i) {
 foreach ($article as $d) {
 	extract($d);
 	echo'
-	<a class="j-box border-'.mt_rand(1,3).'" href=\"view/'.$NOM.'.php">
+	<a class="j-box border-'.mt_rand(1,3).'" href="'.WEBROOT.'Article/view/'.$ID .'">
 	<img src="'.DATA.'general/nosrc.png" alt="Image" />
 	<!-- article -->
 	<article>

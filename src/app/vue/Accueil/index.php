@@ -9,7 +9,7 @@ foreach ($info as $i) {
 	}
 	echo 
 	'
-	<div class="def-p">
+	<div class="tracer">
 	<p>'.$INFO.'</p>
 	<p>'.$DATE.'</p>
 
@@ -19,15 +19,14 @@ foreach ($info as $i) {
 
 ?>
 <h1 class="title">LE JOURNAL</h1>
-<hr size="5" width="100%" color="black" />
+<hr size="5" width="100%" color="black"/>
 <?php
 
 foreach ($article as $d) {
 	extract($d);
 	echo'
-	<a class="j-box border-'.mt_rand(1,3).'" href="'.WEBROOT.'Article/view/'.$ID .'">
-	<img src="'.DATA.'general/nosrc.png" alt="Image" />
-	<!-- article -->
+	<a class="border- Mart" href="'.WEBROOT.'Article/view/'.$ID .'">
+	<img src="'.DATA.'general/nosrc.png" alt="nosrc" />
 	<article>
 	  	<h2>'.$NOM.'</h2>
 		<p>'.$DESCRIPTION.'</p>
@@ -39,18 +38,20 @@ foreach ($article as $d) {
 
 <h1 class="title">LES EMISSIONS</h1>
 <hr size="5" width="100%" color="black" />
-<div class="emissions">
+<div class="Memissions">
 <?php
 
 	foreach ($emission as $e) {
 		extract($e);
 
-		echo'
-			<a href="Emission/view/'.$NOM.'" class="border-'.mt_rand(1,3).'">
+		echo'<div class="border- Memis">
+			<a href="Emission/view/'.$NOM.'" >
 				<h3>'.EMISSIONS[$NOM].'</h3>
 				<img src="'.DATA.'rubrique/'.$NOM.'.png" alt="image" />
-  			</a>';
+  			</a>
+			</div>';
 	}
 ?>
 </div>
 </main>
+

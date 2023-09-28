@@ -106,6 +106,21 @@ class Model{
     }
     return $data;
    }
+
+   /**
+    * Count the number of items in a table with a condition
+    * @param string $condition
+    * @return int
+    */
+    public function Count($condition = "1=1") {
+        $sql = "SELECT COUNT(*) AS NB FROM $this->table WHERE $condition";
+        $db = Connexion::login();
+        $res = $db->query($sql);
+        $db = Connexion::logout();
+        $resu = $res->fetch(PDO::FETCH_ASSOC);
+        return $resu['NB'];
+    }
+
 }
 
 ?>

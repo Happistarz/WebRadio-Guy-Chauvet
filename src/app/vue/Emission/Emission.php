@@ -13,24 +13,24 @@
         <h1 id="podcasts" class="header-page title">LES PODCASTS</h1>
         <hr size="5" width="100%" color="black" />
 
-        <div class="podcast-container border-3">
+        <div class="podcast-container border-">
             <?php
+            $str = [];
             foreach ($audios as $music) {
-                ?>
-                <div class="podcast">
-                    <button onclick="Like(this)"></button>
+                $str[] = '<div class="podcast">
                     <div class="info-podcast">
-                        <h2><?= $music["NOM"] ?></h2>
-                        <p><?= $music["DESCRIPTION"] ?></p>
-                        <p><?= $music["DATE"] ?> / <?= $music["HEURE"] ?></p>
+                        <h2>'. $music["NOM"] .'</h2>
+                        <p>'. $music["DESCRIPTION"].'</p>
+                        <p>'. $music["DATE"] .'/'. $music["HEURE"].'</p>
                     </div>
                     <audio controls>
-                        <source src="<?= DATA . "audio/" . $music['AUDIO'] ?>" type="audio/wav">
+                        <source src="'.DATA . "audio/" . $music["AUDIO"] .'" type="audio/wav">
+                        
                     </audio>
-                </div>
-               
-                <?php
+                    
+                </div>';
             }
+            echo join('<hr size="5" width="95%" color="black" />', $str);
             ?>
         </div>
     </div>

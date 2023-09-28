@@ -33,3 +33,11 @@
   </div>
 
 </header>
+<?php
+function getRandomBorderClass() {
+    $borderClasses = ['red', 'blue', 'green'];
+    $randomIndex = array_rand($borderClasses);
+    return 'border-' . $borderClasses[$randomIndex];
+}
+$randomBorderClass = getRandomBorderClass();
+?>

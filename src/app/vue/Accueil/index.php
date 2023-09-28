@@ -19,7 +19,7 @@ foreach ($info as $i) {
 
 ?>
 <h1 class="title">LE JOURNAL</h1>
-<hr size="5" width="93%" color="black" />
+<hr size="5" width="100%" color="black" />
 <?php
 
 foreach ($article as $d) {
@@ -37,8 +37,8 @@ foreach ($article as $d) {
 }
 ?>
 
-<h1 h1 class="title">LES EMISSIONS</h1>
-<hr size="5" width="93%" color="black" />
+<h1 class="title">LES EMISSIONS</h1>
+<hr size="5" width="100%" color="black" />
 <div class="emissions">
 <?php
 

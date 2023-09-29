@@ -12,7 +12,6 @@ class ModelEmission extends Model{
     public function __construct(){
         $this->id ="NOM";
         $this->table = "Emission";
-        $this->nbAUDIO = 0;
         parent::__construct($this->table,$this->id);
         }
 }

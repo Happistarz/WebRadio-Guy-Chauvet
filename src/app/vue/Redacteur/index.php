@@ -29,7 +29,7 @@
                 <div class="line">
                     <div class="desc">
                         <h2>🎵 H2P Ep 1.wav</h2>
-                        <p>moi moi 2 aaaaaaaaaa<span>• 2023-09-28</span></p>
+                        <p>moi moi 2<span>• 2023-09-28</span></p>
                     </div>
                     <audio src="<?php echo DATA ?>audio/H2P/H2P Ep 1.wav" controls></audio>
                     <div class="action">
@@ -55,23 +55,29 @@
             <button class="fas fa-circle-plus" title="Ajouter un nouvel élément" onclick="add(this)"></button>
             <hr>
             <div class="items">
-                <div class="item" onclick="focus(this)">
-                    <img src="<?php echo DATA?>rubrique/H2P.png" alt="">
+                <?php 
+                // var_dump($emissions);
+                foreach($emissions as $em) {
+                    $inscr = $em['INSCRIPTION'] ? "<b title='Inscription'>📝</b>" : "";
+                    echo '<div class="item" onclick="focus(this)">
+                    <img src="'.DATA.$em['SRC'].'" alt="">
                     <div class="desc">
-                        <h2>aaaaa<b title="Inscription">📝</b></h2>
-                        <p>6 audio(s)</p>
-                        <p>oui</p>
+                    <h2>'.$em['NOM'].$inscr.'</h2>
+                    <p>'.$em['AUDIOS'].' audio(s)</p>
                     </div>
                     <div class="action">
-                        <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this)" data-id="3"></button>
-                        <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)" data-id="3"></button>
+                    <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this)" data-id="'.$em['ID'].'"></button>
+                    <button type="button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)" data-id="'.$em['ID'].'"></button>
                     </div>
-                </div>
+                    </div>';
+                }
+                ?>
             </div>
         </div>
     </div>
 </div>
 </div>
+<script src="<?php echo WWW;?>js/functions.js"></script>
 <script>
     function focus(el) {
         document.querySelector('.focus')?.classList.remove('focus');
@@ -81,6 +87,7 @@
 
     function add(el) {
         console.log("add");
+        request("ajax.php","aaa","ddd",result);
     }
 
     function edit(el) {
@@ -89,5 +96,9 @@
 
     function suppr(el) {
         console.log(el.getAttribute('data-id'));
+    }
+
+    function result(success, response) {
+        console.log(response);
     }
 </script>

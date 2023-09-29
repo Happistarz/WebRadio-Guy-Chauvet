@@ -112,9 +112,10 @@ class Model{
     * @param string $condition
     * @return int
     */
-    public function Count($condition = "1=1") {
-        $sql = "SELECT COUNT(*) AS NB FROM $this->table WHERE $condition";
+    public function Count($table,$condition = "1=1") {
+        $sql = "SELECT COUNT(*) AS NB FROM $table WHERE $condition";
         $db = Connexion::login();
+        // echo $sql."<br>";
         $res = $db->query($sql);
         $db = Connexion::logout();
         $resu = $res->fetch(PDO::FETCH_ASSOC);

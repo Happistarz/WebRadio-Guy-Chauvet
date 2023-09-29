@@ -13,10 +13,11 @@ class CTRLRedacteur extends Controller {
         // if(ValidSession()) {
             $emissions = $this->ModelEmission->Liste();
             // for each emission, count the number of audios
-            // foreach($emissions as $emission) {
-            //     $emission['nbAUDIO'] = $this->ModelEmission->Count("ID=".$emission['ID']);
-            // }
-
+            for($i = 0; $i < sizeof($emissions); $i++) {
+                $emissions[$i]['AUDIOS'] = $this->ModelEmission->Count("Audio","ID=".$emissions[$i]['ID']);
+                // echo $this->ModelEmission->Count("ID=".$emissions[$i]['ID']);
+            }
+            // var_dump($emissions);
 
             $articles = $this->ModelArticle->Liste();
             parent::Set(array('emissions'=>$emissions,'articles'=>$articles));

@@ -1,6 +1,6 @@
 function request(url, action, data, result) {
   $.ajax({
-    url: url,
+    url: url."?action="+action,
     data: data,
     success: function (response) {
       result(true, response);

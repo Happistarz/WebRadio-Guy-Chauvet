@@ -60,6 +60,7 @@
                     <div class="desc">
                         <h2>aaaaa<b title="Inscription">📝</b></h2>
                         <p>6 audio(s)</p>
+                        <p>oui</p>
                     </div>
                     <div class="action">
                         <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this)" data-id="3"></button>

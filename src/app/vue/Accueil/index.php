@@ -20,12 +20,13 @@ foreach ($info as $i) {
 ?>
 <h1 class="title">LE JOURNAL</h1>
 <hr size="5" width="100%" color="black"/>
+<div class="Mart">
 <?php
 
 foreach ($article as $d) {
 	extract($d);
 	echo'
-	<a class="border- Mart" href="'.WEBROOT.'Article/view/'.$ID .'">
+	<a class="border- arti" href="'.WEBROOT.'Article/view/'.$ID .'">
 	<img src="'.DATA.'general/nosrc.png" alt="nosrc" />
 	<article>
 	  	<h2>'.$NOM.'</h2>
@@ -35,6 +36,7 @@ foreach ($article as $d) {
 	';
 }
 ?>
+</div>
 
 <h1 class="title">LES EMISSIONS</h1>
 <hr size="5" width="100%" color="black" />

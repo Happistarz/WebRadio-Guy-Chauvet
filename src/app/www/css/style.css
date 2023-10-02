@@ -14,6 +14,9 @@ body {
 main {
   margin: 2vw 2vh;
 }
+.title{
+  margin-top: 5vh;
+}
 
 /* HEADER ----------------------------------*/
 
@@ -104,17 +107,24 @@ header a:hover {
   font-size: smaller !important;
 }
 
-.Mart {
+.Mart{
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+.arti {
+  text-decoration: none;
   display: flex;
   flex-direction: row;
 }
 
-.Mart img {
+.arti img {
   width: auto;
   border-top-left-radius: 9px;
   border-bottom-left-radius: 9px;
 }
-.Mart article {
+.arti article {
+  gap: 15px;
   width: 100%;
   color: rgb(0, 0, 0);
   text-decoration: none;
@@ -124,10 +134,16 @@ header a:hover {
 }
 
 .Memissions {
-  width: 100%;
-  column-count: 3;
-  column-gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
+.Memissions > * {
+  flex: 0 0 calc(30% - 10px); 
+  margin: 10px; 
+  box-sizing: border-box;
+}
+
 .Memissions .Memis {
   text-align: center;
   align-items: center;
@@ -136,7 +152,10 @@ header a:hover {
   width: fit-content;
   width: 20vw;
 }
-.Memissions .Memis h3 {
+.Memissions .Memis a{
+  text-decoration: none;
+}
+.Memissions .Memis h3{
   background-color: #636060;
   border-radius: 9px;
   margin: 5px;
@@ -196,9 +215,7 @@ header a:hover {
   align-items: center;
   /* margin: 10px 0; */
 }
-.redacteur h1 {
-  margin: 10px 0;
-}
+
 .redacteur hr {
   width: 80%;
   margin: 10px 0;
@@ -455,9 +472,31 @@ footer a:hover {
   min-height: 30vh;
   max-width: 30vh;
   max-width: 30vh;
-  border-radius: 9px;
+  border-radius: 2%;
   background-color: black;
 }
+
+.name{
+  font-weight: bolder;
+  margin-bottom: 2%;
+}
+
+.desc-emi{
+  font-size: 22px;
+}
+
+.img-emi-title{
+  height: 6vh;
+  background-color: grey;
+  border-radius: 8px;
+  margin: 1%;
+  display: flex; 
+  align-items: center;
+}
+
+
+
+
 
 /* Lecteur audio -------------------------------------*/
 

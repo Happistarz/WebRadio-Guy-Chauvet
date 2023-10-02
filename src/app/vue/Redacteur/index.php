@@ -1,23 +1,3 @@
-<?php
-// foreach ($emissions as $e) {
-//     echo $e['NOM'];
-//     echo $e['DESCRIPTION'];
-//     echo $e['SRC'];
-//     echo $e['INSCRIPTION'];
-//     echo "<br> <br>";
-// }
-
-// foreach ($articles as $a) {
-//     echo $a['NOM'];
-//     echo $a['DESCRIPTION'];
-//     echo $a['AUTEUR'];
-//     echo $a['CREATED'];
-//     echo "<br> <br>";
-// }
-
-// var_dump($emissions);
-
-?>
 <div class="redacteur">
 
     <div class="column">
@@ -55,19 +35,20 @@
             <button class="fas fa-circle-plus" title="Ajouter un nouvel élément" onclick="add(this)"></button>
             <hr>
             <div class="items">
-                <?php 
+                <?php
                 // var_dump($emissions);
-                foreach($emissions as $em) {
+                foreach ($emissions as $em) {
+                    $img = file_exists(DATA . $em['SRC']) ? DATA . $em['SRC'] : DATA . 'general/nosrc.png';
                     $inscr = $em['INSCRIPTION'] ? "<b title='Inscription'>📝</b>" : "";
                     echo '<div class="item" onclick="focus(this)">
-                    <img src="'.DATA.$em['SRC'].'" alt="">
+                    <img src="' . $img . '" alt="">
                     <div class="desc">
-                    <h2>'.$em['NOM'].$inscr.'</h2>
-                    <p>'.$em['AUDIOS'].' audio(s)</p>
+                    <h2>' . $em['NOM'] . $inscr . '</h2>
+                    <p>' . $em['AUDIOS'] . ' audio(s)</p>
                     </div>
                     <div class="action">
-                    <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this)" data-id="'.$em['ID'].'"></button>
-                    <button type="button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)" data-id="'.$em['ID'].'"></button>
+                    <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this)" data-id="' . $em['ID'] . '"></button>
+                    <button type="button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)" data-id="' . $em['ID'] . '"></button>
                     </div>
                     </div>';
                 }
@@ -77,7 +58,7 @@
     </div>
 </div>
 </div>
-<script src="<?php echo WWW;?>js/functions.js"></script>
+<script src="<?php echo WWW . "js/functions.js"; ?>"></script>
 <script>
     function focus(el) {
         document.querySelector('.focus')?.classList.remove('focus');
@@ -86,8 +67,8 @@
     }
 
     function add(el) {
-        console.log("add");
-        request("ajax.php","aaa","ddd",result);
+        // console.log("add");
+        request("<?php echo WEBROOT . 'src/app/vue/Redacteur/ajax.php' ?>", "add", "Emission", "ddd", result);
     }
 
     function edit(el) {

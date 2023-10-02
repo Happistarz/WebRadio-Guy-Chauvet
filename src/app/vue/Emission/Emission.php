@@ -12,7 +12,6 @@
         <!-- header page podcasts -->
         <h1 id="podcasts" class="header-page title">LES PODCASTS</h1>
         <hr size="5" width="100%" color="black" />
-
         <div class="podcast-container border-">
             <?php
             $str = [];

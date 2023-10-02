@@ -1,4 +1,4 @@
-<h1>Les Emissions</h1>
+<h1>LES EMISSIONS</h1>
 <HR class="hr-emi" ALIGN=CENTER WIDTH="100">
 <?php
 $counter = 0;
@@ -19,20 +19,30 @@ foreach ($emission as $e) {
     <a class="les-emissions-a" href="<?= $link ?>">
         <?php if ($display === "left") : ?>
             <div class="<?= $display ?>" style="text-align: <?= $display ?>;">
-                <img class="border-" src="<?= $imageSrc ?>" alt="image" />
+                <div class="border-"> 
+                    <div class="img-emi-title"> 
+                        <p style="margin-left: 15px;"> Titre </p>
+                    </div>
+                    <img  src="<?= $imageSrc ?>" alt="image" /> 
+                </div>
                 <div class="info">
-                    <div><?= EMISSIONS[$NOM] ?><br></div>
-                    <div><?= $DESCRIPTION ?></div>
+                    <div class="name"><?= EMISSIONS[$NOM] ?><br></div>
+                    <div class="desc-emi"><?= $DESCRIPTION ?></div>
                 </div>
             </div>
         <?php endif; ?>
         <?php if ($display === "right") : ?>
             <div class="<?= $display ?>" style="text-align: <?= $display ?>;">
                 <div class="info">
-                    <div><?= EMISSIONS[$NOM] ?><br></div>
-                    <div><?= $DESCRIPTION ?></div>
+                    <div class="name"><?= EMISSIONS[$NOM] ?><br></div>
+                    <div class="desc-emi"><?= $DESCRIPTION ?></div>
                 </div>
-                <img class="border- " src="<?= $imageSrc ?>" alt="image" />
+                <div class="border-"> 
+                    <div class="img-emi-title"> 
+                        <p style="margin-left: 15px;"> Titre </p>
+                    </div>
+                    <img  src="<?= $imageSrc ?>" alt="image" /> 
+                </div>
             </div>
         <?php endif; ?>
     </a><br>

@@ -31,3 +31,4 @@ unset($param[1]);
 call_user_func_array(array($ctrl,$action),$param);
 ?>
 
+testtst

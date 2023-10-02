@@ -51,8 +51,11 @@ body {
 	font-size: 150%;
 }
 @import url('https://fonts.googleapis.com/css2?family=Cuprum&display=swap');
-body h1{
-	font-family: 'Cuprum', sans-serif;
+*{
+	font-family:Arial, Helvetica, sans-serif;
+}
+h1{
+	font-size: 4vh;
 }
 
 .border-red {

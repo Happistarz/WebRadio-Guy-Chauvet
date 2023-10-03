@@ -30,7 +30,7 @@ class CTRLEmission extends Controller{
      * 
      * Methode appelée par defaut
      * 
-     * @return array $data
+     * @return void
      */
     public function index(){
         #load model global

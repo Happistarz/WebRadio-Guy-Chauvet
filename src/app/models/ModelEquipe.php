@@ -1,6 +1,6 @@
 <?php
 require_once(LIB.'model.php');
-class ModelArticle extends Model{
+class ModelEquipe extends Model{
     protected $id;
     protected $NOM;
     protected $PRENOM;

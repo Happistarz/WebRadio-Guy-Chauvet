@@ -14,20 +14,22 @@
   <div class="headright">
     <!-- emission btn -->
     <div class="dropdown">
-      <a href="<?php echo WEBROOT ?>Emission">EMISSIONS</a>
+      <a href="<?php echo WEBROOT ?>Emission" target="_blank">EMISSIONS</a>
       <div class="dropdown-content">
-        <a href="<?php echo WEBROOT?>Emission/view/H2P">Histoire de poche</a>
-        <a href="<?php echo WEBROOT?>Emission/view/JA">Journal Audio</a>
+        <a href="<?php echo WEBROOT?>Emission/view/H2P" target="_blank">Histoire de poche</a>
+
+        
+        <a href="<?php echo WEBROOT?>Emission/view/JA" target="_blank">Journal Audio</a>
       </div>
     </div>
     <!-- journal btn -->
-    <a href="<?php echo WEBROOT?>journaux">JOURNAUX</a>
+    <a href="<?php echo WEBROOT?>journaux" target="_blank">JOURNAUX</a>
     <!-- equipe btn -->
     <div class="dropdown">
-      <a disabled style="pointer-events: none">L'EQUIPE</a>
+      <a href="<?php echo WEBROOT?>Equipe" target="_blank">L'EQUIPE</a>
       <div class="dropdown-content">
-        <a href="Static/lycee_mdl">La Web Radio</a>
-        <a href="Static/lycee_membre">Le Lycée</a>
+        <a href="<?php echo WEBROOT?>Equipe/view/lycee_mdl">La Web Radio</a>
+        <a href="<?php echo WEBROOT?>Equipe/view/lycee_membre">Le Lycée</a>
       </div>
     </div>
   </div>

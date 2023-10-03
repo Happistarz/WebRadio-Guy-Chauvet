@@ -18,9 +18,14 @@
             foreach ($audios as $music) {
                 $str[] = '<div class="podcast">
                     <div class="info-podcast">
-                        <h2>'. $music["NOM"] .'</h2>
-                        <p>'. $music["DESCRIPTION"].'</p>
-                        <p>'. $music["DATE"] .'/'. $music["HEURE"].'</p>
+                        <div>
+                            <h2>'. $music["NOM"] .'</h2>
+                            <p>'. $music["DATE"] .'/'. $music["HEURE"].'</p>
+                        </div>
+                        <div>
+                            <p>'.$music["AUTEURS"].' </p>
+                            <p>'. $music["DESCRIPTION"].'</p>
+                        </div>
                     </div>
                     <audio controls>
                         <source src="'.DATA . "audio/" . $music["AUDIO"] .'" type="audio/wav">
@@ -31,6 +36,10 @@
             }
             echo join('<hr size="5" width="95%" color="black" />', $str);
             ?>
+
+        </div>
+
+            
         </div>
     </div>
 </div>

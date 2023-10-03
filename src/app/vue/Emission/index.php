@@ -1,5 +1,5 @@
-<h1>LES EMISSIONS</h1>
-<HR class="hr-emi" ALIGN=CENTER WIDTH="100">
+<h1 class="title">LES EMISSIONS</h1>
+<hr size="5" width="100%" color="black"/>
 <?php
 $counter = 0;
 
@@ -12,41 +12,20 @@ foreach ($emission as $e) {
     extract($e);
     $imageSrc = DATA . 'rubrique/' . $NOM . '.png';
     $link = WEBROOT . "Emission/view/$NOM";
-
-    $randomColor = $colors[array_rand($colors)];
 ?>
-
-    <a class="les-emissions-a" href="<?= $link ?>">
-        <?php if ($display === "left") : ?>
-            <div class="<?= $display ?>" style="text-align: <?= $display ?>;">
-                <div class="border-"> 
-                    <div class="img-emi-title"> 
-                        <p style="margin-left: 15px;"> Titre </p>
-                    </div>
-                    <img  src="<?= $imageSrc ?>" alt="image" /> 
-                </div>
-                <div class="info">
-                    <div class="name"><?= EMISSIONS[$NOM] ?><br></div>
-                    <div class="desc-emi"><?= $DESCRIPTION ?></div>
-                </div>
+    <a class="les-emis" href="<?= $link ?>">
+        <div class="<?= $display ?>">
+            <div class="border-">
+                <p> Titre </p>
+                <img src="<?= $imageSrc ?>" alt="image" />
             </div>
-        <?php endif; ?>
-        <?php if ($display === "right") : ?>
-            <div class="<?= $display ?>" style="text-align: <?= $display ?>;">
-                <div class="info">
-                    <div class="name"><?= EMISSIONS[$NOM] ?><br></div>
-                    <div class="desc-emi"><?= $DESCRIPTION ?></div>
-                </div>
-                <div class="border-"> 
-                    <div class="img-emi-title"> 
-                        <p style="margin-left: 15px;"> Titre </p>
-                    </div>
-                    <img  src="<?= $imageSrc ?>" alt="image" /> 
-                </div>
-            </div>
-        <?php endif; ?>
-    </a><br>
 
+            <div class="info " >
+                <div class="name"><?= EMISSIONS[$NOM] ?><br></div>
+                <div class="desc-emi"><?= $DESCRIPTION ?></div>
+            </div>
+        </div>
+    </a>
 <?php
 }
 ?>

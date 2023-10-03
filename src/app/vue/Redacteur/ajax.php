@@ -1,15 +1,16 @@
 <?php 
 
-if(isset($_GET['submit']) && $_GET['submit']) {
+if(isset($_POST['submit']) && $_POST['submit']) {
     $data = $_POST['data'];
-    $table = $_GET['table'];
-    $action = $_GET['action'];
+    $table = $_POST['table'];
+    $action = $_POST['action'];
     $sql = '';
-
+    
+    echo WEBROOT;
     $model = "Model".$table;
-    require_once MODEL. $model.'php';
+    require ROOT."../../models/". $model.'.php';
     $model = new $model();
-
+    
     switch ($action) {
         case 'add':
             // $model->add($data);
@@ -28,7 +29,6 @@ if(isset($_GET['submit']) && $_GET['submit']) {
             $sql = "SELECT * FROM $table";
             break;
     }
-
 
 
     echo "{'success':true,'data':".json_encode($sql)."}";

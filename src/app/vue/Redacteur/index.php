@@ -14,8 +14,10 @@
                     </div>
                     <audio src="<?php echo DATA ?>audio/H2P/H2P Ep 1.wav" controls></audio>
                     <div class="action">
-                        <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this)" data-id="3"></button>
-                        <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)" data-id="3"></button>
+                        <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this)"
+                            data-id="3"></button>
+                        <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)"
+                            data-id="3"></button>
                     </div>
                 </div>
                 <div class="line">
@@ -25,8 +27,10 @@
                     </div>
                     <audio src="<?php echo DATA ?>audio/H2P/H2P Ep 1.wav" controls></audio>
                     <div class="action">
-                        <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this)" data-id="3"></button>
-                        <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)" data-id="3"></button>
+                        <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this)"
+                            data-id="3"></button>
+                        <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)"
+                            data-id="3"></button>
                     </div>
                 </div>
             </div>
@@ -39,7 +43,7 @@
                 <?php
                 // var_dump($emissions);
                 foreach ($emissions as $em) {
-                    $img = file_exists(DATA . $em['SRC']) ? DATA . $em['SRC'] : DATA . 'general/nosrc.png';
+                    $img = file_exists(ROOT . "src/data/" . $em['SRC']) ? DATA . $em['SRC'] : DATA . 'general/nosrc.png';
                     $inscr = $em['INSCRIPTION'] ? "<b title='Inscription'>📝</b>" : "";
                     echo '
                     <div class="item" onclick="focus(this)">
@@ -60,39 +64,12 @@
             </div>
         </div>
     </div>
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Emissions</h2>
-                <span class="close">&times;</span>
-            </div>
-            <div class="modal-body">
-                <form method="post">
-                    <label for="nom">Nom</label>
-                    <input type="text" name="nom" id="nom" placeholder="Nom de l'émission" required>
-                    <label for="description">Description</label>
-                    <input type="text" name="description" id="description" placeholder="Description" required>
-                    <label for="src">Image</label>
-                    <input type="file" name="src" id="src" placeholder="Image" accept="image/*" onchange="changePreview()">
-                    <label for="inscription">Inscription</label>
-                    <select name="inscription" id="inscription" required>
-                        <option value="0">Non</option>
-                        <option value="1">Oui</option>
-                    </select>
-                    <input type="submit" value="Valider" id="submit">
-                </form>
-                <div class="preview">
-                    <img src="<?php echo DATA ."general/nosrc.png"?>" alt="" id="previewimg">
-                </div>
-            </div>
-        </div>
-    </div>
     <button id="myBtn">BUTTON</button>
 </div>
 </div>
 <script src="<?php echo WWW . "js/functions.js"; ?>"></script>
 <script>
-    const modal = new Modal("Ajouter",`<div class="modal-body">
+    const modal = new Modal("Ajouter", `
             <form method="post">
                 <label for="nom">Nom</label>
                 <input type="text" name="nom" id="nom" placeholder="Nom" required>
@@ -105,12 +82,11 @@
                     <option value="0">Non</option>
                     <option value="1">Oui</option>
                 </select>
-                <input type="submit" value="Valider" id="submit">
+                <input type="submit" value="Valider" id="ModalSubmit">
             </form>
             <div class="preview">
-                <img src="<?php echo DATA ."general/nosrc.png"?>" alt="" id="previewimg">
-            </div>
-        </div>`);
+                <img src="<?php echo DATA . "general/nosrc.png" ?>" alt="" id="previewimg">
+            </div>`);
 
 
     function focus(el) {
@@ -125,20 +101,44 @@
         //     inscription: 0,
         //     src: "<?php //echo DATA . 'general/nosrc.png' ?>"
         // });
-        modal.render();
+        let link = "<?php echo DATA . 'general/nosrc.png' ?>";
+        modal.render(
+            function () {
+                // link = document.querySelector('#previewimg').getAttribute('src');
+                // console.log(link);
+                $('.modal .modal-body form [name="src"]').attr('src', link);
+            });
+        modal.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "add", "Emission");
+        modal.setData({
+            nom: "",
+            description: "",
+            inscription: 0,
+            src: link
+        });
         // request("<?php // echo WEBROOT . 'src/app/vue/Redacteur/ajax.php' ?>", "add", "Emission", "ddd", result);
     }
 
     function edit(el) {
         // console.log(el.getAttribute('data-id'));
         // console.log(el.parentElement.parentElement.querySelector('#description').innerHTML);
-        openModal("Modifier", {
-            // remove emoji for nom
+        modal.render(function () {
+            console.log($('.modal .modal-body form [name="src"]'));
+            $('.modal .modal-body form [name="src"]').attr('src', el.parentElement.parentElement.querySelector('img').getAttribute('src'));
+        });
+        modal.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "edit", "Emission");
+        modal.setData({
             nom: el.parentElement.parentElement.querySelector('h2').innerHTML.replace(/<b.*>.*<\/b>/g, ""),
             description: el.parentElement.parentElement.querySelector('#description').innerHTML,
             inscription: el.parentElement.parentElement.querySelector('#inscription').innerHTML,
             src: el.parentElement.parentElement.querySelector('img').getAttribute('src')
         });
+        // openModal("Modifier", {
+        //     // remove emoji for nom
+        //     nom: el.parentElement.parentElement.querySelector('h2').innerHTML.replace(/<b.*>.*<\/b>/g, ""),
+        //     description: el.parentElement.parentElement.querySelector('#description').innerHTML,
+        //     inscription: el.parentElement.parentElement.querySelector('#inscription').innerHTML,
+        //     src: el.parentElement.parentElement.querySelector('img').getAttribute('src')
+        // });
     }
 
     function suppr(el) {
@@ -150,19 +150,19 @@
         console.log(response);
     }
 
-    function changePreview() {
-        var preview = document.getElementById('previewimg');
-        var file = document.getElementById('src').files[0];
-        var reader = new FileReader();
-        reader.onloadend = function() {
-            preview.src = reader.result;
-        }
-        if (file) {
-            reader.readAsDataURL(file);
-        } else {
-            preview.src = "";
-        }
-    }
+    // function changePreview() {
+    //     var preview = document.getElementById('previewimg');
+    //     var file = document.getElementById('src').files[0];
+    //     var reader = new FileReader();
+    //     reader.onloadend = function () {
+    //         preview.src = reader.result;
+    //     }
+    //     if (file) {
+    //         reader.readAsDataURL(file);
+    //     } else {
+    //         preview.src = "";
+    //     }
+    // }
 
     // var modal = document.getElementById("modal");
 
@@ -203,16 +203,16 @@
     //         closeModal();
     //     }
     // }
-    document.getElementById('submit').addEventListener('click', function (e) {
-        e.preventDefault();
-        var form = document.querySelector('form');
-        var data = new FormData(form);
-        console.log(data);
-    });
+    // document.getElementById('submit').addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     var form = document.querySelector('form');
+    //     var data = new FormData(form);
+    //     console.log(data);
+    // });
 
-    function resultModal(success, response) {
-        if (success) {
-            closeModal();
-        }
-    }
+    // function resultModal(success, response) {
+    //     if (success) {
+    //         closeModal();
+    //     }
+    // }
 </script>

@@ -4,7 +4,7 @@ function request(url, action, table, data, result) {
     type: "POST",
     dataType: "json",
     data: {
-      data: data,
+      data: JSON.stringify(data),
       submit: true,
       action: action,
       table: table,
@@ -47,10 +47,10 @@ class Modal {
             if (success) {
               // Si la requête a réussi, fermez le modal et affichez une alerte
               // self.closeModal();
-              alert("Success", JSON.stringify(response));
+              alert("Success", JSON.stringify(response.responseText));
             } else {
               // Sinon, affichez une alerte avec le message d'erreur
-              alert(JSON.stringify(response));
+              alert(JSON.stringify(response.responseText));
             }
           }
         );

@@ -24,7 +24,7 @@ class CTRLRedacteur extends Controller
 
         $articles = $this->ModelArticle->Liste();
         parent::Set(array('emissions' => $emissions, 'articles' => $articles));
-        parent::Render('index.php', "Redaction");
+        parent::Render('index.php', "Redaction", "box");
         // }
     }
 }

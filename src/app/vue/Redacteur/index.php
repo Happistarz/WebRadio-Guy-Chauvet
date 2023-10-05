@@ -7,34 +7,37 @@
             <button class="fas fa-circle-plus" title="Ajouter un nouvel élément" onclick="add(this,'Audio')"></button>
             <hr>
             <div class="items">
+                <?php
+                ?>
                 <div class="line">
                     <div class="desc">
                         <h2>H2P Ep 1.wav</h2>
-                        <p id="auteurs">moi moi 2</p>
-                        <span>• 2023-09-28</span>
-                        <p style="display: none" id="description">Lorem ddd</p>
+                        <p id="auteurs">moi moi 2 <span>• 2023-09-28</span></p>
+
+                        <p id="description"><i>Lorem ddd</i></p>
                     </div>
                     <audio src="<?php echo DATA ?>audio/H2P/H2P Ep 1.wav" controls></audio>
                     <p style="display: none" id="id">3</p>
                     <div class="action">
-                        <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this,'Audio',this.getAttribute('data-id'))" data-id="3"></button>
+                        <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this,'Audio',3)"></button>
                         <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)" data-id="3"></button>
                     </div>
                 </div>
-                <div class="line">
+                <!-- <div class="line">
                     <div class="desc">
                         <h2>H2P Ep 1.wav</h2>
                         <p id="auteurs">Lorem ddd</p>
                         <span>• 2023-09-28</span>
-                        <p style="display: none" id="description">Lorem ddd</p>
+                        <pid="description">Lorem ddd</p>
                     </div>
-                    <audio src="<?php echo DATA ?>audio/H2P/H2P Ep 1.wav" controls></audio>
+                    <audio src="<?php //echo DATA 
+                                ?>audio/H2P/H2P Ep 1.wav" controls></audio>
                     <p style="display: none" id="id">3</p>
                     <div class="action">
-                        <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this,'Audio',this.getAttribute('data-id'))" data-id="3"></button>
+                        <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this,'Audio',3)"></button>
                         <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)" data-id="3"></button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="liste border-blue">
@@ -57,8 +60,8 @@
                             <p style="display:none" id="nom">' . $em['NOM'] . '</p>
                         </div>
                         <div class="action">
-                            <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this,"Emission",'.$em['ID'].')" data-id="' . $em['ID'] . '"></button>
-                            <button type="button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)" data-id="' . $em['ID'] . '"></button>
+                            <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this,\'Emission\',\'' . $em['ID'] . '\')" data-id="' . $em['ID'] . '"></button>
+                            <button type="button" class="fas fa-trash" title="Supprimer" onclick="suppr(this, \'Emission\')" data-id="' . $em['ID'] . '"></button>
                         </div>
                     </div>';
                 }
@@ -66,7 +69,6 @@
             </div>
         </div>
     </div>
-    <button id="myBtn">BUTTON</button>
 </div>
 </div>
 <script src="<?php echo WWW . "js/functions.js"; ?>"></script>
@@ -156,7 +158,7 @@
         }
     }
 
-    function edit(el,table,id) {
+    function edit(el, table, id) {
         // console.log(el.getAttribute('data-id'));
         switch (table) {
             case "Emission":
@@ -165,8 +167,8 @@
                     console.log($('.modal .modal-body #previewimg'));
                     $('.modal .modal-body #previewimg').attr('src', el.parentElement.parentElement.querySelector('img').getAttribute('src'));
                 });
-                modal.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "edit", "Emission");
-                modal.setData({
+                modalEmission.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "edit", "Emission");
+                modalEmission.setData({
                     nomlong: el.parentElement.parentElement.querySelector('h2').innerHTML.replace(/<b.*>.*<\/b>/g, ""),
                     nom: el.parentElement.parentElement.querySelector('#nom').innerHTML,
                     description: el.parentElement.parentElement.querySelector('#description').innerHTML,
@@ -196,9 +198,11 @@
         }
     }
 
-    function suppr(el) {
-        console.log(el.getAttribute('data-id'));
-        request('<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>', 'delete', 'Audio', el.getAttribute('data-id'));
+    function suppr(el, table) {
+        // console.log(el.getAttribute('data-id'));
+        if (confirm('Voulez vous vraiment suppimer cette émission?')) request('<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>', 'delete', table, el.getAttribute('data-id'), (success, response) => {
+            console.log(response.responseText);
+        });
     }
 
     // function changeSrcPreview() {

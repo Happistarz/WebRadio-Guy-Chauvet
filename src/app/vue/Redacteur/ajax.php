@@ -1,24 +1,28 @@
 <?php 
 
-if(isset($_POST['submit']) && $_POST['submit']) {
-    $data = $_POST['data'];
-    $table = $_POST['table'];
-    $action = $_POST['action'];
+// if(isset($_POST['submit']) && $_POST['submit']) {
+    // $data = $_POST['data'];
+    $table = "Emission";
+    $action = "add";
     $sql = '';
-    
-    echo WEBROOT;
+    require_once "../../../../conf/constantes.php";
+
+
     $model = "Model".$table;
-    require ROOT."../../models/". $model.'.php';
-    $model = new $model();
+    echo ROOT."../../".$model.'.php';
+    // require MODEL. $model.'.php';
+    // $model = new $model();
     
     switch ($action) {
         case 'add':
             // $model->add($data);
-            $sql = "INSERT INTO $table (".join(", ",$model->getColumns()).") VALUES (".join(", ",$data).")";
+            // $sql = "INSERT INTO $table (".join(", ",$model->getColumns()).") VALUES (".join(", ",$data).")";
             break;
         case 'edit':
             // $model->edit($data);
-            $sql = "UPDATE $table SET ".join(", ",$model->getColumns())." WHERE id =". $data['id'];
+            // $sql = "UPDATE $table SET ".join(", ",$model->getColumns())." WHERE id =". $data['id'];
+            // $sql = "UPDATE $table SET ".join(", ",$data)." WHERE id =". $data['id'];
+            $sql = "edit";
             break;
         case 'delete':
             // $model->delete($data);
@@ -32,5 +36,5 @@ if(isset($_POST['submit']) && $_POST['submit']) {
 
 
     echo "{'success':true,'data':".json_encode($sql)."}";
-}
+// }
 ?>

@@ -29,7 +29,7 @@ class Modal {
   /**
    * Ajoute un écouteur d'événements au bouton ModalSubmit.
    */
-  addSubmitListener(url, action, table) {
+  addSubmitListener(url, action, table, callback) {
     const submitButton = document.querySelector("#ModalSubmit");
     const self = this;
     if (submitButton) {
@@ -38,22 +38,22 @@ class Modal {
         const formData = $(".modal-body").find('form').serializeArray();
 
         console.log(formData);
-        // request(
-        //   url,
-        //   action,
-        //   table,
-        //   formData,
-        //   function (success, response) {
-        //     if (success) {
-        //       // Si la requête a réussi, fermez le modal et affichez une alerte
-        //       // self.closeModal();
-        //       alert("Success", response);
-        //     } else {
-        //       // Sinon, affichez une alerte avec le message d'erreur
-        //       alert(response.message);
-        //     }
-        //   }
-        // );
+        request(
+          url,
+          action,
+          table,
+          formData,
+          function (success, response) {
+            if (success) {
+              // Si la requête a réussi, fermez le modal et affichez une alerte
+              // self.closeModal();
+              alert("Success", JSON.stringify(response));
+            } else {
+              // Sinon, affichez une alerte avec le message d'erreur
+              alert(JSON.stringify(response));
+            }
+          }
+        );
         self.closeModal();
       });
     }
@@ -103,7 +103,6 @@ class Modal {
 
   setData(data) {
     const form = this.modal.querySelector("form");
-
     for (let key in data) {
       const value = data[key];
       const field = form.querySelector(`[name="${key}"]`);

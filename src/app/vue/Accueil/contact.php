@@ -12,52 +12,33 @@
 
     <div class="container">
        
+        
         <div class="row">
+            <!-- Maps -->
+            <iframe class="Maps" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d961.921594769298!2d0.0859733681157145!3d47.0063698375723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47fd65f2582afbb1%3A0x7999dd35adc065e1!2sLyc%C3%A9e%20Guy%20chauvet!5e0!3m2!1sfr!2sfr!4v1677751061240!5m2!1sfr!2sfr"
+            style="border:0;float: right;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
             <div class="column">
-                <img src="<?php echo DATA."/general/Logo.png"?>" alt="logoContact">
-            </div>
-            <div style="text-align:center;padding-bottom: 15px;padding-top: 15px;">
-            <h1>Contactez Nous</h1>
-        </div>
-
-        <!-- Maps -->
-        <div class="container">
-                <iframe class="Maps"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d961.921594769298!2d0.0859733681157145!3d47.0063698375723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47fd65f2582afbb1%3A0x7999dd35adc065e1!2sLyc%C3%A9e%20Guy%20chauvet!5e0!3m2!1sfr!2sfr!4v1677751061240!5m2!1sfr!2sfr"
-                    style="border:0;float: right;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-
-            <!-- Formulaire de contact -->
-            <div class="column formContact">
-                <form method="POST" action="contact.php">
-                    <label for="fname">Prenom</label>
-                    <input type="text" id="fname" name="fname" placeholder="Votre nom..." required>
-                    <label for="lname">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Votre E-mail" required>
-                    <label for="subject">Sujet</label>
-                    <textarea id="subject" name="subject" placeholder="Ecrivez quelque chose..." style="height:170px" required></textarea>
+                <!-- Formulaire de contact -->
+                <h1 style="text-align:center; padding-bottom: 20px" >Contactez Nous</h1>
+                <form class="formContact" method="POST" action="contact.php">
+                    <input type="text" name="prenom" placeholder="Votre Prenom..." required>
+                    <input type="text" name="name" placeholder="Votre nom..." required>
+                    <input type="text" name="email" placeholder="Votre email..." required>
+                    <textarea name="sujet" required placeholder="Sujet..."></textarea>
+                    <br>
                     <input type="submit" name="submit" value="Valider">
                 </form>
-            </div>
-        </div>
-    </div>
-    <br>
-    <br>
-
-    <div class="container">
-        <h1 style="text-align: center;">Informations du lycée</h1>
-        <div class="row">
-           
-            <div class="columnContact">
-                <ul>
+                
+                <!-- Informations du lycée -->
+                <h1 style="text-align: center;">Informations du lycée</h1>
+                <ul class="infos-contact">
                     <li><i class="fa fa-bolt" style="margin-right: 15px;"></i> Rue de l'Éperon, 86200 Loudun</li>
                     <li><i class="fas fa-phone-alt" style="margin-right: 15px;"></i> 05 49 98 17 51</li>
                     <li><i class="fas fa-globe" style="margin-right: 15px;"></i> <a
-                            href="https://etab.ac-poitiers.fr/lycee-guy-chauvet/" style="color: black;">Site du lycée
-                        </a></li>
+                    href="https://etab.ac-poitiers.fr/lycee-guy-chauvet/" style="color: black;">Site du lycée</a></li>
                 </ul>
             </div>
-
         </div>
-    </div>

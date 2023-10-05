@@ -138,12 +138,6 @@ header a:hover {
   display: flex;
   flex-direction: row;
 }
-:root {
-  --lines-count: 3;
-  --line-height: 36px;
-  --element-height: calc(var(--lines-count) * var(--line-height));
-}
-
 .Mart .arti img {
   float: left;
   width: 200px;
@@ -167,6 +161,10 @@ header a:hover {
   flex-direction: column;
 }
 .Mart .arti article p{
+  --line-height: 36px;
+  --lines-count: 3;
+  --element-height: calc(var(--lines-count) * var(--line-height));
+  font-size: 0.8em;
   padding: 1px;
   height: var(--element-height);
   text-overflow: ellipsis;
@@ -331,12 +329,14 @@ header a:hover {
 .redacteur .info {
   height: 100%;
   width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 .redacteur .line {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 3fr 0fr;
+  grid-template-columns: 1.5fr 3fr 0.5fr;
   align-items: center;
   margin: 20px 10px;
 }
@@ -345,7 +345,6 @@ header a:hover {
   flex-direction: row;
   justify-content: end;
   align-items: center;
-  /* padding-right: 2vh; */
 }
 
 .redacteur .line .desc {
@@ -452,9 +451,6 @@ header a:hover {
 .container {
   width: 100%;
   height: 100%;
-}
-
-.podcast-container {
 }
 
 .main-podcasts {
@@ -574,22 +570,12 @@ margin-left: 2vw;
   display: flex;
   width: 100%;
   align-items: center;
-  margin-bottom: 5vh;
 }
 
 .left div:nth-child(1),
 .right div:nth-child(1){
 display: flex;
 flex-direction: column;
-> p{
-  display: flex;
-  justify-content: center;
-  font-size: 2em;
-  background-color: grey;
-  border-radius: 9px;
-  margin: 1%;
-}
-  
 }
 
 .les-emis .info {
@@ -601,19 +587,25 @@ flex-direction: column;
   height: 100%;
 }
 
-
-
-
 .les-emis {
   display: flex;
   flex-direction: row;
   text-decoration: none;
+  align-items: center;
   color: black;
+  transition: ease-in-out;
+  margin-bottom: 5vh;
+  padding: 5px;
 }
+
+
+
 
 .left div:nth-child(1) img,
 .right div:nth-child(1) img{
   display: flex;
+  min-height: 150px;
+  min-width: 150px;
   width: 20vw;
   border-radius: 9px;
   margin: 9px;
@@ -628,6 +620,9 @@ flex-direction: column;
 }
 
 .desc-emi {
+  --line-height: 36px;
+  --lines-count: 5;
+  --element-height: calc(var(--lines-count) * var(--line-height));
   padding: 5px;
   font-size: 0.8em;
   text-align: justify;
@@ -645,16 +640,34 @@ flex-direction: column;
   font-size: larger;
 }
 
-
 /* Quizz en serie -------------------------------------*/
 
-.form1,
-.form2{
+.quiz{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+input[type="text"],
+input[type="tel"] {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  margin-top: 10px;
+}
+
+.txt-quiz p {
   margin-bottom: 20px;
 }
 
-.quiz{
-  display: block;
+.pref {
+  margin-bottom: 25px; 
 }
 
 /* Lecteur audio -------------------------------------*/
@@ -780,12 +793,15 @@ audio::-moz-range-track {
   /* Les emissions */
 
   .info .name  {
-    background-color: yellow;
     font-size: 0.4em;
+    padding: 6px;
   }
 
   .desc-emi {
-    font-size: 0.3em;
+    font-size: 0.4em !important;
+    --line-height: 30px !important;
+    --lines-count: 5 !important;;
+    --element-height: calc(var(--lines-count) * var(--line-height));
   }
 
   .title {
@@ -938,28 +954,54 @@ audio::-moz-range-track {
 
 /* Page contact */
 
-img[alt="logoContact"] {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 150px;
-}
-
-.columnContact {
-  z-index: 5;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  padding: 0px;
-  border-width: 0px;
-  margin: 0px;
-  left: 0px;
-  top: 0px;
-  touch-action: pan-x pan-y;
-}
-
 .Maps {
-  width: 600px;
-  height: 400px;
+  width: 1500px;
+  height: 550px;
   display: flex;
+  justify-content: center;
+  border-radius: 9px;
+ 
+}
+
+.row {
+  width: 100%;
+  display:flex;
+}
+
+.formContact {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  box-sizing: border-box;
+  margin: 15px;
+  
+
+  >input[type="submit"]{
+    margin-top: 9px;
+    align-self: center;
+    padding: 10px;
+    width: 50%;
+    border-radius: 15px;
+  }
+}
+
+.infos-contact {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.formContact textarea {
+  padding: 10px;
+  resize:vertical;
+  line-height: 1.5;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #999;
+}
+.row .column{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }

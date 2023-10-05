@@ -19,6 +19,25 @@ main {
 }
 
 /* HEADER ----------------------------------*/
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background: #000;
+  top: 0;
+  transition: top 0.5s ease-in-out;
+  /* display: none; */
+}
+#loader p {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
 
 header {
   width: 100%;
@@ -114,26 +133,49 @@ header a:hover {
   gap: 2vh;
 }
 .Mart .arti {
+  box-sizing: border-box;
   text-decoration: none;
   display: flex;
   flex-direction: row;
 }
+:root {
+  --lines-count: 3;
+  --line-height: 36px;
+  --element-height: calc(var(--lines-count) * var(--line-height));
+}
 
 .Mart .arti img {
+  float: left;
   width: 200px;
+  height: 200px;
   border-top-left-radius: 9px;
   border-bottom-left-radius: 9px;
-}
+  max-width: 200px;
+  max-height: 200px;
+} 
 .Mart .arti article {
+  box-sizing: border-box;
   gap: 15px;
   width: 100%;
+  font-size: 1.5em;
+  text-align: justify;
+  max-height: 183px;
   color: rgb(0, 0, 0);
   text-decoration: none;
-  padding: 8px;
+  margin: 8px;
   display: flex;
   flex-direction: column;
 }
-
+.Mart .arti article p{
+  padding: 1px;
+  height: var(--element-height);
+  text-overflow: ellipsis;
+  line-height: var(--line-height);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: var(--lines-count);
+  -webkit-box-orient: vertical;     
+}
 .Memissions {
   display: flex;
   flex-wrap: wrap;
@@ -189,7 +231,7 @@ header a:hover {
 
 .redacteur .column {
   width: 100%;
-  height: auto;
+  height: 80vh;
   /* background-color: #ccc; */
   /* margin: 0 15px; */
   /* padding: 0 5%; */
@@ -202,19 +244,13 @@ header a:hover {
 .redacteur .column .liste {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  height: 100%;
   align-items: center;
-}
-.redacteur .column .liste {
-  background-color: #ccc;
   width: 90%;
-  /* height: 20vh; */
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-  /* margin: 10px 0; */
+  justify-content: center;
+  height: 100%;
+}
+.redacteur .column h1 {
+  margin: 10px;
 }
 
 .redacteur hr {
@@ -231,6 +267,8 @@ header a:hover {
   justify-content: center;
   align-items: center;
   /* padding: 5px; */
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .redacteur .column .liste .items .item {
   height: auto;
@@ -348,7 +386,7 @@ header a:hover {
   grid-template-columns: 2fr 1fr;
 }
 
-.modal-body form *:not(label) {
+.modal-body form *:not(label,div) {
   display: block;
   margin: 1rem 0;
   padding: 0.5rem;
@@ -356,7 +394,10 @@ header a:hover {
   border: 1px solid #ccc;
   border-radius: 0.5rem;
 }
-.modal-body form *:not(label,input[type=submit]):hover {
+.modal-body form textarea {
+  height: 6rem;
+}
+.modal-body form *:not(label,input[type=submit],div):hover {
   border: 1px solid #555;
 }
 .modal-body input[type=submit] {
@@ -499,7 +540,6 @@ footer ul {
 
 footer li {
   padding: 10px 15px;
-  list-style: none;
 }
 
 footer a {
@@ -541,9 +581,18 @@ margin-left: 2vw;
 .right div:nth-child(1){
 display: flex;
 flex-direction: column;
+> p{
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  background-color: grey;
+  border-radius: 9px;
+  margin: 1%;
+}
+  
 }
 
-.les-emis  .info {
+.les-emis .info {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -551,6 +600,9 @@ flex-direction: column;
   width: 100%;
   height: 100%;
 }
+
+
+
 
 .les-emis {
   display: flex;
@@ -570,20 +622,39 @@ flex-direction: column;
 .name {
   font-weight: bolder;
   margin-bottom: 2%;
+  background-color: grey;
+  border-radius: 9px;
+  padding: 2px;
 }
 
 .desc-emi {
-  font-size: 22px;
+  padding: 5px;
+  font-size: 0.8em;
+  text-align: justify;
+  height: var(--element-height) ;
+  text-overflow: ellipsis;
+  line-height: var(--line-height);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: var(--lines-count);
+  -webkit-box-orient: vertical;     
+
 }
 
-.left div:nth-child(1) p,
-.right div:nth-child(1) p{
-  height: 6vh;
-  background-color: grey;
-  border-radius: 8px;
-  margin: 1%;
-  display: flex;
-  align-items: center;
+.title-img{
+  font-size: larger;
+}
+
+
+/* Quizz en serie -------------------------------------*/
+
+.form1,
+.form2{
+  margin-bottom: 20px;
+}
+
+.quiz{
+  display: block;
 }
 
 /* Lecteur audio -------------------------------------*/
@@ -621,8 +692,42 @@ audio::-moz-range-track {
 
 /*----------------------------------------------------*/
 
-@media only screen and (max-width: 800px){
-  
+/* RESPONSIVE */
+
+@media only screen and (max-width: 880px)and (max-height: 1030px) {
+
+  /* Index */
+
+  .Memissions{
+    flex-direction: column;
+  }
+  .arti{
+  flex-direction: column !important;
+  }
+  .arti img {
+    margin: 10px auto 0 auto;
+    width: 10vw;
+    float: left;
+    border-radius: 9px;
+  }
+  .arti article{
+    margin: 0px !important;
+  }
+  /* Header */
+
+  .headright {
+    display: none;
+  }
+
+ /* footer */
+  .footer-element ul{
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+  }
+
+/* Emission */
+
 .emission {
   width: 80%;
   height: 100%;
@@ -650,20 +755,14 @@ audio::-moz-range-track {
     height: 100%;
   }
 
-.Memis {
-  width: 100%;
-  height: 100%;
-}
-
-  .Memissions {
-    width: 100%;
+  .Memissions .Memis {
+    width: 80%;
     height: 30%;
     display: flex;
     flex-direction: column;
-  }
+    margin: auto;
+    margin-bottom: 20px;
 
-  .headright {
-    display: none;
   }
 
   .info-podcast {
@@ -678,12 +777,34 @@ audio::-moz-range-track {
 
   }
 
+  /* Les emissions */
 
+  .info .name  {
+    background-color: yellow;
+    font-size: 0.4em;
+  }
+
+  .desc-emi {
+    font-size: 0.3em;
+  }
+
+  .title {
+    font-size: 1em;
+  }
+
+  /* Quiz en série */
+
+  .quiz {
+    font-size: 0.7em;
+  }
+
+  /* Mentions légales */
+
+  .Titre {
+      
+  }
 
 }
-
-
-
 
 /*----------------------------------------------------*/
 
@@ -813,4 +934,32 @@ audio::-moz-range-track {
   right: 54%;
   transform: translateY(-50%);
   cursor: pointer;
+}
+
+/* Page contact */
+
+img[alt="logoContact"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+}
+
+.columnContact {
+  z-index: 5;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  border-width: 0px;
+  margin: 0px;
+  left: 0px;
+  top: 0px;
+  touch-action: pan-x pan-y;
+}
+
+.Maps {
+  width: 600px;
+  height: 400px;
+  display: flex;
 }

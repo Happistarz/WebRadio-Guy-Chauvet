@@ -4,44 +4,45 @@
 
         <div class="info border-blue">
             <h1>Informations</h1>
-            <button class="fas fa-circle-plus" title="Ajouter un nouvel élément" onclick="add(this)"></button>
-            <hr style="width:100%">
+            <button class="fas fa-circle-plus" title="Ajouter un nouvel élément" onclick="add(this,'Audio')"></button>
+            <hr>
             <div class="items">
                 <div class="line">
                     <div class="desc">
-                        <h2>🎵 H2P Ep 1.wav</h2>
-                        <p>moi moi 2<span>• 2023-09-28</span></p>
+                        <h2>H2P Ep 1.wav</h2>
+                        <p id="auteurs">moi moi 2</p>
+                        <span>• 2023-09-28</span>
+                        <p style="display: none" id="description">Lorem ddd</p>
                     </div>
                     <audio src="<?php echo DATA ?>audio/H2P/H2P Ep 1.wav" controls></audio>
+                    <p style="display: none" id="id">3</p>
                     <div class="action">
-                        <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this)"
-                            data-id="3"></button>
-                        <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)"
-                            data-id="3"></button>
+                        <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this,'Audio',this.getAttribute('data-id'))" data-id="3"></button>
+                        <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)" data-id="3"></button>
                     </div>
                 </div>
                 <div class="line">
                     <div class="desc">
-                        <h2>🎵 H2P Ep 1.wav</h2>
-                        <p>Lorem ddd</p>
+                        <h2>H2P Ep 1.wav</h2>
+                        <p id="auteurs">Lorem ddd</p>
+                        <span>• 2023-09-28</span>
+                        <p style="display: none" id="description">Lorem ddd</p>
                     </div>
                     <audio src="<?php echo DATA ?>audio/H2P/H2P Ep 1.wav" controls></audio>
+                    <p style="display: none" id="id">3</p>
                     <div class="action">
-                        <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this)"
-                            data-id="3"></button>
-                        <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)"
-                            data-id="3"></button>
+                        <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this,'Audio',this.getAttribute('data-id'))" data-id="3"></button>
+                        <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)" data-id="3"></button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="liste border-blue">
             <h1>Emissions</h1>
-            <button class="fas fa-circle-plus" title="Ajouter un nouvel élément" onclick="add(this)"></button>
+            <button class="fas fa-circle-plus" title="Ajouter un nouvel élément" onclick="add(this,'Emission')"></button>
             <hr>
             <div class="items">
                 <?php
-                // var_dump($emissions);
                 foreach ($emissions as $em) {
                     $img = file_exists(ROOT . "src/data/" . $em['SRC']) ? DATA . $em['SRC'] : DATA . 'general/nosrc.png';
                     $inscr = $em['INSCRIPTION'] ? "<b title='Inscription'>📝</b>" : "";
@@ -49,13 +50,14 @@
                     <div class="item" onclick="focus(this)">
                         <img src="' . $img . '" alt="">
                         <div class="desc">
-                            <h2>' . $em['NOM'] . $inscr . '</h2>
+                            <h2>' . $em['NOMLONG'] . $inscr . '</h2>
                             <p>' . $em['AUDIOS'] . ' audio(s)</p>
                             <p style="display:none" id="description">' . $em['DESCRIPTION'] . '</p>
                             <p style="display:none" id="inscription">' . $em['INSCRIPTION'] . '</p>
+                            <p style="display:none" id="nom">' . $em['NOM'] . '</p>
                         </div>
                         <div class="action">
-                            <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this)" data-id="' . $em['ID'] . '"></button>
+                            <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this,"Emission",'.$em['ID'].')" data-id="' . $em['ID'] . '"></button>
                             <button type="button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)" data-id="' . $em['ID'] . '"></button>
                         </div>
                     </div>';
@@ -69,24 +71,46 @@
 </div>
 <script src="<?php echo WWW . "js/functions.js"; ?>"></script>
 <script>
-    const modal = new Modal("Ajouter", `
+    const BODYEMISSION = `
             <form method="post">
-                <label for="nom">Nom</label>
-                <input type="text" name="nom" id="nom" placeholder="Nom" required>
+                <label>Nom</label>
+                <div class="form-name">
+                    <input type="text" name="nomlong" id="nomlong" placeholder="Nom" required>
+                    <input type="text" name="nom" id="nom" placeholder="Raccourci" required>
+                </div>
                 <label for="description">Description</label>
-                <input type="text" name="description" id="description" placeholder="Description" required>
+                <textarea type="text" name="description" id="description" placeholder="Description" required> </textarea>
                 <label for="src">Image</label>
-                <input type="file" name="src" id="src" placeholder="Image" accept="image/*" onchange="changePreview()">
+                <input type="file" name="src" id="src" placeholder="Image" accept="image/*" onchange="changeImgPreview()">
                 <label for="inscription">Inscription</label>
                 <select name="inscription" id="inscription" required>
                     <option value="0">Non</option>
                     <option value="1">Oui</option>
                 </select>
+                <input type="hidden" name="id" id="id" value="">
                 <input type="submit" value="Valider" id="ModalSubmit">
             </form>
             <div class="preview">
                 <img src="<?php echo DATA . "general/nosrc.png" ?>" alt="" id="previewimg">
-            </div>`);
+            </div>`;
+
+    const BODYAUDIO = `
+            <form method="post">
+                <label>Nom</label>
+                <input type="text" name="nom" id="nom" placeholder="Nom" required>
+                <label for="src">Audio</label>
+                <input type="file" name="src" id="src" placeholder="Audio" accept="audio/*" onchange="changeImgPreview()">
+                <label for="description">Description</label>
+                <textarea type="text" name="description" id="description" placeholder="Description" required> </textarea>
+                <label for="auteurs">Auteurs</label>
+                <input type="text" name="auteurs" id="auteurs" placeholder="Auteurs" required>
+                <input type="hidden" name="idemission" id="idemission" value="">
+                <input type="hidden" name="id" id="id" value="">
+                <input type="submit" value="Valider" id="ModalSubmit">
+            </form>
+            <div class="preview">
+                <audio src="" controls></audio>
+            </div>`;
 
 
     function focus(el) {
@@ -94,122 +118,106 @@
         el.classList.toggle('focus');
     }
 
-    function add(el) {
-        // openModal("Ajouter", {
-        //     nom: "",
-        //     description: "",
-        //     inscription: 0,
-        //     src: "<?php //echo DATA . 'general/nosrc.png' ?>"
-        // });
-        let link = "<?php echo DATA . 'general/nosrc.png' ?>";
-        modal.render(
-            function () {
-                // link = document.querySelector('#previewimg').getAttribute('src');
-                // console.log(link);
-                $('.modal .modal-body form [name="src"]').attr('src', link);
-            });
-        modal.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "add", "Emission");
-        modal.setData({
-            nom: "",
-            description: "",
-            inscription: 0,
-            src: link
-        });
-        // request("<?php // echo WEBROOT . 'src/app/vue/Redacteur/ajax.php' ?>", "add", "Emission", "ddd", result);
+    function add(el, table) {
+
+        switch (table) {
+            case "Emission":
+                let modalEmission = new Modal("Ajouter", BODYEMISSION);
+                let link = "<?php echo DATA . 'general/nosrc.png' ?>";
+                modalEmission.render(
+                    function() {
+                        $('.modal .modal-body form [name="src"]').attr('src', link);
+                    });
+                modalEmission.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "add", "Emission");
+                modalEmission.setData({
+                    nomlong: "",
+                    nom: "",
+                    description: "",
+                    inscription: 0,
+                    src: link
+                });
+                break;
+            case "Audio":
+                let modalAudio = new Modal("Ajouter", BODYAUDIO);
+                modalAudio.render(function() {
+                    $('.modal .modal-body form .preview audio').attr('src', "");
+                });
+                modalAudio.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "add", "Audio");
+                modalAudio.setData({
+                    nom: "",
+                    src: "",
+                    description: "",
+                    auteurs: "",
+                    idemission: ""
+                });
+                break;
+            default:
+                break;
+        }
     }
 
-    function edit(el) {
+    function edit(el,table,id) {
         // console.log(el.getAttribute('data-id'));
-        // console.log(el.parentElement.parentElement.querySelector('#description').innerHTML);
-        modal.render(function () {
-            console.log($('.modal .modal-body form [name="src"]'));
-            $('.modal .modal-body form [name="src"]').attr('src', el.parentElement.parentElement.querySelector('img').getAttribute('src'));
-        });
-        modal.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "edit", "Emission");
-        modal.setData({
-            nom: el.parentElement.parentElement.querySelector('h2').innerHTML.replace(/<b.*>.*<\/b>/g, ""),
-            description: el.parentElement.parentElement.querySelector('#description').innerHTML,
-            inscription: el.parentElement.parentElement.querySelector('#inscription').innerHTML,
-            src: el.parentElement.parentElement.querySelector('img').getAttribute('src')
-        });
-        // openModal("Modifier", {
-        //     // remove emoji for nom
-        //     nom: el.parentElement.parentElement.querySelector('h2').innerHTML.replace(/<b.*>.*<\/b>/g, ""),
-        //     description: el.parentElement.parentElement.querySelector('#description').innerHTML,
-        //     inscription: el.parentElement.parentElement.querySelector('#inscription').innerHTML,
-        //     src: el.parentElement.parentElement.querySelector('img').getAttribute('src')
-        // });
+        switch (table) {
+            case "Emission":
+                let modalEmission = new Modal("Modifier", BODYEMISSION);
+                modalEmission.render(function() {
+                    console.log($('.modal .modal-body #previewimg'));
+                    $('.modal .modal-body #previewimg').attr('src', el.parentElement.parentElement.querySelector('img').getAttribute('src'));
+                });
+                modal.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "edit", "Emission");
+                modal.setData({
+                    nomlong: el.parentElement.parentElement.querySelector('h2').innerHTML.replace(/<b.*>.*<\/b>/g, ""),
+                    nom: el.parentElement.parentElement.querySelector('#nom').innerHTML,
+                    description: el.parentElement.parentElement.querySelector('#description').innerHTML,
+                    inscription: el.parentElement.parentElement.querySelector('#inscription').innerHTML,
+                    src: el.parentElement.parentElement.querySelector('img').getAttribute('src'),
+                    id: id
+                });
+                break;
+            case "Audio":
+                let modalAudio = new Modal("Modifier", BODYAUDIO);
+                modalAudio.render(function() {
+                    console.log($('.modal .modal-body .preview audio'));
+                    $('.modal .modal-body .preview audio').attr('src', el.parentElement.parentElement.querySelector('audio').getAttribute('src'));
+                });
+                modalAudio.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "edit", "Audio");
+                modalAudio.setData({
+                    nom: el.parentElement.parentElement.querySelector('h2').innerHTML.replace(/<b.*>.*<\/b>/g, ""),
+                    description: el.parentElement.parentElement.querySelector('#description').innerHTML,
+                    auteurs: el.parentElement.parentElement.querySelector('#auteurs').innerHTML,
+                    src: el.parentElement.parentElement.querySelector('audio').getAttribute('src'),
+                    idemission: el.getAttribute('data-id'),
+                    id: id
+                });
+                break;
+            default:
+                break;
+        }
     }
 
     function suppr(el) {
-        // console.log("suppr");
         console.log(el.getAttribute('data-id'));
+        request('<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>', 'delete', 'Audio', el.getAttribute('data-id'));
     }
 
-    function resultSuppr(success, response) {
-        console.log(response);
+    // function changeSrcPreview() {
+
+    // }
+
+    function changeImgPreview() {
+        var preview = document.getElementById('previewimg');
+        var file = document.getElementById('src').files[0];
+        var reader = new FileReader();
+        reader.onloadend = function() {
+            preview.src = reader.result;
+        }
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+        }
     }
-
-    // function changePreview() {
-    //     var preview = document.getElementById('previewimg');
-    //     var file = document.getElementById('src').files[0];
-    //     var reader = new FileReader();
-    //     reader.onloadend = function () {
-    //         preview.src = reader.result;
-    //     }
-    //     if (file) {
-    //         reader.readAsDataURL(file);
-    //     } else {
-    //         preview.src = "";
-    //     }
-    // }
-
-    // var modal = document.getElementById("modal");
-
-    // // Get the button that opens the modal
-    // var btn = document.getElementById("myBtn");
-
-    // // Get the <span> element that closes the modal
-    // var span = document.getElementsByClassName("close")[0];
-
-    // // When the user clicks on the button, open the modal
-    // function openModal(title,data=null) {
-    //     modal.style.display = "block";
-    //     document.querySelector('.modal-header h2').innerHTML = title;
-    //     // set form with data
-
-    //     if (data == null) return;
-    //     document.getElementById('nom').value = data.nom;
-    //     document.getElementById('description').value = data.description;
-    //     document.getElementById('inscription').value = data.inscription;
-    //     document.getElementById('previewimg').src = data.src;
-    // }
-
-    // function closeModal() {
-    //     modal.style.display = "none";
-    // }
-
-    // // When the user clicks on <span> (x), close the modal
-    // span.onclick = function() {
-    //     closeModal();
-    // }
-
-    // btn.onclick = function() {
-    //     openModal();
-    // }
-    // // When the user clicks anywhere outside of the modal, close it
-    // window.onclick = function(event) {
-    //     if (event.target == modal) {
-    //         closeModal();
-    //     }
-    // }
-    // document.getElementById('submit').addEventListener('click', function (e) {
-    //     e.preventDefault();
-    //     var form = document.querySelector('form');
-    //     var data = new FormData(form);
-    //     console.log(data);
-    // });
-
     // function resultModal(success, response) {
     //     if (success) {
     //         closeModal();

@@ -18,8 +18,6 @@ function request(url, action, table, data, result) {
   });
 }
 
-// create a class Modal to create a modal with create, update and delete functions
-// need to set data in the body of the modal
 class Modal {
   constructor(title, body, callback) {
     this.title = title;

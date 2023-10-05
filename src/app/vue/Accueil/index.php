@@ -1,4 +1,3 @@
-<main>
 <?php
 foreach ($info as $i) {
 	extract($i);
@@ -24,16 +23,15 @@ foreach ($info as $i) {
 <?php
 
 foreach ($article as $d) {
-	extract($d);
-	echo'
-	<a class="border- arti" href="'.WEBROOT.'Article/view/'.$ID .'">
-	<img src="'.DATA.'general/nosrc.png" alt="nosrc" />
-	<article>
-	  	<h2>'.$NOM.'</h2>
-		<p>'.$DESCRIPTION.'</p>
-	</article>
-	</a> 
-	';
+    extract($d);
+    echo '
+    <a class="border- arti" href="' . WEBROOT . 'Article/view/' . $ID . '">
+        <img src="' . DATA . 'general/nosrc.png" alt="nosrc" />
+        <article>
+            <h2>' . $NOM . '</h2>
+			<p>' . $DESCRIPTION .'</p>
+		</article>
+    </a>';
 }
 ?>
 </div>
@@ -48,12 +46,11 @@ foreach ($article as $d) {
 
 		echo'<div class="border- Memis">
 			<a href="Emission/view/'.$NOM.'" >
-				<h3>'.EMISSIONS[$NOM].'</h3>
+				<h3>'.$NOMLONG.'</h3>
 				<img src="'.DATA.'rubrique/'.$NOM.'.png" alt="image" />
   			</a>
 			</div>';
 	}
 ?>
 </div>
-</main>
 

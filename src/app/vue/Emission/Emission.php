@@ -4,7 +4,7 @@
     <div class="emission">
         <img src="<?= DATA . $SRC; ?>" alt="imgEmission">
         <article>
-            <h5 ><?= EMISSIONS[$NOM] ?></h5>
+            <h5 ><?= $NOMLONG ?></h5>
             <p ><?= $DESCRIPTION ?></p>
         </article>
     </div>

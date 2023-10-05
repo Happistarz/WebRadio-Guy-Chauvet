@@ -1,6 +1,7 @@
 <script src="<?php echo WWW . "js/loader.js" ?>"></script>
 <link rel="stylesheet" href="<?php echo CSS . "reset.css" ?>">
 <link rel="stylesheet" href="<?php echo CSS . "style.css" ?>">
+<link rel="icon" type="image/png" href="<?php echo DATA . "general/icones/couleur.png" ?>" />
 <!-- loader -->
 <!-- <div id="loader">
   <p>Chargement...</p>
@@ -14,19 +15,25 @@
   <div class="headright">
     <!-- emission btn -->
     <div class="dropdown">
-      <a href="<?php echo WEBROOT ?>Emission" target="_blank">EMISSIONS</a>
+      <a href="<?php echo WEBROOT ?>Emission">EMISSIONS</a>
       <div class="dropdown-content">
-        <a href="<?php echo WEBROOT?>Emission/view/H2P" target="_blank">Histoire de poche</a>
-
-        
-        <a href="<?php echo WEBROOT?>Emission/view/JA" target="_blank">Journal Audio</a>
+        <?php
+        foreach ($emissions as $ems) {
+          extract($ems);
+          echo '
+            <a href="'. WEBROOT .'Emission/view/'.$NOM.'">'.$NOMLONG.'</a>
+          ';
+        }
+        ?>
+        <a href="<?php echo WEBROOT?>Emission/view/H2P">Histoire de poche</a>
+        <a href="<?php echo WEBROOT?>Emission/view/JA">Journal Audio</a>
       </div>
     </div>
     <!-- journal btn -->
-    <a href="<?php echo WEBROOT?>journaux" target="_blank">JOURNAUX</a>
+    <a href="<?php echo WEBROOT?>journax">JOURNAL</a>
     <!-- equipe btn -->
     <div class="dropdown">
-      <a href="<?php echo WEBROOT?>Equipe" target="_blank">L'EQUIPE</a>
+      <a href="<?php echo WEBROOT?>Equipe">L'EQUIPE</a>
       <div class="dropdown-content">
         <a href="<?php echo WEBROOT?>Equipe/view/lycee_mdl">La Web Radio</a>
         <a href="<?php echo WEBROOT?>Equipe/view/lycee_membre">Le Lycée</a>

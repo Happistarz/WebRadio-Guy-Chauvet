@@ -47,7 +47,7 @@ class CTRLEmission extends Controller{
         if ($data["INSCRIPTION"]) {
             $layout = "inscription";
         }
-        parent::Render('Emission.php', EMISSIONS[$rubrique], $layout);
+        parent::Render('Emission.php', $data['NOMLONG'], $layout);
     }
 
     

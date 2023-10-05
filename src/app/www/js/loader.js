@@ -30,12 +30,12 @@ function MenuOpen() {
 }
 
 // loader event
-/*window.addEventListener("DOMContentLoaded", (event) => {
-  setTimeout(function () {
-    // animation loader fill up
-    document.getElementById("loader").style.top = "-100vh";
-  }, 500);
-});*/
+// window.addEventListener("DOMContentLoaded", (event) => {
+//   setTimeout(function () {
+//     // animation loader fill up
+//     document.getElementById("loader").style.top = "-100vh";
+//   }, 500);
+// });
 
 function addredac() {
   var form1 = (document.getElementById("form1").style.display = "grid");
@@ -53,20 +53,19 @@ function textAreaAdjust(element) {
   element.style.height = 25 + element.scrollHeight + "px";
 }
 
-
 function previewImage() {
-  var preview = document.getElementById('preview');
-  var image = document.getElementById('image').files[0];
+  var preview = document.getElementById("preview");
+  var image = document.getElementById("image").files[0];
   var reader = new FileReader();
 
-  reader.onloadend = function() {
-      preview.src = reader.result;
-  }
+  reader.onloadend = function () {
+    preview.src = reader.result;
+  };
 
   if (image) {
-      reader.readAsDataURL(image);
+    reader.readAsDataURL(image);
   } else {
-      preview.src = "";
+    preview.src = "";
   }
 }
 
@@ -81,12 +80,12 @@ document.addEventListener("DOMContentLoaded", function () {
   elements.forEach(function (element) {
     // Vérifiez si l'élément a déjà des classes CSS
     const existingClasses = element.getAttribute("class").split(" ");
-    const borderClassesToRemove = existingClasses.filter(className =>
+    const borderClassesToRemove = existingClasses.filter((className) =>
       className.startsWith("border-")
     );
 
     // Retirez toutes les classes CSS "border-" existantes de l'élément
-    borderClassesToRemove.forEach(className => {
+    borderClassesToRemove.forEach((className) => {
       element.classList.remove(className);
     });
 

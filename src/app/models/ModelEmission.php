@@ -5,6 +5,7 @@ class ModelEmission extends Model{
     protected $id;
     protected $table;
     protected $NOM;
+    protected $NOMLONG;
     protected $DESCRIPTION;
     protected $SRC;
     protected $INSCRIPTION;

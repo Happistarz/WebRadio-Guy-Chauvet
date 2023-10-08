@@ -1,3 +1,5 @@
+<?php require VUE . "Redacteur/ajax.php"; ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -26,3 +28,28 @@
 </body>
 
 </html>
+
+<!-- generate me the architecture of the projet based on what you see just in the app folder and conf -->
+
+<!-- 
+conf
+    config.php
+src
+    app
+        controller
+            AllControllers
+        model
+            AllModels
+        vue
+            Welcome
+                ajax.php
+                index.php
+            layout
+                box.php
+                default.php
+        www
+            css
+                AllCSS
+            js
+                AllJS
+-->

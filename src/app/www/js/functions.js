@@ -61,7 +61,7 @@ class Modal {
   /**
    * Crée et affiche le modal.
    */
-  render(Callback = function () { }) {
+  render(AfterLoad = function () { }) {
     // Crée le modal s'il n'existe pas
     if (!this.modal) {
       this.modal = document.createElement("div");
@@ -98,7 +98,7 @@ class Modal {
 
     // Affiche le modal
     this.modal.style.display = "block";
-    Callback();
+    AfterLoad();
   }
 
   setData(data) {

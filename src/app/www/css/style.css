@@ -2,7 +2,7 @@
 
 ::after,
 *::before {
-  margin: 100;
+  /* margin: 100; */
   padding: 0;
   box-sizing: border-box;
 }
@@ -301,7 +301,7 @@ header a:hover {
   margin: 10px;
 }
 
-.redacteur .item.focus {
+.redacteur .focus {
   background-color: #555555ab !important;
   border-radius: 1.3rem !important;
 }

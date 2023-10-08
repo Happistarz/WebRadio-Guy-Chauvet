@@ -31,12 +31,13 @@
         password: $('#password').val()
       },
       function (success, response) {
-        // if (success) {
-        //   window.location.href = "<?php //echo WEBROOT . "Redacteur" ?>";
-        // } else {
-        //   $('.error').html(response.responseText);
-        // }
-        console.log(response);
+        if (success) {
+          window.location.href = "<?php echo WEBROOT . "Redacteur" ?>";
+          console.log(response);
+        } else {
+          $('.error').html("Identifiants incorrects");
+          $('.error').fadeIn();
+        }
       }
     )
   })

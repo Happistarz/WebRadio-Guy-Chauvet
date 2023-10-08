@@ -53,7 +53,7 @@
                     $img = file_exists(ROOT . "src/data/" . $em['SRC']) ? DATA . $em['SRC'] : DATA . 'general/nosrc.png';
                     $inscr = $em['INSCRIPTION'] ? "<b title='Inscription'>📝</b>" : "";
                     echo '
-                    <div class="item" onclick="focus(this)">
+                    <div class="item" onclick="focusElement(this)" data-id="' . $em['ID'] . '">
                         <img src="' . $img . '" alt="">
                         <div class="desc">
                             <h2>' . $em['NOMLONG'] . $inscr . '</h2>
@@ -77,7 +77,7 @@
 <script>
     const BODYEMISSION = `
             <form method="post">
-                <label>Nom</label>
+                <label for="nomlong">Nom</label>
                 <div class="form-name">
                     <input type="text" name="nomlong" id="nomlong" placeholder="Nom" required>
                     <input type="text" name="nom" id="nom" placeholder="Raccourci" required>
@@ -116,10 +116,17 @@
                 <audio src="" controls></audio>
             </div>`;
 
+    var lastFocusElement = null;
 
-    function focus(el) {
+    function focusElement(el) {
         document.querySelector('.focus')?.classList.remove('focus');
-        el.classList.toggle('focus');
+        if (lastFocusElement != el) {
+            el.classList.add('focus');
+            request('<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>', 'get', 'Audio', $(el).data('id'), (success, response) => {
+                console.log(response.responseText);
+            });
+        }
+        lastFocusElement = el;
     }
 
     function add(el, table) {
@@ -187,7 +194,7 @@
                 modalAudio.setData({
                     nom: el.parentElement.parentElement.querySelector('h2').innerHTML.replace(/<b.*>.*<\/b>/g, ""),
                     description: el.parentElement.parentElement.querySelector('#description i').innerHTML,
-                    auteurs: el.parentElement.parentElement.querySelector('#auteurs').innerHTML,
+                    auteurs: el.parentElement.parentElement.querySelector('#auteurs').innerHTML.replace(/<span.*>.*<\/span>/g, ""),
                     src: el.parentElement.parentElement.querySelector('audio').getAttribute('src'),
                     idemission: el.getAttribute('data-id'),
                     id: id

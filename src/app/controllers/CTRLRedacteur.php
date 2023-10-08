@@ -13,7 +13,7 @@ class CTRLRedacteur extends Controller
 
     public function index()
     {
-        // if(ValidSession()) {
+        // if (ValidSession()) {
         $emissions = $this->ModelEmission->Liste();
         // for each emission, count the number of audios
         for ($i = 0; $i < sizeof($emissions); $i++) {

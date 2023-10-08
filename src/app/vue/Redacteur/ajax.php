@@ -1,6 +1,6 @@
 <?php
 
-// if(isset($_POST['submit']) && $_POST['submit']) {
+// if (isset($_POST['submit']) && $_POST['submit']) {
 // $data = $_POST['data'];
 $table = "Emission";
 $action = "add";
@@ -8,7 +8,7 @@ $sql = '';
 
 
 $model = "Model" . $table;
-echo ROOT . "../../" . $model . '.php';
+echo MODEL . $model . '.php';
 // require MODEL. $model.'.php';
 // $model = new $model();
 

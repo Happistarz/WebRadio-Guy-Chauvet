@@ -20,7 +20,9 @@ class CTRLAccount extends Controller
 
   public function logout()
   {
-    echo "logout";
+    session_start();
+    session_destroy();
+    header('Location: ' . WEBROOT . 'Accueil');
   }
 }
 

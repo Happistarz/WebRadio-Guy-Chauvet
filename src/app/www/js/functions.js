@@ -1,4 +1,16 @@
+/**
+ * Fonction qui permet de faire une requête AJAX avec jQuery.
+ *
+ * @param {string} url L'URL de la page qui va traiter la requête.
+ * @param {string} action L'action à effectuer.
+ * @param {string} table La table à modifier.
+ * @param {object} data Les données à envoyer.
+ * @param {function} result La fonction à exécuter après la requête.
+ *
+ * @return {void}
+ */
 function request(url, action, table, data, result) {
+  // créer une requête AJAX
   $.ajax({
     url: url,
     type: "POST",
@@ -10,16 +22,31 @@ function request(url, action, table, data, result) {
       table: table,
     },
     success: function (response) {
+      // exécuter le callback avec la réponse du serveur
       result(true, response);
     },
     error: function (response) {
+      // exécuter le callback avec la réponse du serveur
       result(false, response);
     },
   });
 }
 
+/**
+ * Fonction qui permet de faire une requête AJAX avec jQuery.
+ *
+ */
 class Modal {
+  /**
+   * Crée un objet Modal.
+   *
+   * @param {string} title Le titre du modal.
+   * @param {string} body Le corps du modal.
+   * @param {function} callback La fonction à exécuter après la fermeture du modal.
+   */
   constructor(title, body, callback) {
+    // Initialiser les propriétés
+
     this.title = title;
     this.body = body;
     this.modal = null;
@@ -27,44 +54,53 @@ class Modal {
   }
 
   /**
-   * Ajoute un écouteur d'événements au bouton ModalSubmit.
+   * Ajoute un écouteur sur le bouton de soumission du formulaire.
+   *
+   * @param {string} url L'URL de la page qui va traiter la requête.
+   * @param {string} action L'action à effectuer.
+   * @param {string} table La table à modifier.
+   * @param {function} callback La fonction à exécuter après la requête.
    */
   addSubmitListener(url, action, table, callback) {
+    // Ajouter un écouteur sur le bouton de soumission du formulaire
     const submitButton = document.querySelector("#ModalSubmit");
     const self = this;
     if (submitButton) {
       submitButton.addEventListener("click", function (e) {
+        // Empêcher le comportement par défaut du bouton
         e.preventDefault();
-        const formData = $(".modal-body").find('form').serializeArray();
+        // Récupérer les données du formulaire
+        const formData = $(".modal-body").find("form").serializeArray();
 
-        console.log(formData);
-        request(
-          url,
-          action,
-          table,
-          formData,
-          function (success, response) {
-            if (success) {
-              self.closeModal();
-              alert(response.data);
-              callback(true, response);
-            } else {
-              callback(false, response);
-            }
+        // Envoyer la requête AJAX
+        request(url, action, table, formData, function (success, response) {
+          if (success) {
+            self.closeModal();
+            // Exécuter le callback avec la réponse du serveur
+            callback(true, response);
+          } else {
+            // Exécuter le callback avec la réponse du serveur
+            callback(false, response);
           }
-        );
+        });
         self.closeModal();
       });
     }
   }
   /**
-   * Crée et affiche le modal.
+   * Ajoute un écouteur sur le bouton de soumission du formulaire.
+   *
+   * @param {function} callback La fonction à exécuter après la requête.
+   * @return {void}
    */
-  render(Callback = function () { }) {
+  render(Callback = function () {}) {
     // Crée le modal s'il n'existe pas
     if (!this.modal) {
+      // Crée le modal
       this.modal = document.createElement("div");
       this.modal.classList.add("modal");
+
+      // Ajoute le contenu du modal
       this.modal.innerHTML = `
         <div class="modal-content">
           <div class="modal-header">
@@ -76,12 +112,14 @@ class Modal {
           </div>
         </div>
       `;
+      // Ajoute le modal à la page
       document.body.appendChild(this.modal);
     }
 
     // Ajoute un écouteur pour fermer le modal lors du clic en dehors de celui-ci
     const self = this;
     this.modal.addEventListener("click", function (event) {
+      // Ferme le modal si l'utilisateur clique en dehors du modal
       if (event.target === self.modal) {
         self.closeModal();
       }
@@ -90,6 +128,7 @@ class Modal {
     // Ajoute un écouteur pour fermer le modal lors du clic sur le bouton de fermeture
     const closeButton = this.modal.querySelector(".close");
     if (closeButton) {
+      // Ferme le modal si l'utilisateur clique sur le bouton de fermeture
       closeButton.addEventListener("click", function () {
         self.closeModal();
       });
@@ -100,13 +139,23 @@ class Modal {
     Callback();
   }
 
+  /**
+   * Remplit le formulaire du modal avec les données fournies.
+   *
+   * @param {object} data Les données à envoyer.
+   * @return {void}
+   */
   setData(data) {
+    // Remplir le formulaire du modal avec les données fournies
     const form = this.modal.querySelector("form");
     for (let key in data) {
+      // Récupérer la valeur de la propriété
       const value = data[key];
       const field = form.querySelector(`[name="${key}"]`);
 
+      // Vérifier si le champ existe
       if (field) {
+        // Gérer les champs spéciaux
         if (field.type === "file") {
           // Gérer le champ de type "file" en attachant le fichier s'il est fourni
           if (value instanceof File) {
@@ -128,6 +177,8 @@ class Modal {
 
   /**
    * Ferme le modal.
+   *
+   * @return {void}
    */
   closeModal() {
     if (this.modal) {
@@ -135,9 +186,6 @@ class Modal {
     }
   }
 }
-
-
-
 
 // console.dir(audio);
 

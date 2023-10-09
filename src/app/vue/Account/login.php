@@ -8,7 +8,7 @@
   }
 </style>
 
-
+<!-- LE FORMULAIRE DE LOGIN -->
 <form method="post" class="border-green login" id="loginForm">
   <label for="username">Username:</label>
   <input type="text" id="username" name="username" required>
@@ -20,8 +20,11 @@
 </form>
 
 <script>
+  // Ajout de l'event submit sur le formulaire
   $('#loginForm').submit(function (e) {
+    // On empêche le comportement par défaut du formulaire
     e.preventDefault();
+    // On envoie la requête ajax
     request(
       "<?php echo WEBROOT . "src/app/vue/Account/ajax.php" ?>",
       "check",
@@ -32,11 +35,12 @@
       },
       function (success, response) {
         if (success) {
+          // On redirige vers la page d'accueil
           window.location.href = "<?php echo WEBROOT . "Redacteur" ?>";
         } else {
+          // On affiche l'erreur
           $('.error').html(response.responseText);
         }
-        console.log(response);
       }
     )
   })

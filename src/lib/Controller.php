@@ -7,14 +7,16 @@
  * 
  * @package webradio
  */
-class Controller{
+class Controller
+{
 
     /**
      * @var array $view
      */
     protected $view = array();
 
-    public function __construct(){
+    public function __construct()
+    {
     }
 
     /**
@@ -25,8 +27,9 @@ class Controller{
      * @param  string $model
      * @return void
      */
-    public function loadModel($model){
-        require(MODEL.$model.".php");
+    public function loadModel($model)
+    {
+        require(MODEL . $model . ".php");
         $this->$model = new $model();
     }
 
@@ -38,7 +41,8 @@ class Controller{
      * @param  array $array
      * @return void
      */
-    public function Set($array) {
+    public function Set($array)
+    {
         $this->view = array_merge($this->view, $array);
     }
 
@@ -53,14 +57,15 @@ class Controller{
      * @param  string $layout
      * @return void
      */
-    public function Render($name,$title_page, $layout = "default") {
+    public function Render($name, $title_page, $layout = "default")
+    {
         // EXTRACT LES DATA
         extract($this->view);
-        
+
         // RECUP LE DOSSIER PUIS LE PATH
         $doss = get_class($this);
         $doss = str_replace("CTRL", "", $doss);
-        $path = VUE."$doss/$name";
+        $path = VUE . "$doss/$name";
 
         // REQUIRE LA VUE MAIS LA STOCK DANS UN BUFFER
         ob_start();
@@ -68,23 +73,32 @@ class Controller{
         // RECUP LE BUFFER
         $content = ob_get_clean();
         ob_end_clean();
-        
+
         $title = $title_page;
         // REQUIRE LE LAYOUT
-        require VUE."layout/$layout.php";
+        require VUE . "layout/$layout.php";
+    }
+
+
+    public function RenderAJAX($name, $title_page)
+    {
+        // EXTRACT LES DATA
+        extract($this->view);
+
+        // RECUP LE DOSSIER PUIS LE PATH
+        $doss = get_class($this);
+        $doss = str_replace("CTRL", "", $doss);
+        $path = VUE . "$doss/$name";
+
+        // REQUIRE LA VUE MAIS LA STOCK DANS UN BUFFER
+        ob_start();
+        require $path;
+        // RECUP LE BUFFER
+        $content = ob_get_clean();
+        ob_end_clean();
+
+        $title = $title_page;
+        // REQUIRE LE LAYOUT
+        require VUE . "layout/box.php";
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

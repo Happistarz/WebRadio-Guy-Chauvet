@@ -7,8 +7,6 @@
             <button class="fas fa-circle-plus" title="Ajouter un nouvel élément" onclick="add(this,'Audio')"></button>
             <hr>
             <div class="items">
-                <?php
-                ?>
                 <div class="line">
                     <div class="desc">
                         <h2>H2P Ep 1.wav</h2>
@@ -132,7 +130,7 @@
                     function () {
                         $('.modal .modal-body form [name="src"]').attr('src', link);
                     });
-                modalEmission.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "add", "Emission");
+                modalEmission.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "add", "Emission",resultContent);
                 modalEmission.setData({
                     nomlong: "",
                     nom: "",
@@ -146,7 +144,7 @@
                 modalAudio.render(function () {
                     $('.modal .modal-body form .preview audio').attr('src', "");
                 });
-                modalAudio.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "add", "Audio");
+                modalAudio.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "add", "Audio",resultModal);
                 modalAudio.setData({
                     nom: "",
                     src: "",
@@ -168,7 +166,7 @@
                 modalEmission.render(function () {
                     $('.modal .modal-body #previewimg').attr('src', el.parentElement.parentElement.querySelector('img').getAttribute('src'));
                 });
-                modalEmission.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "edit", "Emission");
+                modalEmission.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "edit", "Emission",resultContent);
                 modalEmission.setData({
                     nomlong: el.parentElement.parentElement.querySelector('h2').innerHTML.replace(/<b.*>.*<\/b>/g, ""),
                     nom: el.parentElement.parentElement.querySelector('#nom').innerHTML,
@@ -183,7 +181,7 @@
                 modalAudio.render(function () {
                     $('.modal .modal-body .preview audio').attr('src', el.parentElement.parentElement.querySelector('audio').getAttribute('src'));
                 });
-                modalAudio.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "edit", "Audio");
+                modalAudio.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "edit", "Audio",resultModal);
                 modalAudio.setData({
                     nom: el.parentElement.parentElement.querySelector('h2').innerHTML.replace(/<b.*>.*<\/b>/g, ""),
                     description: el.parentElement.parentElement.querySelector('#description i').innerHTML,
@@ -205,10 +203,6 @@
         });
     }
 
-    // function changeSrcPreview() {
-
-    // }
-
     function changeImgPreview() {
         var preview = document.getElementById('previewimg');
         var file = document.getElementById('src').files[0];
@@ -222,9 +216,12 @@
             preview.src = "";
         }
     }
-    // function resultModal(success, response) {
-    //     if (success) {
-    //         closeModal();
-    //     }
-    // }
+    function resultModal(success, response) {
+        // reload .items where 
+    }
+    function resultContent(success, response) {
+        if (success) {
+            $('#ajaxcontent').load(location.href + ' #ajaxcontent'); 
+        }
+    }
 </script>

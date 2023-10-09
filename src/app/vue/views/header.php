@@ -24,10 +24,14 @@
         ?>
         <a href="<?php echo WEBROOT ?>Emission/view/H2P">Histoire de poche</a>
         <a href="<?php echo WEBROOT ?>Emission/view/JA">Journal Audio</a>
+        <a href="<?php echo WEBROOT ?>Emission/view/1T3C">1 Thème 3 Chansons</a>
+        <a href="<?php echo WEBROOT ?>Emission/view/QES">Quiz En Série</a>
+        <a href="<?php echo WEBROOT ?>Emission">...</a>
+
       </div>
     </div>
     <!-- journal btn -->
-    <a href="<?php echo WEBROOT ?>journax">JOURNAL</a>
+    <a href="<?php echo WEBROOT ?>journax" >JOURNAL</a>
     <!-- equipe btn -->
     <div class="dropdown">
       <a href="<?php echo WEBROOT ?>Equipe">L'EQUIPE</a>

@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <title>
@@ -15,14 +12,11 @@
   <script src="<?php echo WWW . "js/functions.js" ?>"></script>
 </head>
 
-<body>
-  <?php require VIEWS . "header.php"; ?>
-  <main>
-    <div class="content">
-      <?php echo $content; ?>
-    </div>
-  </main>
-  <?php require VIEWS . "footer.php"; ?>
-</body>
+<?php require VIEWS . "header.php" ?>
+<main>
+  <div id="content">
+    <?php echo $content; ?>
+  </div>
+</main>
 
-</html>
+<?php require VIEWS . "footer.php" ?>

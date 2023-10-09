@@ -8,7 +8,7 @@ $sql = '';
 
 
 $model = "Model" . $table;
-echo ROOT . "../../" . $model . '.php';
+echo ROOT;
 // require MODEL. $model.'.php';
 // $model = new $model();
 
@@ -34,6 +34,6 @@ switch ($action) {
 }
 
 
-echo "{'success':true,'data':" . json_encode($sql) . "}";
+// echo '{"success":true,"data":' . json_encode($sql) . '}';
 // }
 ?>

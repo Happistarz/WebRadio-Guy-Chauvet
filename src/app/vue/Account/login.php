@@ -31,11 +31,11 @@
         password: $('#password').val()
       },
       function (success, response) {
-        // if (success) {
-        //   window.location.href = "<?php //echo WEBROOT . "Redacteur" ?>";
-        // } else {
-        //   $('.error').html(response.responseText);
-        // }
+        if (success) {
+          window.location.href = "<?php echo WEBROOT . "Redacteur" ?>";
+        } else {
+          $('.error').html(response.responseText);
+        }
         console.log(response);
       }
     )

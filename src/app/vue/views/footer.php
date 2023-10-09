@@ -16,6 +16,7 @@ if (ValidSession()) {
     <h4>A propos</h4>
     <div class="footer-element">
         <ul>
+            <!-- LISTE DE TOUTES LES PAGES DU FOOTER -->
             <li><a href="<?php echo WEBROOT . "Accueil/Contact" ?>">- Contact</a></li>
             <li><a href="<?php echo WEBROOT . "Accueil/Plan" ?>">- Plan du site</a></li>
             <li><a href="<?php echo WEBROOT . "Accueil/Mentions" ?>">- Mentions Legales</a></li>

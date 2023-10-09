@@ -1,34 +1,49 @@
-<h1 class="Titre">Mentions légales</h1>
-    <div class="Directeurdepublication">
-        <img src="../images/arrondi.png" alt="icone" class="icones" />
-        <h1 class="GigaTitre">Directeur de publication :</h1>
-    </div>
-    <p class="GrosTexteMention">Le proviseur de l'établissement.</p>
+<h1 style="text-align: center; font-size: 50px; padding-bottom: 40px">Mentions légales</h1>
 
-    <div class="Raisonsociale">
-        <img src="../images/rectangle.png" alt="icone" class="icones" />
-        <h1 class="GigaTitre">Raison sociale : </h1>
+<!-- Directeur de publication -->
+    <div class="mention-directeur">
+        <img src=<?php echo DATA ."general/icones/ovale_bleu_icone.png"; ?> alt='mention-logo'>
+        <h1 class="mention-titre">Directeur de publication :</h1>
+        
     </div>
-    <p class="GrosTexteMention">LYCEE GENERAL ET TECHNOLOGIQUE GUY CHAUVET </p>
-    <p class="GrosTexteMention">Rue DE L EPERON</p>
-    <p class="GrosTexteMention">86206 LOUDUN</p>
-    <p class="GrosTexteMention">Téléphone : 0549981751</p>
+    <!-- Description -->
+    <p class="mention-description">Le proviseur de l'établissement.</p>
+    
+    <!-- Raison scociale -->
+    <div class="mention-raison">
+        <img src=<?php echo DATA ."general/icones/rectangle_jaune_icone.png"; ?> alt='mention-logo'>
 
-    <div class="Hebergeur">
-        <img src="../images/exagone.png" alt="icone" class="icones" />
-        <h1 class="GigaTitre">Hébergeur : </h1>
+    <!-- Description -->
+        <h1 class="mention-titre">Raison sociale : </h1>
+        <p class="mention-description">
+            LYCEE GENERAL ET TECHNOLOGIQUE GUY CHAUVET <br> 
+            Rue DE L EPERON <br> 
+            86206 LOUDUN <br> 
+            Téléphone : 0549981751</p>
     </div>
+    
 
-    <p class="GrosTexteMention">LYCEE GENERAL ET TECHNOLOGIQUE GUY CHAUVET</p>
-    <p class="GrosTexteMention">Rue DE L EPERON</p>
-    <p class="GrosTexteMention">86206 LOUDUN</p>
-    <p class="GrosTexteMention">Téléphone : 0549981751</p>
+    <!-- Hébergeur -->
+    <div class="mention-hebergeur">
+        <img src=<?php echo DATA ."general/icones/exagone_rose_icone.png"; ?> alt='mention-logo'>
+            <h1 class="mention-titre">Hébergeur : </h1>
 
-    <div class="Protectiondesdonnees">
-        <img src="../images/arrondi.png" alt="icone" class="icones" />
-        <h1 class="GigaTitre">Protection des données :</h1>
+    <!-- Description -->
+        <p class="mention-description">
+            LYCEE GENERAL ET TECHNOLOGIQUE GUY CHAUVET <br> 
+            Rue DE L EPERON <br> 
+            86206 LOUDUN <br> 
+            Téléphone : 0549981751
+        </p>
     </div>
-    <img id="myZbi" src="../images/infonoir.png" alt="questinfo" class="infonoir" onclick="openModal1()">
+   
+
+    <!-- Protection des données -->
+    <div class="mention-protegeur">
+        <h1 class="mention-titre">Protection des données :</h1>
+        <img src=<?php echo DATA ."general/icones/ovale_bleu_icone.png"; ?> alt='mention-logo'>
+    </div>
+    <img id="myZbi" src="" alt="questinfo" class="infonoir" onclick="openModal1()">
 
     <div id="myModalmention" class="modalmention">
     <span class="close2">&times;</span>
@@ -40,18 +55,18 @@
                     <div class="interieur">
                         <div class="Titrement">
                             <img src="../images/arrondi.png" alt="icone" class="moyenicones" />
-                            <h1 class="GigaTitre">Protection des données :</h1>
+                            <h1 class="mention-titre">Protection des données :</h1>
                         </div>
                         <img src="../images/sansinfo.png" alt="questinfo" class="infos close">
                         <div class="Titrement">
                             <img src="../images/arrondi.png" alt="icone" class="petiticones" />
-                            <h1 class="GigaTitre">Responsable du traitement</h1>
+                            <h1 class="mention-titre">Responsable du traitement</h1>
                         </div>
                         <p class="TexteMention">Le LYCEE GENERAL ET TECHNOLOGIQUE GUY CHAUVET est responsable du
                             traitement des données.</p>
                         <div class="Titrement">
                             <img src="../images/rectangle.png" alt="icone" class="petiticones" />
-                            <h1 class="GigaTitre">Objectif du traitement</h1>
+                            <h1 class="mention-titre">Objectif du traitement</h1>
                         </div>
                         <h2 class="TitreMention">Finalités du traitement :</h2>
                         <p class="TexteMention">Certains des services proposés sur notre site web nécessitent le
@@ -79,7 +94,7 @@
                             loi Informatique et Libertés modifiée.</p>
                         <div class="Titrement">
                             <img src="../images/exagone.png" alt="icone" class="petiticones" />
-                            <h1 class="GigaTitre">Données traitées</h1>
+                            <h1 class="mention-titre">Données traitées</h1>
                         </div>
                         <h2 class="TitreMention">Catégories des données :</h2>
                         <p class="TexteMention"><strong>·</strong> Identité, fonctions, coordonnées ;</p>
@@ -117,7 +132,7 @@
                             mention contraire dans le formulaire concerné (ou sur la plateforme numérique concernée)</p>
                         <div class="Titrement">
                             <img src="../images/arrondi.png" alt="icone" class="petiticones" />
-                            <h1 class="GigaTitre">Personnes concernées</h1>
+                            <h1 class="mention-titre">Personnes concernées</h1>
                         </div>
                         <h2 class="TitreMention">Le traitement de données concerne :</h2>
                         <p class="TexteMention"><strong>·</strong> Les personnels de la structure en charge de la
@@ -134,7 +149,7 @@
                             sécurité des systèmes d’information de la structure.</p>
                         <div class="Titrement">
                             <img src="../images/rectangle.png" alt="icone" class="petiticones" />
-                            <h1 class="GigaTitre">Destinataires des données traitées</h1>
+                            <h1 class="mention-titre">Destinataires des données traitées</h1>
                         </div>
                         <h2 class="TitreMention">Catégories de destinataires</h2>
                         <p class="TexteMention">En fonction de leurs besoins respectifs, sont destinataires de tout ou
@@ -157,7 +172,7 @@
                             n'est réalisé.</p>
                         <div class="Titrement">
                             <img src="../images/exagone.png" alt="icone" class="petiticones" />
-                            <h1 class="GigaTitre">Durées de conservation des données</h1>
+                            <h1 class="mention-titre">Durées de conservation des données</h1>
                         </div>
                         <p class="TexteMention">Le LYCEE GENERAL ET TECHNOLOGIQUE GUY CHAUVET conserve les données selon
                             les durées d’utilités administratives définie dans le BO N°24 du 25 juin 2005 (Instruction
@@ -174,13 +189,13 @@
                         Elles sont destinées aux différents services compétents de la structure.</p>
                         <div class="Titrement">
                             <img src="../images/arrondi.png" alt="icone" class="petiticones" />
-                            <h1 class="GigaTitre">Sécurité</h1>
+                            <h1 class="mention-titre">Sécurité</h1>
                         </div>
                         <p class="TexteMention">Les mesures de sécurité sont mises en œuvre conformément à la politique
                             de sécurité des systèmes d’information (PSSI) du rectorat, issue de la PSSI de l’Etat.</p>
                         <div class="Titrement">
                             <img src="../images/rectangle.png" alt="icone" class="petiticones" />
-                            <h1 class="GigaTitre">À propos des cookies</h1>
+                            <h1 class="mention-titre">À propos des cookies</h1>
                         </div>
                         <p class="TexteMention">Nous utilisons différents cookies sur le site pour améliorer
                             l’interactivité du site et nos services</p>
@@ -216,7 +231,7 @@
                             être accessibles.</p>
                         <div class="Titrement">
                             <img src="../images/exagone.png" alt="icone" class="petiticones" />
-                            <h1 class="GigaTitre">Les droits sur les données</h1>
+                            <h1 class="mention-titre">Les droits sur les données</h1>
                         </div>
                         <h2 class="TitreMention">Exercer ses droits :</h2>
                         <p class="TexteMention">Conformément au Règlement européen n°2016/679/UE du 27 avril 2016 sur la
@@ -242,21 +257,31 @@
             </div>
         </div>
     </div>
+
+    <!-- Création de liens -->
     <div class="Créationdeliens">
-        <img src="../images/exagone.png" alt="icone" class="icones" />
-        <h1 class="GigaTitre">Création de liens :</h1>
+        <h1 class="mention-titre">Création de liens :</h1>
+        <img src=<?php echo DATA ."general/icones/exagone_rose_icone.png"; ?> alt='mention-logo'>
     </div>
-    <p class="GrosTexteMention">vers ce site </h2>
-    <p class="GrosTexteMention">Dans le cadre de sa mission de service public, le lycée Guy Chauvet éditeur du site,
-        autorise </p>
-    <p class="GrosTexteMention">les liens hypertextes vers l'un quelconque des articles du site pour une utilisation
-    </p>
-    <p class="GrosTexteMention">institutionnelle dans un cadre pédagogique. Toute utilisation à des fins commerciales ou
-    </p>
-    <p class="GrosTexteMention">publicitaires est interdite. La mention explicite du site pointé dans l'intitulé du lien
-        est attendue.</p>
-    <p class="GrosTexteMention">Les pages du site ne doivent pas être imbriquées à l'intérieur des pages d'un autre site
-        (frame </p>
-    <p class="GrosTexteMention">ou système apparenté) mais visibles uniquement par l'ouverture d'une fenêtre
-        indépendante.</p>
+
+    <!-- Description liens -->
+    <div class="desc-lien">
+        <h3>Vers ce site : </h3>
+        <ul style="list-style-type: disc;">
+            <li>Dans le cadre de sa mission de service public, le lycée Guy Chauvet éditeur du site,
+            autorise les liens hypertextes vers l'un quelconque des articles du site pour une utilisation 
+            institutionnelle dans un cadre pédagogique. Toute utilisation à des fins commerciales ou
+            publicitaires est interdite. La mention explicite du site pointé dans l'intitulé du lien
+            est attendue.
+            </li>
+
+            <li>
+            Les pages du site ne doivent pas être imbriquées à l'intérieur des pages d'un autre site
+            (frame ou système apparenté) mais visibles uniquement par l'ouverture d'une fenêtre
+            indépendante.
+            </li>
+        <ul>
+    </div>
+
+
 </div>

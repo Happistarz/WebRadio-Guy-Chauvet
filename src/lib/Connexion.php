@@ -1,23 +1,42 @@
 <?php
 
-class Connexion {
-    private static $login = "chef";
-    private static $host = "127.0.0.1";
-    private static $dbname = "WebRadio";
-    private static $password = "mdpchef";
+/**
+ * Class Connexion : Permet de se connecter à la base de données
+ */
+class Connexion
+{
 
-    public static function login() : PDO
+    /**
+     * Permet de se connecter à la base de données
+     * 
+     * @return PDO
+     */
+    public static function login(): PDO
     {
-        return new PDO("mysql:host=".self::$host.";dbname=".self::$dbname, self::$login, self::$password);
+        $file = json_decode(file_get_contents(LIB . "config.json"), true);
+        return new PDO("mysql:host=" . $file['HOST'] . ";dbname=" . $file['DBNAME'] . ";charset=utf8", $file['LOGIN'], $file['MDP']);
     }
 
-    public static function logout() {
+    /**
+     * Permet de se déconnecter de la base de données
+     * 
+     * @return null
+     */
+    public static function logout()
+    {
         return null;
     }
 
 }
-function hashPassword ($passwd) {
+
+/**
+ * Permet de hasher un mot de passe
+ * 
+ * @param string $passwd
+ * @return string
+ */
+function hashPassword($passwd)
+{
     return password_hash($passwd, PASSWORD_DEFAULT);
 }
-
 ?>

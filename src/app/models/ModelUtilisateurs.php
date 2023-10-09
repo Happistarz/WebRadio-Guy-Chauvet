@@ -1,6 +1,12 @@
 <?php
 require_once(LIB.'model.php');
 
+/**
+ * 
+ * Model de la page utilisateurs
+ * table Utilisateurs
+ * id ID
+ */
 class ModelUtilisateurs extends Model{
     protected $id;
     protected $table;

@@ -1,6 +1,8 @@
-<!-- Setup Container Emission -->
-<?php extract($emission); ?>
+<?php 
+// extract les données de l'émission
+extract($emission); ?>
 <div class="container">
+    <!-- PANNEAU DE L'EMISSION -->
     <div class="emission">
         <img src="<?= DATA . $SRC; ?>" alt="imgEmission">
         <article>
@@ -8,13 +10,16 @@
             <p ><?= $DESCRIPTION ?></p>
         </article>
     </div>
+    <!-- AFFICHAGE DES PODCASTS -->
     <div class="main-podcasts"> 
         <!-- header page podcasts -->
         <h1 id="podcasts" class="header-page title">LES PODCASTS</h1>
         <hr size="5" width="100%" color="black" />
         <div class="podcast-container border-">
             <?php
+            // tableau des podcasts
             $str = [];
+            // affichage des podcasts
             foreach ($audios as $music) {
                 $str[] = '<div class="podcast">
                     <div class="info-podcast">
@@ -34,6 +39,7 @@
                     
                 </div>';
             }
+            // affichage des podcasts dans la page avec un séparateur
             echo join('<hr size="5" width="95%" color="black" />', $str);
             ?>
 

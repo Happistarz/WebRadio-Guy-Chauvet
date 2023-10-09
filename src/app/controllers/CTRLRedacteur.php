@@ -11,9 +11,16 @@ class CTRLRedacteur extends Controller
         parent::loadModel('ModelArticle');
     }
 
+    /**
+     * index
+     * 
+     * Methode appelée par defaut
+     * 
+     * @return void
+     */
     public function index()
     {
-        // if (ValidSession()) {
+        // if (hasRole('redacteur')) {
         $emissions = $this->ModelEmission->Liste();
         // for each emission, count the number of audios
         for ($i = 0; $i < sizeof($emissions); $i++) {
@@ -23,8 +30,8 @@ class CTRLRedacteur extends Controller
         // var_dump($emissions);
 
         $articles = $this->ModelArticle->Liste();
-        parent::Set(array('emissions' => $emissions, 'articles' => $articles));
-        parent::Render('index.php', "Redaction", "box");
+        parent::Set(array('emissions' => $emissions, 'articles' => $articles, 'audios' => array()));
+        parent::RenderAJAX('index.php', "Redacteur");
         // }
     }
 }

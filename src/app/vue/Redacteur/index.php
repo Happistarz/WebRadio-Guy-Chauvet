@@ -2,46 +2,38 @@
 
     <div class="column">
 
+        <!-- INFORMATION DE LA LISTE -->
         <div class="info border-blue">
             <h1>Informations</h1>
             <button class="fas fa-circle-plus" title="Ajouter un nouvel élément" onclick="add(this,'Audio')"></button>
             <hr>
             <div class="items">
                 <?php
-                ?>
-                <div class="line">
-                    <div class="desc">
-                        <h2>H2P Ep 1.wav</h2>
-                        <p id="auteurs">moi moi 2 <span>• 2023-09-28</span></p>
 
-                        <p id="description"><i>Lorem ddd</i></p>
-                    </div>
-                    <audio src="<?php echo DATA ?>audio/H2P/H2P Ep 1.wav" controls></audio>
-                    <p style="display: none" id="id">3</p>
-                    <div class="action">
-                        <button type="button" class="fas fa-edit" title="Modifier"
-                            onclick="edit(this,'Audio',3)"></button>
-                        <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)"
-                            data-id="3"></button>
-                    </div>
-                </div>
-                <!-- <div class="line">
+                foreach ($audios as $audio) {
+                    $nom_emission = $emissions[$audio['IDEMISSION'] - 1]['NOM'];
+
+                    echo '<div class="line">
                     <div class="desc">
-                        <h2>H2P Ep 1.wav</h2>
-                        <p id="auteurs">Lorem ddd</p>
-                        <span>• 2023-09-28</span>
-                        <pid="description">Lorem ddd</p>
-                    </div>
-                    <audio src="<?php //echo DATA 
-                    ?>audio/H2P/H2P Ep 1.wav" controls></audio>
-                    <p style="display: none" id="id">3</p>
+                    <h2>' . $audio['NOM'] . '</h2>
+                        <p id="auteurs">' . $audio['AUTEURS'] . '<span>• ' . $audio['CREATED'] . '</span></p>
+                        
+                        <p id="description"><i>' . $audio['DESCRIPTION'] . '</i></p>
+                        </div>
+                        <audio src="' . DATA . 'audio/' . $nom_emission . '/' . $audio['NOM'] . '.wav" controls></audio>
+                        <p style="display: none" id="id">3</p>
                     <div class="action">
-                        <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this,'Audio',3)"></button>
-                        <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)" data-id="3"></button>
-                    </div>
-                </div> -->
+                    <button type="button" class="fas fa-edit" title="Modifier"
+                    onclick="edit(this,"Audio",3)"></button>
+                        <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)"
+                        data-id="' . $audio['IDEMISSION'] . '"></button>
+                        </div>
+                        </div>';
+                }
+                ?>
             </div>
         </div>
+        <!-- LISTE DES DATA -->
         <div class="liste border-blue">
             <h1>Emissions</h1>
             <button class="fas fa-circle-plus" title="Ajouter un nouvel élément"
@@ -49,8 +41,10 @@
             <hr>
             <div class="items">
                 <?php
+                // affichage des emissions
                 foreach ($emissions as $em) {
                     $img = file_exists(ROOT . "src/data/" . $em['SRC']) ? DATA . $em['SRC'] : DATA . 'general/nosrc.png';
+                    // affichage de l'icone inscription si inscription
                     $inscr = $em['INSCRIPTION'] ? "<b title='Inscription'>📝</b>" : "";
                     echo '
                     <div class="item" onclick="focusElement(this)" data-id="' . $em['ID'] . '">
@@ -75,6 +69,7 @@
 </div>
 </div>
 <script>
+    // FORMULAIRE POUR LES EMISSIONS
     const BODYEMISSION = `
             <form method="post">
                 <label for="nomlong">Nom</label>
@@ -98,6 +93,7 @@
                 <img src="<?php echo DATA . "general/nosrc.png" ?>" alt="" id="previewimg">
             </div>`;
 
+    // FORMULAIRE POUR LES AUDIOS
     const BODYAUDIO = `
             <form method="post">
                 <label>Nom</label>
@@ -116,30 +112,48 @@
                 <audio src="" controls></audio>
             </div>`;
 
+
     var lastFocusElement = null;
 
+    /**
+     * Permet de mettre en focus un élément
+     * @param {HTMLElement} el
+     * @returns {void}
+     */
     function focusElement(el) {
         document.querySelector('.focus')?.classList.remove('focus');
         if (lastFocusElement != el) {
             el.classList.add('focus');
             request('<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>', 'get', 'Audio', $(el).data('id'), (success, response) => {
-                console.log(response.responseText);
+                alert(response.responseText);
             });
         }
         lastFocusElement = el;
     }
 
+    /**
+     * Permet d'ajouter un élément
+     * @param {HTMLElement} el
+     * @param {string} table
+     * @returns {void}
+     */
     function add(el, table) {
 
+        // switch pour savoir quel modal afficher
         switch (table) {
             case "Emission":
+                // création du modal
                 let modalEmission = new Modal("Ajouter", BODYEMISSION);
+                // affichage de l'image par défaut
                 let link = "<?php echo DATA . 'general/nosrc.png' ?>";
+                // affichage du modal avec l'image par défaut
                 modalEmission.render(
                     function () {
                         $('.modal .modal-body form [name="src"]').attr('src', link);
                     });
-                modalEmission.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "add", "Emission");
+                // ajout du listener pour l'envoi du formulaire
+                modalEmission.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "add", "Emission", resultContent);
+                // ajout des données par défaut
                 modalEmission.setData({
                     nomlong: "",
                     nom: "",
@@ -149,11 +163,15 @@
                 });
                 break;
             case "Audio":
+                // création du modal
                 let modalAudio = new Modal("Ajouter", BODYAUDIO);
+                // affichage du modal
                 modalAudio.render(function () {
                     $('.modal .modal-body form .preview audio').attr('src', "");
                 });
-                modalAudio.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "add", "Audio");
+                // ajout du listener pour l'envoi du formulaire
+                modalAudio.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "add", "Audio", resultModal);
+                // ajout des données par défaut
                 modalAudio.setData({
                     nom: "",
                     src: "",
@@ -167,15 +185,26 @@
         }
     }
 
+    /**
+     * Permet de modifier un élément
+     * @param {HTMLElement} el
+     * @param {string} table
+     * @param {number} id
+     * @returns {void}
+     */
     function edit(el, table, id) {
-        // console.log(el.getAttribute('data-id'));
+        // switch pour savoir quel modal afficher
         switch (table) {
             case "Emission":
+                // création du modal
                 let modalEmission = new Modal("Modifier", BODYEMISSION);
+                // affichage du modal avec l'img de l'élément
                 modalEmission.render(function () {
                     $('.modal .modal-body #previewimg').attr('src', el.parentElement.parentElement.querySelector('img').getAttribute('src'));
                 });
-                modalEmission.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "edit", "Emission");
+                // ajout du listener pour l'envoi du formulaire
+                modalEmission.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "edit", "Emission", resultContent);
+                // ajout des données par défaut
                 modalEmission.setData({
                     nomlong: el.parentElement.parentElement.querySelector('h2').innerHTML.replace(/<b.*>.*<\/b>/g, ""),
                     nom: el.parentElement.parentElement.querySelector('#nom').innerHTML,
@@ -186,11 +215,15 @@
                 });
                 break;
             case "Audio":
+                // création du modal
                 let modalAudio = new Modal("Modifier", BODYAUDIO);
+                // affichage du modal avec l'audio de l'élément
                 modalAudio.render(function () {
                     $('.modal .modal-body .preview audio').attr('src', el.parentElement.parentElement.querySelector('audio').getAttribute('src'));
                 });
-                modalAudio.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "edit", "Audio");
+                // ajout du listener pour l'envoi du formulaire
+                modalAudio.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "edit", "Audio", resultModal);
+                // ajout des données par défaut
                 modalAudio.setData({
                     nom: el.parentElement.parentElement.querySelector('h2').innerHTML.replace(/<b.*>.*<\/b>/g, ""),
                     description: el.parentElement.parentElement.querySelector('#description i').innerHTML,
@@ -205,33 +238,59 @@
         }
     }
 
+    /**
+     * Permet de supprimer un élément
+     * @param {HTMLElement} el
+     * @param {string} table
+     * @returns {void}
+     */
     function suppr(el, table) {
-        // console.log(el.getAttribute('data-id'));
+        // confirmation de la suppression, si oui, envoi de la requête
         if (confirm('Voulez vous vraiment suppimer cette émission?')) request('<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>', 'delete', table, el.getAttribute('data-id'), (success, response) => {
             console.log(response.responseText);
         });
     }
 
-    // function changeSrcPreview() {
-
-    // }
-
+    /**
+     * Permet de changer l'image de preview
+     * @returns {void}
+     */
     function changeImgPreview() {
+        // récupération de l'image
         var preview = document.getElementById('previewimg');
         var file = document.getElementById('src').files[0];
+        // création d'un reader pour lire l'image
         var reader = new FileReader();
         reader.onloadend = function () {
             preview.src = reader.result;
         }
+        // si il y a une image, on la lit, sinon on met l'image par défaut
         if (file) {
             reader.readAsDataURL(file);
         } else {
             preview.src = "";
         }
     }
-    // function resultModal(success, response) {
-    //     if (success) {
-    //         closeModal();
-    //     }
-    // }
+
+    /**
+     * Permet de gérer le résultat de la requête ajax puis reload la div .items
+     * @param {boolean} success
+     * @param {XMLHttpRequest} response
+     * @returns {void}
+     */
+    function resultModal(success, response) {
+        // reload .items where 
+    }
+
+    /**
+     * Permet de gérer le résultat de la requête ajax puis reload la div #ajaxcontent
+     * @param {boolean} success
+     * @param {XMLHttpRequest} response
+     * @returns {void}
+     */
+    function resultContent(success, response) {
+        if (success) {
+            $('#ajaxcontent').load(location.href + ' #ajaxcontent');
+        }
+    }
 </script>

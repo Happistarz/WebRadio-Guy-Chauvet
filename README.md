@@ -95,17 +95,21 @@ Nommage fichier: <br>
 Adresse mail : gr-sts1-slam@lycee-guychauvet.fr
 
 
+09/10/23 : 
+Repartion des taches ) 
 
-Group 1
-Hugo,  
-Index
+Set Equipe ( 3 page ) css , Html
+	Florent 
 
-Group 2
-Yoan , Kassim
-Les emissions
+Set Footer ( 3 page ) css ,html ...
+	Kassim
 
+Set lecteur Audio 
+	Benjamin
 
-Group 3
-Mathieu , Flo
-Page emission (...)
+Header liste des ellement 
+	Yoan
+
+Page readac (login ....)
+	Mathieux
 

@@ -43,14 +43,29 @@ class CTRLAccueil extends Controller{
         parent::Render("index.php","WebRadio");
     }
 
+    /**
+     * afficher la page contact
+     * 
+     * @return void
+     */
     public function Contact(){
         parent::Render("contact.php","Contact");
     }
 
+    /**
+     * afficher la page plan
+     * 
+     * @return void
+     */
     public function Plan() {
         parent::Render("plan.php","Plan");
     }
 
+    /**
+     * afficher la page mentions
+     * 
+     * @return void
+     */
     public function Mentions() {
         parent::Render("mention.php","Mentions");
     }

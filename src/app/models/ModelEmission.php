@@ -1,6 +1,14 @@
 <?php
 require_once(LIB.'model.php');
 
+/**
+ * Class ModelEmission
+ * 
+ * Model de la page emission
+ * 
+ * table Emission
+ * id NOM
+ */
 class ModelEmission extends Model{
     protected $id;
     protected $table;

@@ -1,7 +1,8 @@
 <?php
-// ROOT = AU CHEMIN DU DOSSIER WebRadio-Guy-Chauvet
 
-define('ROOT', dirname($_SERVER['SCRIPT_FILENAME']) . "/"); // Chemin à partir de var/www/html/WebRadio-Guy-Chauvet/
+
+// Constantes de connexion à la base de données
+define('ROOT', dirname($_SERVER['SCRIPT_FILENAME']) . "/");
 define('WEBROOT', dirname($_SERVER['SCRIPT_NAME']) . "/");
 define('APP', ROOT . 'src/app/');
 define('LIB', ROOT . 'src/lib/');
@@ -19,11 +20,17 @@ define('ADMIN_MAIN', "webradio@lycee-guychauvet.fr");
 
 function ValidSession()
 {
-    if (isset($_SESSION) && !empty($_SESSION) && $_SESSION["valid"] && !empty($_SESSION["login"]) && !empty($_SESSION["role"])) {
+    if (isset($_SESSION) && !empty($_SESSION) && $_SESSION['valid'] && !empty($_SESSION['login']) && !empty($_SESSION['role'])) {
         return true;
     } else {
         return false;
     }
+}
+;
+
+function hasRole($role)
+{
+    return ValidSession() && $_SESSION['role'] == $role;
 }
 ;
 

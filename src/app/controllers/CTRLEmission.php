@@ -39,11 +39,19 @@ class CTRLEmission extends Controller{
         parent::Render('index.php',"Emission");
     }
 
+    /**
+     * affiche une emission en fonction de son nom
+     * 
+     * @param string $rubrique
+     * @return void
+     */
     public function view($rubrique){
         $data = $this->ModelEmission->ReadByKey(array("NOM ='$rubrique'"))[0];
         $audio = $this->ModelAudio->ReadByKey(array("IDEMISSION =".$data["ID"]));
         parent::Set(array('emission'=>$data,'audios'=>$audio));
         $layout = "default";
+        
+        // si l'emission est en inscription
         if ($data["INSCRIPTION"]) {
             $layout = "inscription";
         }

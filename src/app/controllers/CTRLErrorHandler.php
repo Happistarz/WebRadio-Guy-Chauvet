@@ -10,7 +10,7 @@ class CTRLErrorHandler extends Controller
     }
     public function index()
     {
-        parent::Render("error.php", "Erreur");
+        echo 'Erreur pas de page';
     }
 }
 ?>

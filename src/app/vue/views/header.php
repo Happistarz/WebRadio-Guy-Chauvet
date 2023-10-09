@@ -2,7 +2,13 @@
 <!-- <div id="loader">
   <p>Chargement...</p>
 </div> -->
+<?php
 
+require_once MODEL . "ModelEmission.php";
+$emission = new ModelEmission();
+$header_emissions = $emission->Liste();
+
+?>
 <!-- header -->
 <header>
   <!-- logo -->
@@ -15,15 +21,12 @@
       <div class="dropdown-content">
         <?php
         $emission = array();
-        foreach ($emission as $ems) {
-          extract($ems);
+        foreach ($header_emissions as $ems) {
           echo '
-            <a href="' . WEBROOT . 'Emission/view/' . $NOM . '">' . $NOMLONG . '</a>
+            <a href="' . WEBROOT . 'Emission/view/' . $ems['NOM'] . '">' . $ems['NOMLONG'] . '</a>
           ';
         }
         ?>
-        <a href="<?php echo WEBROOT ?>Emission/view/H2P">Histoire de poche</a>
-        <a href="<?php echo WEBROOT ?>Emission/view/JA">Journal Audio</a>
       </div>
     </div>
     <!-- journal btn -->

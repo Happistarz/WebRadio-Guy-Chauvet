@@ -2,6 +2,13 @@
 
 require_once LIB ."model.php";
 
+/**
+ * Class ModelAudio
+ * 
+ * Model de la page Audio
+ * table Audio
+ * id ID
+ */
 class ModelAudio extends Model {
     protected $table = "Audio";
 

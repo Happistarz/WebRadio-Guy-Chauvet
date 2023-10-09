@@ -11,6 +11,13 @@ class CTRLRedacteur extends Controller
         parent::loadModel('ModelArticle');
     }
 
+    /**
+     * index
+     * 
+     * Methode appelée par defaut
+     * 
+     * @return void
+     */
     public function index()
     {
         // if(ValidSession()) {

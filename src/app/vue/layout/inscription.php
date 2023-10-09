@@ -12,16 +12,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="<?php echo WWW . "js/functions.js" ?>"></script>
     <title>
-        <?php $title; ?>
+        <?php
+        // affichage du titre de la page
+        $title;
+        ?>
     </title>
 </head>
 
 <body>
-    <?php require VIEWS . "header.php" ?>
+    <?php
+    // affichage du header
+    require VIEWS . "header.php"
+    ?>
     <main>
         <div class="content">
-            <?php echo $content; ?>
+            <?php
+            // affichage du contenu de la page
+            echo $content;
+            ?>
         </div>
+        <!-- INITIALISATION DU FORMULAIRE -->
         <div class="quiz">
 
             <div class="form1">
@@ -77,7 +87,10 @@
         </div>
     </main>
 
-    <?php require VIEWS . "footer.php" ?>
+    <?php
+    // affichage du footer
+    require VIEWS . "footer.php"
+    ?>
 </body>
 
 </html>

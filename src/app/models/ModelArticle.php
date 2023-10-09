@@ -1,5 +1,13 @@
 <?php
 require_once(LIB.'model.php');
+
+/**
+ * Class ModelAccueil
+ * 
+ * Model de la page accueil
+ * table Article
+ * id ID
+ */
 class ModelArticle extends Model{
     protected $id;
     protected $lib;

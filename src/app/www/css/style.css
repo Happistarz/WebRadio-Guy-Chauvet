@@ -1224,9 +1224,10 @@ input[type="tel"] {
   text-indent: 30px;
 }
 
-.img[alt=mention-logo]{
-  width: 10px;
-  height: 25px;
+img[alt="mention-logo"]{
+  width: 45px;
+  height: 40px;
+ 
 }
 
 .mention-directeur {

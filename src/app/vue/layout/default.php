@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- IMPORTATION DE TOUTES LES RESSOURCES -->
 
 <head>
     <meta charset="UTF-8">
@@ -12,18 +13,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="<?php echo WWW . "js/functions.js" ?>"></script>
     <title>
-        <?php echo $title; ?>
+        <?php
+        // affichage du titre de la page
+        echo $title;
+        ?>
     </title>
 </head>
 
 <body>
-    <?php require VIEWS . "header.php"; ?>
+    <?php
+    // affichage du header
+    require VIEWS . "header.php";
+    ?>
     <main>
         <div class="content">
             <?php echo $content; ?>
         </div>
     </main>
-    <?php require VIEWS . "footer.php"; ?>
+    <?php
+    // affichage du footer
+    require VIEWS . "footer.php";
+    ?>
 </body>
 
 </html>

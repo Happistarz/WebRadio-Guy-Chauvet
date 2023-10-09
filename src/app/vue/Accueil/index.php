@@ -1,4 +1,6 @@
 <?php
+
+// AFFICHE LES INFOS DANS LA SECTION INFO
 foreach ($info as $i) {
 	extract($i);
 	if ($MODIFIED > $CREATED)  {
@@ -22,6 +24,7 @@ foreach ($info as $i) {
 <div class="Mart">
 <?php
 
+// AFFICHE LES ARTICLES DANS LA SECTION JOURNAL
 foreach ($article as $d) {
     extract($d);
     echo '
@@ -40,7 +43,7 @@ foreach ($article as $d) {
 <hr size="5" width="100%" color="black" />
 <div class="Memissions">
 <?php
-
+	// AFFICHE LES EMISSIONS DANS LA SECTION EMISSIONS
 	foreach ($emission as $e) {
 		extract($e);
 

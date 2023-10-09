@@ -9,7 +9,7 @@ class ModelEquipe extends Model{
     protected $SRC;
     protected $table;
     public function __construct(){
-        $this->table = "Article";
+        $this->table = "Equipe";
         $this->id = "ID";
         parent::__construct($this->table,$this->id);
         }

@@ -38,6 +38,12 @@ class CTRLEquipe extends Controller{
         parent::Render('index.php',"Equipe");
     }
 
+    /**
+     * affiche une emission en fonction de son nom
+     * 
+     * @param string $rubrique
+     * @return void
+     */
     public function view($equipe){
         $data = $this->ModelEquipe->ReadByKey(array("NOM ='$equipe'"))[0];
         parent::Set(array("Equipe"=>$data));

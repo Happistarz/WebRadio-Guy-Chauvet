@@ -1,7 +1,10 @@
 <head>
   <meta charset="UTF-8">
   <title>
-    <?php echo $title; ?>
+    <?php
+    // affiche le titre de la page
+    echo $title;
+    ?>
   </title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="<?php echo WWW . "js/loader.js" ?>"></script>
@@ -12,11 +15,17 @@
   <script src="<?php echo WWW . "js/functions.js" ?>"></script>
 </head>
 
-<?php require VIEWS . "header.php" ?>
+<?php
+// affiche le header
+require VIEWS . "header.php"
+?>
 <main>
   <div id="content">
     <?php echo $content; ?>
   </div>
 </main>
 
-<?php require VIEWS . "footer.php" ?>
+<?php
+// affiche le footer
+require VIEWS . "footer.php"
+?>

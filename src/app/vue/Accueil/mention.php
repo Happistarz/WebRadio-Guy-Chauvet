@@ -1,43 +1,47 @@
-<h1 style="text-align: center; font-size: 50px;">Mentions légales</h1>
+<h1 style="text-align: center; font-size: 50px; padding-bottom: ">Mentions légales</h1>
 
 <!-- Directeur de publication -->
-<h1 class="mention-titre">Directeur de publication :</h1>
     <div class="mention-directeur">
         <img src=<?php echo DATA ."general/icones/ovale_bleu_icone.png"; ?> alt='mention-logo'>
+        <h1 class="mention-titre">Directeur de publication :</h1>
         
     </div>
+    <!-- Description -->
     <p class="mention-description">Le proviseur de l'établissement.</p>
-
-
+    
     <!-- Raison scociale -->
-    <h1 class="mention-titre">Raison sociale : </h1>
     <div class="Raisonsociale">
-        <img src=<?php echo DATA ."general/icones/rectangle_jaune_icone.png"; ?> alt='mention-logo'>
-        
+    <img src=<?php echo DATA ."general/icones/rectangle_jaune_icone.png"; ?> alt='mention-logo'>
+
+    <!-- Description -->
+    <h1 class="mention-titre">Raison sociale : </h1>
+    <p class="mention-description">LYCEE GENERAL ET TECHNOLOGIQUE GUY CHAUVET </p>
+    <p class="mention-description">Rue DE L EPERON</p>
+    <p class="mention-description">86206 LOUDUN</p>
+    <p class="mention-description">Téléphone : 0549981751</p>
     </div>
-    <p class="GrosTexteMention">LYCEE GENERAL ET TECHNOLOGIQUE GUY CHAUVET </p>
-    <p class="GrosTexteMention">Rue DE L EPERON</p>
-    <p class="GrosTexteMention">86206 LOUDUN</p>
-    <p class="GrosTexteMention">Téléphone : 0549981751</p>
+    
 
     <!-- Hébergeur -->
     <div class="Hebergeur">
     <img src=<?php echo DATA ."general/icones/exagone_rose_icone.png"; ?> alt='mention-logo'>
-    
         <h1 class="mention-titre">Hébergeur : </h1>
+
+    <!-- Description -->
+    <p class="mention-description">LYCEE GENERAL ET TECHNOLOGIQUE GUY CHAUVET</p>
+    <p class="mention-description">Rue DE L EPERON</p>
+    <p class="mention-description">86206 LOUDUN</p>
+    <p class="mention-description">Téléphone : 0549981751</p>
     </div>
 
-    <p class="GrosTexteMention">LYCEE GENERAL ET TECHNOLOGIQUE GUY CHAUVET</p>
-    <p class="GrosTexteMention">Rue DE L EPERON</p>
-    <p class="GrosTexteMention">86206 LOUDUN</p>
-    <p class="GrosTexteMention">Téléphone : 0549981751</p>
+   
 
     <!-- Protection des données -->
     <div class="Protectiondesdonnees">
-        <img src="../images/arrondi.png" alt="icone" class="mention-logo" />
         <h1 class="mention-titre">Protection des données :</h1>
+        <img src=<?php echo DATA ."general/icones/ovale_bleu_icone.png"; ?> alt='mention-logo'>
     </div>
-    <img id="myZbi" src="../images/infonoir.png" alt="questinfo" class="infonoir" onclick="openModal1()">
+    <img id="myZbi" src="" alt="questinfo" class="infonoir" onclick="openModal1()">
 
     <div id="myModalmention" class="modalmention">
     <span class="close2">&times;</span>
@@ -254,20 +258,20 @@
 
     <!-- Création de liens -->
     <div class="Créationdeliens">
-        <img src="../images/exagone.png" alt="icone" class="icones" />
         <h1 class="mention-titre">Création de liens :</h1>
+        <img src=<?php echo DATA ."general/icones/exagone_rose_icone.png"; ?> alt='mention-logo'>
     </div>
-    <p class="GrosTexteMention">vers ce site </h2>
-    <p class="GrosTexteMention">Dans le cadre de sa mission de service public, le lycée Guy Chauvet éditeur du site,
+    <p class="mention-description">vers ce site </h2>
+    <p class="mention-description">Dans le cadre de sa mission de service public, le lycée Guy Chauvet éditeur du site,
         autorise </p>
-    <p class="GrosTexteMention">les liens hypertextes vers l'un quelconque des articles du site pour une utilisation
+    <p class="mention-description">les liens hypertextes vers l'un quelconque des articles du site pour une utilisation
     </p>
-    <p class="GrosTexteMention">institutionnelle dans un cadre pédagogique. Toute utilisation à des fins commerciales ou
+    <p class="mention-description">institutionnelle dans un cadre pédagogique. Toute utilisation à des fins commerciales ou
     </p>
-    <p class="GrosTexteMention">publicitaires est interdite. La mention explicite du site pointé dans l'intitulé du lien
+    <p class="mention-description">publicitaires est interdite. La mention explicite du site pointé dans l'intitulé du lien
         est attendue.</p>
-    <p class="GrosTexteMention">Les pages du site ne doivent pas être imbriquées à l'intérieur des pages d'un autre site
+    <p class="mention-description">Les pages du site ne doivent pas être imbriquées à l'intérieur des pages d'un autre site
         (frame </p>
-    <p class="GrosTexteMention">ou système apparenté) mais visibles uniquement par l'ouverture d'une fenêtre
+    <p class="mention-description">ou système apparenté) mais visibles uniquement par l'ouverture d'une fenêtre
         indépendante.</p>
 </div>

@@ -66,6 +66,34 @@
             </div>
         </div>
     </div>
+    <div class="column">
+        <div class="info border-">
+            <h1>Articles</h1>
+            <button class="fas fa-circle-plus" title="Ajouter un nouvel élément" onclick="add(this,'Article')"></button>
+            <hr>
+            <div class="items">
+                <?php
+                // affichage des articles
+                foreach ($articles as $art) {
+                    echo '
+                    <div class="line">
+                        <div class="desc">
+                            <h2>' . $art['NOM'] . '</h2>
+                            <p id="auteurs">' . $art['AUTEUR'] . '<span>• ' . $art['CREATED'] . '</span></p>
+                            <p id="description"><i>' . substr($art['DESCRIPTION'], 0, 200) . '</i></p>
+                        </div>
+                        <img src="' . DATA . 'general/nosrc.png" alt="">
+                        <p style="display: none" id="id">3</p>
+                        <div class="action">
+                            <button type="button" class="fas fa-edit" title="Modifier" onclick="edit(this,\'Article\',\'3\')"></button>
+                            <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)" data-id="' . $art['ID'] . '"></button>
+                        </div>
+                    </div>';
+                }
+                ?>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 <script>
@@ -110,6 +138,23 @@
             </form>
             <div class="preview">
                 <audio src="" controls></audio>
+            </div>`;
+
+    const BODYARTICLE = `
+            <form method="post">
+                <label for="titre">Titre</label>
+                <input type="text" name="nom" id="nom" placeholder="Titre" required>
+                <label for="description">Description</label>
+                <textarea type="text" name="description" id="description" placeholder="Description" required> </textarea>
+                <label for="src">Image</label>
+                <input type="file" name="src" id="src" placeholder="Image" accept="image/*" onchange="changeImgPreview()">
+                <label for="contenu">Auteur</label>
+                <textarea type="text" name="auteur" id="auteur" placeholder="Auteur" required> </textarea>
+                <input type="hidden" name="id" id="id" value="">
+                <input type="submit" value="Valider" id="ModalSubmit">
+            </form>
+            <div class="preview">
+                <img src="<?php echo DATA . "general/nosrc.png" ?>" alt="" id="previewimg">
             </div>`;
 
 
@@ -180,6 +225,25 @@
                     idemission: ""
                 });
                 break;
+            case "Article":
+                // création du modal
+                let modalArticle = new Modal("Ajouter", BODYARTICLE);
+                // affichage de l'image par défaut
+                // affichage du modal avec l'image par défaut
+                modalArticle.render(
+                    function () {
+                        $('.modal .modal-body form [name="src"]').attr('src', "<?php echo DATA . 'general/nosrc.png' ?>");
+                    });
+                // ajout du listener pour l'envoi du formulaire
+                modalArticle.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "add", "Article", resultContent);
+                // ajout des données par défaut
+                modalArticle.setData({
+                    nom: "",
+                    description: "",
+                    src: "<?php echo DATA . 'general/nosrc.png' ?>",
+                    auteur: ""
+                });
+                break;
             default:
                 break;
         }
@@ -233,6 +297,24 @@
                     id: id
                 });
                 break;
+            case "Article":
+                // création du modal
+                let modalArticle = new Modal("Modifier", BODYARTICLE);
+                // affichage du modal avec l'img de l'élément
+                modalArticle.render(function () {
+                    $('.modal .modal-body #previewimg').attr('src', el.parentElement.parentElement.querySelector('img').getAttribute('src'));
+                });
+                // ajout du listener pour l'envoi du formulaire
+                modalArticle.addSubmitListener("<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>", "edit", "Article", resultContent);
+                // ajout des données par défaut
+                modalArticle.setData({
+                    nom: el.parentElement.parentElement.querySelector('h2').innerHTML.replace(/<b.*>.*<\/b>/g, ""),
+                    description: el.parentElement.parentElement.querySelector('#description i').innerHTML,
+                    src: el.parentElement.parentElement.querySelector('img').getAttribute('src'),
+                    auteur: el.parentElement.parentElement.querySelector('#auteurs').innerHTML.replace(/<span.*>.*<\/span>/g, ""),
+                    id: id
+                });
+                break;
             default:
                 break;
         }
@@ -246,7 +328,7 @@
      */
     function suppr(el, table) {
         // confirmation de la suppression, si oui, envoi de la requête
-        if (confirm('Voulez vous vraiment suppimer cette émission?')) request('<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>', 'delete', table, el.getAttribute('data-id'), (success, response) => {
+        if (confirm('Voulez vous vraiment suppimer cet élément?')) request('<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>', 'delete', table, el.getAttribute('data-id'), (success, response) => {
             console.log(response.responseText);
         });
     }

@@ -258,7 +258,7 @@ header a:hover {
   width: 100%;
   height: 80vh;
   /* background-color: #ccc; */
-  /* margin: 0 15px; */
+  margin: 25px 0;
   /* padding: 0 5%; */
   display: grid;
   grid-template-columns: 1fr 0.4fr;
@@ -272,7 +272,19 @@ header a:hover {
   align-items: center;
   width: 90%;
   justify-content: center;
-  height: 100%;
+  height: 95%;
+}
+
+.redacteur .column .items::-webkit-scrollbar {
+  width: 10px;
+}
+
+.redacteur .column .items::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.redacteur .column .items::-webkit-scrollbar-thumb {
+  background: #000;
 }
 
 .redacteur .column h1 {
@@ -361,7 +373,7 @@ header a:hover {
 }
 
 .redacteur .info {
-  height: 100%;
+  height: 95%;
   width: 95%;
   display: flex;
   flex-direction: column;
@@ -374,6 +386,12 @@ header a:hover {
   grid-template-columns: 1.5fr 3fr 0.5fr;
   align-items: center;
   margin: 20px 10px;
+}
+
+.redacteur .line img {
+  width: 20%;
+  /* height: 20%; */
+  border-radius: 1.3rem;
 }
 
 .redacteur .line audio {
@@ -1272,4 +1290,4 @@ img[alt="mention-logo"] {
   display: flex;
 }
 
-.desc-lien {}
+/* .desc-lien {} */

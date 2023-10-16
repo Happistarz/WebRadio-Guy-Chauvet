@@ -33,6 +33,16 @@ function request(url, action, table, data, result) {
 }
 
 /**
+ * Fonction qui set le lecteur audio
+ */
+function setLecteurAudio() {
+
+}
+
+
+
+
+/**
  * Fonction qui permet de faire une requête AJAX avec jQuery.
  *
  */
@@ -93,7 +103,7 @@ class Modal {
    * @param {function} callback La fonction à exécuter après la requête.
    * @return {void}
    */
-  render(AfterLoad = function () { }) {
+  render(AfterLoad = function () {}) {
     // Crée le modal s'il n'existe pas
     if (!this.modal) {
       // Crée le modal
@@ -187,85 +197,77 @@ class Modal {
   }
 }
 
-// console.dir(audio);
+/**
+ * Class qui permet de faire des Dropdowns et Dropups.
+ */
+class DropContainer {
+  /**
+   * Crée un objet DropContainer.
+   * @param {string} title Le titre du dropdown.
+   * @param {string} body Le corps du dropdown.
+   * @param {string} position La position du dropdown.
+   * @param {string} parent Le parent du dropdown.
+   * @return {void}
+   */
+  constructor(title, body, position, parent) {
+    // Initialiser les propriétés
+    this.title = title;
+    this.body = body;
+    this.position = position;
+    this.container = null;
+    this.parent = parent;
+  }
 
-// audio.addEventListener(
-//   "loadeddata",
-//   () => {
-//     audioPlayer.querySelector(".time .length").textContent = getTimeCodeFromNum(
-//       audio.duration
-//     );
-//     audio.volume = .75;
-//   },
-//   false
-// );
+  /**
+   * Affiche le DropContainer.
+   *
+   * @return {void}
+   */
+  render() {
+    // Crée le container s'il n'existe pas
+    if (!this.container) {
+      // Crée le container
+      this.container = document.createElement("div");
+      this.container.classList.add("drop-container");
+      this.container.classList.add(this.position);
 
-// //click on timeline to skip around
-// const timeline = audioPlayer.querySelector(".timeline");
-// timeline.addEventListener("click", e => {
-//   const timelineWidth = window.getComputedStyle(timeline).width;
-//   const timeToSeek = e.offsetX / parseInt(timelineWidth) * audio.duration;
-//   audio.currentTime = timeToSeek;
-// }, false);
+      // Ajoute le contenu du container
+      this.container.innerHTML = `
+        <div class="drop-content">
+          <div class="drop-header">
+            <h2>${this.title}</h2>
+          </div>
+          <div class="drop-body">
+            ${this.body}
+          </div>
+        </div>
+      `;
+      // Ajoute le container à la page
+      $(this.parent).append(this.container);
+    }
+    this.closeContainer();
+    
+    // Ajoute un écouteur pour fermer le container quand on perd le focus sur celui-ci
+    const self = this;
+    $(this.parent).on('mouseenter', function () {
+      self.container.style.display = "block";
+    });
+    $(this.parent).on('mouseleave', function () {
+      self.closeContainer();
+    });
 
-// //click volume slider to change volume
-// const volumeSlider = audioPlayer.querySelector(".controls .volume-slider");
-// volumeSlider.addEventListener('click', e => {
-//   const sliderWidth = window.getComputedStyle(volumeSlider).width;
-//   const newVolume = e.offsetX / parseInt(sliderWidth);
-//   audio.volume = newVolume;
-//   audioPlayer.querySelector(".controls .volume-percentage").style.width = newVolume * 100 + '%';
-// }, false)
+    // Affiche le container
+    // this.container.style.display = "block";
+  }
 
-// //check audio percentage and update time accordingly
-// setInterval(() => {
-//   const progressBar = audioPlayer.querySelector(".progress");
-//   progressBar.style.width = audio.currentTime / audio.duration * 100 + "%";
-//   audioPlayer.querySelector(".time .current").textContent = getTimeCodeFromNum(
-//     audio.currentTime
-//   );
-// }, 500);
-
-// //toggle between playing and pausing on button click
-// const playBtn = audioPlayer.querySelector(".controls .toggle-play");
-// playBtn.addEventListener(
-//   "click",
-//   () => {
-//     if (audio.paused) {
-//       playBtn.classList.remove("play");
-//       playBtn.classList.add("pause");
-//       audio.play();
-//     } else {
-//       playBtn.classList.remove("pause");
-//       playBtn.classList.add("play");
-//       audio.pause();
-//     }
-//   },
-//   false
-// );
-
-// audioPlayer.querySelector(".volume-button").addEventListener("click", () => {
-//   const volumeEl = audioPlayer.querySelector(".volume-container .volume");
-//   audio.muted = !audio.muted;
-//   if (audio.muted) {
-//     volumeEl.classList.remove("icono-volumeMedium");
-//     volumeEl.classList.add("icono-volumeMute");
-//   } else {
-//     volumeEl.classList.add("icono-volumeMedium");
-//     volumeEl.classList.remove("icono-volumeMute");
-//   }
-// });
-
-// //turn 128 seconds into 2:08
-// function getTimeCodeFromNum(num) {
-//   let seconds = parseInt(num);
-//   let minutes = parseInt(seconds / 60);
-//   seconds -= minutes * 60;
-//   const hours = parseInt(minutes / 60);
-//   minutes -= hours * 60;
-
-//   if (hours === 0) return `${minutes}:${String(seconds % 60).padStart(2, 0)}`;
-//   return `${String(hours).padStart(2, 0)}:${minutes}:${String(
-//     seconds % 60
-//   ).padStart(2, 0)}`;
-// }
+  /**
+   * Ferme le container.
+   *
+   * @return {void}
+   */
+  closeContainer() {
+    if (this.container) {
+      this.container.style.display = "none";
+    }
+  }
+}

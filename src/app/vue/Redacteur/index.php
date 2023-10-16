@@ -36,8 +36,7 @@
         <!-- LISTE DES DATA -->
         <div class="liste border-blue">
             <h1>Emissions</h1>
-            <button class="fas fa-circle-plus" title="Ajouter un nouvel élément"
-                onclick="add(this,'Emission')"></button>
+            <button class="fas fa-circle-plus" title="Ajouter un nouvel élément" onclick="add(this,'Emission')"></button>
             <hr>
             <div class="items">
                 <?php
@@ -195,7 +194,7 @@
                 let link = "<?php echo DATA . 'general/nosrc.png' ?>";
                 // affichage du modal avec l'image par défaut
                 modalEmission.render(
-                    function () {
+                    function() {
                         $('.modal .modal-body form [name="src"]').attr('src', link);
                     });
                 // ajout du listener pour l'envoi du formulaire
@@ -213,7 +212,7 @@
                 // création du modal
                 let modalAudio = new Modal("Ajouter", BODYAUDIO);
                 // affichage du modal
-                modalAudio.render(function () {
+                modalAudio.render(function() {
                     $('.modal .modal-body form .preview audio').attr('src', "");
                 });
                 // ajout du listener pour l'envoi du formulaire
@@ -233,7 +232,7 @@
                 // affichage de l'image par défaut
                 // affichage du modal avec l'image par défaut
                 modalArticle.render(
-                    function () {
+                    function() {
                         $('.modal .modal-body form [name="src"]').attr('src', "<?php echo DATA . 'general/nosrc.png' ?>");
                     });
                 // ajout du listener pour l'envoi du formulaire
@@ -265,7 +264,7 @@
                 // création du modal
                 let modalEmission = new Modal("Modifier", BODYEMISSION);
                 // affichage du modal avec l'img de l'élément
-                modalEmission.render(function () {
+                modalEmission.render(function() {
                     $('.modal .modal-body #previewimg').attr('src', el.parentElement.parentElement.querySelector('img').getAttribute('src'));
                 });
                 // ajout du listener pour l'envoi du formulaire
@@ -284,7 +283,7 @@
                 // création du modal
                 let modalAudio = new Modal("Modifier", BODYAUDIO);
                 // affichage du modal avec l'audio de l'élément
-                modalAudio.render(function () {
+                modalAudio.render(function() {
                     $('.modal .modal-body .preview audio').attr('src', el.parentElement.parentElement.querySelector('audio').getAttribute('src'));
                 });
                 // ajout du listener pour l'envoi du formulaire
@@ -303,7 +302,7 @@
                 // création du modal
                 let modalArticle = new Modal("Modifier", BODYARTICLE);
                 // affichage du modal avec l'img de l'élément
-                modalArticle.render(function () {
+                modalArticle.render(function() {
                     $('.modal .modal-body #previewimg').attr('src', el.parentElement.parentElement.querySelector('img').getAttribute('src'));
                 });
                 // ajout du listener pour l'envoi du formulaire
@@ -345,7 +344,7 @@
         var file = document.getElementById('src').files[0];
         // création d'un reader pour lire l'image
         var reader = new FileReader();
-        reader.onloadend = function () {
+        reader.onloadend = function() {
             preview.src = reader.result;
         }
         // si il y a une image, on la lit, sinon on met l'image par défaut
@@ -381,3 +380,10 @@
         }
     }
 </script>
+<style>
+    .modal-body {
+
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+</style>

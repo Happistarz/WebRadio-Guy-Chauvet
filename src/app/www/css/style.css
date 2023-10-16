@@ -13,7 +13,7 @@ body {
 }
 
 main {
-  margin: 2vw 2vh;
+  margin: 6vw 6vh;
 }
 
 .title {
@@ -281,10 +281,12 @@ header a:hover {
 
 .redacteur .column .items::-webkit-scrollbar-track {
   background: #f1f1f1;
+  border-radius: 1.3rem;
 }
 
 .redacteur .column .items::-webkit-scrollbar-thumb {
   background: #000;
+  border-radius: 1.3rem;
 }
 
 .redacteur .column h1 {
@@ -444,8 +446,6 @@ header a:hover {
 
 .modal-body {
   padding: 1rem;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
 }
 
 .modal-body form *:not(label, div) {
@@ -1089,7 +1089,6 @@ input[type="tel"] {
 }
 
 
-
 .Titre {
   text-align: center;
   font-size: 50px;
@@ -1274,22 +1273,67 @@ input[type="tel"] {
 
 /* Mentions légales */
 
-.mention-titre {
-  font-size: 40px;
-  margin: 25px 5px;
-  text-indent: 30px;
-}
-
 img[alt="mention-logo"] {
   width: 45px;
   height: 40px;
 
 }
 
-.mention-directeur {
+.mention > .mention-titre {
   display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin: 6px 0 20px 0;
 }
 
-.desc-lien {
-  margin-left: 70px;
+
+.close-modal {
+  display: flex;
+
 }
+.mention-description{
+  margin-bottom: 6vh;
+  margin-left: 8vw;
+  line-height: 1.5;
+}
+
+.mentions-legales {
+  margin-left: 5%;
+}
+
+.mention > .mention-liens {
+  display: flex;
+  flex-direction: row;
+  margin: 6px 0 20px 90px;
+}
+
+
+/* PLAN ----------------------------------- */
+
+ h1 {
+  margin-bottom: 20px;
+ }
+.espace {
+  margin-bottom: 20px;
+}
+
+.espace ul li {
+  margin-bottom: 5px;
+}
+
+.espace ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.espace ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  display: block;
+}
+
+  .espace a:hover {
+    text-decoration: underline;
+    color: lightblue;
+  }

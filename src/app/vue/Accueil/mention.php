@@ -1,72 +1,65 @@
 <h1 style="text-align: center; font-size: 50px; padding-bottom: 40px">Mentions légales</h1>
 
 <!-- Directeur de publication -->
-    <div class="mention-directeur">
-        <img src=<?php echo DATA ."general/icones/ovale_bleu_icone.png"; ?> alt='mention-logo'>
-        <h1 class="mention-titre">Directeur de publication :</h1>
-        
+<div class="mention">
+
+    <div class="mention-titre">
+        <img src=<?php echo DATA . "general/icones/ovale_bleu_icone.png"; ?> alt='mention-logo'>
+        <h1>Directeur de publication :</h1>
     </div>
     <!-- Description -->
     <p class="mention-description">Le proviseur de l'établissement.</p>
-    
+
+
+
     <!-- Raison scociale -->
-    <div class="mention-raison">
-        <img src=<?php echo DATA ."general/icones/rectangle_jaune_icone.png"; ?> alt='mention-logo'>
-
-    <!-- Description -->
-        <h1 class="mention-titre">Raison sociale : </h1>
+        <div class="mention-titre">
+            <img src=<?php echo DATA . "general/icones/rectangle_jaune_icone.png"; ?> alt='mention-logo'>
+            <h1>Raison sociale : </h1>
+        </div>
+        <!-- Description -->
         <p class="mention-description">
-            LYCEE GENERAL ET TECHNOLOGIQUE GUY CHAUVET <br> 
-            Rue DE L EPERON <br> 
-            86206 LOUDUN <br> 
-            Téléphone : 0549981751</p>
-    </div>
-    
-
-    <!-- Hébergeur -->
-    <div class="mention-hebergeur">
-        <img src=<?php echo DATA ."general/icones/exagone_rose_icone.png"; ?> alt='mention-logo'>
-            <h1 class="mention-titre">Hébergeur : </h1>
-
-    <!-- Description -->
-        <p class="mention-description">
-            LYCEE GENERAL ET TECHNOLOGIQUE GUY CHAUVET <br> 
-            Rue DE L EPERON <br> 
-            86206 LOUDUN <br> 
+            LYCEE GENERAL ET TECHNOLOGIQUE GUY CHAUVET <br>
+            Rue DE L EPERON <br>
+            86206 LOUDUN <br>
             Téléphone : 0549981751
         </p>
-    </div>
-   
-
-    <!-- Protection des données -->
-    <div class="mention-protegeur">
-        <h1 class="mention-titre">Protection des données :</h1>
-        <img src=<?php echo DATA ."general/icones/ovale_bleu_icone.png"; ?> alt='mention-logo'>
-        
-    </div>
-    <img id="myZbi" src="" alt="questinfo" class="infonoir" onclick="openModal1()">
-
-    <div id="myModalmention" class="modalmention">
-    <span class="close2">&times;</span>
-        <div class="modal-contentmention">
-            <div class="podcast-container2 border-2">
-                <div class="modal-bodymention">
 
 
-                    <div class="interieur">
-                        <div class="Titrement">
-                            <img src="../images/arrondi.png" alt="icone" class="moyenicones" />
+
+    <!-- Hébergeur -->
+        <div class="mention-titre">
+            <img src=<?php echo DATA . "general/icones/exagone_rose_icone.png"; ?> alt='mention-logo'>
+            <h1 class="mention-titre">Hébergeur : </h1>
+        </div>
+        <!-- Description -->
+        <p class="mention-description">
+            LYCEE GENERAL ET TECHNOLOGIQUE GUY CHAUVET <br>
+            Rue DE L EPERON <br>
+            86206 LOUDUN <br>
+            Téléphone : 0549981751
+        </p>
+
+    <div class="mention border-">
+                        <div class="mention-titre">
+                                <!-- Protection des données -->
+                            <img src=<?php echo DATA . "general/icones/ovale_bleu_icone.png"; ?> alt='mention-logo'>
                             <h1 class="mention-titre">Protection des données :</h1>
+                            <img src=<?php echo DATA . "general/sansinfo.png"; ?> alt='mention-logo'>
                         </div>
-                        <img src="../images/sansinfo.png" alt="questinfo" class="infos close">
-                        <div class="Titrement">
-                            <img src="../images/arrondi.png" alt="icone" class="petiticones" />
+                    
+                        <div class="mention-liens">
+                            <!-- Responsable du traitement -->
+                            <!-- <img src="../images/sansinfo.png" alt="questinfo" class="infos close"> -->
+                        
+                            <img src=<?php echo DATA . "general/icones/ovale_bleu_icone.png";  ?> alt='mention-logo'>
                             <h1 class="mention-titre">Responsable du traitement</h1>
                         </div>
-                        <p class="TexteMention">Le LYCEE GENERAL ET TECHNOLOGIQUE GUY CHAUVET est responsable du
+                  
+                        <p class="texteMention" style="margin-left: 45px;">Le LYCEE GENERAL ET TECHNOLOGIQUE GUY CHAUVET est responsable du
                             traitement des données.</p>
-                        <div class="Titrement">
-                            <img src="../images/rectangle.png" alt="icone" class="petiticones" />
+                        <div class="mention-liens">
+                            <img src=<?php echo DATA . "general/icones/rectangle_jaune_icone.png"; ?> alt='mention-logo'>
                             <h1 class="mention-titre">Objectif du traitement</h1>
                         </div>
                         <h2 class="TitreMention">Finalités du traitement :</h2>
@@ -93,8 +86,8 @@
                             relève de l'exercice de l'autorité publique dont est investie le proviseur de
                             l'établissement en application du règlement général sur la protection des données et de la
                             loi Informatique et Libertés modifiée.</p>
-                        <div class="Titrement">
-                            <img src="../images/exagone.png" alt="icone" class="petiticones" />
+                        <div class="mention-liens">
+                            <img src=<?php echo DATA . "general/icones/exagone_rose_icone.png"; ?> alt='mention-logo'>
                             <h1 class="mention-titre">Données traitées</h1>
                         </div>
                         <h2 class="TitreMention">Catégories des données :</h2>
@@ -131,8 +124,8 @@
                         <p class="TexteMention"><strong>·</strong> Les données collectées pour la réalisation des autres
                             finalités sont recueillies de façon obligatoire, sauf – dans le cas d’une collecte directe -
                             mention contraire dans le formulaire concerné (ou sur la plateforme numérique concernée)</p>
-                        <div class="Titrement">
-                            <img src="../images/arrondi.png" alt="icone" class="petiticones" />
+                        <div class="mention-liens">
+                            <img src=<?php echo DATA . "general/icones/ovale_bleu_icone.png"; ?> alt='mention-logo'>
                             <h1 class="mention-titre">Personnes concernées</h1>
                         </div>
                         <h2 class="TitreMention">Le traitement de données concerne :</h2>
@@ -148,8 +141,8 @@
                             structure concernant les données publiées sur le (les) site(s) web ;</p>
                         <p class="TexteMention"><strong>·</strong> Les personnels responsables de la supervision de la
                             sécurité des systèmes d’information de la structure.</p>
-                        <div class="Titrement">
-                            <img src="../images/rectangle.png" alt="icone" class="petiticones" />
+                        <div class="mention-liens">
+                            <img src=<?php echo DATA . "general/icones/rectangle_jaune_icone.png"; ?> alt='mention-logo'>
                             <h1 class="mention-titre">Destinataires des données traitées</h1>
                         </div>
                         <h2 class="TitreMention">Catégories de destinataires</h2>
@@ -171,8 +164,8 @@
                             présence sur Internet, hors de l’Union européenne.
                             Concernant l’hébergement des données, aucun transfert de données hors de l'Union européenne
                             n'est réalisé.</p>
-                        <div class="Titrement">
-                            <img src="../images/exagone.png" alt="icone" class="petiticones" />
+                        <div class="mention-liens">
+                            <img src=<?php echo DATA . "general/icones/exagone_rose_icone.png"; ?> alt='mention-logo'>
                             <h1 class="mention-titre">Durées de conservation des données</h1>
                         </div>
                         <p class="TexteMention">Le LYCEE GENERAL ET TECHNOLOGIQUE GUY CHAUVET conserve les données selon
@@ -189,13 +182,11 @@
                             conservées pendant 3 ans ;</p>
                         Elles sont destinées aux différents services compétents de la structure.</p>
                         <div class="Titrement">
-                            <img src="../images/arrondi.png" alt="icone" class="petiticones" />
                             <h1 class="mention-titre">Sécurité</h1>
                         </div>
                         <p class="TexteMention">Les mesures de sécurité sont mises en œuvre conformément à la politique
                             de sécurité des systèmes d’information (PSSI) du rectorat, issue de la PSSI de l’Etat.</p>
                         <div class="Titrement">
-                            <img src="../images/rectangle.png" alt="icone" class="petiticones" />
                             <h1 class="mention-titre">À propos des cookies</h1>
                         </div>
                         <p class="TexteMention">Nous utilisons différents cookies sur le site pour améliorer
@@ -231,7 +222,6 @@
                             vous vous rendrez sur un site, et certains services et fonctionnalités risquent de ne pas
                             être accessibles.</p>
                         <div class="Titrement">
-                            <img src="../images/exagone.png" alt="icone" class="petiticones" />
                             <h1 class="mention-titre">Les droits sur les données</h1>
                         </div>
                         <h2 class="TitreMention">Exercer ses droits :</h2>
@@ -253,36 +243,50 @@
                             n’est pas assuré, peut introduire une réclamation auprès de la Commission Nationale de
                             l’Informatique et des Libertés (CNIL), 3 Place de Fontenoy - TSA 80715 - 75334 PARIS CEDEX
                             07.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- Création de liens -->
-    <div class="Créationdeliens">
-        <h1 class="mention-titre">Création de liens :</h1>
-        <img src=<?php echo DATA ."general/icones/exagone_rose_icone.png"; ?> alt='mention-logo'>
-    </div>
+        <div class="mention-titre">
+            <img src=<?php echo DATA . "general/icones/exagone_rose_icone.png"; ?> alt='mention-logo'>
+            <h1>Création de liens :</h1>
+        </div>
 
-    <!-- Description liens -->
-    <div class="desc-lien">
-        <h3 style="margin-bottom: 25px;">Vers ce site : </h3>
-        <ul style="list-style-type: disc;">
-            <li style="margin-bottom: 25px;">Dans le cadre de sa mission de service public, le lycée Guy Chauvet éditeur du site,
-            autorise les liens hypertextes vers l'un quelconque des articles du site pour une utilisation 
-            institutionnelle dans un cadre pédagogique. Toute utilisation à des fins commerciales ou
-            publicitaires est interdite. La mention explicite du site pointé dans l'intitulé du lien
-            est attendue.
-            </li>
+        <!-- Description liens -->
+        <div class="desc-lien">
+            <h3 style="margin-bottom: 25px;">Vers ce site : </h3>
+            <ul style="list-style-type: disc;">
+                <li style="margin-bottom: 25px;">Dans le cadre de sa mission de service public, le lycée Guy Chauvet éditeur du site,
+                    autorise les liens hypertextes vers l'un quelconque des articles du site pour une utilisation
+                    institutionnelle dans un cadre pédagogique. Toute utilisation à des fins commerciales ou
+                    publicitaires est interdite. La mention explicite du site pointé dans l'intitulé du lien
+                    est attendue.
+                </li>
 
-            <li>
-            Les pages du site ne doivent pas être imbriquées à l'intérieur des pages d'un autre site
-            (frame ou système apparenté) mais visibles uniquement par l'ouverture d'une fenêtre
-            indépendante.
-            </li>
-        <ul>
-    </div>
+                <li>
+                    Les pages du site ne doivent pas être imbriquées à l'intérieur des pages d'un autre site
+                    (frame ou système apparenté) mais visibles uniquement par l'ouverture d'une fenêtre
+                    indépendante.
+                </li>
+                <ul>
+        </div>
 
+
+    <!-- Scripts JS -->
+    <script>
+        var modal = document.getElementById("modalMention");
+        var img = document.getElementById("protectionDonnées");
+        var modalImg = document.getElementById("infonoir");
+        img.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+
+        var span = document.getElementsByClassName("close")[0];
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    </script>
 
 </div>

@@ -35,8 +35,15 @@ function request(url, action, table, data, result) {
 /**
  * Fonction qui set le lecteur audio
  */
-function setLecteurAudio() {
+function setLecteurAudio(url, time, play = true) {
+  const audio = document.querySelector('#audio-player');
+  audio.src = url;
+  audio.currentTime = time;
 
+  // si on veut jouer la musique
+  if (play) {
+    audio.play();
+  }
 }
 
 
@@ -103,7 +110,7 @@ class Modal {
    * @param {function} callback La fonction à exécuter après la requête.
    * @return {void}
    */
-  render(AfterLoad = function () {}) {
+  render(AfterLoad = function () { }) {
     // Crée le modal s'il n'existe pas
     if (!this.modal) {
       // Crée le modal
@@ -246,7 +253,7 @@ class DropContainer {
       $(this.parent).append(this.container);
     }
     this.closeContainer();
-    
+
     // Ajoute un écouteur pour fermer le container quand on perd le focus sur celui-ci
     const self = this;
     $(this.parent).on('mouseenter', function () {

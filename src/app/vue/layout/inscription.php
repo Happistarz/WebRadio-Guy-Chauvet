@@ -23,7 +23,7 @@
     <?php
     // affichage du header
     require VIEWS . "header.php"
-    ?>
+        ?>
     <main>
         <div class="content">
             <?php
@@ -39,7 +39,8 @@
                     <label for="nom">Nom Prénom:</label>
                     <input type="text" id="nom" name="nom" required="required"><br>
                     <label for="telephone">Téléphone :</label>
-                    <input type="tel" id="telephone" name="telephone" required="required" placeholder="Tout attaché sans +33"><br>
+                    <input type="tel" id="telephone" name="telephone" required="required"
+                        placeholder="Tout attaché sans +33"><br>
             </div>
 
             <div class="txt-quiz">
@@ -80,7 +81,8 @@
                     <label for="preference5">Proposition date 5</label><br>
                 </div>
 
-                <button type="submit" name="submit" class="button" id="button-submit"><img src="../images/valider.png" onclick="sumbimit_form();"></button>
+                <button type="submit" name="submit" class="button" id="button-submit"><img src="../images/valider.png"
+                        onclick="sumbimit_form();"></button>
 
                 </form>
             </div>
@@ -89,7 +91,8 @@
 
     <?php
     // affichage du footer
-    require VIEWS . "footer.php"
+    require VIEWS . "footer.php";
+    require VIEWS . "lecteur.php";
     ?>
 </body>
 

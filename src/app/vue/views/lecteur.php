@@ -15,40 +15,45 @@ $audio_ = $audio->Liste();
 
 
 <div id="audio-container">
-    <audio id="audio-player" controls>
-        <source src="" type="audio/mpeg">
-        Votre navigateur ne supporte pas l'élément audio.
-    </audio>
-    <button id="open-modal-button">Ouvrir la liste de lecture</button>
-    <div id="drop">test</div>
+    <div class="controls">
+        <button class="like"><img src="<?php echo DATA . "general/like.png" ?>" alt=""></button>
+    </div>
+    <div class="audiobar">
+        <div class="topbar">
+            <h3 class="titre">H2P Ep 1</h3>
+            <p class="info">moi med <i> 2023-06-06</i></p>
+        </div>
+        <audio id="audio-player" controls>
+            <source src="" type="audio/mpeg">
+            Votre navigateur ne supporte pas l'élément audio.
+        </audio>
+    </div>
+    <div class="extra">
+        <button id="open-modal-button">
+            <img src="<?php echo DATA . "general/biblio.png" ?>" alt="">
+            <span>Bibliothèque</span>
+        </button>
+    </div>
 </div>
 <script>
-    // au chargement de la page: 
-    // get le nom de l'audio dans le local storage
-    // get le current time dans le local storage
-    // si le nom et le current time sont différents de null: les mettre dans le lecteur
-    // sinon: rien
-    // quand on choisit un audio dans la biblio: 
-    // set l'audio dans le lecteur
-    // set le current time a 0 dans le lecteur
-    // quand on quitte la page:
-    // set le nom de l'audio dans le local storage
-    // set le current time dans le local storage
 
     const audioPlayer = $("#audio-player")[0];
-    window.onload = function() {
-        const audioName = localStorage.getItem("audioName");
-        const audioTime = localStorage.getItem("audioTime");
-        if (audioName != null && audioTime != null) {
-            audioPlayer.src = audioName;
-            audioPlayer.currentTime = audioTime;
-            audioPlayer.play();
+    window.onload = function () {
+        const WRGCLecteurResponse = JSON.parse(localStorage.getItem("WRGCLecteurInfo"));
+        if (WRGCLecteurResponse.audioName != null && WRGCLecteurResponse.audioTime != null && WRGCLecteurResponse.audioPlaying != null) {
+            setLecteurAudio(WRGCLecteurResponse.audioName, WRGCLecteurResponse.audioTime, WRGCLecteurResponse.audioPlaying);
+
+            localStorage.removeItem("WRGCLecteurInfo");
         }
     }
 
-    window.onbeforeunload = function() {
-        localStorage.setItem("audioName", audioPlayer.src);
-        localStorage.setItem("audioTime", audioPlayer.currentTime);
+    window.onbeforeunload = function () {
+        var WRGCLecteurInfo = {
+            audioName: audioPlayer.src,
+            audioTime: audioPlayer.currentTime,
+            audioPlaying: !audioPlayer.paused
+        }
+        localStorage.setItem("WRGCLecteurInfo", JSON.stringify(WRGCLecteurInfo));
     }
 
 
@@ -76,12 +81,11 @@ $audio_ = $audio->Liste();
 
     // function en cas de click sur un bouton
     function setAudio(url) {
-        audioPlayer.src = url;
-        audioPlayer.play();
+        setLecteurAudio(url, 0, true);
         lecteurModal.closeModal();
     }
 
-    $('#open-modal-button').on('click', function() {
+    $('#open-modal-button').on('click', function () {
         lecteurModal.render();
     });
 
@@ -89,27 +93,3 @@ $audio_ = $audio->Liste();
     const drop = new DropContainer("Bibliothèque", BODYLECTEUR, "up", "#drop");
     drop.render();
 </script>
-<style>
-    #audio-container {
-        margin: 20px;
-    }
-
-    #audio-player {
-        width: 300px;
-    }
-
-    #play-button,
-    #pause-button {
-        display: none;
-        cursor: pointer;
-    }
-
-    .biblio {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 30vh;
-        overflow: auto;
-    }
-</style>

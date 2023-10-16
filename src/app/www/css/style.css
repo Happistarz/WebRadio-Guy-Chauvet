@@ -236,6 +236,50 @@ header a:hover {
   border-radius: 9px;
 }
 
+.Mequipe {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.Mequipe>* {
+  flex: 0 0 calc(30% - 10px);
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.Mequipe .Membres {
+  text-align: center;
+  align-items: center;
+  break-inside: avoid;
+  margin-bottom: 10px;
+  width: fit-content;
+  width: 20vw;
+  transition: transform 0.2s ease-in-out;
+}
+
+.Mequipe .Membres:hover {
+  transform: translateY(-5px);
+}
+
+.Mequipe .Membres a {
+  text-decoration: none;
+}
+
+.Mequipe .Membres h3 {
+  background-color: #636060;
+  border-radius: 9px;
+  margin: 5px;
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+}
+
+.Mequipe .Membres a img {
+  width: 90%;
+  border-radius: 9px;
+}
+
 /* PAGE REDACTEUR ----------------------------------*/
 
 .content {
@@ -533,6 +577,14 @@ header a:hover {
   border-radius: 9px;
 }
 
+.podcast audio {
+  width: 100%;
+  outline: none;
+  border: none;
+  background: none;
+  border-radius: 9px;
+}
+
 img[alt="imgEmission"] {
   margin: 0px 25px 0px 50px;
   width: 20%;
@@ -607,6 +659,7 @@ footer {
   background-color: black;
   color: rgb(255, 255, 255);
   text-align: center;
+  padding-bottom: 30px;
 }
 
 .logo-footer::before {
@@ -775,149 +828,88 @@ input[type="tel"] {
 }
 
 /* Lecteur audio -------------------------------------*/
-
-
-
-.audio-player {
-  height: 50px;
-  width: 350px;
-  background: #444;
-  box-shadow: 0 0 20px 0 #000a;
-
-  font-family: arial;
-  color: white;
-  font-size: 0.75em;
-  overflow: hidden;
-
+#audio-container {
+  /* height: 50px; */
+  width: 100%;
   display: grid;
-  grid-template-rows: 6px auto;
-
-  .timeline {
-    background: white;
-    width: 100%;
-    position: relative;
-    cursor: pointer;
-    box-shadow: 0 2px 10px 0 #0008;
-
-    .progress {
-      background: coral;
-      width: 0%;
-      height: 100%;
-      transition: 0.25s;
-    }
-  }
-
-  .controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    padding: 0 20px;
-
-    >* {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .toggle-play {
-      &.play {
-        cursor: pointer;
-        position: relative;
-        left: 0;
-        height: 0;
-        width: 0;
-        border: 7px solid #0000;
-        border-left: 13px solid white;
-
-        &:hover {
-          transform: scale(1.1);
-        }
-      }
-
-      &.pause {
-        height: 15px;
-        width: 20px;
-        cursor: pointer;
-        position: relative;
-
-        &:before {
-          position: absolute;
-          top: 0;
-          left: 0px;
-          background: white;
-          content: "";
-          height: 15px;
-          width: 3px;
-        }
-
-        &:after {
-          position: absolute;
-          top: 0;
-          right: 8px;
-          background: white;
-          content: "";
-          height: 15px;
-          width: 3px;
-        }
-
-        &:hover {
-          transform: scale(1.1);
-        }
-      }
-    }
-
-    .time {
-      display: flex;
-
-      >* {
-        padding: 2px;
-      }
-    }
-
-    .volume-container {
-      cursor: pointer;
-
-      .volume-button {
-        height: 26px;
-        display: flex;
-        align-items: center;
-
-        .volume {
-          transform: scale(0.7);
-        }
-      }
-
-      position: relative;
-      z-index: 2;
-
-      .volume-slider {
-        position: absolute;
-        left: -3px;
-        top: 15px;
-        z-index: -1;
-        width: 0;
-        height: 15px;
-        background: white;
-        box-shadow: 0 0 20px #000a;
-        transition: .25s;
-
-        .volume-percentage {
-          background: coral;
-          height: 100%;
-          width: 75%;
-        }
-      }
-
-      &:hover {
-        .volume-slider {
-          left: -123px;
-          width: 120px;
-        }
-      }
-    }
-  }
+  grid-template-columns: 0.2fr 1fr .1fr;
+  background-image: linear-gradient(to bottom,
+      #000 0%,
+      #000 50%,
+      #636060 50%,
+      #636060 100%);
+  color: white;
 }
 
+#audio-container .controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#audio-container .controls .like img {
+  width: 50px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+#audio-container .controls .like {
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+#audio-container .extra {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#audio-container .extra button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+#audio-container .extra button img {
+  width: 35px;
+  height: 35px;
+}
+
+#audio-container .extra button span {
+  font-size: 13px;
+  color: white;
+}
+
+#audio-container .audiobar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+#audio-container .audiobar audio {
+  width: 100%;
+}
+
+#audio-container .audiobar .topbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 10px;
+  margin: 7px 40px;
+  font-size: 25px;
+}
 
 /*----------------------------------------------------*/
 
@@ -928,6 +920,10 @@ input[type="tel"] {
   /* Index */
 
   .Memissions {
+    flex-direction: column;
+  }
+
+  .Mequipe {
     flex-direction: column;
   }
 
@@ -1279,7 +1275,7 @@ img[alt="mention-logo"] {
 
 }
 
-.mention > .mention-titre {
+.mention>.mention-titre {
   display: flex;
   flex-direction: row;
   gap: 30px;
@@ -1291,7 +1287,8 @@ img[alt="mention-logo"] {
   display: flex;
 
 }
-.mention-description{
+
+.mention-description {
   margin-bottom: 6vh;
   margin-left: 8vw;
   line-height: 1.5;
@@ -1301,7 +1298,7 @@ img[alt="mention-logo"] {
   margin-left: 5%;
 }
 
-.mention > .mention-liens {
+.mention>.mention-liens {
   display: flex;
   flex-direction: row;
   margin: 6px 0 20px 90px;
@@ -1310,9 +1307,10 @@ img[alt="mention-logo"] {
 
 /* PLAN ----------------------------------- */
 
- h1 {
+h1 {
   margin-bottom: 20px;
- }
+}
+
 .espace {
   margin-bottom: 20px;
 }
@@ -1333,7 +1331,7 @@ img[alt="mention-logo"] {
   display: block;
 }
 
-  .espace a:hover {
-    text-decoration: underline;
-    color: lightblue;
-  }
+.espace a:hover {
+  text-decoration: underline;
+  color: lightblue;
+}

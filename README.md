@@ -91,25 +91,24 @@ Nommage fichier: <br>
 
   page fini: index-{PAGE}: ex.index-emission. <br>
 ***
+
 ## **Contact :**
 Adresse mail : gr-sts1-slam@lycee-guychauvet.fr
+***
 
-
-09/10/23 : 
-Repartion des taches ) 
+## **Planing :**
+16/10/23 : 
+Repartion des taches
 
 Set Equipe ( 3 page ) css , Html
 	Florent 
 
 Set Footer ( 3 page ) css ,html ...
-	Kassim
+	Kassim , Yoan
 
 Set lecteur Audio 
 	Benjamin
 
-Header liste des ellement 
-	Yoan
-
 Page readac (login ....)
-	Mathieux
-
+	Mathieu
+***

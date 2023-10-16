@@ -1290,4 +1290,6 @@ img[alt="mention-logo"] {
   display: flex;
 }
 
-/* .desc-lien {} */
+.desc-lien {
+  margin-left: 70px;
+}

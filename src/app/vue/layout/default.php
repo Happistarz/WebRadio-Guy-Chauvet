@@ -33,6 +33,7 @@
     <?php
     // affichage du footer
     require VIEWS . "footer.php";
+    require VIEWS . "lecteur.php";
     ?>
 </body>
 

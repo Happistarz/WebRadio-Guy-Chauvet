@@ -166,14 +166,16 @@
      * @returns {void}
      */
     function focusElement(el) {
-        document.querySelector('.focus')?.classList.remove('focus');
+        document.querySelector('.liste .focus')?.classList.remove('focus');
         if (lastFocusElement != el) {
             el.classList.add('focus');
             request('<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>', 'get', 'Audio', $(el).data('id'), (success, response) => {
                 alert(response.responseText);
             });
+            lastFocusElement = el;
+        } else {
+            lastFocusElement = null;
         }
-        lastFocusElement = el;
     }
 
     /**
@@ -362,6 +364,9 @@
      */
     function resultModal(success, response) {
         // reload .items where 
+        if (success) {
+            $('.items').load(location.href + ' .items');
+        }
     }
 
     /**
@@ -372,7 +377,7 @@
      */
     function resultContent(success, response) {
         if (success) {
-            $('#ajaxcontent').load(location.href + ' #ajaxcontent');
+            $('#content').load(location.href + ' #content');
         }
     }
 </script>

@@ -42,6 +42,7 @@
     <div class="mention-protegeur">
         <h1 class="mention-titre">Protection des données :</h1>
         <img src=<?php echo DATA ."general/icones/ovale_bleu_icone.png"; ?> alt='mention-logo'>
+        
     </div>
     <img id="myZbi" src="" alt="questinfo" class="infonoir" onclick="openModal1()">
 
@@ -266,9 +267,9 @@
 
     <!-- Description liens -->
     <div class="desc-lien">
-        <h3>Vers ce site : </h3>
+        <h3 style="margin-bottom: 25px;">Vers ce site : </h3>
         <ul style="list-style-type: disc;">
-            <li>Dans le cadre de sa mission de service public, le lycée Guy Chauvet éditeur du site,
+            <li style="margin-bottom: 25px;">Dans le cadre de sa mission de service public, le lycée Guy Chauvet éditeur du site,
             autorise les liens hypertextes vers l'un quelconque des articles du site pour une utilisation 
             institutionnelle dans un cadre pédagogique. Toute utilisation à des fins commerciales ou
             publicitaires est interdite. La mention explicite du site pointé dans l'intitulé du lien

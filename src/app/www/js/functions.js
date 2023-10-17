@@ -31,15 +31,45 @@ function request(url, action, table, data, result) {
     },
   });
 }
+/**
+ * Fonction pour convertir des secondes en minutes:secondes.
+ * 
+ * @param {int} sec Le nombre de secondes à convertir.
+ * @return {string} Le temps converti en format mm:ss
+ */
+const calculateTime = (sec) => {
+  const minutes = Math.floor(sec / 60);
+  const seconds = Math.floor(sec % 60);
+  const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+  return `${minutes}:${returnedSeconds}`;
+}
 
 /**
  * Fonction qui set le lecteur audio
+ * 
+ * @param {string} url L'url de la musique
+ * @param {int} time Le temps de la musique
+ * @param {int} volume Le volume de la musique
+ * @param {boolean} play Si on veut jouer la musique
  */
-function setLecteurAudio(url, time, volume = 100, play = true) {
-  const audio = document.querySelector('#audio-player');
+function setLecteurAudio(url, time, volume = 100, play = true, data = null) {
+  const audioplayer = document.querySelector('.audioplayer');
+  const audio = document.querySelector('.audioplayer audio');
+  const timetracker = document.querySelector('.audioplayer .tracker #current-time');
+  const tracker = document.querySelector('.audioplayer .tracker input');
+  const duration = document.querySelector('.audioplayer .tracker #duration');
   audio.src = url;
   audio.currentTime = time;
   audio.volume = volume / 100;
+  timetracker.innerHTML = calculateTime(time);
+  tracker.value = time;
+
+  if (!data) return;
+  document.querySelector('.audiobar .titre').innerHTML = data.NOM;
+  document.querySelector('.audiobar .info').innerHTML = data.AUTEURS;
+  document.querySelector('.audiobar .topbar i').innerHTML = data.DATE;
+
+
 
   // si on veut jouer la musique
   if (play) {

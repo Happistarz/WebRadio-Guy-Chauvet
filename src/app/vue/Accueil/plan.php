@@ -9,14 +9,22 @@ $plan_emissions = $emission->Liste();
 <div class="espace">
     <ul>
         <li>
+            <a href="<?php echo WEBROOT ?>">Accueil</a>
+        </li>
+    </ul>
+</div>
+
+<div class="espace">
+    <ul>
+        <li>
             <a href="<?php echo WEBROOT ?>Emission">Les Émissions</a>
             <ul>
                 <?php foreach ($plan_emissions as $ems) : ?>
-                    <li>
+                    <p>
                         <a href="<?php echo WEBROOT . 'Emission/view/' . $ems['NOM']; ?>">
-                            <?php echo $ems['NOMLONG']; ?>
+                            <?php echo "-", " ",$ems['NOMLONG']; ?>
                         </a>
-                    </li>
+                    </p>
                 <?php endforeach; ?>
             </ul>
         </li>
@@ -35,10 +43,23 @@ $plan_emissions = $emission->Liste();
     <ul>
         <li>
             <a href="<?php echo WEBROOT ?>Equipe">L'équipe</a>
-            <ul>
-                <li><a href="<?php echo WEBROOT ?>Equipe/view/lycee_mdl">La Web Radio</a></li>
-                <li><a href="<?php echo WEBROOT ?>Equipe/view/lycee_membre">Le Lycée</a></li>
-            </ul>
+            <p>
+                <a href="<?php echo WEBROOT ?>Equipe/view/lycee_mdl">-La Web Radio</a>
+                <a href="<?php echo WEBROOT ?>Equipe/view/lycee_membre">-Le Lycée</a>
+            </p>
+        </li>
+    </ul>
+</div>
+
+<div class="espace">
+    <ul>
+        <li>
+            <a href="<?php echo WEBROOT ?>">A propos</a>
+            <p>
+                <a href="<?php echo WEBROOT . "Accueil/Contact" ?>">- Contact</a>
+                <a href="<?php echo WEBROOT . "Accueil/Plan" ?>">- Plan du site</a>
+                <a href="<?php echo WEBROOT . "Accueil/Mentions" ?>">- Mentions Legales</a>
+            </p>
         </li>
     </ul>
 </div>

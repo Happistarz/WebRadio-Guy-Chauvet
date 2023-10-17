@@ -35,10 +35,11 @@ function request(url, action, table, data, result) {
 /**
  * Fonction qui set le lecteur audio
  */
-function setLecteurAudio(url, time, play = true) {
+function setLecteurAudio(url, time, volume = 100, play = true) {
   const audio = document.querySelector('#audio-player');
   audio.src = url;
   audio.currentTime = time;
+  audio.volume = volume / 100;
 
   // si on veut jouer la musique
   if (play) {

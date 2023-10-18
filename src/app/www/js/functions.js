@@ -271,7 +271,7 @@ class DropContainer {
 
       // Ajoute le contenu du container
       this.container.innerHTML = `
-        <div class="drop-content">
+        <div class="drop-content ${this.position}">
           <div class="drop-header">
             <h2>${this.title}</h2>
           </div>

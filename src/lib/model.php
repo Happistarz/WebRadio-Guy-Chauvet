@@ -122,6 +122,23 @@ class Model{
         return $resu['NB'];
     }
 
+    /**
+     * Get the columns of a table
+     * 
+     * @return array
+     */
+    public function getColumns() {
+        $sql = "SHOW COLUMNS FROM $this->table";
+        $db = Connexion::login();
+        $res = $db->query($sql);
+        $db = Connexion::logout();
+        $data = array();
+        while($resu = $res->fetch(PDO::FETCH_ASSOC)) {
+            $data[] = $resu['Field'];
+        }
+        return $data;
+    }
+
 }
 
 ?>

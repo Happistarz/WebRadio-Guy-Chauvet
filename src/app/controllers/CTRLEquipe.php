@@ -39,17 +39,22 @@ class CTRLEquipe extends Controller{
     }
 
     /**
-     * affiche une emission en fonction de son nom
+     * afficher la page lycee
      * 
-     * @param string $rubrique
      * @return void
      */
-    public function view($equipe){
-        $data = $this->ModelEquipe->ReadByKey(array("NOM ='$equipe'"))[0];
-        parent::Set(array("Equipe"=>$data));
-        parent::Render('index.php',$equipe);
+    public function lycee() {
+        parent::Render("lycee.php","Lycée");
     }
 
+        /**
+     * afficher les Membres
+     * 
+     * @return void
+     */
+    public function Membres() {
+        parent::Render("membres.php","Membres");
+    }
     
 
 

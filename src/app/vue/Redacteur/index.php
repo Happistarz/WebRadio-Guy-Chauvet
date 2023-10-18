@@ -9,26 +9,65 @@
             <hr>
             <div class="items">
                 <?php
-
+                // affichage des audios de l'émission
                 foreach ($audios as $audio) {
                     $nom_emission = $emissions[$audio['IDEMISSION'] - 1]['NOM'];
 
-                    echo '<div class="line">
-                    <div class="desc">
-                    <h2>' . $audio['NOM'] . '</h2>
-                        <p id="auteurs">' . $audio['AUTEURS'] . '<span>• ' . $audio['CREATED'] . '</span></p>
-                        
-                        <p id="description"><i>' . $audio['DESCRIPTION'] . '</i></p>
+                    echo '
+                    <div class="line">
+                        <!--<div class="desc">
+                            <h2>' . $audio['NOM'] . '</h2>
+                                <p id="auteurs">' . $audio['AUTEURS'] . '<span>• ' . $audio['CREATED'] . '</span></p>
+                                
+                                <p id="description"><i>' . $audio['DESCRIPTION'] . '</i></p>
                         </div>
-                        <audio src="' . DATA . 'audio/' . $nom_emission . '/' . $audio['NOM'] . '.wav" controls></audio>
+
+                        <audio src="' . DATA . 'audio/' . $nom_emission . '/' . $audio['NOM'] . '.wav" controls></audio>-->
+
+
+                        <div class="audio-container" >
+                        <div class="controls">
+                            <button class="like"><img src="' . DATA . "general/like.png" . '" alt=""></button>
+                            <button class="play" onclick="PlayEvent(this)"><img src="' . DATA . "general/play.png" . '"
+                                    alt=""></button>
+                        </div>
+                        <div class="audiobar">
+                            <div class="topbar">
+                                <h3 class="titre">' . $music['NOM'] . '</h3>
+                                <p class="info">' . $music['AUTEURS'] . '</p>
+                                <p class="info">' . $music['DESCRIPTION'] . '</p>
+                                <i style="font-size: 12px">
+                                    ' . $music['DATE'] . ' / ' . $music['HEURE'] . '
+                                </i>
+                            </div>
+                            <div class="audioplayer">
+                                <audio src="' . DATA . "audio/" . $music['AUDIO'] . '" id="audio-src" preload="metadata" loop></audio>
+                                <div class="tracker">
+                                    <span id="current-time">00:00</span>
+                                    <div class="progress">
+                                        <input type="range" name="progress-track" id="progress-track" max="100" value="0">
+                                    </div>
+                                    <span id="duration">00:00</span>
+                                </div>
+                                <div class="volume">
+                                    <button type="button" id="button-mute" onclick="MuteEvent(this)"><img
+                                            src="' . DATA . "general/unmute.png" . '" alt=""></button>
+                                    <input type="range" name="volume-track" id="volume-track" max="100" value="100">
+                                    <!-- <output id="volume-output">100%</output> -->
+                                </div>
+                            </div>
+                        </div>
+
+
+
                         <p style="display: none" id="id">3</p>
-                    <div class="action">
-                    <button type="button" class="fas fa-edit" title="Modifier"
-                    onclick="edit(this,"Audio",3)"></button>
-                        <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)"
-                        data-id="' . $audio['IDEMISSION'] . '"></button>
+                        <div class="action">
+                            <button type="button" class="fas fa-edit" title="Modifier"
+                                onclick="edit(this,"Audio",3)"></button>
+                            <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)"
+                                data-id="' . $audio['IDEMISSION'] . '"></button>
                         </div>
-                        </div>';
+                    </div>';
                 }
                 ?>
             </div>
@@ -168,9 +207,10 @@
         document.querySelector('.liste .focus')?.classList.remove('focus');
         if (lastFocusElement != el) {
             el.classList.add('focus');
-            request('<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>', 'get', 'Audio', $(el).data('id'), (success, response) => {
-                alert(response.responseText);
-            });
+            // request('<?php //echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>', 'get', 'Audio', $(el).data('id'), (success, response) => {
+            //     // alert(response.responseText);
+            // });
+            $('#content').load(location.href + ' #content');
             lastFocusElement = el;
         } else {
             lastFocusElement = null;

@@ -35,8 +35,8 @@ $header_emissions = $emission->Liste();
     <div class="dropdown">
       <a href="<?php echo WEBROOT ?>Equipe">L'EQUIPE</a>
       <div class="dropdown-content">
-        <a href="<?php echo WEBROOT ?>Equipe/view/lycee_mdl">La Web Radio</a>
-        <a href="<?php echo WEBROOT ?>Equipe/view/lycee_membre">Le Lycée</a>
+        <a href="<?php echo WEBROOT ?>Equipe/lycee">Le Lycée</a>
+        <a href="<?php echo WEBROOT ?>Equipe/membres">Les Membres</a>
       </div>
     </div>
   </div>

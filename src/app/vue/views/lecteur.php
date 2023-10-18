@@ -10,7 +10,7 @@ $audio_ = $audio->Liste();
 ?>
 
 <!-- Le modal -->
-<div class="audio-container">
+<div class="audio-container lecteur">
     <div class="controls">
         <button class="like"><img src="<?php echo DATA . "general/like.png" ?>" alt=""></button>
         <button class="next"><img src="<?php echo DATA . "general/next.png" ?>" style="transform: rotate(180deg)"
@@ -23,7 +23,7 @@ $audio_ = $audio->Liste();
         <div class="topbar">
             <h3 class="titre">Aucun Podcast</h3>
             <p class="info">Auteurs</p>
-            <i>
+            <i style="font-size: 12px">
                 <?php echo date('Y-m-d') ?>
             </i>
         </div>
@@ -54,28 +54,34 @@ $audio_ = $audio->Liste();
 
 <script>
     const audioPlayer = $(".audioplayer")[0];
+
+    // function pour set le lecteur audio avec les infos du localstorage
     window.onload = function () {
         const WRGCLecteurResponse = JSON.parse(localStorage.getItem("WRGCLecteurInfo"));
+
+        // check si le localstorage existe
         if (WRGCLecteurResponse && WRGCLecteurResponse.audioName != null && WRGCLecteurResponse.audioTime != null && WRGCLecteurResponse.audioPlaying != null) {
+            // set le lecteur audio avec les infos du localstorage
             setLecteurAudio(WRGCLecteurResponse.audioName, WRGCLecteurResponse.audioTime, WRGCLecteurResponse.audioPlaying);
 
             localStorage.removeItem("WRGCLecteurInfo");
         }
     }
 
-    // window.onbeforeunload = function () {
-    //     var WRGCLecteurInfo = {
-    //         audioName: audioPlayer.src,
-    //         audioTime: audioPlayer.currentTime,
-    //         audioPlaying: !audioPlayer.paused
-    //     }
-    //     localStorage.setItem("WRGCLecteurInfo", JSON.stringify(WRGCLecteurInfo));
-    // }
+    // function pour get les infos du lecteur audio et les set dans le localstorage
+    window.onbeforeunload = function () {
+        // var WRGCLecteurInfo = {
+        //     audioName: audioPlayer.src,
+        //     audioTime: audioPlayer.currentTime,
+        //     audioPlaying: !audioPlayer.paused
+        // }
+        // localStorage.setItem("WRGCLecteurInfo", JSON.stringify(WRGCLecteurInfo));
+    }
 
 
-    // // Cree un modal
+    // // Creation du dropcontainer
     const BODYLECTEUR = `
-        <ul class="biblio">` + `
+        <ul style="overflow:auto;height: 20vh">` + `
         <?php
         foreach ($head_emis as $head) {
             echo '
@@ -93,8 +99,8 @@ $audio_ = $audio->Liste();
         ?>` + `
         </ul>`;
 
-    // Création du modal
-    const lecteurModal = new Modal("Bibliothèque", BODYLECTEUR);
+    // Création du dropcontainer
+    const lecteurModal = new DropContainer("Bibliothèque", BODYLECTEUR, "up", "#open-modal-button");
 
 
     // function en cas de click sur un bouton
@@ -105,14 +111,12 @@ $audio_ = $audio->Liste();
         lecteurModal.closeModal();
     }
 
+    // pour la biblio, mais a refaire car dropcontainer
     $('#open-modal-button').on('click', function () {
         lecteurModal.render();
     });
 
-
-    // const drop = new DropContainer("Bibliothèque", BODYLECTEUR, "up", "#drop");
-    // drop.render();
-
+    // Pour display le temps en cours
     const displayDuration = (duration) => {
         $("#duration").text(calculateTime(duration));
     }
@@ -121,6 +125,7 @@ $audio_ = $audio->Liste();
     const audio = document.getElementById("audio-src");
     audio.volume = volume / 100;
 
+    // changer la durée en secondes en format 00:00 de la durée du son
     if (audio.readyState > 0) {
         displayDuration(audio.duration);
     } else {
@@ -129,25 +134,32 @@ $audio_ = $audio->Liste();
         });
     }
 
+    // Quand le son est en cours
     audio.addEventListener("timeupdate", () => {
         const progressRatio = audio.currentTime / audio.duration;
         const progressPercent = Math.round(progressRatio * 100);
+        // mettre a jour le slider en fonction du temps du son
         $("#progress-track").val(progressPercent);
+        // display le temps en cours du son
         $("#current-time").text(calculateTime(audio.currentTime));
     });
 
+    // Quand on change le temps avec le slider
     $("#progress-track").on("input", (e) => {
         const progressRatio = e.target.value / 100;
+        // set le temps sur le son en cours
         audio.currentTime = progressRatio * audio.duration;
     });
 
+    // Quand on change le volume avec le slider
     $("#volume-track").on("input", (e) => {
         const volumeRatio = e.target.value / 100;
+        // set le volume sur le son en cours
         audio.volume = volumeRatio;
         volume = e.target.value;
-        // $("#volume-output").text(`${volume}%`);
     });
 
+    // function pour changer les images des boutons play et mute
     function setButtonSrc(type) {
         switch (type) {
             case "play":
@@ -165,29 +177,40 @@ $audio_ = $audio->Liste();
         }
     }
 
+    // Quand on appui sur le bouton play
     function PlayEvent(element) {
+        // check si le son est en pause
         if (audio.paused) {
-            // try {
+            // check si le son est deja chargé
             if (audio.readyState > 0) {
+                // play le son et change l'image du bouton
                 audio.play();
                 setButtonSrc("play");
             } else {
+                // sinon erreur et fait rien
                 setButtonSrc("pause");
             }
         } else {
+            // pause le son et change l'image du bouton
             audio.pause();
             setButtonSrc("pause");
         }
     }
 
+    // Quand on appui sur le bouton mute
     function MuteEvent(element) {
+        // check si le volume est deja coupée
         if (audio.volume === 0) {
             audio.volume = volume / 100;
-            $("#volume-track").val(volume);
+            // mettre le volume au niveau du slider
+            $(element, "#volume-track").val(volume);
+            // changer l'image du bouton
             setButtonSrc("mute");
         } else {
             audio.volume = 0;
-            $("#volume-track").val(0);
+            // mettre le volume au niveau du slider
+            $(element,"#volume-track").val(0);
+            // changer l'image du bouton
             setButtonSrc("unmute");
         }
     }

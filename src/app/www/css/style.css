@@ -841,15 +841,24 @@ input[type="tel"] {
   padding: 0;
 }
 
+.lecteur {
+  background-image: linear-gradient(to bottom, #000000aa 0%, #000000 50%, #000 50%, #000 100%) !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  width: 100% !important; 
+}
+
 .audio-container {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  /* width: 100%; */
   --size: 55px;
-  background-image: linear-gradient(to bottom, #000000 0%, #000000 50%, #636060 50%, #636060 100%);
   color: white;
+  background-image: linear-gradient(to bottom, #000000aa 0%, #000000aa 100%);
+  border-radius: 6px;
   position: sticky;
   bottom: 0;
+  padding: 10px;
 
   >.controls {
     display: flex;
@@ -874,12 +883,14 @@ input[type="tel"] {
 
     >button img {
       width: var(--size);
-      /* height: var(--size); */
     }
 
     >.next img {
       width: 40px;
       height: 40px;
+    }
+    > .like img{
+      width: calc(var(--size) - 20px);
     }
   }
 

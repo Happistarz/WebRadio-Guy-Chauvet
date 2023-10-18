@@ -21,8 +21,8 @@ $audio_ = $audio->Liste();
     </div>
     <div class="audiobar">
         <div class="topbar">
-            <h3 class="titre">Aucun Podcast</h3>
-            <p class="info">Auteurs</p>
+            <h3 class="audiotitre">Aucun Podcast</h3>
+            <p class="info-topbar">Auteurs</p>
             <i style="font-size: 12px">
                 <?php echo date('Y-m-d') ?>
             </i>
@@ -209,7 +209,7 @@ $audio_ = $audio->Liste();
         } else {
             audio.volume = 0;
             // mettre le volume au niveau du slider
-            $(element,"#volume-track").val(0);
+            $(element, "#volume-track").val(0);
             // changer l'image du bouton
             setButtonSrc("unmute");
         }

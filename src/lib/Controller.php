@@ -95,10 +95,11 @@ class Controller
         extract($this->view);
 
         // RECUP LE DOSSIER PUIS LE PATH
-        $doss = get_class($this); 
+        $doss = get_class($this);
         $doss = str_replace("CTRL", "", $doss);
         $path = VUE . "$doss/$name";
 
+        $s = true;
         // REQUIRE LA VUE MAIS LA STOCK DANS UN BUFFER
         ob_start();
         require VUE . "$doss/ajax.php";

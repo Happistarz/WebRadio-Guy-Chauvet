@@ -23,4 +23,5 @@
     </div>
   </main>
   <?php require VIEWS . "footer.php"; ?>
+  <?php require VIEWS . "lecteur.php"; ?>
 </body>

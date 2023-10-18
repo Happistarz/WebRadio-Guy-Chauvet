@@ -1,14 +1,26 @@
-
 <?php
 
-
-if (isset($_POST['submit']) && $_POST['submit']) {
+// echo ROOT;
+if (isset($s) && $s) {
 
     ini_set('display_errors', 1);
 
-    $data = $_POST['data'];
-    $table = $_POST['table'];
-    $action = $_POST['action'];
+    // $data = $_POST['data'];
+    // $table = $_POST['table'];
+    // $action = $_POST['action'];
+    $data = array(
+        "ID" => 1,
+        "IDEMISSION" => 1,
+        "NOM" => "test",
+        "AUTEURS" => "test",
+        "DESCRIPTION" => "test",
+        "AUDIO" => "test",
+        "CREATED" => "test",
+        "HEURE" => "test",
+        "DATE" => "test",
+    );
+    $table = "Audio";
+    $action = "get";
     $sql = '';
 
 
@@ -38,16 +50,12 @@ if (isset($_POST['submit']) && $_POST['submit']) {
         case 'get':
             # code...
             // $sql = "SELECT * FROM $table WHERE id =" . $data['id'];
-            var_dump($model->Liste("IDEMISSION = ".$data[0]));
+            $audios = $model->Liste("IDEMISSION = " . $data["IDEMISSION"]);
             break;
     }
 
-    // if ($table == "Audio") {
-    //     echo $audios = $doc;
-    // }
 
 
-
-    echo '{"success":true,"data":' . json_encode($doc) . '}';
+    // echo '{"success":true,"data":' . json_encode($doc) . '}';
 }
 ?>

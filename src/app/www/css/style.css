@@ -343,7 +343,7 @@ header a:hover {
 }
 
 .redacteur .column .items {
-  width: 100%;
+  width: 95%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -430,13 +430,13 @@ header a:hover {
   display: grid;
   grid-template-columns: 1.5fr 3fr 0.5fr;
   align-items: center;
+  justify-items: center;
   margin: 20px 10px;
 }
 
 .redacteur .line img {
   width: 20%;
   /* height: 20%; */
-  border-radius: 1.3rem;
 }
 
 .redacteur .line audio {
@@ -451,6 +451,7 @@ header a:hover {
   flex-direction: row;
   justify-content: end;
   align-items: center;
+  gap: 10px;
 }
 
 .redacteur .line .desc {
@@ -845,7 +846,7 @@ input[type="tel"] {
   background-image: linear-gradient(to bottom, #000000aa 0%, #000000 50%, #000 50%, #000 100%) !important;
   border-radius: 0 !important;
   padding: 0 !important;
-  width: 100% !important; 
+  width: 100% !important;
 }
 
 .audio-container {
@@ -877,7 +878,7 @@ input[type="tel"] {
       transition: transform 0.2s ease-in-out;
     }
 
-    > :hover {
+    >button:hover {
       transform: translateY(-2px);
     }
 
@@ -889,7 +890,8 @@ input[type="tel"] {
       width: 40px;
       height: 40px;
     }
-    > .like img{
+
+    >.like img {
       width: calc(var(--size) - 20px);
     }
   }
@@ -907,8 +909,13 @@ input[type="tel"] {
       align-items: center;
       gap: 7px;
 
+      >h3 {
+        font-size: 30px;
+        margin: 5px 10px;
+      }
+
       >p {
-        margin-left: 20px
+        margin-left: 10px
       }
 
       >p,
@@ -965,6 +972,10 @@ input[type="tel"] {
         >#button-mute {
           -webkit-filter: invert(1);
           filter: invert(1);
+
+          >img {
+            width: var(--size);
+          }
         }
 
         >#button-mute:hover+#volume-track,

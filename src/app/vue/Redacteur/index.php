@@ -1,7 +1,5 @@
 <div class="redacteur">
-
     <div class="column">
-
         <!-- INFORMATION DE LA LISTE -->
         <div class="info border-blue">
             <h1>Informations</h1>
@@ -11,62 +9,55 @@
                 <?php
                 // affichage des audios de l'émission
                 foreach ($audios as $audio) {
-                    $nom_emission = $emissions[$audio['IDEMISSION'] - 1]['NOM'];
-
+                    $nom_emission = $emissions[(int) $audio['IDEMISSION']]['NOM'];
                     echo '
-                    <div class="line">
-                        <!--<div class="desc">
-                            <h2>' . $audio['NOM'] . '</h2>
-                                <p id="auteurs">' . $audio['AUTEURS'] . '<span>• ' . $audio['CREATED'] . '</span></p>
-                                
-                                <p id="description"><i>' . $audio['DESCRIPTION'] . '</i></p>
-                        </div>
-
-                        <audio src="' . DATA . 'audio/' . $nom_emission . '/' . $audio['NOM'] . '.wav" controls></audio>-->
-
-
-                        <div class="audio-container" >
-                        <div class="controls">
-                            <button class="like"><img src="' . DATA . "general/like.png" . '" alt=""></button>
-                            <button class="play" onclick="PlayEvent(this)"><img src="' . DATA . "general/play.png" . '"
-                                    alt=""></button>
-                        </div>
-                        <div class="audiobar">
-                            <div class="topbar">
-                                <h3 class="titre">' . $music['NOM'] . '</h3>
-                                <p class="info">' . $music['AUTEURS'] . '</p>
-                                <p class="info">' . $music['DESCRIPTION'] . '</p>
-                                <i style="font-size: 12px">
-                                    ' . $music['DATE'] . ' / ' . $music['HEURE'] . '
-                                </i>
+                    <div class="line" style="grid-template-columns: 1fr;">
+                        <div class="audio-container" style="width:97%">
+                            <div class="controls">
+                                <button class="like"><img src="' . DATA . "general/like.png" . '" alt=""></button>
+                                <button class="play" onclick="PlayEvent(this)"><img src="' . DATA . "general/play.png" . '"
+                                        alt=""></button>
                             </div>
-                            <div class="audioplayer">
-                                <audio src="' . DATA . "audio/" . $music['AUDIO'] . '" id="audio-src" preload="metadata" loop></audio>
-                                <div class="tracker">
-                                    <span id="current-time">00:00</span>
-                                    <div class="progress">
-                                        <input type="range" name="progress-track" id="progress-track" max="100" value="0">
+                            <div class="audiobar">
+                                <div class="topbar">
+                                    <h3 class="audiotitre">' . $audio['NOM'] . '</h3>
+                                    <p class="info-topbar">' . $audio['AUTEURS'] . '</p>
+                                    <p class="info-topbar">' . $audio['DESCRIPTION'] . '</p>
+                                    <i style="font-size: 12px">
+                                        ' . $audio['DATE'] . ' / ' . $audio['HEURE'] . '
+                                    </i>
+                                </div>
+                                <div class="audioplayer">
+                                    <audio src="' . DATA . "audio/" . $audio['AUDIO'] . '" id="audio-src" preload="metadata" loop></audio>
+                                    <div class="tracker">
+                                        <span id="current-time">00:00</span>
+                                        <div class="progress">
+                                            <input type="range" name="progress-track" id="progress-track" max="100" value="0">
+                                        </div>
+                                        <span id="duration">00:00</span>
                                     </div>
-                                    <span id="duration">00:00</span>
+                                    <div class="volume">
+                                        <button type="button" id="button-mute" onclick="MuteEvent(this)"><img
+                                                src="' . DATA . "general/unmute.png" . '" alt=""></button>
+                                        <input type="range" name="volume-track" id="volume-track" max="100" value="100">
+                                        <!-- <output id="volume-output">100%</output> -->
+                                    </div>
                                 </div>
-                                <div class="volume">
-                                    <button type="button" id="button-mute" onclick="MuteEvent(this)"><img
-                                            src="' . DATA . "general/unmute.png" . '" alt=""></button>
-                                    <input type="range" name="volume-track" id="volume-track" max="100" value="100">
-                                    <!-- <output id="volume-output">100%</output> -->
+                            </div>
+                            <div class="extra">
+                                <p style="display: none" id="id">3</p>
+                                <div class="action" style="  -webkit-filter: invert(1); filter: invert(1);">
+                                    <button type="button" class="fas fa-edit" title="Modifier"
+                                        onclick="edit(this,\'Audio\',3)"></button>
+                                    <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)"
+                                        data-id="' . $audio['IDEMISSION'] . '"></button>
                                 </div>
                             </div>
                         </div>
 
 
 
-                        <p style="display: none" id="id">3</p>
-                        <div class="action">
-                            <button type="button" class="fas fa-edit" title="Modifier"
-                                onclick="edit(this,"Audio",3)"></button>
-                            <button type"button" class="fas fa-trash" title="Supprimer" onclick="suppr(this)"
-                                data-id="' . $audio['IDEMISSION'] . '"></button>
-                        </div>
+
                     </div>';
                 }
                 ?>
@@ -75,7 +66,8 @@
         <!-- LISTE DES DATA -->
         <div class="liste border-blue">
             <h1>Emissions</h1>
-            <button class="fas fa-circle-plus" title="Ajouter un nouvel élément" onclick="add(this,'Emission')"></button>
+            <button class="fas fa-circle-plus" title="Ajouter un nouvel élément"
+                onclick="add(this,'Emission')"></button>
             <hr>
             <div class="items">
                 <?php
@@ -207,9 +199,9 @@
         document.querySelector('.liste .focus')?.classList.remove('focus');
         if (lastFocusElement != el) {
             el.classList.add('focus');
-            // request('<?php //echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>', 'get', 'Audio', $(el).data('id'), (success, response) => {
-            //     // alert(response.responseText);
-            // });
+            request('<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>', 'get', 'Audio', { "IDEMISSION": $(el).data('id') }, (success, response) => {
+                alert(response.responseText);
+            });
             $('#content').load(location.href + ' #content');
             lastFocusElement = el;
         } else {
@@ -234,7 +226,7 @@
                 let link = "<?php echo DATA . 'general/nosrc.png' ?>";
                 // affichage du modal avec l'image par défaut
                 modalEmission.render(
-                    function() {
+                    function () {
                         $('.modal .modal-body form [name="src"]').attr('src', link);
                     });
                 // ajout du listener pour l'envoi du formulaire
@@ -252,7 +244,7 @@
                 // création du modal
                 let modalAudio = new Modal("Ajouter", BODYAUDIO);
                 // affichage du modal
-                modalAudio.render(function() {
+                modalAudio.render(function () {
                     $('.modal .modal-body form .preview audio').attr('src', "");
                 });
                 // ajout du listener pour l'envoi du formulaire
@@ -272,7 +264,7 @@
                 // affichage de l'image par défaut
                 // affichage du modal avec l'image par défaut
                 modalArticle.render(
-                    function() {
+                    function () {
                         $('.modal .modal-body form [name="src"]').attr('src', "<?php echo DATA . 'general/nosrc.png' ?>");
                     });
                 // ajout du listener pour l'envoi du formulaire
@@ -304,7 +296,7 @@
                 // création du modal
                 let modalEmission = new Modal("Modifier", BODYEMISSION);
                 // affichage du modal avec l'img de l'élément
-                modalEmission.render(function() {
+                modalEmission.render(function () {
                     $('.modal .modal-body #previewimg').attr('src', el.parentElement.parentElement.querySelector('img').getAttribute('src'));
                 });
                 // ajout du listener pour l'envoi du formulaire
@@ -323,7 +315,7 @@
                 // création du modal
                 let modalAudio = new Modal("Modifier", BODYAUDIO);
                 // affichage du modal avec l'audio de l'élément
-                modalAudio.render(function() {
+                modalAudio.render(function () {
                     $('.modal .modal-body .preview audio').attr('src', el.parentElement.parentElement.querySelector('audio').getAttribute('src'));
                 });
                 // ajout du listener pour l'envoi du formulaire
@@ -342,7 +334,7 @@
                 // création du modal
                 let modalArticle = new Modal("Modifier", BODYARTICLE);
                 // affichage du modal avec l'img de l'élément
-                modalArticle.render(function() {
+                modalArticle.render(function () {
                     $('.modal .modal-body #previewimg').attr('src', el.parentElement.parentElement.querySelector('img').getAttribute('src'));
                 });
                 // ajout du listener pour l'envoi du formulaire
@@ -384,7 +376,7 @@
         var file = document.getElementById('src').files[0];
         // création d'un reader pour lire l'image
         var reader = new FileReader();
-        reader.onloadend = function() {
+        reader.onloadend = function () {
             preview.src = reader.result;
         }
         // si il y a une image, on la lit, sinon on met l'image par défaut

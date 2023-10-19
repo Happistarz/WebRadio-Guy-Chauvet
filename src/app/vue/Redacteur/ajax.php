@@ -1,31 +1,31 @@
 <?php
 
-// echo ROOT;
-if (isset($s) && $s) {
+echo ROOT;
+if (isset($ajax['submit']) && $ajax['submit']) {
 
     ini_set('display_errors', 1);
 
     // $data = $_POST['data'];
     // $table = $_POST['table'];
     // $action = $_POST['action'];
-    $data = array(
-        "ID" => 1,
-        "IDEMISSION" => 1,
-        "NOM" => "test",
-        "AUTEURS" => "test",
-        "DESCRIPTION" => "test",
-        "AUDIO" => "test",
-        "CREATED" => "test",
-        "HEURE" => "test",
-        "DATE" => "test",
-    );
+    // $data = array(
+    //     "ID" => 1,
+    //     "IDEMISSION" => 1,
+    //     "NOM" => "test",
+    //     "AUTEURS" => "test",
+    //     "DESCRIPTION" => "test",
+    //     "AUDIO" => "test",
+    //     "CREATED" => "test",
+    //     "HEURE" => "test",
+    //     "DATE" => "test",
+    // );
     $table = "Audio";
-    $action = "get";
-    $sql = '';
+    // $action = "get";
+    // $sql = '';
 
 
     $model = "Model" . $table;
-    // echo ROOT;
+    echo ROOT;
     require_once MODEL . $model . '.php';
     $model = new $model();
 
@@ -54,8 +54,7 @@ if (isset($s) && $s) {
             break;
     }
 
+    echo '{"data":' . json_encode($audios) . '}';
 
-
-    // echo '{"success":true,"data":' . json_encode($doc) . '}';
 }
 ?>

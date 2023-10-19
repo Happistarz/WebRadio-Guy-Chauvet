@@ -30,7 +30,7 @@ $header_emissions = $emission->Liste();
       </div>
     </div>
     <!-- journal btn -->
-    <a href="<?php echo WEBROOT ?>journax">JOURNAL</a>
+    <a href="<?php echo WEBROOT ?>journax" style="pointer-events: none;color: #ccc">JOURNAL</a>
     <!-- equipe btn -->
     <div class="dropdown">
       <a href="<?php echo WEBROOT ?>Equipe">L'EQUIPE</a>

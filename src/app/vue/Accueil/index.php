@@ -61,14 +61,14 @@ foreach ($info as $i) {
 <hr size="5" width="100%" color="black" />
 <div class="Mequipe">
 	<div class="border- Membres">
-		<a href="Equipe/view/lycee_mdl">
+		<a href="Equipe/lycee">
 			<h3>LE LYCEE</h3>
-			<img src="<?= DATA . 'general/nosrc.png' ?>" alt="image" />
+			<img src="<?= DATA . 'general/lycee_img.png' ?>" alt="image" />
 		</a>
 	</div>
 	<div class="border- Membres">
-		<a href="Equipe/view/lycee_membre">
+		<a href="Equipe/membres">
 			<h3>LA WEB RADIO</h3>
-			<img src="<?= DATA . 'general/nosrc.png' ?>" alt="image" />
+			<img src="<?= DATA . 'general/logo/typo.png' ?>" alt="image" />
 		</a>
 	</div>

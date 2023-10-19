@@ -19,7 +19,9 @@
   <?php require VIEWS . "header.php"; ?>
   <main>
     <div class="content">
-      <?php echo json_decode($content, true); ?>
+      <?php
+      echo json_decode($content, true);
+      ?>
     </div>
   </main>
   <?php require VIEWS . "footer.php"; ?>

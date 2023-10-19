@@ -199,9 +199,9 @@
         document.querySelector('.liste .focus')?.classList.remove('focus');
         if (lastFocusElement != el) {
             el.classList.add('focus');
-            request('<?php echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>', 'get', 'Audio', { "IDEMISSION": $(el).data('id') }, (success, response) => {
-                alert(response.responseText);
-            });
+            // request('<?php //echo WEBROOT . "src/app/vue/Redacteur/ajax.php" ?>', 'get', 'Audio', { "IDEMISSION": $(el).data('id') }, (success, response) => {
+            //     alert(response.responseText);
+            // });
             $('#content').load(location.href + ' #content');
             lastFocusElement = el;
         } else {

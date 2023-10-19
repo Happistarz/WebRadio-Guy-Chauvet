@@ -53,6 +53,8 @@ class CTRLEquipe extends Controller{
      * @return void
      */
     public function Membres() {
+        $data = $this->ModelEquipe->Liste();
+        parent::Set(array('membres'=>$data));
         parent::Render("membres.php","Membres");
     }
     

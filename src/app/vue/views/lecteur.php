@@ -81,7 +81,7 @@ $audio_ = $audio->Liste();
 
     // // Creation du dropcontainer
     const BODYLECTEUR = `
-        <ul style="overflow:auto;height: 20vh">` + `
+        <ul>` + `
         <?php
         foreach ($head_emis as $head) {
             echo '
@@ -100,21 +100,16 @@ $audio_ = $audio->Liste();
         </ul>`;
 
     // Création du dropcontainer
-    const lecteurModal = new DropContainer("Bibliothèque", BODYLECTEUR, "up", "#open-modal-button");
-
+    const Bibliotheque = new DropContainer("Bibliothèque", BODYLECTEUR, "up", "#open-modal-button");
+    Bibliotheque.render();
 
     // function en cas de click sur un bouton
     function setAudio(data) {
         setLecteurAudio(data.AUDIO, 0, 100, true, data);
         setButtonSrc("play");
         setButtonSrc("mute");
-        lecteurModal.closeModal();
+        Bibliotheque.closeContainer();
     }
-
-    // pour la biblio, mais a refaire car dropcontainer
-    $('#open-modal-button').on('click', function () {
-        lecteurModal.render();
-    });
 
     // Pour display le temps en cours
     const displayDuration = (duration) => {
@@ -157,6 +152,12 @@ $audio_ = $audio->Liste();
         // set le volume sur le son en cours
         audio.volume = volumeRatio;
         volume = e.target.value;
+        // changer l'image du bouton si le volume est a 0
+        if (volume == 0) {
+            setButtonSrc("unmute");
+        } else {
+            setButtonSrc("mute");
+        }
     });
 
     // function pour changer les images des boutons play et mute

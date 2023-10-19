@@ -65,8 +65,8 @@ function setLecteurAudio(url, time, volume = 100, play = true, data = null) {
   tracker.value = time;
 
   if (!data) return;
-  document.querySelector('.audiobar .titre').innerHTML = data.NOM;
-  document.querySelector('.audiobar .info').innerHTML = data.AUTEURS;
+  document.querySelector('.audiobar .audiotitre').innerHTML = data.NOM;
+  document.querySelector('.audiobar .info-topbar').innerHTML = data.AUTEURS;
   document.querySelector('.audiobar .topbar i').innerHTML = data.DATE;
 
 
@@ -271,7 +271,7 @@ class DropContainer {
 
       // Ajoute le contenu du container
       this.container.innerHTML = `
-        <div class="drop-content ${this.position}">
+        <div class="drop${this.position}-content ">
           <div class="drop-header">
             <h2>${this.title}</h2>
           </div>
@@ -287,12 +287,29 @@ class DropContainer {
 
     // Ajoute un écouteur pour fermer le container quand on perd le focus sur celui-ci
     const self = this;
-    $(this.parent).on('mouseenter', function () {
+
+    if (this.position === 'up') {
+      $(this.parent).on('mouseenter', function () {
+        self.container.style.display = "inline-block";
+      });
+    
+      $(this.parent).on('mouseleave', function () {
+        self.closeContainer();
+      });
+    } else {
+      $(this.parent).on('mouseenter', function () {
+        self.container.style.display = "block";
+      });
+
+      $(this.parent).on('mouseleave', function () {
+        self.closeContainer();
+      });
+    }
+    $(this.container).on('mouseenter', function () {
+      
+      if (self.container.style.display != "block") return;
       self.container.style.display = "block";
-    });
-    $(this.parent).on('mouseleave', function () {
-      self.closeContainer();
-    });
+    })
 
     // Affiche le container
     // this.container.style.display = "block";

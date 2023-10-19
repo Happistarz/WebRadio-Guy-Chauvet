@@ -14,6 +14,11 @@ foreach ($emission as $e) :
     extract($e);
     $imageSrc = DATA . 'rubrique/' . $NOM . '.png';
     $link = WEBROOT . "Emission/view/$NOM";
+
+    $max = 300;
+    if (strlen($DESCRIPTION) > $max) {
+        $DESCRIPTION = substr($DESCRIPTION, 0, $max) . '...';
+    }
 ?>
     <!-- Item émission -->
     <a class="les-emis" href="<?= $link ?>">

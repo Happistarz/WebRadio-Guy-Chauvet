@@ -99,7 +99,7 @@ class Controller
         $doss = str_replace("CTRL", "", $doss);
         $path = VUE . "$doss/$name";
 
-        $s = true;
+        $ajax = array();
         // REQUIRE LA VUE MAIS LA STOCK DANS UN BUFFER
         ob_start();
         require VUE . "$doss/ajax.php";

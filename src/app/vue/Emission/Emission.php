@@ -26,40 +26,44 @@ extract($emission); ?>
             // affichage des podcasts
             foreach ($audios as $music) {
                 $str[] = '<div class="podcast">
-                    <div class="audio-container" >
+                    
+                    <div class="audio-container">
                         <div class="controls">
                             <button class="like"><img src="' . DATA . "general/like.png" . '" alt=""></button>
-                            <button class="play" onclick="PlayEvent(this)"><img src="' . DATA . "general/play.png" . '"
-                                    alt=""></button>
+                            <button class="play"><img src="' . DATA . "general/play.png" . '" alt=""></button>
                         </div>
                         <div class="audiobar">
                             <div class="topbar">
-                                <h3 class="titre">' . $music['NOM'] . '</h3>
-                                <p class="info">' . $music['AUTEURS'] . '</p>
-                                <p class="info">' . $music['DESCRIPTION'] . '</p>
+                                <h3 class="audiotitre">' . $music['NOM'] . '</h3>
+                                <p class="info-topbar">' . $music['AUTEURS'] . '</p>
+                                <p class="info-topbar">' . $music['DESCRIPTION'] . '</p>
                                 <i style="font-size: 12px">
                                     ' . $music['DATE'] . ' / ' . $music['HEURE'] . '
                                 </i>
                             </div>
                             <div class="audioplayer">
-                                <audio src="' . DATA . "audio/" . $music['AUDIO'] . '" id="audio-src" preload="metadata" loop></audio>
+                                <audio class="audio-src" src="' . DATA . 'audio/' . $music['AUDIO'] . '" preload="metadata" loop></audio>
                                 <div class="tracker">
-                                    <span id="current-time">00:00</span>
+                                    <span class="current-time">00:00</span>
                                     <div class="progress">
-                                        <input type="range" name="progress-track" id="progress-track" max="100" value="0">
+                                        <input type="range" class="progress-track" name="progress-track" max="100" value="0">
                                     </div>
-                                    <span id="duration">00:00</span>
+                                    <span class="duration">00:00</span>
                                 </div>
                                 <div class="volume">
-                                    <button type="button" id="button-mute" onclick="MuteEvent(this)"><img
-                                            src="' . DATA . "general/unmute.png" . '" alt=""></button>
-                                    <input type="range" name="volume-track" id="volume-track" max="100" value="100">
-                                    <!-- <output id="volume-output">100%</output> -->
+                                    <button type="button" id="button-mute"><img src="' . DATA . "general/unmute.png" . '"
+                                            alt=""></button>
+                                    <input type="range" class="volume-track" name="volume-track" max="100" value="100">
                                 </div>
                             </div>
                         </div>
+                        <div class="extra">
+                            <button id="open-modal-button" class="biblio">
+                                <img src="' . DATA . "general/biblio.png" . '" alt="">
+                                <span>Bibliothèque</span>
+                            </button>
+                        </div>
                     </div>
-                    
                 </div>';
             }
             // affichage des podcasts dans la page avec un séparateur
@@ -73,8 +77,8 @@ extract($emission); ?>
 </div>
 </div>
 <script>
-    $('.podcast-container audio').on('play', function() {
-        $('.podcast-container audio').not(this).each(function(index, audio) {
+    $('.podcast-container audio').on('play', function () {
+        $('.podcast-container audio').not(this).each(function (index, audio) {
             audio.pause();
         });
 

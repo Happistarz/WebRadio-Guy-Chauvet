@@ -15,8 +15,7 @@ $audio_ = $audio->Liste();
         <button class="like"><img src="<?php echo DATA . "general/like.png" ?>" alt=""></button>
         <button class="next"><img src="<?php echo DATA . "general/next.png" ?>" style="transform: rotate(180deg)"
                 alt=""></button>
-        <button class="play" onclick="PlayEvent(this)"><img src="<?php echo DATA . "general/play.png" ?>"
-                alt=""></button>
+        <button class="play"><img src="<?php echo DATA . "general/play.png" ?>" alt=""></button>
         <button class="next"><img src="<?php echo DATA . "general/next.png" ?>" alt=""></button>
     </div>
     <div class="audiobar">
@@ -28,19 +27,18 @@ $audio_ = $audio->Liste();
             </i>
         </div>
         <div class="audioplayer">
-            <audio src id="audio-src" preload="metadata" loop></audio>
+            <audio class="audio-src" src="" preload="metadata" loop></audio>
             <div class="tracker">
-                <span id="current-time">00:00</span>
+                <span class="current-time">00:00</span>
                 <div class="progress">
-                    <input type="range" name="progress-track" id="progress-track" max="100" value="0">
+                    <input type="range" class="progress-track" name="progress-track" max="100" value="0">
                 </div>
-                <span id="duration">00:00</span>
+                <span class="duration">00:00</span>
             </div>
             <div class="volume">
-                <button type="button" id="button-mute" onclick="MuteEvent(this)"><img
-                        src="<?php echo DATA . "general/unmute.png" ?>" alt=""></button>
-                <input type="range" name="volume-track" id="volume-track" max="100" value="100">
-                <!-- <output id="volume-output">100%</output> -->
+                <button type="button" id="button-mute"><img src="<?php echo DATA . "general/unmute.png" ?>"
+                        alt=""></button>
+                <input type="range" class="volume-track" name="volume-track" max="100" value="100">
             </div>
         </div>
     </div>
@@ -51,6 +49,7 @@ $audio_ = $audio->Liste();
         </button>
     </div>
 </div>
+
 
 <script>
     const audioPlayer = $(".audioplayer")[0];
@@ -85,12 +84,21 @@ $audio_ = $audio->Liste();
         <?php
         foreach ($head_emis as $head) {
             echo '
-                            <ul>
-                            <h3>' . $head['NOMLONG'] . '</h3>';
+                <ul>
+                    <h3>' . $head['NOMLONG'] . '</h3>';
             foreach ($audio_ as $aud) {
+                // check si l'audio est dans l'emission
                 if ($head['ID'] == $aud['IDEMISSION']) {
+
                     $aud['AUDIO'] = DATA . "audio/" . $aud['AUDIO'];
-                    echo '<li><button onclick=\'setAudio(' . json_encode($aud) . ')\'>' . $aud['NOM'] . ' <p>' . $aud['AUTEURS'] . ' <i>' . $aud['HEURE'] . ' / ' . $aud['DATE'] . '</i></p></button></li>';
+                    echo '<li>
+                            <button onclick=\'setAudio(' . json_encode($aud) . ')\'>' . $aud['NOM'] . '   
+                                <p>' . $aud['AUTEURS'] . '
+                                    <!--<i>' . $aud['HEURE'] . ' / ' . $aud['DATE'] . '
+                                    </i>-->
+                                </p>
+                            </button>
+                        </li>';
                 }
             }
             echo '</ul>';
@@ -112,107 +120,119 @@ $audio_ = $audio->Liste();
     }
 
     // Pour display le temps en cours
-    const displayDuration = (duration) => {
-        $("#duration").text(calculateTime(duration));
+    const displayDuration = (el, duration) => {
+        $(el).closest(".topbar").find('.duration').text(calculateTime(duration));
     }
 
-    var volume = 100;
-    const audio = document.getElementById("audio-src");
-    audio.volume = volume / 100;
-
-    // changer la durée en secondes en format 00:00 de la durée du son
-    if (audio.readyState > 0) {
-        displayDuration(audio.duration);
-    } else {
-        audio.addEventListener("loadedmetadata", () => {
-            displayDuration(audio.duration);
-        });
-    }
+    $('audio').on('loadedmetadata', function () {
+        // display la durée du son
+        displayDuration(this, this.duration);
+    });
 
     // Quand le son est en cours
-    audio.addEventListener("timeupdate", () => {
-        const progressRatio = audio.currentTime / audio.duration;
+    $("audio").on("timeupdate", () => {
+        const progressRatio = this.currentTime / this.duration;
         const progressPercent = Math.round(progressRatio * 100);
         // mettre a jour le slider en fonction du temps du son
-        $("#progress-track").val(progressPercent);
+        $(this).closest('.tracker').find(".progress-track").val(progressPercent);
         // display le temps en cours du son
-        $("#current-time").text(calculateTime(audio.currentTime));
+        $(this).closest('.tracker').find('.current-time').text(calculateTime(this.currentTime));
     });
 
     // Quand on change le temps avec le slider
-    $("#progress-track").on("input", (e) => {
+    $(".progress-track").on("input", (e) => {
         const progressRatio = e.target.value / 100;
         // set le temps sur le son en cours
-        audio.currentTime = progressRatio * audio.duration;
+        $(this).closest('.audioplayer').find('.audio-src')[0].currentTime = progressRatio * $(this).closest('.audioplayer').find('.audio-src')[0].duration;
     });
 
     // Quand on change le volume avec le slider
-    $("#volume-track").on("input", (e) => {
+    $(".volume-track").on("input", (e) => {
         const volumeRatio = e.target.value / 100;
         // set le volume sur le son en cours
-        audio.volume = volumeRatio;
-        volume = e.target.value;
+        $(this).closest('.audioplayer').find('.audio-src').volume = volumeRatio;
+        // volume = e.target.value;
         // changer l'image du bouton si le volume est a 0
-        if (volume == 0) {
-            setButtonSrc("unmute");
+        if (volumeRatio == 0) {
+            setButtonSrc(this, "unmute");
         } else {
-            setButtonSrc("mute");
+            setButtonSrc(this, "mute");
         }
     });
 
     // function pour changer les images des boutons play et mute
-    function setButtonSrc(type) {
+    function setButtonSrc(el, type) {
         switch (type) {
             case "play":
-                document.querySelector('.controls .play').children[0].src = "<?php echo DATA . "general/pause.png" ?>";
+                $(el).closest('.controls').find('.play img').attr('src', "<?php echo DATA . "general/pause.png" ?>");
                 break;
             case "pause":
-                document.querySelector('.controls .play').children[0].src = "<?php echo DATA . "general/play.png" ?>";
+                $(el).closest('.controls').find('.play img').attr('src', "<?php echo DATA . "general/play.png" ?>");
                 break;
             case "mute":
-                document.querySelector('#button-mute').children[0].src = "<?php echo DATA . "general/unmute.png" ?>";
+                $(el).closest('.volume').find('#button-mute img').attr('src', "<?php echo DATA . "general/mute.png" ?>");
                 break;
             case "unmute":
-                document.querySelector('#button-mute').children[0].src = "<?php echo DATA . "general/mute.png" ?>";
+                $(el).closest('.volume').find('#button-mute img').attr('src', "<?php echo DATA . "general/unmute.png" ?>");
                 break;
         }
     }
 
+    // ----------------------
+    // audio est pas reconnu
+    // Uncaught TypeError: Cannot read properties of undefined (reading 'paused')
+    // at PlayEvent (H2P:522:21)
+    // at HTMLButtonElement.<anonymous> (H2P:511:9)
+    // at HTMLButtonElement.dispatch (jquery.min.js:2:43184)
+    // at y.handle (jquery.min.js:2:41168)
+    // ----------------------
+
+
+    $('.controls .play').on('click', function () {
+        var audio = $(this).closest('.audioplayer').find('.audio-src')[0];
+        PlayEvent(audio);
+    });
+
+    $('#button-mute').on('click', function () {
+        var audio = $(this).closest('.audioplayer').find('.audio-src')[0];
+        MuteEvent(audio);
+    });
+
     // Quand on appui sur le bouton play
     function PlayEvent(element) {
         // check si le son est en pause
-        if (audio.paused) {
+        if (element.paused) {
             // check si le son est deja chargé
-            if (audio.readyState > 0) {
+            if (element.readyState > 0) {
                 // play le son et change l'image du bouton
-                audio.play();
-                setButtonSrc("play");
+                element.play();
+                setButtonSrc(element, "play");
             } else {
                 // sinon erreur et fait rien
-                setButtonSrc("pause");
+                setButtonSrc(element, "pause");
             }
         } else {
             // pause le son et change l'image du bouton
-            audio.pause();
-            setButtonSrc("pause");
+            element.pause();
+            setButtonSrc(element, "pause");
         }
     }
 
     // Quand on appui sur le bouton mute
     function MuteEvent(element) {
-        // check si le volume est deja coupée
+        var audio = $(element).closest('.audioplayer').find('audio')[0];
+        var volumeInput = $(element).closest('.volume').find("#volume-track");
+
         if (audio.volume === 0) {
-            audio.volume = volume / 100;
-            // mettre le volume au niveau du slider
-            $(element, "#volume-track").val(volume);
+            audio.volume = volumeInput.val() / 100;
             // changer l'image du bouton
-            setButtonSrc("mute");
+            setButtonSrc(element, "mute");
         } else {
+            volumeInput.val(0);
             audio.volume = 0;
-            // mettre le volume au niveau du slider
-            $(element, "#volume-track").val(0);
             // changer l'image du bouton
-            setButtonSrc("unmute");
+            setButtonSrc(element, "unmute");
         }
     }
+
 </script>

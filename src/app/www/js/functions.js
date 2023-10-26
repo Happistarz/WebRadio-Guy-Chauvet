@@ -53,29 +53,29 @@ const calculateTime = (sec) => {
  * @param {boolean} play Si on veut jouer la musique
  */
 function setLecteurAudio(url, time, volume = 100, play = true, data = null) {
-  const audioplayer = document.querySelector('.audioplayer');
-  const audio = document.querySelector('.audioplayer audio');
-  const timetracker = document.querySelector('.audioplayer .tracker #current-time');
-  const tracker = document.querySelector('.audioplayer .tracker input');
-  const duration = document.querySelector('.audioplayer .tracker #duration');
-  audio.src = url;
-  audio.currentTime = time;
-  audio.volume = volume / 100;
-  timetracker.innerHTML = calculateTime(time);
-  tracker.value = time;
+  const audioplayer = $(document).find('.audioplayer');
+  const audio = audioplayer.find('audio');
+  const timetracker = audioplayer.find('.tracker #current-time');
+  const tracker = audioplayer.find('.tracker input');
+  const duration = audioplayer.find('.tracker #duration');
+  audio.attr('src', url);
+  audio[0].currentTime = time;
+  audio[0].volume = volume / 100;
+  timetracker.text(calculateTime(time));
+  tracker.val(time);
 
   if (!data) return;
-  document.querySelector('.audiobar .audiotitre').innerHTML = data.NOM;
-  document.querySelector('.audiobar .info-topbar').innerHTML = data.AUTEURS;
-  document.querySelector('.audiobar .topbar i').innerHTML = data.DATE;
 
-
+  audioplayer.find('.audiotitre').text(data.NOM);
+  audioplayer.find('.info-topbar').text(data.AUTEURS);
+  audioplayer.find('.topbar i').text(data.DATE);
 
   // si on veut jouer la musique
   if (play) {
-    audio.play();
+    audio[0].play();
   }
 }
+
 
 
 
@@ -292,7 +292,7 @@ class DropContainer {
       $(this.parent).on('mouseenter', function () {
         self.container.style.display = "inline-block";
       });
-    
+
       $(this.parent).on('mouseleave', function () {
         self.closeContainer();
       });
@@ -306,7 +306,7 @@ class DropContainer {
       });
     }
     $(this.container).on('mouseenter', function () {
-      
+
       if (self.container.style.display != "block") return;
       self.container.style.display = "block";
     })

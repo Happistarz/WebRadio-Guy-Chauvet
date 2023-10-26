@@ -56,5 +56,7 @@ if (isset($ajax['submit']) && $ajax['submit']) {
 
     echo '{"data":' . json_encode($audios) . '}';
 
+
 }
+unset($ajax);
 ?>

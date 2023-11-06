@@ -102,7 +102,7 @@ class Controller
         $ajax = array();
         // REQUIRE LA VUE MAIS LA STOCK DANS UN BUFFER
         ob_start();
-        require VUE . "$doss/ajax.php";
+        //require VUE . "$doss/ajax.php";
         require $path;
         // RECUP LE BUFFER
         $content = json_encode(ob_get_clean());

@@ -12,7 +12,7 @@ if (ValidSession()) {
 
 ?>
 <footer>
-    <a href="index.php"> <img src=<?php echo DATA . "/general/Logo.png"; ?> alt="Logo" class="logo-footer" /></a>
+    <a href="<?php echo WEBROOT ?>"> <img src=<?php echo DATA . "/general/Logo.png"; ?> alt="Logo" class="logo-footer" /></a>
     <h4>A propos</h4>
     <div class="footer-element">
         <ul>

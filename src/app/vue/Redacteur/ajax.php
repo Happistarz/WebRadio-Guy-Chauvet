@@ -1,7 +1,9 @@
 <?php
 
-echo ROOT;
-if (isset($ajax['submit']) && $ajax['submit']) {
+require_once "../../../../conf/constantes.php";
+
+
+if (isset($_POST['submit']) && $_POST['submit']) {
 
     ini_set('display_errors', 1);
 
@@ -25,8 +27,7 @@ if (isset($ajax['submit']) && $ajax['submit']) {
 
 
     $model = "Model" . $table;
-    echo ROOT;
-    require_once MODEL . $model . '.php';
+    require_once ROOT ."../../models/". $model . '.php';
     $model = new $model();
 
     $doc = array();
@@ -55,8 +56,5 @@ if (isset($ajax['submit']) && $ajax['submit']) {
     }
 
     echo '{"data":' . json_encode($audios) . '}';
-
-
 }
-unset($ajax);
 ?>

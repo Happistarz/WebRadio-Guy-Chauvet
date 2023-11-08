@@ -98,16 +98,14 @@ class Controller
         $doss = get_class($this);
         $doss = str_replace("CTRL", "", $doss);
         $path = VUE . "$doss/$name";
-
-        $ajax = array();
+        
         // REQUIRE LA VUE MAIS LA STOCK DANS UN BUFFER
         ob_start();
         //require VUE . "$doss/ajax.php";
         require $path;
         // RECUP LE BUFFER
         $content = json_encode(ob_get_clean());
-        ob_end_clean();
-
+        
         $title = $title_page;
         // REQUIRE LE LAYOUT
         require VUE . "layout/box.php";

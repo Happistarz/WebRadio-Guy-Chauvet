@@ -2,8 +2,9 @@
 
 
 // Constantes de connexion à la base de données
-define('ROOT', dirname($_SERVER['SCRIPT_FILENAME']) . "/");
+define('ROOT', dirname(__DIR__) . '/');
 define('WEBROOT', dirname($_SERVER['SCRIPT_NAME']) . "/");
+define("AJAXROOT", "");
 define('APP', ROOT . 'src/app/');
 define('LIB', ROOT . 'src/lib/');
 define('CONTROLLER', APP . 'controllers/');
@@ -18,7 +19,12 @@ define('DATA', WEBROOT . 'src/data/');
 
 define('ADMIN_MAIN', "webradio@lycee-guychauvet.fr");
 
-function ValidSession()
+/**
+ * Verifications de session
+
+ @return bool
+ */
+function ValidSession() : bool
 {
     if (isset($_SESSION) && !empty($_SESSION) && $_SESSION['valid'] && !empty($_SESSION['login']) && !empty($_SESSION['role'])) {
         return true;
@@ -28,7 +34,13 @@ function ValidSession()
 }
 ;
 
-function hasRole($role)
+/**
+ * Verification du role
+ * 
+ * @param string $role
+ * @return bool
+ */
+function hasRole($role) : bool
 {
     return ValidSession() && $_SESSION['role'] == $role;
 }

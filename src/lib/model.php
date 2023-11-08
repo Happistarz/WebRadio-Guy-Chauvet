@@ -139,6 +139,19 @@ class Model{
         return $data;
     }
 
+
+    /**
+     * Execute a SQL query
+     * 
+     * @param string $sql
+     * @return void
+     */
+    public function exec($sql) : void {
+        $db = Connexion::login();
+        $res = $db->exec($sql);
+        $db = Connexion::logout();
+    }
+
 }
 
 ?>

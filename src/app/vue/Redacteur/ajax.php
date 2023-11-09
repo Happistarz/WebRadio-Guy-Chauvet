@@ -7,9 +7,7 @@ if (isset($_POST['submit']) && $_POST['submit']) {
 
     $data = json_decode($_POST['data'], true);
     $table = $_POST['table'];
-    // $action = $_POST['action'];
-
-    $action = 'edit';
+    $action = $_POST['action'];
 
     $sql = 'aa';
 
@@ -27,14 +25,17 @@ if (isset($_POST['submit']) && $_POST['submit']) {
         case 'edit':
             $sql = "UPDATE $table SET ";
 
-            foreach ($model->getColumns() as $column) {
-                // $sql .= $column . " = '" . $data[] . "', ";
+            $id = "0";
+            foreach ($data as $d) {
+                if ($d["name"] == "id") {$id = $d["value"];continue;}
+                $sql .= strtoupper($d["name"]) . "= \"" . $d["value"] . "\", ";
             }
-            $sql .= " WHERE ID =". $data['IDEMISSION'];
-            // $sql = "UPDATE $table SET ".join(", ",$data)." WHERE id =". $data['id'];
+            if (substr($sql, -2) == ", ") $sql = substr($sql, 0, -2);
+
+            $sql .= " WHERE ID = '" . $id ."'";
             break;
         case 'delete':
-            $sql = "DELETE FROM $table WHERE ID = " . $data[0];
+            $sql = "DELETE FROM $table WHERE ID = " . $data["IDEMISSION"];
             break;
         case 'get':
             $sql = "SELECT * FROM $table WHERE ID = " . $data["IDEMISSION"];

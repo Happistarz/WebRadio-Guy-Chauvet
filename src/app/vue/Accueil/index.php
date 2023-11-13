@@ -71,4 +71,4 @@ foreach ($info as $i) {
 			<h3>LA WEB RADIO</h3>
 			<img src="<?= DATA . 'general/logo/typo.png' ?>" alt="image" />
 		</a>
-	</div>
+	</div>.......
